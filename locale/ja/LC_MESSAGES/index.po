@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Toshihiro Nakamura <toshihiro.nakamura@gmail.com>, 2024
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Last-Translator: Toshihiro Nakamura <toshihiro.nakamura@gmail.com>, 2024\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/index.po\n"
+"X-Crowdin-File-ID: 44\n"
+
+#: ../../index.rst:13
+msgid "Welcome to Doma 2"
+msgstr ""
+
+#: ../../index.rst:15
+msgid "Doma 2 is a database access framework for Java 8+. Doma has various strengths:"
+msgstr ""
+
+#: ../../index.rst:18
+msgid "Verifies and generates source code at compile time using annotation processing."
+msgstr ""
+
+#: ../../index.rst:19
+msgid "Provides type-safe Criteria API."
+msgstr ""
+
+#: ../../index.rst:20
+msgid "Supports Kotlin."
+msgstr ""
+
+#: ../../index.rst:21
+msgid "Uses SQL templates, called \"two-way SQL\"."
+msgstr ""
+
+#: ../../index.rst:22
+msgid "Has no dependence on other libraries."
+msgstr ""
+
+#: ../../index.rst:24
+msgid "This document consists of following sections:"
+msgstr ""
+
+#: ../../index.rst:26
+msgid "`User Documentation`_"
+msgstr ""
+
+#: ../../index.rst:27
+msgid "`About Doma`_"
+msgstr ""
+
+#: ../../index.rst:28
+msgid "`Links`_"
+msgstr ""
+
+#: ../../index.rst:30
+msgid "Help improve our documentation"
+msgstr ""
+
+#: ../../index.rst:33
+msgid "Have feedback or a question? Found a typo?"
+msgstr ""
+
+#: ../../index.rst:35
+msgid "Please add an issue or pull request to https://github.com/domaframework/doma-docs and we’ll get back to you."
+msgstr ""
+
+#: ../../index.rst:39
+msgid "User Documentation"
+msgstr ""
+
+#: ../../index.rst:65
+msgid "About Doma"
+msgstr ""
+
+#: ../../index.rst:73
+msgid "Links"
+msgstr ""
+
+#: ../../index.rst:75
+msgid "`News and announcements <https://twitter.com/domaframework>`_"
+msgstr ""
+
+#: ../../index.rst:76
+msgid "`GitHub repository <https://github.com/domaframework/doma>`_"
+msgstr ""
+
+#: ../../index.rst:77
+msgid "`Release Notes <https://github.com/domaframework/doma/releases>`_"
+msgstr ""
+
+#: ../../index.rst:78
+msgid "`JavaDoc <https://www.javadoc.io/doc/org.seasar.doma/doma-core/latest/index.html>`_"
+msgstr ""
+
+#: ../../index.rst:79
+msgid "`Examples <https://github.com/domaframework/simple-examples>`_"
+msgstr ""
+
+#: ../../index.rst:80
+msgid "`Doma Compile Plugin <https://github.com/domaframework/doma-compile-plugin>`_"
+msgstr ""
+
+#: ../../index.rst:81
+msgid "`Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-plugin>`_"
+msgstr ""
+
+#: ../../index.rst:82
+msgid "`Doma version 1 <http://doma.seasar.org/>`_"
+msgstr ""
+
