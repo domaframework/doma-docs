@@ -1,0 +1,475 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/config.po\n"
+"X-Crowdin-File-ID: 26\n"
+
+#: ../../config.rst:3
+msgid "Configuration"
+msgstr ""
+
+#: ../../config.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../config.rst:8
+msgid "The configurable items must be returned from the methods of the implementation class of the ``org.seasar.doma.jdbc.Config`` interface."
+msgstr ""
+
+#: ../../config.rst:12
+msgid "Configurable items"
+msgstr ""
+
+#: ../../config.rst:15
+msgid "DataSource"
+msgstr ""
+
+#: ../../config.rst:17
+msgid "Return a JDBC ``DataSource`` from the ``getDataSource`` method. If you need local transactions provided by Doma, return a ``LocalTransactionDataSource``."
+msgstr ""
+
+#: ../../config.rst:20 ../../config.rst:160
+msgid "See also: :doc:`transaction`"
+msgstr ""
+
+#: ../../config.rst:24 ../../config.rst:73
+msgid "Required item"
+msgstr ""
+
+#: ../../config.rst:27
+msgid "DataSource's name"
+msgstr ""
+
+#: ../../config.rst:29
+msgid "Return a DataSource's name from the ``getDataSourceName`` method. In the environment where multiple DataSources are used, the name is important. You have to give an unique name to each DataSource."
+msgstr ""
+
+#: ../../config.rst:33
+msgid "The default value is the full qualified name of the implementation class of ``Config``."
+msgstr ""
+
+#: ../../config.rst:36
+msgid "SQL dialect"
+msgstr ""
+
+#: ../../config.rst:38
+msgid "Return a ``Dialect`` from the  ``getDialect`` method. You have to choose an appropriate dialect for the database you use."
+msgstr ""
+
+#: ../../config.rst:41
+msgid "Doma provides following dialects:"
+msgstr ""
+
+#: ../../config.rst:44
+msgid "Database"
+msgstr ""
+
+#: ../../config.rst:44
+msgid "Dialect Name"
+msgstr ""
+
+#: ../../config.rst:44
+msgid "Description"
+msgstr ""
+
+#: ../../config.rst:46
+msgid "DB2"
+msgstr ""
+
+#: ../../config.rst:46
+msgid "Db2Dialect"
+msgstr ""
+
+#: ../../config.rst:48 ../../config.rst:48
+msgid "H2 Database Engine 1.2.126"
+msgstr ""
+
+#: ../../config.rst:48
+msgid "H212126Dialect"
+msgstr ""
+
+#: ../../config.rst:50
+msgid "H2 Database"
+msgstr ""
+
+#: ../../config.rst:50
+msgid "H2Dialect"
+msgstr ""
+
+#: ../../config.rst:50
+msgid "H2 Database Engine 1.3.171 and above"
+msgstr ""
+
+#: ../../config.rst:52
+msgid "HSQLDB"
+msgstr ""
+
+#: ../../config.rst:52
+msgid "HsqldbDialect"
+msgstr ""
+
+#: ../../config.rst:54 ../../config.rst:54
+msgid "Microsoft SQL Server 2008"
+msgstr ""
+
+#: ../../config.rst:54
+msgid "Mssql2008Dialect"
+msgstr ""
+
+#: ../../config.rst:56
+msgid "Microsoft SQL Server"
+msgstr ""
+
+#: ../../config.rst:56
+msgid "MssqlDialect"
+msgstr ""
+
+#: ../../config.rst:56
+msgid "Microsoft SQL Server 2012 and above"
+msgstr ""
+
+#: ../../config.rst:58
+msgid "MySQL"
+msgstr ""
+
+#: ../../config.rst:58
+msgid "MySqlDialect"
+msgstr ""
+
+#: ../../config.rst:60 ../../config.rst:60
+msgid "Oracle Database 11g"
+msgstr ""
+
+#: ../../config.rst:60
+msgid "Oracle11Dialect"
+msgstr ""
+
+#: ../../config.rst:62
+msgid "Oracle Database"
+msgstr ""
+
+#: ../../config.rst:62
+msgid "OracleDialect"
+msgstr ""
+
+#: ../../config.rst:62
+msgid "Oracle Database 12g and above"
+msgstr ""
+
+#: ../../config.rst:64
+msgid "PostgreSQL"
+msgstr ""
+
+#: ../../config.rst:64
+msgid "PostgresDialect"
+msgstr ""
+
+#: ../../config.rst:66
+msgid "SQLite"
+msgstr ""
+
+#: ../../config.rst:66
+msgid "SqliteDialect"
+msgstr ""
+
+#: ../../config.rst:69
+msgid "These dialect are located in the ``org.seasar.doma.jdbc.dialect`` package."
+msgstr ""
+
+#: ../../config.rst:78
+msgid "Logger"
+msgstr ""
+
+#: ../../config.rst:80
+msgid "Return a ``JdbcLogger`` from the ``getJdbcLogger`` method."
+msgstr ""
+
+#: ../../config.rst:82
+msgid "Doma provides following JdbcLogger:"
+msgstr ""
+
+#: ../../config.rst:84
+msgid "org.seasar.doma.jdbc.UtilLoggingJdbcLogger"
+msgstr ""
+
+#: ../../config.rst:86
+msgid "The default JdbcLogger is UtilLoggingJdbcLogger which uses ``java.util.logging``."
+msgstr ""
+
+#: ../../config.rst:89
+msgid "SQL File Repository"
+msgstr ""
+
+#: ../../config.rst:91
+msgid "Return a ``SqlFileRepository`` from the ``getSqlFileRepository`` method."
+msgstr ""
+
+#: ../../config.rst:93
+msgid "Doma provides following SqlFileRepositories:"
+msgstr ""
+
+#: ../../config.rst:95
+msgid "org.seasar.doma.jdbc.GreedyCacheSqlFileRepository"
+msgstr ""
+
+#: ../../config.rst:96
+msgid "org.seasar.doma.jdbc.NoCacheSqlFileRepository"
+msgstr ""
+
+#: ../../config.rst:98
+msgid "The default SqlFileRepository is GreedyCacheSqlFileRepository which caches the result of SQL parsing without limitation."
+msgstr ""
+
+#: ../../config.rst:102
+msgid "Controlling REQUIRES_NEW transaction"
+msgstr ""
+
+#: ../../config.rst:104
+msgid "Return a ``RequiresNewController`` from the ``getRequiresNewController`` method. RequiresNewController may begin new transactions to makes transaction locked time shorter."
+msgstr ""
+
+#: ../../config.rst:107
+msgid "This feature is used only when you use ``@TableGenerator`` which generates identities with the table."
+msgstr ""
+
+#: ../../config.rst:109
+msgid "The default RequiresNewController does nothing."
+msgstr ""
+
+#: ../../config.rst:112
+msgid "Loading classes"
+msgstr ""
+
+#: ../../config.rst:114
+msgid "Return a ``ClassHelper`` from the ``getClassHelper`` method."
+msgstr ""
+
+#: ../../config.rst:116
+msgid "When the application server and framework you use loads classes with their specific way, consider to create your own ClassHelper."
+msgstr ""
+
+#: ../../config.rst:119
+msgid "The default ClassHelper loads classes with ``Class#forName`` mainly."
+msgstr ""
+
+#: ../../config.rst:122
+msgid "Choosing SQL format contained in exception messages"
+msgstr ""
+
+#: ../../config.rst:124
+msgid "Return a ``SqlLogType`` from the ``getExceptionSqlLogType``. The default SqlLogType contains the formatted SQL in exception messages."
+msgstr ""
+
+#: ../../config.rst:128
+msgid "Handling unknown columns"
+msgstr ""
+
+#: ../../config.rst:130
+msgid "Return a ``UnknownColumnHandler`` from the ``getUnknownColumnHandler`` method. In result set mappings, if an unknown column to an entity class is found, the UnknownColumnHandler handles the situation."
+msgstr ""
+
+#: ../../config.rst:134
+msgid "The default UnknownColumnHandler throws an ``UnknownColumnException``."
+msgstr ""
+
+#: ../../config.rst:137
+msgid "Naming convention for tables and columns"
+msgstr ""
+
+#: ../../config.rst:139
+msgid "Return a ``Naming`` from the ``getNaming`` method. The naming element of ``@Entity`` have preference over this value. When you specify explicit value to the name elements of ``@Table`` and ``@Column``, the naming convention is not applied to them."
+msgstr ""
+
+#: ../../config.rst:144
+msgid "The default Naming does nothing."
+msgstr ""
+
+#: ../../config.rst:147
+msgid "Naming convention for keys of java.util.Map"
+msgstr ""
+
+#: ../../config.rst:149
+msgid "Return a ``MapKeyNaming`` from the ``getMapKeyNaming`` method. The MapKeyNaming is used when the result set is mapped to ``java.util.Map<String, Object>``."
+msgstr ""
+
+#: ../../config.rst:152
+msgid "The default MapKeyNaming does nothing."
+msgstr ""
+
+#: ../../config.rst:155
+msgid "Local transaction manager"
+msgstr ""
+
+#: ../../config.rst:157
+msgid "Return a ``LocalTransactionManager`` from the ``getTransactionManager`` method. The ``getTransactionManager`` method throws ``UnsupportedOperationException`` as default."
+msgstr ""
+
+#: ../../config.rst:163
+msgid "Adding SQL identifiers to the SQLs as a comment"
+msgstr ""
+
+#: ../../config.rst:165
+msgid "Return a ``Commenter`` from the ``getCommenter`` method."
+msgstr ""
+
+#: ../../config.rst:167
+msgid "Doma provides following commenter:"
+msgstr ""
+
+#: ../../config.rst:169
+msgid "org.seasar.doma.jdbc.CallerCommenter"
+msgstr ""
+
+#: ../../config.rst:171
+msgid "The default Commenter does nothing."
+msgstr ""
+
+#: ../../config.rst:174
+msgid "Command implementors"
+msgstr ""
+
+#: ../../config.rst:176
+msgid "Return a ``CommandImplementors`` from the ``getCommandImplementors`` method. For example, the CommandImplementors provides you a hook to execute JDBC API."
+msgstr ""
+
+#: ../../config.rst:180
+msgid "Query implementors"
+msgstr ""
+
+#: ../../config.rst:182
+msgid "Return a ``QueryImplementors`` from the ``getQueryImplementors`` method. For example, the QueryImplementors provides you a hook to rewrite SQL statements."
+msgstr ""
+
+#: ../../config.rst:186
+msgid "Query timeout"
+msgstr ""
+
+#: ../../config.rst:188
+msgid "Return the query timeout (second) from the ``getQueryTimeout`` method. This value is used as default in :doc:`query/index`."
+msgstr ""
+
+#: ../../config.rst:192
+msgid "Max rows"
+msgstr ""
+
+#: ../../config.rst:194
+msgid "Return the max rows from the ``getMaxRows`` method. This value is used as default in :doc:`query/select`."
+msgstr ""
+
+#: ../../config.rst:198
+msgid "Fetch size"
+msgstr ""
+
+#: ../../config.rst:200
+msgid "Return the fetch size from the ``getFetchSize`` method. This value is used as default in :doc:`query/select`."
+msgstr ""
+
+#: ../../config.rst:204
+msgid "Batch size"
+msgstr ""
+
+#: ../../config.rst:206
+msgid "Return the batch size from the ``getBatchSize`` method. This value is used as default in :doc:`query/batch-insert`, :doc:`query/batch-update` and :doc:`query/batch-delete`."
+msgstr ""
+
+#: ../../config.rst:211
+msgid "Providing entity listeners"
+msgstr ""
+
+#: ../../config.rst:213
+msgid "Return a ``EntityListenerProvider`` from the ``getEntityListenerProvider`` method. When you want to get entity listeners from a dependency injection container, create your own EntityListenerProvider."
+msgstr ""
+
+#: ../../config.rst:217
+msgid "The default EntityListenerProvider get the entity listener from the accepted supplier."
+msgstr ""
+
+#: ../../config.rst:220
+msgid "Loading JDBC drivers"
+msgstr ""
+
+#: ../../config.rst:225
+msgid "All JDBC drivers are loaded automatically by the `service provider <service provider_>`_ mechanism."
+msgstr ""
+
+#: ../../config.rst:229
+msgid "But in the specific environment, the mechanism doesn't work appropriately. For example, when you use Apache Tomcat, you will find the case. See also: `DriverManager, the service provider mechanism and memory leaks <tomcat driver_>`_"
+msgstr ""
+
+#: ../../config.rst:236
+msgid "Configuration definition"
+msgstr ""
+
+#: ../../config.rst:239
+msgid "Simple definition"
+msgstr ""
+
+#: ../../config.rst:241
+msgid "The simple definition is appropriate in following cases:"
+msgstr ""
+
+#: ../../config.rst:243
+msgid "The configuration instance isn't managed in the dependency injection container"
+msgstr ""
+
+#: ../../config.rst:244
+msgid "Local transactions is used"
+msgstr ""
+
+#: ../../config.rst:286
+msgid "You can use the above ``DbConfig`` class as follows:"
+msgstr ""
+
+#: ../../config.rst:292
+msgid "The above ``EmployeeDao`` interface must be annotated with the ``@Dao`` annotation as follows:"
+msgstr ""
+
+#: ../../config.rst:304
+msgid "Advanced definition"
+msgstr ""
+
+#: ../../config.rst:306
+msgid "The advanced definition is appropriate in following cases:"
+msgstr ""
+
+#: ../../config.rst:308
+msgid "The configuration instance is managed as a singleton object in the dependency injection container"
+msgstr ""
+
+#: ../../config.rst:309
+msgid "The transaction manager is provided from the application server or framework you use"
+msgstr ""
+
+#: ../../config.rst:311
+msgid "Suppose the ``dialect`` and the ``dataSource`` are injected by the dependency injection container:"
+msgstr ""
+
+#: ../../config.rst:340
+msgid "To inject the instance of the above class to your DAO implementation instance, you have to annotate your DAO interfaces with ``@AnnotateWith``:"
+msgstr ""
+
+#: ../../config.rst:367
+msgid "To avoid annotating your DAO interfaces with ``@AnnotateWith`` repeatedly, annotate the arbitrary annotation with it only once:"
+msgstr ""
+
+#: ../../config.rst:378
+msgid "Then, you can annotate your DAO interfaces with the above ``@InjectConfig`` annotation:"
+msgstr ""
+
