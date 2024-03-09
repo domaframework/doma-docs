@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/lombok-support.po\n"
+"X-Crowdin-File-ID: 50\n"
+
+#: ../../lombok-support.rst:3
+msgid "Lombok support"
+msgstr ""
+
+#: ../../lombok-support.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../lombok-support.rst:8
+msgid "Doma supports `Lombok <https://projectlombok.org/>`_ 1.16.12 or above."
+msgstr ""
+
+#: ../../lombok-support.rst:12
+msgid "If you intend to use Eclipse, use version 4.5 or above."
+msgstr ""
+
+#: ../../lombok-support.rst:15
+msgid "Overview"
+msgstr ""
+
+#: ../../lombok-support.rst:17
+msgid "Both Lombok and Doma provide annotation processors. Because the execution order of annotation processors is not determined in Java, Doma's annotation processors are not always aware of the class modifications made by Lombok annotation processors."
+msgstr ""
+
+#: ../../lombok-support.rst:22
+msgid "To resolve the issue, Doma's annotation processors recognize several of Lombok's annotations and change their behavior. For example, if Doma's annotation processors find a class annotated with ``@lombok.Value``, they suppose that the class has a constructor whose arguments cover all instance fields."
+msgstr ""
+
+#: ../../lombok-support.rst:28
+msgid "Best practices"
+msgstr ""
+
+#: ../../lombok-support.rst:30
+msgid "We show you recommended ways to define classes with Lombok annotations."
+msgstr ""
+
+#: ../../lombok-support.rst:33
+msgid "Entity class definition"
+msgstr ""
+
+#: ../../lombok-support.rst:36
+msgid "immutable entity classes"
+msgstr ""
+
+#: ../../lombok-support.rst:38
+msgid "Specify ``true`` to the ``immutable`` element of ``@Entity``"
+msgstr ""
+
+#: ../../lombok-support.rst:39 ../../lombok-support.rst:111
+msgid "Specify either ``@lombok.Value`` or ``@lombok.AllArgsConstructor``"
+msgstr ""
+
+#: ../../lombok-support.rst:40 ../../lombok-support.rst:112
+msgid "Specify ``@lombok.Getter`` to generate getters, in case of ``@lombok.AllArgsConstructor``"
+msgstr ""
+
+#: ../../lombok-support.rst:66
+msgid "mutable entity classes"
+msgstr ""
+
+#: ../../lombok-support.rst:68
+msgid "Define a default constructor"
+msgstr ""
+
+#: ../../lombok-support.rst:69
+msgid "Specify ``@lombok.Data`` or ``@lombok.Getter``/``@lombok.Setter`` to generate getters/setters"
+msgstr ""
+
+#: ../../lombok-support.rst:95
+msgid "Domain class definition"
+msgstr ""
+
+#: ../../lombok-support.rst:97
+msgid "Specify ``@lombok.Value``"
+msgstr ""
+
+#: ../../lombok-support.rst:98
+msgid "Define only one instance field whose name is ``value``"
+msgstr ""
+
+#: ../../lombok-support.rst:109
+msgid "Embeddable class definition"
+msgstr ""
+
