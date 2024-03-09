@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: doma-docs\\n"
+"POT-Creation-Date: 2024-02-27 13:50-0000\\n"
+"PO-Revision-Date: 2024-02-27 13:50-0000\\n"
+"Last-Translator: \\n"
+"Language-Team: none\\n"
+"MIME-Version: 1.0\\n"
+"Content-Type: text/plain; charset=UTF-8\\n"
+"Content-Transfer-Encoding: 8bit\\n"
+"Plural-Forms: nplurals=1; plural=0;\\n"
+"X-Generator: Crowdin\\n"
+
+msgid "Welcome to Doma 2"
+msgstr "Doma 2へようこそ"
+
+msgid ""
+"Doma 2 is a database access framework for Java 8+. Doma has various "
+"strengths:"
+msgstr "Doma 2 は Java 8 以降のデータベースアクセスフレームワークです。Doma 2 には様々な強みがあります。"
+
+msgid ""
+"Verifies and generates source code at compile time using annotation "
+"processing."
+msgstr ""
+"Verifies and generates source code at compile time using annotation "
+"processing."
+
+msgid "Provides type-safe Criteria API."
+msgstr "Provides type-safe Criteria API."
+
+msgid "Supports Kotlin."
+msgstr "Supports Kotlin."
+
+msgid "Uses SQL templates, called \"two-way SQL\"."
+msgstr "Uses SQL templates, called \"two-way SQL\"."
+
+msgid "Has no dependence on other libraries."
+msgstr "Has no dependence on other libraries."
+
+msgid "This document consists of following sections:"
+msgstr "This document consists of following sections:"
+
+msgid "`User Documentation`_"
+msgstr "`User Documentation`_"
+
+msgid "`About Doma`_"
+msgstr "`About Doma`_"
+
+msgid "`Links`_"
+msgstr "`Links`_"
+
+msgid "Help improve our documentation"
+msgstr "Help improve our documentation"
+
+msgid "Have feedback or a question? Found a typo?"
+msgstr "Have feedback or a question? Found a typo?"
+
+msgid ""
+"Please add an issue or pull request to https://github.com/domaframew"
+"ork/doma-docs and we’ll get back to you."
+msgstr ""
+"Please add an issue or pull request to https://github.com/domaframew"
+"ork/doma-docs and we’ll get back to you."
+
+msgid "User Documentation"
+msgstr "User Documentation"
+
+msgid "About Doma"
+msgstr "About Doma"
+
+msgid "Links"
+msgstr "Links"
+
+msgid "`News and announcements <https://twitter.com/domaframework>`_"
+msgstr "`News and announcements <https://twitter.com/domaframework>`_"
+
+msgid "`GitHub repository <https://github.com/domaframework/doma>`_"
+msgstr "`GitHub repository <https://github.com/domaframework/doma>`_"
+
+msgid "`Release Notes <https://github.com/domaframework/doma/releases>`_"
+msgstr "`Release Notes <https://github.com/domaframework/doma/releases>`_"
+
+msgid ""
+"`JavaDoc <https://www.javadoc.io/doc/org.seasar.doma/doma-core/lates"
+"t/index.html>`_"
+msgstr ""
+"`JavaDoc <https://www.javadoc.io/doc/org.seasar.doma/doma-core/lates"
+"t/index.html>`_"
+
+msgid "`Examples <https://github.com/domaframework/simple-examples>`_"
+msgstr "`Examples <https://github.com/domaframework/simple-examples>`_"
+
+msgid ""
+"`Doma Compile Plugin <https://github.com/domaframework/doma-compile-"
+"plugin>`_"
+msgstr ""
+"`Doma Compile Plugin <https://github.com/domaframework/doma-compile-"
+"plugin>`_"
+
+msgid ""
+"`Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-"
+"plugin>`_"
+msgstr ""
+"`Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-"
+"plugin>`_"
+
+msgid "`Doma version 1 <http://doma.seasar.org/>`_"
+msgstr "`Doma version 1 <http://doma.seasar.org/>`_"
+
