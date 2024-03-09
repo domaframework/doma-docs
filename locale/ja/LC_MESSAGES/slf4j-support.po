@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/slf4j-support.po\n"
+"X-Crowdin-File-ID: 56\n"
+
+#: ../../slf4j-support.rst:3
+msgid "SLF4J support"
+msgstr ""
+
+#: ../../slf4j-support.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../slf4j-support.rst:9
+msgid "Overview"
+msgstr ""
+
+#: ../../slf4j-support.rst:11
+msgid "Doma uses java util logging as underling logging framework, but you can replace it with `SLF4J <http://www.slf4j.org/>`_ easily."
+msgstr ""
+
+#: ../../slf4j-support.rst:15
+msgid "Gradle"
+msgstr ""
+
+#: ../../slf4j-support.rst:17
+msgid "Doma provides the doma-slf4j artifact to adapt SLF4J."
+msgstr ""
+
+#: ../../slf4j-support.rst:28
+msgid "Configuration"
+msgstr ""
+
+#: ../../slf4j-support.rst:30
+msgid "Return a ``org.seasar.doma.slf4j.Slf4jJdbcLogger`` instance from the ``getJdbcLogger`` method of the ``org.seasar.doma.jdbc.Config`` implementation class."
+msgstr ""
+
+#: ../../slf4j-support.rst:33
+msgid "See also :ref:`Logger<config-logger>`."
+msgstr ""
+
+#: ../../slf4j-support.rst:36
+msgid "Loggers"
+msgstr ""
+
+#: ../../slf4j-support.rst:38
+msgid "doma-slf4j provides several loggers as follows:"
+msgstr ""
+
+#: ../../slf4j-support.rst:40
+msgid "org.seasar.doma.jdbc.LogKind.DAO"
+msgstr ""
+
+#: ../../slf4j-support.rst:41
+msgid "org.seasar.doma.jdbc.LogKind.FAILURE"
+msgstr ""
+
+#: ../../slf4j-support.rst:42
+msgid "org.seasar.doma.jdbc.LogKind.LOCAL_TRANSACTION"
+msgstr ""
+
+#: ../../slf4j-support.rst:43
+msgid "org.seasar.doma.jdbc.LogKind.SKIP.STATE_UNCHANGED"
+msgstr ""
+
+#: ../../slf4j-support.rst:44
+msgid "org.seasar.doma.jdbc.LogKind.SKIP.BATCH_TARGET_NONEXISTENT"
+msgstr ""
+
+#: ../../slf4j-support.rst:45
+msgid "org.seasar.doma.jdbc.LogKind.SQL.BATCH_DELETE"
+msgstr ""
+
+#: ../../slf4j-support.rst:46
+msgid "org.seasar.doma.jdbc.LogKind.SQL.BATCH_INSERT"
+msgstr ""
+
+#: ../../slf4j-support.rst:47
+msgid "org.seasar.doma.jdbc.LogKind.SQL.BATCH_UPDATE"
+msgstr ""
+
+#: ../../slf4j-support.rst:48
+msgid "org.seasar.doma.jdbc.LogKind.SQL.DELETE"
+msgstr ""
+
+#: ../../slf4j-support.rst:49
+msgid "org.seasar.doma.jdbc.LogKind.SQL.FUNCTION"
+msgstr ""
+
+#: ../../slf4j-support.rst:50
+msgid "org.seasar.doma.jdbc.LogKind.SQL.INSERT"
+msgstr ""
+
+#: ../../slf4j-support.rst:51
+msgid "org.seasar.doma.jdbc.LogKind.SQL.PROCEDURE"
+msgstr ""
+
+#: ../../slf4j-support.rst:52
+msgid "org.seasar.doma.jdbc.LogKind.SQL.SCRIPT"
+msgstr ""
+
+#: ../../slf4j-support.rst:53
+msgid "org.seasar.doma.jdbc.LogKind.SQL.SELECT"
+msgstr ""
+
+#: ../../slf4j-support.rst:54
+msgid "org.seasar.doma.jdbc.LogKind.SQL.SQL_PROCESSOR"
+msgstr ""
+
+#: ../../slf4j-support.rst:55
+msgid "org.seasar.doma.jdbc.LogKind.SQL.UPDATE"
+msgstr ""
+
+#: ../../slf4j-support.rst:57
+msgid "See `source code <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma/slf4j/Slf4jJdbcLogger.java>`_ for more information. It's simple."
+msgstr ""
+
+#: ../../slf4j-support.rst:61
+msgid "Examples"
+msgstr ""
+
+#: ../../slf4j-support.rst:63
+msgid "Below, we show you `logback <http://logback.qos.ch/>`_ configurations."
+msgstr ""
+
+#: ../../slf4j-support.rst:66
+msgid "Log all"
+msgstr ""
+
+#: ../../slf4j-support.rst:85
+msgid "Log all SQL statements"
+msgstr ""
+
+#: ../../slf4j-support.rst:104
+msgid "Log only SELECT statements"
+msgstr ""
+
