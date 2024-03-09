@@ -1,0 +1,539 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/expression.po\n"
+"X-Crowdin-File-ID: 38\n"
+
+#: ../../expression.rst:3
+msgid "Expression language"
+msgstr ""
+
+#: ../../expression.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../expression.rst:8
+msgid "You can write simple expressions in directives of :doc:`sql`. The grammar is almost the same as Java. However, not everything is possible that Java can do."
+msgstr ""
+
+#: ../../expression.rst:14
+msgid "Especially, the big difference is how to use optional types like ``java.util.Optional``. In the expression, a value of ``Optional`` type is always converted to a value of the element type automatically. For example a value of the ``Optional<String>`` type is treated as a value of ``String`` type. Therefore, we can't call methods of ``Optional`` type, nor do we call methods which have an ``Optional`` type in the parameters."
+msgstr ""
+
+#: ../../expression.rst:21
+msgid "When you want to check existence of a value, use ``/*%if optional != null */`` instead of ``/*%if optional.isPresent() */``."
+msgstr ""
+
+#: ../../expression.rst:24
+msgid "The same is true for ``java.util.OptionalInt``, ``java.util.OptionalDouble``, and ``java.util.OptionalLong``."
+msgstr ""
+
+#: ../../expression.rst:28
+msgid "Literals"
+msgstr ""
+
+#: ../../expression.rst:30
+msgid "You can use the following literals:"
+msgstr ""
+
+#: ../../expression.rst:33
+msgid "Literal"
+msgstr ""
+
+#: ../../expression.rst:33
+msgid "Type"
+msgstr ""
+
+#: ../../expression.rst:35
+msgid "null"
+msgstr ""
+
+#: ../../expression.rst:35
+msgid "void"
+msgstr ""
+
+#: ../../expression.rst:37
+msgid "true"
+msgstr ""
+
+#: ../../expression.rst:37 ../../expression.rst:39
+msgid "boolean"
+msgstr ""
+
+#: ../../expression.rst:39
+msgid "false"
+msgstr ""
+
+#: ../../expression.rst:41
+msgid "10"
+msgstr ""
+
+#: ../../expression.rst:41
+msgid "int"
+msgstr ""
+
+#: ../../expression.rst:43
+msgid "10L"
+msgstr ""
+
+#: ../../expression.rst:43
+msgid "long"
+msgstr ""
+
+#: ../../expression.rst:45
+msgid "0.123F"
+msgstr ""
+
+#: ../../expression.rst:45
+msgid "float"
+msgstr ""
+
+#: ../../expression.rst:47
+msgid "0.123D"
+msgstr ""
+
+#: ../../expression.rst:47
+msgid "double"
+msgstr ""
+
+#: ../../expression.rst:49
+msgid "0.123B"
+msgstr ""
+
+#: ../../expression.rst:49
+msgid "java.math.BigDecimal"
+msgstr ""
+
+#: ../../expression.rst:51
+msgid "'a'"
+msgstr ""
+
+#: ../../expression.rst:51 ../../expression.rst:155
+msgid "char"
+msgstr ""
+
+#: ../../expression.rst:53
+msgid "\"a\""
+msgstr ""
+
+#: ../../expression.rst:53 ../../expression.rst:153
+msgid "java.lang.String"
+msgstr ""
+
+#: ../../expression.rst:56
+msgid "The numeral types are distinguished by suffix letters such as ``L`` or ``F`` at the end of the literals. The suffixes must be capital letters."
+msgstr ""
+
+#: ../../expression.rst:67
+msgid "Comparison operators"
+msgstr ""
+
+#: ../../expression.rst:69
+msgid "You can use the following comparison operators:"
+msgstr ""
+
+#: ../../expression.rst:72 ../../expression.rst:104 ../../expression.rst:126
+msgid "Operator"
+msgstr ""
+
+#: ../../expression.rst:72 ../../expression.rst:104 ../../expression.rst:126
+msgid "Description"
+msgstr ""
+
+#: ../../expression.rst:74
+msgid "=="
+msgstr ""
+
+#: ../../expression.rst:74
+msgid "Equal to operator"
+msgstr ""
+
+#: ../../expression.rst:76
+msgid "!="
+msgstr ""
+
+#: ../../expression.rst:76
+msgid "Not equal to operator"
+msgstr ""
+
+#: ../../expression.rst:78
+msgid "<"
+msgstr ""
+
+#: ../../expression.rst:78
+msgid "Less than operator"
+msgstr ""
+
+#: ../../expression.rst:80
+msgid "<="
+msgstr ""
+
+#: ../../expression.rst:80
+msgid "Less than or equal to operator"
+msgstr ""
+
+#: ../../expression.rst:82
+msgid ">"
+msgstr ""
+
+#: ../../expression.rst:82
+msgid "Greater than operator"
+msgstr ""
+
+#: ../../expression.rst:84
+msgid ">="
+msgstr ""
+
+#: ../../expression.rst:84
+msgid "Greater than or equal to operator"
+msgstr ""
+
+#: ../../expression.rst:87
+msgid "To use comparison operators, operands must implement ``java.lang.Comparable``."
+msgstr ""
+
+#: ../../expression.rst:89
+msgid "The operands for ``<``, ``<=``, ``>`` and ``>=`` must not be ``null``."
+msgstr ""
+
+#: ../../expression.rst:99
+msgid "Logical operators"
+msgstr ""
+
+#: ../../expression.rst:101
+msgid "You can use the following logical operators:"
+msgstr ""
+
+#: ../../expression.rst:106
+msgid "!"
+msgstr ""
+
+#: ../../expression.rst:106
+msgid "Logical complement operator"
+msgstr ""
+
+#: ../../expression.rst:107
+msgid "&&"
+msgstr ""
+
+#: ../../expression.rst:107
+msgid "Conditional-AND operator"
+msgstr ""
+
+#: ../../expression.rst:108
+msgid "||"
+msgstr ""
+
+#: ../../expression.rst:108
+msgid "Conditional-OR operator"
+msgstr ""
+
+#: ../../expression.rst:111
+msgid "With parentheses, you can override the precedence of operators."
+msgstr ""
+
+#: ../../expression.rst:121
+msgid "Arithmetic operators"
+msgstr ""
+
+#: ../../expression.rst:123
+msgid "You can use the following arithmetic operators:"
+msgstr ""
+
+#: ../../expression.rst:128
+msgid "\\+"
+msgstr ""
+
+#: ../../expression.rst:128
+msgid "Additive operator"
+msgstr ""
+
+#: ../../expression.rst:130
+msgid "\\-"
+msgstr ""
+
+#: ../../expression.rst:130
+msgid "Subtraction operator"
+msgstr ""
+
+#: ../../expression.rst:132
+msgid "\\*"
+msgstr ""
+
+#: ../../expression.rst:132
+msgid "Multiplication operator"
+msgstr ""
+
+#: ../../expression.rst:134
+msgid "/"
+msgstr ""
+
+#: ../../expression.rst:134
+msgid "Division operator"
+msgstr ""
+
+#: ../../expression.rst:136
+msgid "%"
+msgstr ""
+
+#: ../../expression.rst:136
+msgid "Remainder operator"
+msgstr ""
+
+#: ../../expression.rst:139
+msgid "Operands must be numeric type."
+msgstr ""
+
+#: ../../expression.rst:147
+msgid "String concatenation operator"
+msgstr ""
+
+#: ../../expression.rst:149
+msgid "You can concatenate characters using a concatenation operator ``+``."
+msgstr ""
+
+#: ../../expression.rst:151
+msgid "The operand must be one of the following types:"
+msgstr ""
+
+#: ../../expression.rst:154
+msgid "java.lang.Character"
+msgstr ""
+
+#: ../../expression.rst:163
+msgid "Calling instance methods"
+msgstr ""
+
+#: ../../expression.rst:165
+msgid "You can call instance methods with the method names separated by dots ``.``. The method visibility must be public."
+msgstr ""
+
+#: ../../expression.rst:175
+msgid "If the method has no argument, specify ``()`` after the method name."
+msgstr ""
+
+#: ../../expression.rst:185
+msgid "Accessing to instance fields"
+msgstr ""
+
+#: ../../expression.rst:187
+msgid "You can access instance fields with the field names separated by dots ``.``. Even if the visibility is private, you can access it."
+msgstr ""
+
+#: ../../expression.rst:196
+msgid "Calling static methods"
+msgstr ""
+
+#: ../../expression.rst:198
+msgid "You can call static methods by continuing the method names with the fully qualified class names enclosed in ``@``. The method visibility must be public."
+msgstr ""
+
+#: ../../expression.rst:210
+msgid "Accessing to static fields"
+msgstr ""
+
+#: ../../expression.rst:212
+msgid "You can access static fields by continuing the field name with the fully qualified class name enclosed in ``@``. Even if the visibility is private, you can access it."
+msgstr ""
+
+#: ../../expression.rst:224
+msgid "Using built-in functions"
+msgstr ""
+
+#: ../../expression.rst:226
+msgid "Built-in functions are utilities mainly for changing values of binding variables before binding them to SQL."
+msgstr ""
+
+#: ../../expression.rst:229
+msgid "For example, when you run a prefix search with a LIKE clause, you can write like this:"
+msgstr ""
+
+#: ../../expression.rst:237
+msgid "``@prefix(employee.employeeName)`` means that we pass ``employee.employeeName`` to the ``@prefix`` function. The ``@prefix`` function converts the character sequence which is received by the parameter to a string for forward match search. It also escapes special characters. For example, if the value of ``employee.employeeName`` is ``ABC``, it's converted to ``ABC%``. If the value of ``employee.employeeName`` contains ``%`` such as ``AB%C``, the ``%`` is escaped with a default escape sequence ``$``, therefore the value is converted to ``AB$%C%``."
+msgstr ""
+
+#: ../../expression.rst:247
+msgid "You can use following function signatures:"
+msgstr ""
+
+#: ../../expression.rst:253
+msgid "String @escape(CharSequence text, char escapeChar = '$')"
+msgstr ""
+
+#: ../../expression.rst:250
+msgid "Escapes the character sequence for LIKE operation. The return value is a string which is a result of escaping the character sequence. If ``escapeChar`` isn't specified, ``$`` is used as a default escape sequence. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:260
+msgid "String @prefix(CharSequence prefix, char escapeChar = '$')"
+msgstr ""
+
+#: ../../expression.rst:256
+msgid "Converts the character sequence for prefix search. The return value is a string which is a result of escaping the character sequence and adding a wild card character at the end. If ``escapeChar`` isn't specified, ``$`` is used as a default escape sequence. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:267
+msgid "String @infix(CharSequence infix, char escapeChar = '$')"
+msgstr ""
+
+#: ../../expression.rst:263
+msgid "Converts the character sequence for infix search. The return value is a string which is a result of escaping the character sequence and adding wild card characters at the beginning and the end. If ``escapeChar`` isn't specified, ``$`` is used as a default escape sequence. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:274
+msgid "String @suffix(CharSequence suffix, char escapeChar = '$')"
+msgstr ""
+
+#: ../../expression.rst:270
+msgid "Converts the character sequence for suffix search. The return value is a string which is a result of escaping the character sequence and adding a wild card character at the beginning. If ``escapeChar`` isn't specified, ``$`` is used as a default escape sequence. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:279
+msgid "java.util.Date @roundDownTimePart(java.util.Date date)"
+msgstr ""
+
+#: ../../expression.rst:277 ../../expression.rst:282
+msgid "Rounds down the time part. The return value is a new Date which is rounded down the time part. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:284
+msgid "java.sql.Date @roundDownTimePart(java.sql.Date date)"
+msgstr ""
+
+#: ../../expression.rst:289
+msgid "java.sql.Timestamp @roundDownTimePart(java.sql.Timestamp timestamp)"
+msgstr ""
+
+#: ../../expression.rst:287
+msgid "Rounds down the time part. The return value is a new Timestamp which is rounded down the time part. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:294
+msgid "java.time.LocalDateTime @roundDownTimePart(java.time.LocalDateTime localDateTime)"
+msgstr ""
+
+#: ../../expression.rst:292
+msgid "Rounds down the time part. The return value is a new LocalDateTime which is rounded down the time part. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:299
+msgid "java.util.Date @roundUpTimePart(java.util.Date date)"
+msgstr ""
+
+#: ../../expression.rst:297 ../../expression.rst:302
+msgid "Rounds up the time part. The return value is a new Date which is rounded up the time part. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:304
+msgid "java.sql.Date @roundUpTimePart(java.sql.Date date)"
+msgstr ""
+
+#: ../../expression.rst:309
+msgid "java.sql.Timestamp @roundUpTimePart(java.sql.Timestamp timestamp)"
+msgstr ""
+
+#: ../../expression.rst:307
+msgid "Rounds up the time part. The return value is a new Timestamp which is rounded up the time part. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:314
+msgid "java.time.LocalDateTime @roundUpTimePart(java.time.LocalDateTime localDateTime)"
+msgstr ""
+
+#: ../../expression.rst:312
+msgid "Rounds up the time part. The return value is a new LocalDateTime which is rounded up the time part. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:319
+msgid "java.time.LocalDate @roundUpTimePart(java.time.LocalDate localDate)"
+msgstr ""
+
+#: ../../expression.rst:317
+msgid "Returns the next day. The return value is a new LocalDate which is the next one after the argument. It returns ``null`` if you pass ``null`` as a parameter."
+msgstr ""
+
+#: ../../expression.rst:322
+msgid "boolean @isEmpty(CharSequence charSequence)"
+msgstr ""
+
+#: ../../expression.rst:322
+msgid "Returns ``true`` if the character sequence is ``null`` or the length is ``0``."
+msgstr ""
+
+#: ../../expression.rst:325
+msgid "boolean @isNotEmpty(CharSequence charSequence)"
+msgstr ""
+
+#: ../../expression.rst:325
+msgid "Returns ``true`` if the character sequence isn't ``null`` and the length isn't ``0``."
+msgstr ""
+
+#: ../../expression.rst:329
+msgid "boolean @isBlank(CharSequence charSequence)"
+msgstr ""
+
+#: ../../expression.rst:328
+msgid "Returns ``true`` only if the character sequence is ``null``, the length is ``0``, or the sequence is formed with whitespaces only."
+msgstr ""
+
+#: ../../expression.rst:333
+msgid "boolean @isNotBlank(CharSequence charSequence)"
+msgstr ""
+
+#: ../../expression.rst:332
+msgid "Returns ``true`` if the character sequence isn't ``null``, the length isn't ``0``, and the sequence isn't formed with whitespaces only."
+msgstr ""
+
+#: ../../expression.rst:335
+msgid "These functions are correspond to the methods of ``org.seasar.doma.expr.ExpressionFunctions``."
+msgstr ""
+
+#: ../../expression.rst:338
+msgid "Using custom functions"
+msgstr ""
+
+#: ../../expression.rst:340
+msgid "You can define and use your own functions."
+msgstr ""
+
+#: ../../expression.rst:342
+msgid "You need to follow these settings when you use custom functions which you define by yourself:"
+msgstr ""
+
+#: ../../expression.rst:344
+msgid "The function is defined as a method of a class which implements ``org.seasar.doma.expr.ExpressionFunctions``."
+msgstr ""
+
+#: ../../expression.rst:346
+msgid "The method is a public instance method."
+msgstr ""
+
+#: ../../expression.rst:347
+msgid "The class is registered as an option in :doc:`annotation-processing`. The key of the option is ``doma.expr.functions``."
+msgstr ""
+
+#: ../../expression.rst:349
+msgid "The instance of the class you create is used in an RDBMS dialect in your configuration class (The implementations of RDBMS dialect provided by Doma can receive ``ExpressionFunctions`` in the constructor)."
+msgstr ""
+
+#: ../../expression.rst:353
+msgid "To call a custom function, add ``@`` at the beginning of the function name like built-in functions. For example, you can call ``myfunc`` function like this:"
+msgstr ""
+
