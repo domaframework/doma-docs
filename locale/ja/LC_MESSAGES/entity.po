@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/entity.po\n"
+"X-Crowdin-File-ID: 36\n"
+
+#: ../../entity.rst:3
+msgid "Entity classes"
+msgstr ""
+
+#: ../../entity.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../entity.rst:8
+msgid "Entity classes correspond to database tables or query result sets."
+msgstr ""
+
+#: ../../entity.rst:11
+msgid "Entity definition"
+msgstr ""
+
+#: ../../entity.rst:13
+msgid "The following code snippet shows how to define an entity:"
+msgstr ""
+
+#: ../../entity.rst:22
+msgid "An entity class can inherit other entity class."
+msgstr ""
+
+#: ../../entity.rst:24
+msgid "The following code snippet shows how to inherit other entity class:"
+msgstr ""
+
+#: ../../entity.rst:34
+msgid "In Java 14 and later version, you can annotate `records`_ with ``@Entity``:"
+msgstr ""
+
+#: ../../entity.rst:42
+msgid "In the case, the entity is recognize as :ref:`immutable` even though the immutable property of ``@Entity`` is ``false``."
+msgstr ""
+
+#: ../../entity.rst:48
+msgid "Entity listeners"
+msgstr ""
+
+#: ../../entity.rst:50
+msgid "Entity listeners work before/after Doma issues the database modification statements - INSERT, DELETE and UPDATE."
+msgstr ""
+
+#: ../../entity.rst:52
+msgid "The following code snippet shows how to define an entity listener:"
+msgstr ""
+
+#: ../../entity.rst:60
+msgid "To use the entity listener, specify it to the ``listener`` property within the ``@Entity`` annotation:"
+msgstr ""
+
+#: ../../entity.rst:69
+msgid "An entity subclass inherits parent`s entity listener."
+msgstr ""
+
+#: ../../entity.rst:72
+msgid "Naming convention"
+msgstr ""
+
+#: ../../entity.rst:74
+msgid "Naming convention maps the names between:"
+msgstr ""
+
+#: ../../entity.rst:76
+msgid "the database tables and the Java entity classes"
+msgstr ""
+
+#: ../../entity.rst:77
+msgid "the database column and the Java entity fields"
+msgstr ""
+
+#: ../../entity.rst:79
+msgid "The following code snippet shows how to apply the naming convention to an entity:"
+msgstr ""
+
+#: ../../entity.rst:88
+msgid "When the ``name`` property within the ``@Table`` or ``@Column`` annotation is explicitly specified, the naming convention is ignored."
+msgstr ""
+
+#: ../../entity.rst:91
+msgid "An entity subclass inherits parent's naming convention."
+msgstr ""
+
+#: ../../entity.rst:96
+msgid "Immutable"
+msgstr ""
+
+#: ../../entity.rst:98
+msgid "An entity class can be immutable."
+msgstr ""
+
+#: ../../entity.rst:100
+msgid "The following code snippet shows how to define an immutable entity:"
+msgstr ""
+
+#: ../../entity.rst:120
+msgid "The ``immutable`` property within the ``@Entity`` annotation must be ``true``. The persistent field must be ``final``."
+msgstr ""
+
+#: ../../entity.rst:123
+msgid "An entity subclass inherits parent's immutable property."
+msgstr ""
+
+#: ../../entity.rst:126
+msgid "Table"
+msgstr ""
+
+#: ../../entity.rst:128
+msgid "You can specify the corresponding table name with the ``@Table`` annotation:"
+msgstr ""
+
+#: ../../entity.rst:138
+msgid "Without the ``@Table`` annotation, the table name is resolved by `Naming Convention`_."
+msgstr ""
+
+#: ../../entity.rst:141
+msgid "Field definition"
+msgstr ""
+
+#: ../../entity.rst:143
+msgid "By default, the fields are persistent and correspond to the database columns or result set columns."
+msgstr ""
+
+#: ../../entity.rst:145 ../../entity.rst:222 ../../entity.rst:307
+msgid "The field type must be one of the following:"
+msgstr ""
+
+#: ../../entity.rst:147
+msgid ":doc:`basic`"
+msgstr ""
+
+#: ../../entity.rst:148
+msgid ":doc:`domain`"
+msgstr ""
+
+#: ../../entity.rst:149
+msgid ":doc:`embeddable`"
+msgstr ""
+
+#: ../../entity.rst:150
+msgid "java.util.Optional, whose element is either :doc:`basic` or :doc:`domain`"
+msgstr ""
+
+#: ../../entity.rst:151
+msgid "java.util.OptionalInt"
+msgstr ""
+
+#: ../../entity.rst:152
+msgid "java.util.OptionalLong"
+msgstr ""
+
+#: ../../entity.rst:153
+msgid "java.util.OptionalDouble"
+msgstr ""
+
+#: ../../entity.rst:156
+msgid "The following code snippet shows how to define a filed:"
+msgstr ""
+
+#: ../../entity.rst:167
+msgid "Column"
+msgstr ""
+
+#: ../../entity.rst:169
+msgid "You can specify the corresponding column name with the ``@Column`` annotation:"
+msgstr ""
+
+#: ../../entity.rst:177
+msgid "To exclude fields from INSERT or UPDATE statements, specify ``false`` to the ``insertable`` or ``updatable`` property within the ``@Column`` annotation:"
+msgstr ""
+
+#: ../../entity.rst:185
+msgid "Without the ``@Column`` annotation, the column name is resolved by `Naming Convention`_."
+msgstr ""
+
+#: ../../entity.rst:189
+msgid "When the filed type is :doc:`embeddable`, you cannot specify the ``@Column`` annotation to the field."
+msgstr ""
+
+#: ../../entity.rst:192
+msgid "Id"
+msgstr ""
+
+#: ../../entity.rst:194
+msgid "The database primary keys are represented with the ``@Id`` annotation:"
+msgstr ""
+
+#: ../../entity.rst:201
+msgid "When there is a composite primary key, use the ``@Id`` annotation many times:"
+msgstr ""
+
+#: ../../entity.rst:213
+msgid "When the filed type is :doc:`embeddable`, you cannot specify the ``@Id`` annotation to the field."
+msgstr ""
+
+#: ../../entity.rst:218
+msgid "Id generation"
+msgstr ""
+
+#: ../../entity.rst:220
+msgid "You can instruct Doma to generate id values automatically using the ``@GeneratedValue`` annotation."
+msgstr ""
+
+#: ../../entity.rst:224 ../../entity.rst:309
+msgid "the subclass of java.lang.Number"
+msgstr ""
+
+#: ../../entity.rst:225 ../../entity.rst:310
+msgid ":doc:`domain`, whose value type is the subclass of java.lang.Number"
+msgstr ""
+
+#: ../../entity.rst:226 ../../entity.rst:311
+msgid "java.util.Optional, whose element is either above types"
+msgstr ""
+
+#: ../../entity.rst:227 ../../entity.rst:312
+msgid "OptionalInt"
+msgstr ""
+
+#: ../../entity.rst:228 ../../entity.rst:313
+msgid "OptionalLong"
+msgstr ""
+
+#: ../../entity.rst:229 ../../entity.rst:314
+msgid "OptionalDouble"
+msgstr ""
+
+#: ../../entity.rst:230 ../../entity.rst:315
+msgid "the primitive types for number"
+msgstr ""
+
+#: ../../entity.rst:234
+msgid "The generated values are assign to the field only when the field is either ``null`` or less than ``0``. If you use one of the primitive types as filed type, initialize the field with tha value that is less than ``0``, such as ``-1``."
+msgstr ""
+
+#: ../../entity.rst:239
+msgid "Id generation by IDENTITY"
+msgstr ""
+
+#: ../../entity.rst:241
+msgid "To generate values using the RDBMS IDENTITY function, specify the ``GenerationType.IDENTITY`` enum value to ``strategy`` property within the ``@GeneratedValue``:"
+msgstr ""
+
+#: ../../entity.rst:250
+msgid "In advance, define the database primary key as IDENTITY."
+msgstr ""
+
+#: ../../entity.rst:254
+msgid "All RDBMS doesn't support the IDENTITY function."
+msgstr ""
+
+#: ../../entity.rst:257
+msgid "Id generation by SEQUENCE"
+msgstr ""
+
+#: ../../entity.rst:259
+msgid "To generate values using the RDBMS SEQUENCE, specify the ``GenerationType.SEQUENCE`` enum value to ``strategy`` property within the ``@GeneratedValue`` annotation. And use the ``@SequenceGenerator`` annotation:"
+msgstr ""
+
+#: ../../entity.rst:270
+msgid "In advance, define the SEQUENCE in the database. The SEQUENCE definitions such as the name, the allocation size and the initial size must correspond the properties within the ``@SequenceGenerator`` annotation."
+msgstr ""
+
+#: ../../entity.rst:276
+msgid "All RDBMS doesn't support the SEQUENCE."
+msgstr ""
+
+#: ../../entity.rst:279
+msgid "Id generation by TABLE"
+msgstr ""
+
+#: ../../entity.rst:281
+msgid "To generate values using the RDBMS TABLE, specify the ``GenerationType.TABLE`` enum value to ``strategy`` property within the ``@GeneratedValue`` annotation. And use the ``@TableGenerator`` annotation:"
+msgstr ""
+
+#: ../../entity.rst:292
+msgid "In advance, define the TABLE in the database. The TABLE`s definition must correspond to the properties within the ``@TableGenerator`` annotation. For example, the DDL should be following:"
+msgstr ""
+
+#: ../../entity.rst:300
+msgid "You can change the table name and the column names using the properties within the ``@TableGenerator`` annotation."
+msgstr ""
+
+#: ../../entity.rst:303
+msgid "Version"
+msgstr ""
+
+#: ../../entity.rst:305
+msgid "The version fields for optimistic locking are represented with the ``@Version`` annotation."
+msgstr ""
+
+#: ../../entity.rst:324
+msgid "When the filed type is :doc:`embeddable`, you cannot specify the ``@Version`` annotation to the field."
+msgstr ""
+
+#: ../../entity.rst:327
+msgid "Tenant Id"
+msgstr ""
+
+#: ../../entity.rst:329
+msgid "The tenant id fields are represented with the ``@TenantId`` annotation. The column corresponding to the annotated field is included in the WHERE clause of UPDATE and DELETE statements."
+msgstr ""
+
+#: ../../entity.rst:339
+msgid "When the filed type is :doc:`embeddable`, you cannot specify the ``@TenantId`` annotation to the field."
+msgstr ""
+
+#: ../../entity.rst:342
+msgid "Transient"
+msgstr ""
+
+#: ../../entity.rst:344
+msgid "If an entity has fields that you don't want to persist, you can annotate them using ``@Transient``:"
+msgstr ""
+
+#: ../../entity.rst:352
+msgid "OriginalStates"
+msgstr ""
+
+#: ../../entity.rst:354
+msgid "If you want to include only changed values in UPDATE statements, you can define fields annotated with ``@OriginalStates``. The fields can hold the original values that were fetched from the database."
+msgstr ""
+
+#: ../../entity.rst:358
+msgid "Doma uses the values to know which values are changed in the application and includes the only changed values in UPDATE statements."
+msgstr ""
+
+#: ../../entity.rst:361
+msgid "The following code snippet shows how to define original states:"
+msgstr ""
+
+#: ../../entity.rst:368
+msgid "The field type must be the same as the entity type."
+msgstr ""
+
+#: ../../entity.rst:371
+msgid "Method definition"
+msgstr ""
+
+#: ../../entity.rst:373
+msgid "There are no limitations in the use of methods."
+msgstr ""
+
+#: ../../entity.rst:376
+msgid "Example"
+msgstr ""
+
+#: ../../entity.rst:378
+msgid "Instantiate the ``Employee`` entity class and use its instance:"
+msgstr ""
+
