@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/domain.po\n"
+"X-Crowdin-File-ID: 32\n"
+
+#: ../../domain.rst:3
+msgid "Domain classes"
+msgstr ""
+
+#: ../../domain.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../domain.rst:8
+msgid "A domain class represents a table column and it allows you to handle the column value as a Java object. In the Doma framework, a **domain** means all the values which a data type may contain. In short, a domain class is a user defined class that can be map to a column. The use of the domain classes is optional."
+msgstr ""
+
+#: ../../domain.rst:13
+msgid "Every domain class is either an internal domain class or an external domain class."
+msgstr ""
+
+#: ../../domain.rst:16
+msgid "Internal domain classes"
+msgstr ""
+
+#: ../../domain.rst:18
+msgid "The internal domain class must be annotated with ``@Domain``. The ``@Domain``'s ``valueType`` element corresponds to a data type of a column. Specify any type of :doc:`basic` to the ``valueType`` element."
+msgstr ""
+
+#: ../../domain.rst:23
+msgid "Instantiation with a constructor"
+msgstr ""
+
+#: ../../domain.rst:25
+msgid "The default value of the ``@Domain``'s ``factoryMethod`` element is ``new``. The value ``new`` means that the object of annotated class is created with a constructor."
+msgstr ""
+
+#: ../../domain.rst:49
+msgid "In Java 14 and later version, you can annotate `records`_ with ``@Domain``:"
+msgstr ""
+
+#: ../../domain.rst:64
+msgid "To annotate records with ``@Domain`` is a little redundant, because you must specify some properties to ``@Domain`` such as ``valueType``. Instead of ``@Domain``, you can annotate records with ``@DataType``:"
+msgstr ""
+
+#: ../../domain.rst:79
+msgid "Instantiation with a static factory method"
+msgstr ""
+
+#: ../../domain.rst:81
+msgid "To create the object of annotated class with a static factory method, specify the method name to the ``@Domain``'s ``factoryMethod`` element."
+msgstr ""
+
+#: ../../domain.rst:84
+msgid "The method must be static and non-private:"
+msgstr ""
+
+#: ../../domain.rst:110
+msgid "With a static factory method, you can apply the ``@Domain`` annotation to enum types:"
+msgstr ""
+
+#: ../../domain.rst:143
+msgid "Using type parameters in internal domain classes"
+msgstr ""
+
+#: ../../domain.rst:145
+msgid "All internal domain class declarations have type parameters:"
+msgstr ""
+
+#: ../../domain.rst:164
+msgid "When you create the object of annotated class with a static factory method, the method declaration must have same type parameters that are declared in the class declaration:"
+msgstr ""
+
+#: ../../domain.rst:188
+msgid "External domain classes"
+msgstr ""
+
+#: ../../domain.rst:190
+msgid "This feature allows you to define arbitrary classes as domain classes, even if the classes can be annotated with the ``@Domain`` annotation."
+msgstr ""
+
+#: ../../domain.rst:193
+msgid "To define external domain classes, you have to do as follows:"
+msgstr ""
+
+#: ../../domain.rst:195
+msgid "Create a class that implements ``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate ``@ExternalDomain`` to the class"
+msgstr ""
+
+#: ../../domain.rst:197
+msgid "Create a class that is annotated with ``@DomainConverters``"
+msgstr ""
+
+#: ../../domain.rst:198
+msgid "Specify the class annotated with ``@ExternalDomain`` to the ``@DomainConverters``'s ``value`` element"
+msgstr ""
+
+#: ../../domain.rst:199
+msgid "Specify the full qualified name of the class annotated with ``@DomainConverters`` to the option of :doc:`annotation-processing`"
+msgstr ""
+
+#: ../../domain.rst:202
+msgid "Suppose, for instance, there is the ``PhoneNumber`` class that you can change:"
+msgstr ""
+
+#: ../../domain.rst:223
+msgid "First, to define the ``PhoneNumber`` class as an external domain class, create following class:"
+msgstr ""
+
+#: ../../domain.rst:242
+msgid "Then create following class and specify the above class to the ``@DomainConverters``'s ``value`` element:"
+msgstr ""
+
+#: ../../domain.rst:250
+msgid "Finally, specify the full qualified name of the above class to the option of :doc:`annotation-processing`. If you use Gradle, specify the option in the build script as follows:"
+msgstr ""
+
+#: ../../domain.rst:262
+msgid "Using type parameters in external domain classes"
+msgstr ""
+
+#: ../../domain.rst:264
+msgid "All external domain class declarations have type parameters:"
+msgstr ""
+
+#: ../../domain.rst:281
+msgid "In the ``DomainConverter`` implementation class, specify a wildcard ``?`` as type arguments to the external domain class:"
+msgstr ""
+
+#: ../../domain.rst:303
+msgid "Example"
+msgstr ""
+
+#: ../../domain.rst:305
+msgid "The Domain classes showed above are used as follows:"
+msgstr ""
+
