@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/annotation-processing.po\n"
+"X-Crowdin-File-ID: 20\n"
+
+#: ../../annotation-processing.rst:3
+msgid "Annotation processing"
+msgstr ""
+
+#: ../../annotation-processing.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../annotation-processing.rst:8
+msgid "Doma uses `Pluggable Annotation Processing API <https://www.jcp.org/en/jsr/detail?id=269>`_ at compile time."
+msgstr ""
+
+#: ../../annotation-processing.rst:10
+msgid "In this document, we describe the options for the annotation processors in Doma and show you how to pass them to build tools."
+msgstr ""
+
+#: ../../annotation-processing.rst:14
+msgid "Options"
+msgstr ""
+
+#: ../../annotation-processing.rst:19
+msgid "doma.dao.package"
+msgstr ""
+
+#: ../../annotation-processing.rst:17
+msgid "The package that the generated implementation classes of interfaces annotated with ``@Dao`` belong to. The specified value overrides the value of doma.dao.subpackage. The default value is the same package as the one the interfaces annotated with ``@Dao`` belong to."
+msgstr ""
+
+#: ../../annotation-processing.rst:25
+msgid "doma.dao.subpackage"
+msgstr ""
+
+#: ../../annotation-processing.rst:22
+msgid "The subpackage that the generated implementation classes of interfaces annotated with ``@Dao`` belong to. The specified value is overridden by the value of doma.dao.package. If this value is ``impl`` and the package of interfaces annotated with ``@Dao`` is ``example.dao``, the generated implementation classes belong to the package ``example.dao.impl``."
+msgstr ""
+
+#: ../../annotation-processing.rst:31
+msgid "doma.dao.suffix"
+msgstr ""
+
+#: ../../annotation-processing.rst:28
+msgid "The name suffix that the generated implementation classes of interfaces annotated with ``@Dao`` have. If this value is ``Bean`` and the simple name of the interface annotated with ``@Dao`` is ``EmployeeDao``, the simple name of the generated implementation class is ``EmployeeDaoBean``. The default value is ``Impl``."
+msgstr ""
+
+#: ../../annotation-processing.rst:36
+msgid "doma.debug"
+msgstr ""
+
+#: ../../annotation-processing.rst:34
+msgid "Whether to output the debug log in annotation processing. If the value is ``true``, the annotation processors output the debug log. The default value is ``false``."
+msgstr ""
+
+#: ../../annotation-processing.rst:41
+msgid "doma.domain.converters"
+msgstr ""
+
+#: ../../annotation-processing.rst:39
+msgid "The full qualified names of the classes annotated with ``@DomainConverters``. The names are described as comma separated list. This value are used to find external domain classes."
+msgstr ""
+
+#: ../../annotation-processing.rst:46
+msgid "doma.entity.field.prefix"
+msgstr ""
+
+#: ../../annotation-processing.rst:44
+msgid "The name prefix that the fields of the generated entity meta classes have. The value ``none`` means the prefix is not used. The default value is ``$``."
+msgstr ""
+
+#: ../../annotation-processing.rst:51
+msgid "doma.expr.functions"
+msgstr ""
+
+#: ../../annotation-processing.rst:49
+msgid "The full qualified name of the class that implements ``org.seasar.doma.expr.ExpressionFunctions``. The default value is ``org.seasar.doma.expr.ExpressionFunctions``. This value are used to determine which functions are available in expression comments."
+msgstr ""
+
+#: ../../annotation-processing.rst:57
+msgid "doma.metamodel.enabled"
+msgstr ""
+
+#: ../../annotation-processing.rst:54
+msgid "Whether to generate meta classes for the Criteria API. When the value is ``true``, metamodels are generated for all entity classes even if they are not specified with ``metamodel = @Metamodel``. The default value is ``false``."
+msgstr ""
+
+#: ../../annotation-processing.rst:61
+msgid "doma.metamodel.prefix"
+msgstr ""
+
+#: ../../annotation-processing.rst:60
+msgid "The name prefix of the metamodel classes for the Criteria API. The default value is an empty string."
+msgstr ""
+
+#: ../../annotation-processing.rst:65
+msgid "doma.metamodel.suffix"
+msgstr ""
+
+#: ../../annotation-processing.rst:64
+msgid "The name suffix of the metamodel classes for the Criteria API. The default value is ``_``."
+msgstr ""
+
+#: ../../annotation-processing.rst:70
+msgid "doma.resources.dir"
+msgstr ""
+
+#: ../../annotation-processing.rst:68
+msgid "The resource directory that contains the resource files such as a doma.compile.config file and sql files. Specify the value as an absolute path. If the value is not specified, the resource directory is same as the directory the classes are generated."
+msgstr ""
+
+#: ../../annotation-processing.rst:76
+msgid "doma.sql.validation"
+msgstr ""
+
+#: ../../annotation-processing.rst:73
+msgid "Whether to validate the existence of sql files and the grammar of sql comments. If the value is ``true``, the validations run. To disable the validations, set ``false``. The default value is ``true``."
+msgstr ""
+
+#: ../../annotation-processing.rst:82
+msgid "doma.version.validation"
+msgstr ""
+
+#: ../../annotation-processing.rst:79
+msgid "Whether to validate the versions of doma.jar between runtime and compile-time. If the value is ``true``, the validation runs. To disable the validation, set ``false``. The default value is ``true``."
+msgstr ""
+
+#: ../../annotation-processing.rst:86
+msgid "doma.config.path"
+msgstr ""
+
+#: ../../annotation-processing.rst:85
+msgid "The file path of the configuration file for Doma. The default value is ``doma.compile.config``."
+msgstr ""
+
+#: ../../annotation-processing.rst:89
+msgid "Setting options in Gradle"
+msgstr ""
+
+#: ../../annotation-processing.rst:91
+msgid "Use `the compilerArgs property <https://docs.gradle.org/5.0/dsl/org.gradle.api.tasks.compile.CompileOptions.html#org.gradle.api.tasks.compile.CompileOptions:compilerArgs>`_:"
+msgstr ""
+
+#: ../../annotation-processing.rst:103
+msgid "Setting options in IntelliJ IDEA"
+msgstr ""
+
+#: ../../annotation-processing.rst:105
+msgid "Import your project as a Gradle project. In the case, the options written in build.gradle are used."
+msgstr ""
+
+#: ../../annotation-processing.rst:109
+msgid "Setting options in Eclipse"
+msgstr ""
+
+#: ../../annotation-processing.rst:111
+msgid "Use the Gradle plugin `com.diffplug.eclipse.apt <https://plugins.gradle.org/plugin/com.diffplug.eclipse.apt>`_ and the processorArgs property:"
+msgstr ""
+
+#: ../../annotation-processing.rst:129
+msgid "When you run ``gradle eclipse``, eclipse setting files are generated."
+msgstr ""
+
+#: ../../annotation-processing.rst:132
+msgid "Setting options with configuration file"
+msgstr ""
+
+#: ../../annotation-processing.rst:134
+msgid "The options specified in the ``doma.compile.config`` file are available in all build tools such as Eclipse, IDEA, Gradle and so on."
+msgstr ""
+
+#: ../../annotation-processing.rst:137
+msgid "The ``doma.compile.config`` file must follow the properties file format and be placed in the root directory such as ``src/main/resources``."
+msgstr ""
+
+#: ../../annotation-processing.rst:141
+msgid "The options specified in the ``doma.compile.config`` file are overridden by the ones specific to the build tools."
+msgstr ""
+
