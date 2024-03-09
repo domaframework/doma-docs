@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/transaction.po\n"
+"X-Crowdin-File-ID: 60\n"
+
+#: ../../transaction.rst:3
+msgid "Transaction"
+msgstr ""
+
+#: ../../transaction.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../transaction.rst:8
+msgid "Doma supports local transaction. This document explains how to configure and use the local transaction."
+msgstr ""
+
+#: ../../transaction.rst:11
+msgid "If you want to use global transaction, use frameworks or application servers which support JTA (Java Transaction API)."
+msgstr ""
+
+#: ../../transaction.rst:14
+msgid "See also :ref:`config-configuration-definition` ."
+msgstr ""
+
+#: ../../transaction.rst:17
+msgid "Configuration"
+msgstr ""
+
+#: ../../transaction.rst:19
+msgid "To use local transaction, these conditions are required:"
+msgstr ""
+
+#: ../../transaction.rst:21
+msgid "Return ``LocalTransactionDataSource`` from ``getDataSource`` in ``Config``"
+msgstr ""
+
+#: ../../transaction.rst:22
+msgid "Generate ``LocalTransactionManager`` using the ``LocalTransactionDataSource`` above in the constructor"
+msgstr ""
+
+#: ../../transaction.rst:23
+msgid "Use the ``LocalTransactionManager`` above to control database access"
+msgstr ""
+
+#: ../../transaction.rst:25
+msgid "There are several ways to generate and get the ``LocalTransactionManager``, but the simplest way is to generate it in the constructor of ``Config`` implementation class and make the ``Config`` implementation class singleton."
+msgstr ""
+
+#: ../../transaction.rst:29
+msgid "Here is an example:"
+msgstr ""
+
+#: ../../transaction.rst:72
+msgid "Usage"
+msgstr ""
+
+#: ../../transaction.rst:74
+msgid "We use the following DAO interface in example code:"
+msgstr ""
+
+#: ../../transaction.rst:93
+msgid "Start and finish transactions"
+msgstr ""
+
+#: ../../transaction.rst:95
+msgid "You can start a transaction with one of following methods of ``TransactionManager``:"
+msgstr ""
+
+#: ../../transaction.rst:97
+msgid "required"
+msgstr ""
+
+#: ../../transaction.rst:98
+msgid "requiresNew"
+msgstr ""
+
+#: ../../transaction.rst:99
+msgid "notSupported"
+msgstr ""
+
+#: ../../transaction.rst:101
+msgid "Use a lambda expression to write a process which you want to run in a transaction."
+msgstr ""
+
+#: ../../transaction.rst:115
+msgid "The transaction is committed if the lambda expression finishes successfully. The transaction is rolled back if the lambda expression throws an exception."
+msgstr ""
+
+#: ../../transaction.rst:119
+msgid "Explicit rollback"
+msgstr ""
+
+#: ../../transaction.rst:121
+msgid "Besides throwing an exception, you can use ``setRollbackOnly`` method to rollback a transaction."
+msgstr ""
+
+#: ../../transaction.rst:138
+msgid "Savepoint"
+msgstr ""
+
+#: ../../transaction.rst:140
+msgid "With a savepoint, you can cancel specific changes in a transaction."
+msgstr ""
+
