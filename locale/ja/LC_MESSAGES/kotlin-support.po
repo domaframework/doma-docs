@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/kotlin-support.po\n"
+"X-Crowdin-File-ID: 48\n"
+
+#: ../../kotlin-support.rst:3
+msgid "Kotlin support"
+msgstr ""
+
+#: ../../kotlin-support.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../kotlin-support.rst:8
+msgid "Doma supports `Kotlin <https://kotlinlang.org/>`_ 1.4.0 or later."
+msgstr ""
+
+#: ../../kotlin-support.rst:11
+msgid "Best practices"
+msgstr ""
+
+#: ../../kotlin-support.rst:13
+msgid "Here are some recommended methods, such as defining classes and building them with Kotlin."
+msgstr ""
+
+#: ../../kotlin-support.rst:16
+msgid "Entity classes"
+msgstr ""
+
+#: ../../kotlin-support.rst:18
+msgid "Define as a plain class"
+msgstr ""
+
+#: ../../kotlin-support.rst:19
+msgid "Specify a ``Metamodel`` annotation to the ``metamodel`` element of ``@Entity``"
+msgstr ""
+
+#: ../../kotlin-support.rst:44
+msgid "Domain classes"
+msgstr ""
+
+#: ../../kotlin-support.rst:46 ../../kotlin-support.rst:59
+msgid "Define as a data class"
+msgstr ""
+
+#: ../../kotlin-support.rst:47 ../../kotlin-support.rst:60
+msgid "Define only one constructor"
+msgstr ""
+
+#: ../../kotlin-support.rst:48
+msgid "Define only one property whose name is ``value`` in the constructor"
+msgstr ""
+
+#: ../../kotlin-support.rst:49
+msgid "Use `val` for the property definition"
+msgstr ""
+
+#: ../../kotlin-support.rst:57
+msgid "Embeddable classes"
+msgstr ""
+
+#: ../../kotlin-support.rst:61
+msgid "Define properties only in the constructor"
+msgstr ""
+
+#: ../../kotlin-support.rst:62
+msgid "Use `val` for the property definitions"
+msgstr ""
+
+#: ../../kotlin-support.rst:70
+msgid "Dao interfaces"
+msgstr ""
+
+#: ../../kotlin-support.rst:72
+msgid "Specify a SQL template to ``@org.seasar.doma.Sql``"
+msgstr ""
+
+#: ../../kotlin-support.rst:73
+msgid "Use ``org.seasar.doma.jdbc.Result`` as the return type of ``@Delete``, ``@Insert`` and ``@Update``"
+msgstr ""
+
+#: ../../kotlin-support.rst:74
+msgid "Use ``org.seasar.doma.jdbc.BatchResult`` as the return type of ``@BatchDelete``, ``@BatchInsert`` and ``@BatchUpdate``"
+msgstr ""
+
+#: ../../kotlin-support.rst:91
+msgid "Use `Destructuring Declarations <https://kotlinlang.org/docs/reference/multi-declarations.html>`_ for ``org.seasar.doma.jdbc.Result`` and ``org.seasar.doma.jdbc.BatchResult``"
+msgstr ""
+
+#: ../../kotlin-support.rst:103
+msgid "Kotlin specific Criteria API"
+msgstr ""
+
+#: ../../kotlin-support.rst:107
+msgid "Prefer the Kotlin specific Criteria API to DAO interfaces."
+msgstr ""
+
+#: ../../kotlin-support.rst:109
+msgid "Doma provides Kotlin specific Criteria API, ``KEntityql`` and ``KNativeQl`` DSLs. They are very similar with the ``Entityql`` and ``NativeQl`` DSLs, which are described in :doc:`criteria-api`. The biggest feature of the ``KEntityql`` and ``KNativeQl`` DSLs is simplicity."
+msgstr ""
+
+#: ../../kotlin-support.rst:113
+msgid "For example, when you use ``KEntityql``, you have to accept a lambda parameter in a WHERE expression as follows:"
+msgstr ""
+
+#: ../../kotlin-support.rst:132
+msgid "The lambda parameter ``c`` is a bit annoying. On the other hand, when you use ``KEntityql``, the parameter is gone."
+msgstr ""
+
+#: ../../kotlin-support.rst:152
+msgid "You can see a lot of sample code `here <https://github.com/domaframework/doma-it/tree/master/kotlin/src/test/kotlin/org/seasar/doma/it/criteria>`_."
+msgstr ""
+
+#: ../../kotlin-support.rst:154
+msgid "The ``KEntityql`` and ``KNativeQl`` DSLs are included in doma-kotlin.jar. Note that you should depend on doma-kotlin instead of doma-core in your build script. You can write build.gradle.kts as follows:"
+msgstr ""
+
+#: ../../kotlin-support.rst:165
+msgid "Code Generation"
+msgstr ""
+
+#: ../../kotlin-support.rst:167
+msgid "Use `Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-plugin>`_. This plugin support Kotlin code generation."
+msgstr ""
+
+#: ../../kotlin-support.rst:171
+msgid "Using kapt in Gradle"
+msgstr ""
+
+#: ../../kotlin-support.rst:173
+msgid "Annotation processors are supported in Kotlin with the `kapt <https://kotlinlang.org/docs/reference/kapt.html>`_ compiler plugin."
+msgstr ""
+
+#: ../../kotlin-support.rst:176
+msgid "Add the dependencies using the `kapt` and `implementation` configuration in your dependencies block. For example, you can write build.gradle.kts as follows:"
+msgstr ""
+
+#: ../../kotlin-support.rst:186
+msgid "To simplify your build script, we recommend you use the `Doma Compile Plugin <https://github.com/domaframework/doma-compile-plugin>`_:"
+msgstr ""
+
+#: ../../kotlin-support.rst:190
+msgid "Sample project"
+msgstr ""
+
+#: ../../kotlin-support.rst:192
+msgid "`kotlin-sample <https://github.com/domaframework/kotlin-sample>`_"
+msgstr ""
+
