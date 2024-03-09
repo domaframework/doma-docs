@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/basic.po\n"
+"X-Crowdin-File-ID: 22\n"
+
+#: ../../basic.rst:3
+msgid "Basic classes"
+msgstr ""
+
+#: ../../basic.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../basic.rst:9
+msgid "Overview"
+msgstr ""
+
+#: ../../basic.rst:11
+msgid "The Java types can be mapped to database column types are called \"Basic classes\" in Doma."
+msgstr ""
+
+#: ../../basic.rst:14
+msgid "List of basic classes"
+msgstr ""
+
+#: ../../basic.rst:16
+msgid "primitive types except ``char``"
+msgstr ""
+
+#: ../../basic.rst:17
+msgid "wrapper class for above primitive types"
+msgstr ""
+
+#: ../../basic.rst:18
+msgid "enum types"
+msgstr ""
+
+#: ../../basic.rst:19
+msgid "byte[]"
+msgstr ""
+
+#: ../../basic.rst:20
+msgid "java.lang.String"
+msgstr ""
+
+#: ../../basic.rst:21
+msgid "java.lang.Object"
+msgstr ""
+
+#: ../../basic.rst:22
+msgid "java.math.BigDecimal"
+msgstr ""
+
+#: ../../basic.rst:23
+msgid "java.math.BigInteger"
+msgstr ""
+
+#: ../../basic.rst:24 ../../basic.rst:0
+msgid "java.time.LocalDate"
+msgstr ""
+
+#: ../../basic.rst:25 ../../basic.rst:0
+msgid "java.time.LocalTime"
+msgstr ""
+
+#: ../../basic.rst:26 ../../basic.rst:0
+msgid "java.time.LocalDateTime"
+msgstr ""
+
+#: ../../basic.rst:27 ../../basic.rst:0
+msgid "java.sql.Date"
+msgstr ""
+
+#: ../../basic.rst:28 ../../basic.rst:0
+msgid "java.sql.Time"
+msgstr ""
+
+#: ../../basic.rst:29 ../../basic.rst:0
+msgid "java.sql.Timestamp"
+msgstr ""
+
+#: ../../basic.rst:30
+msgid "java.sql.Array"
+msgstr ""
+
+#: ../../basic.rst:31
+msgid "java.sql.Blob"
+msgstr ""
+
+#: ../../basic.rst:32
+msgid "java.sql.Clob"
+msgstr ""
+
+#: ../../basic.rst:33
+msgid "java.sql.SQLXML"
+msgstr ""
+
+#: ../../basic.rst:34 ../../basic.rst:0
+msgid "java.util.Date"
+msgstr ""
+
+#: ../../basic.rst:37
+msgid "Differences between temporal classes"
+msgstr ""
+
+#: ../../basic.rst:40 ../../basic.rst:49
+msgid "represents SQL DATE"
+msgstr ""
+
+#: ../../basic.rst:43 ../../basic.rst:52
+msgid "represents SQL TIME"
+msgstr ""
+
+#: ../../basic.rst:46 ../../basic.rst:55
+msgid "represents SQL TIMESTAMP and may hold nanoseconds if RDBMS supports it"
+msgstr ""
+
+#: ../../basic.rst:58
+msgid "represents SQL TIMESTAMP and doesn't hold nanoseconds"
+msgstr ""
+
+#: ../../basic.rst:61
+msgid "Examples"
+msgstr ""
+
+#: ../../basic.rst:64
+msgid "Using in entity class"
+msgstr ""
+
+#: ../../basic.rst:84
+msgid "Using in domain class"
+msgstr ""
+
+#: ../../basic.rst:103
+msgid "Using in DAO interface"
+msgstr ""
+
