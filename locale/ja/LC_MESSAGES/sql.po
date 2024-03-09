@@ -1,0 +1,842 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/sql.po\n"
+"X-Crowdin-File-ID: 58\n"
+
+#: ../../sql.rst:3
+msgid "SQL templates"
+msgstr ""
+
+#: ../../sql.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../sql.rst:9
+msgid "Overview"
+msgstr ""
+
+#: ../../sql.rst:11
+msgid "Doma supports SQL templates, called \"two-way SQL\". \"Two-way SQL\" means that the SQL templates can be used in two ways:"
+msgstr ""
+
+#: ../../sql.rst:14
+msgid "To build dynamic SQL statements from the templates."
+msgstr ""
+
+#: ../../sql.rst:15
+msgid "To execute the templates in SQL tools as they are."
+msgstr ""
+
+#: ../../sql.rst:17
+msgid "Every SQL template must correspond to a DAO method. For example, suppose you have the pair of an SQL template and a DAO method as follows:"
+msgstr ""
+
+#: ../../sql.rst:28
+msgid "The ``employeeId`` expression enclosed between ``/*`` and ``*/`` corresponds to the method parameter \"employeeId\" of the DAO. In runtime, the SQL comment and following number ``/* employeeId */99`` is replaced with a bind variable ``?`` and the method parameter \"employeeId\" is passed to the variable. The SQL statement generated from the SQL template is as follows:"
+msgstr ""
+
+#: ../../sql.rst:38
+msgid "The number ``99`` in the SQL template is test data and never used in runtime. The test data is only useful when you execute the SQL template as is. In other words, you can check whether the SQL template is grammatically correct with your favorite SQL tools."
+msgstr ""
+
+#: ../../sql.rst:42
+msgid "Each SQL template is represented either a text file or an annotation."
+msgstr ""
+
+#: ../../sql.rst:45
+msgid "SQL templates in files"
+msgstr ""
+
+#: ../../sql.rst:47
+msgid "You can specify SQL templates in text files:"
+msgstr ""
+
+#: ../../sql.rst:60
+msgid "Above ``selectById`` and ``deleteByName`` methods are mapped onto their own SQL files. DAO methods must be annotated with one of following annotations:"
+msgstr ""
+
+#: ../../sql.rst:63 ../../sql.rst:155
+msgid "@Select"
+msgstr ""
+
+#: ../../sql.rst:64
+msgid "@Insert(sqlFile = true)"
+msgstr ""
+
+#: ../../sql.rst:65
+msgid "@Update(sqlFile = true)"
+msgstr ""
+
+#: ../../sql.rst:66
+msgid "@Delete(sqlFile = true)"
+msgstr ""
+
+#: ../../sql.rst:67
+msgid "@BatchInsert(sqlFile = true)"
+msgstr ""
+
+#: ../../sql.rst:68
+msgid "@BatchUpdate(sqlFile = true)"
+msgstr ""
+
+#: ../../sql.rst:69
+msgid "@BatchDelete(sqlFile = true)"
+msgstr ""
+
+#: ../../sql.rst:72
+msgid "Encoding"
+msgstr ""
+
+#: ../../sql.rst:74
+msgid "The SQL files must be saved as UTF-8 encoded."
+msgstr ""
+
+#: ../../sql.rst:77
+msgid "Location"
+msgstr ""
+
+#: ../../sql.rst:79
+msgid "The SQL files must be located in directories below a \"META-INF\" directory which is included in CLASSPATH."
+msgstr ""
+
+#: ../../sql.rst:82
+msgid "Format of file path"
+msgstr ""
+
+#: ../../sql.rst:84
+msgid "The SQL file path must follow the following format:"
+msgstr ""
+
+#: ../../sql.rst:86
+msgid "META-INF/*path-format-of-dao-interface*/*dao-method*.sql"
+msgstr ""
+
+#: ../../sql.rst:89
+msgid "For example, when the DAO interface name is ``aaa.bbb.EmployeeDao`` and the DAO method name is ``selectById``, the SQL file path is as follows:"
+msgstr ""
+
+#: ../../sql.rst:92
+msgid "META-INF/aaa/bbb/EmployeeDao/selectById.sql"
+msgstr ""
+
+#: ../../sql.rst:97
+msgid "Dependency on a specific RDBMS"
+msgstr ""
+
+#: ../../sql.rst:99
+msgid "You can specify dependency on a specific RDBMS by file name. To do this, put the hyphen \"-\" and RDBMS name before the extension \".sql\". For example, the file path specific to PostgreSQL is as follows:"
+msgstr ""
+
+#: ../../sql.rst:103
+msgid "META-INF/aaa/bbb/EmployeeDao/selectById-*postgres*.sql"
+msgstr ""
+
+#: ../../sql.rst:105
+msgid "The SQL files specific to RDBMSs are given priority. For example, in the environment where PostgreSQL is used, \"META-INF/aaa/bbb/EmployeeDao/selectById-postgres.sql\" is chosen instead of \"META-INF/aaa/bbb/EmployeeDao/selectById.sql\"."
+msgstr ""
+
+#: ../../sql.rst:110
+msgid "The RDBMS names are stem from dialects:"
+msgstr ""
+
+#: ../../sql.rst:113
+msgid "RDBMS"
+msgstr ""
+
+#: ../../sql.rst:113
+msgid "Dialect"
+msgstr ""
+
+#: ../../sql.rst:113
+msgid "RDBMS Name"
+msgstr ""
+
+#: ../../sql.rst:115
+msgid "DB2"
+msgstr ""
+
+#: ../../sql.rst:115
+msgid "Db2Dialect"
+msgstr ""
+
+#: ../../sql.rst:115
+msgid "db2"
+msgstr ""
+
+#: ../../sql.rst:117
+msgid "H2 Database"
+msgstr ""
+
+#: ../../sql.rst:117
+msgid "H2Dialect"
+msgstr ""
+
+#: ../../sql.rst:117
+msgid "h2"
+msgstr ""
+
+#: ../../sql.rst:119
+msgid "HSQLDB"
+msgstr ""
+
+#: ../../sql.rst:119
+msgid "HsqldbDialect"
+msgstr ""
+
+#: ../../sql.rst:119
+msgid "hsqldb"
+msgstr ""
+
+#: ../../sql.rst:121
+msgid "Microsoft SQL Server"
+msgstr ""
+
+#: ../../sql.rst:121
+msgid "MssqlDialect"
+msgstr ""
+
+#: ../../sql.rst:121
+msgid "mssql"
+msgstr ""
+
+#: ../../sql.rst:123
+msgid "MySQL"
+msgstr ""
+
+#: ../../sql.rst:123
+msgid "MySqlDialect"
+msgstr ""
+
+#: ../../sql.rst:123
+msgid "mysql"
+msgstr ""
+
+#: ../../sql.rst:125
+msgid "Oracle Database"
+msgstr ""
+
+#: ../../sql.rst:125
+msgid "OracleDialect"
+msgstr ""
+
+#: ../../sql.rst:125
+msgid "oracle"
+msgstr ""
+
+#: ../../sql.rst:127
+msgid "PostgreSQL"
+msgstr ""
+
+#: ../../sql.rst:127
+msgid "PostgresDialect"
+msgstr ""
+
+#: ../../sql.rst:127
+msgid "postgres"
+msgstr ""
+
+#: ../../sql.rst:129
+msgid "SQLite"
+msgstr ""
+
+#: ../../sql.rst:129
+msgid "SqliteDialect"
+msgstr ""
+
+#: ../../sql.rst:129
+msgid "sqlite"
+msgstr ""
+
+#: ../../sql.rst:135
+msgid "SQL templates in annotations"
+msgstr ""
+
+#: ../../sql.rst:137
+msgid "You can specify SQL templates to DAO methods with the ``@Sql`` annotation:"
+msgstr ""
+
+#: ../../sql.rst:153
+msgid "The ``@Sql`` annotation must be combined with following annotations:"
+msgstr ""
+
+#: ../../sql.rst:156
+msgid "@Script"
+msgstr ""
+
+#: ../../sql.rst:157
+msgid "@Insert"
+msgstr ""
+
+#: ../../sql.rst:158
+msgid "@Update"
+msgstr ""
+
+#: ../../sql.rst:159
+msgid "@Delete"
+msgstr ""
+
+#: ../../sql.rst:160
+msgid "@BatchInsert"
+msgstr ""
+
+#: ../../sql.rst:161
+msgid "@BatchUpdate"
+msgstr ""
+
+#: ../../sql.rst:162
+msgid "@BatchDelete"
+msgstr ""
+
+#: ../../sql.rst:165
+msgid "Directives"
+msgstr ""
+
+#: ../../sql.rst:167
+msgid "In SQL templates, the SQL comments following the specific rules are recognised as directives. Supported directives are as follows:"
+msgstr ""
+
+#: ../../sql.rst:170
+msgid "`Bind variable directive`_"
+msgstr ""
+
+#: ../../sql.rst:171
+msgid "`Literal variable directive`_"
+msgstr ""
+
+#: ../../sql.rst:172
+msgid "`Embedded variable directive`_"
+msgstr ""
+
+#: ../../sql.rst:173
+msgid "`Condition directive`_"
+msgstr ""
+
+#: ../../sql.rst:174
+msgid "`Loop directive`_"
+msgstr ""
+
+#: ../../sql.rst:175
+msgid "`Expansion directive`_"
+msgstr ""
+
+#: ../../sql.rst:176
+msgid "`Population directive`_"
+msgstr ""
+
+#: ../../sql.rst:180
+msgid "See also :doc:`expression` for information of the expression language available in directives."
+msgstr ""
+
+#: ../../sql.rst:183
+msgid "Bind variable directive"
+msgstr ""
+
+#: ../../sql.rst:185
+msgid "Bind variable directive is represented with the format ``/*...*/``. The expression enclosed between ``/*`` and ``*/`` is evaluated and its evaluation result is passed to bind variable in SQL statement. The directive must be followed by test data, which is never used in runtime."
+msgstr ""
+
+#: ../../sql.rst:191
+msgid "Basic and domain parameters"
+msgstr ""
+
+#: ../../sql.rst:193
+msgid "The parameter whose type is one of :doc:`basic` and :doc:`domain` is recognised as a bind variable."
+msgstr ""
+
+#: ../../sql.rst:196 ../../sql.rst:220 ../../sql.rst:252 ../../sql.rst:291
+msgid "The following example is the pair of a DAO method and an SQL template:"
+msgstr ""
+
+#: ../../sql.rst:206
+msgid "The following SQL statement is generated from the SQL template:"
+msgstr ""
+
+#: ../../sql.rst:213
+msgid "Parameters in IN clause"
+msgstr ""
+
+#: ../../sql.rst:215
+msgid "The parameter whose type is a subtype of ``java.lang.Iterable`` or an array type is recognised as bind variables in IN clause. The type argument of ``java.lang.Iterable`` must be one of :doc:`basic` and :doc:`domain`. The directives must be followed by test data enclosed between ``(`` and ``)``."
+msgstr ""
+
+#: ../../sql.rst:230
+msgid "In case that the ``employeeIdList`` contains five elements, the following SQL statement is generated from the SQL template:"
+msgstr ""
+
+#: ../../sql.rst:237
+msgid "In case that the ``employeeIdList`` is empty, the IN clause is replaced with ``in (null)`` in runtime:"
+msgstr ""
+
+#: ../../sql.rst:245
+msgid "Literal variable directive"
+msgstr ""
+
+#: ../../sql.rst:247
+msgid "Literal variable directive is represented with the format ``/*^...*/``. The expression enclosed between ``/*^`` and ``*/`` is evaluated and its evaluation result is converted to literal format to be embedded in SQL statement. The directive must be followed by test data, which is never used in runtime."
+msgstr ""
+
+#: ../../sql.rst:262 ../../sql.rst:301
+msgid "The DAO method is invoked as follows:"
+msgstr ""
+
+#: ../../sql.rst:269 ../../sql.rst:310 ../../sql.rst:699 ../../sql.rst:711
+#: ../../sql.rst:750
+msgid "The generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:277
+msgid "Literal variable directives are helpful to avoid bind variables and fix SQL plans."
+msgstr ""
+
+#: ../../sql.rst:281
+msgid "Literal variable directives do not escape parameters for SQL injection. But the directives reject parameters containing the single quotation ``'``."
+msgstr ""
+
+#: ../../sql.rst:285
+msgid "Embedded variable directive"
+msgstr ""
+
+#: ../../sql.rst:287
+msgid "Embedded variable directive is represented with the format ``/*#...*/``. The expression enclosed between ``/*#`` and ``*/`` is evaluated and its evaluation result is embedded in SQL statement."
+msgstr ""
+
+#: ../../sql.rst:318
+msgid "Embedded variable directives are helpful to build SQL fragments such as ORDER BY clause."
+msgstr ""
+
+#: ../../sql.rst:322
+msgid "To prevent SQL injection vulnerabilities, embedded variable directives reject parameters containing the following values:"
+msgstr ""
+
+#: ../../sql.rst:325
+msgid "a single quotation ``'``"
+msgstr ""
+
+#: ../../sql.rst:326
+msgid "a semi colon ``;``"
+msgstr ""
+
+#: ../../sql.rst:327
+msgid "two hyphen ``--``"
+msgstr ""
+
+#: ../../sql.rst:328
+msgid "a slash and an asterisk ``/*``"
+msgstr ""
+
+#: ../../sql.rst:331
+msgid "Condition directive"
+msgstr ""
+
+#: ../../sql.rst:333
+msgid "Condition directive allows you to build SQL statements conditionally."
+msgstr ""
+
+#: ../../sql.rst:336 ../../sql.rst:546 ../../sql.rst:670 ../../sql.rst:726
+#: ../../sql.rst:765
+msgid "Synopsis"
+msgstr ""
+
+#: ../../sql.rst:350
+msgid "The expressions ``condition``, ``condition2``, and ``condition3`` must be evaluated to either ``boolean`` or ``java.lang.Boolean``."
+msgstr ""
+
+#: ../../sql.rst:353
+msgid "The ``elseif`` directives and the ``else`` directive are optional."
+msgstr ""
+
+#: ../../sql.rst:356
+msgid "if"
+msgstr ""
+
+#: ../../sql.rst:358 ../../sql.rst:384 ../../sql.rst:473 ../../sql.rst:498
+#: ../../sql.rst:568 ../../sql.rst:604 ../../sql.rst:632 ../../sql.rst:771
+msgid "Suppose you have the following SQL template:"
+msgstr ""
+
+#: ../../sql.rst:367
+msgid "If the ``employeeId`` is not ``null``, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:373
+msgid "If the ``employeeId`` is ``null``, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:379
+msgid "The SQL keyword ``where`` is removed automatically."
+msgstr ""
+
+#: ../../sql.rst:382
+msgid "elseif and else"
+msgstr ""
+
+#: ../../sql.rst:403
+msgid "If the ``employeeId != null`` is evaluated ``true``, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:414
+msgid "If the ``employeeId == null && department_id != null`` is evaluated ``true``, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:426 ../../sql.rst:440
+msgid "The SQL keyword ``and`` followed by ``department_id`` is remove automatically:"
+msgstr ""
+
+#: ../../sql.rst:428
+msgid "If the ``employeeId == null && department_id == null`` is evaluated ``true``, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:443
+msgid "Nested condition directive"
+msgstr ""
+
+#: ../../sql.rst:445
+msgid "You can nest condition directives as follows:"
+msgstr ""
+
+#: ../../sql.rst:462
+msgid "Removal of clauses on the condition directive"
+msgstr ""
+
+#: ../../sql.rst:464
+msgid "Following clauses can become unnecessary on the condition directive:"
+msgstr ""
+
+#: ../../sql.rst:466 ../../sql.rst:597
+msgid "WHERE"
+msgstr ""
+
+#: ../../sql.rst:467 ../../sql.rst:598
+msgid "HAVING"
+msgstr ""
+
+#: ../../sql.rst:468 ../../sql.rst:599
+msgid "ORDER BY"
+msgstr ""
+
+#: ../../sql.rst:469 ../../sql.rst:600
+msgid "GROUP BY"
+msgstr ""
+
+#: ../../sql.rst:471 ../../sql.rst:602
+msgid "In the case, they are removed automatically."
+msgstr ""
+
+#: ../../sql.rst:482 ../../sql.rst:508
+msgid "If the ``employeeId != null`` is evaluated ``false``, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:489
+msgid "Because the SQL clause ``where`` followed by ``/*%if ...*/`` is unnecessary, it is removed automatically."
+msgstr ""
+
+#: ../../sql.rst:493
+msgid "Removal of AND and OR keywords on the condition directives"
+msgstr ""
+
+#: ../../sql.rst:495
+msgid "AND and OR keywords can become unnecessary on the condition directive. In the case, they are removed automatically."
+msgstr ""
+
+#: ../../sql.rst:515
+msgid "Because the SQL keyword ``and`` following ``/*%end*/`` is unnecessary, it is removed automatically."
+msgstr ""
+
+#: ../../sql.rst:519
+msgid "Restriction on condition directive"
+msgstr ""
+
+#: ../../sql.rst:521
+msgid "``/*%if condition*/`` and ``/*%end*/`` must be included in same SQL clause and in same statement level."
+msgstr ""
+
+#: ../../sql.rst:524
+msgid "The following template is invalid, because ``/*%if condition*/`` is in the FROM clause and ``/*%end*/`` is in the WHERE clause:"
+msgstr ""
+
+#: ../../sql.rst:532
+msgid "The following template is invalid, because ``/*%if condition*/`` is in the outer statement and ``/*%end*/`` is in the inner statement:"
+msgstr ""
+
+#: ../../sql.rst:541
+msgid "Loop directive"
+msgstr ""
+
+#: ../../sql.rst:543
+msgid "Loop directive allows you to build SQL statements using loop."
+msgstr ""
+
+#: ../../sql.rst:554
+msgid "The ``item`` is the loop variable. The expression ``sequence`` must be evaluated to a subtype of ``java.lang.Iterable`` or an array type."
+msgstr ""
+
+#: ../../sql.rst:557
+msgid "In the inside between ``/*%for item : sequence*/`` and ``/*%end*/``, two extra loop variables are available:"
+msgstr ""
+
+#: ../../sql.rst:0
+msgid "item_index"
+msgstr ""
+
+#: ../../sql.rst:560
+msgid "The index (0-based number) of the current item in the loop"
+msgstr ""
+
+#: ../../sql.rst:0
+msgid "item_has_next"
+msgstr ""
+
+#: ../../sql.rst:561
+msgid "Boolean value that tells if the current item is the last in the sequence or not"
+msgstr ""
+
+#: ../../sql.rst:563
+msgid "The prefix ``item`` indicates the name of the loop variable."
+msgstr ""
+
+#: ../../sql.rst:566
+msgid "for and item_has_next"
+msgstr ""
+
+#: ../../sql.rst:580
+msgid "If the sequence ``names`` contains three items, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:593
+msgid "Removal of clauses on the loop directive"
+msgstr ""
+
+#: ../../sql.rst:595
+msgid "Following clauses can become unnecessary on the loop directive:"
+msgstr ""
+
+#: ../../sql.rst:616 ../../sql.rst:646
+msgid "If the sequence ``names`` is empty, the generated SQL statement is as follows:"
+msgstr ""
+
+#: ../../sql.rst:623
+msgid "Because the SQL clause ``where`` followed by ``/*%for ...*/`` is unnecessary, it is removed automatically."
+msgstr ""
+
+#: ../../sql.rst:627
+msgid "Removal of AND and OR keywords on the loop directive"
+msgstr ""
+
+#: ../../sql.rst:629
+msgid "AND and OR keywords can become unnecessary on the loop directive. In the case, they are removed automatically."
+msgstr ""
+
+#: ../../sql.rst:653
+msgid "Because the SQL keyword ``or`` following ``/*%end*/`` is unnecessary, it is removed automatically."
+msgstr ""
+
+#: ../../sql.rst:657
+msgid "Restriction on loop directive"
+msgstr ""
+
+#: ../../sql.rst:659
+msgid "``/*%for ...*/`` and ``/*%end*/`` must be included in same SQL clause and in same statement level."
+msgstr ""
+
+#: ../../sql.rst:662
+msgid "See also `Restriction on condition directive`_."
+msgstr ""
+
+#: ../../sql.rst:665
+msgid "Expansion directive"
+msgstr ""
+
+#: ../../sql.rst:667
+msgid "Expansion directive allows you to build column list of SELECT clause from the definition of :doc:`entity`."
+msgstr ""
+
+#: ../../sql.rst:676
+msgid "The expression ``alias`` is optional. If it is specified, it must be evaluated to ``java.lang.String``."
+msgstr ""
+
+#: ../../sql.rst:679
+msgid "The directive must be followed by the asterisk ``*``."
+msgstr ""
+
+#: ../../sql.rst:682
+msgid "expand"
+msgstr ""
+
+#: ../../sql.rst:684 ../../sql.rst:735
+msgid "Suppose you have the following SQL template and the entity class mapped to the template:"
+msgstr ""
+
+#: ../../sql.rst:705
+msgid "If you specify an alias to the table, specify same alias to the expansion directive:"
+msgstr ""
+
+#: ../../sql.rst:720
+msgid "Population directive"
+msgstr ""
+
+#: ../../sql.rst:722
+msgid "Population directive allows you to build column list of UPDATE SET clause from the definition of :doc:`entity`."
+msgstr ""
+
+#: ../../sql.rst:733
+msgid "populate"
+msgstr ""
+
+#: ../../sql.rst:759
+msgid "Parser-level comment directive"
+msgstr ""
+
+#: ../../sql.rst:761
+msgid "Using a parser-level comment directive allows you to include comments in an SQL template that will be removed after the template is parsed."
+msgstr ""
+
+#: ../../sql.rst:782
+msgid "The above SQL template is parsed into the following SQL:"
+msgstr ""
+
+#: ../../sql.rst:794
+msgid "Comments"
+msgstr ""
+
+#: ../../sql.rst:796
+msgid "This section show you how to distinguish between directives and normal SQL comments."
+msgstr ""
+
+#: ../../sql.rst:799
+msgid "Single line comment"
+msgstr ""
+
+#: ../../sql.rst:801
+msgid "Always the string consisting of two hyphens ``--`` is a single line comment. It is never directive."
+msgstr ""
+
+#: ../../sql.rst:805
+msgid "Multi line comment"
+msgstr ""
+
+#: ../../sql.rst:807
+msgid "If the character following ``/*`` is not permissible as the first character in a Java identifier and it is neither ``%``, ``#``, ``@``, ``\"`` nor ``'``, the ``/*`` is beginning of a multi line comment."
+msgstr ""
+
+#: ../../sql.rst:811
+msgid "The followings are the beginning of a multi line comment:"
+msgstr ""
+
+#: ../../sql.rst:813
+msgid "/\\*\\*...\\*/"
+msgstr ""
+
+#: ../../sql.rst:814
+msgid "/\\*+...\\*/"
+msgstr ""
+
+#: ../../sql.rst:815
+msgid "/\\*=...\\*/"
+msgstr ""
+
+#: ../../sql.rst:816
+msgid "/\\*:...\\*/"
+msgstr ""
+
+#: ../../sql.rst:817
+msgid "/\\*;...\\*/"
+msgstr ""
+
+#: ../../sql.rst:818
+msgid "/\\*(...\\*/"
+msgstr ""
+
+#: ../../sql.rst:819
+msgid "/\\*)...\\*/"
+msgstr ""
+
+#: ../../sql.rst:820
+msgid "/\\*&...\\*/"
+msgstr ""
+
+#: ../../sql.rst:822
+msgid "In other hand, the followings are the beginning of a directive:"
+msgstr ""
+
+#: ../../sql.rst:824
+msgid "/\\* ...\\*/"
+msgstr ""
+
+#: ../../sql.rst:825
+msgid "/\\*a...\\*/"
+msgstr ""
+
+#: ../../sql.rst:826
+msgid "/\\*$...\\*/"
+msgstr ""
+
+#: ../../sql.rst:827
+msgid "/\\*@...\\*/"
+msgstr ""
+
+#: ../../sql.rst:828
+msgid "/\\*\"...\\*/"
+msgstr ""
+
+#: ../../sql.rst:829
+msgid "/\\*'...\\*/"
+msgstr ""
+
+#: ../../sql.rst:830
+msgid "/\\*#...\\*/"
+msgstr ""
+
+#: ../../sql.rst:831
+msgid "/\\*%...\\*/"
+msgstr ""
+
+#: ../../sql.rst:835
+msgid "We recommend you always use ``/**...*/`` to begin multi line comments because it is simple."
+msgstr ""
+
+#: ../../sql.rst:838
+msgid "doma-template module"
+msgstr ""
+
+#: ../../sql.rst:840
+msgid "The doma-template module helps obtain prepared SQL statements from SQL templates. The module only contains the following classes:"
+msgstr ""
+
+#: ../../sql.rst:843
+msgid "SqlArgument"
+msgstr ""
+
+#: ../../sql.rst:844
+msgid "SqlStatement"
+msgstr ""
+
+#: ../../sql.rst:845
+msgid "SqlTemplate"
+msgstr ""
+
+#: ../../sql.rst:848
+msgid "Gradle"
+msgstr ""
+
+#: ../../sql.rst:857
+msgid "Usage"
+msgstr ""
+
