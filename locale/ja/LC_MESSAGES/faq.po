@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/faq.po\n"
+"X-Crowdin-File-ID: 40\n"
+
+#: ../../faq.rst:3
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../faq.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../faq.rst:9
+msgid "General"
+msgstr ""
+
+#: ../../faq.rst:12
+msgid "What does \"Doma\" mean?"
+msgstr ""
+
+#: ../../faq.rst:14
+msgid "The name \"Doma\" comes from the \"Dao Oriented database MApping framework\"."
+msgstr ""
+
+#: ../../faq.rst:17
+msgid "What is annotation processing?"
+msgstr ""
+
+#: ../../faq.rst:19
+msgid "Annotation processing, that was introduced in Java 6, allows us to validate and generate source code at compile time."
+msgstr ""
+
+#: ../../faq.rst:22
+msgid "We use annotation processing for the following purposes:"
+msgstr ""
+
+#: ../../faq.rst:24
+msgid "Generating meta classes from the classes annotated with ``@Entity`` and ``@Domain``."
+msgstr ""
+
+#: ../../faq.rst:25
+msgid "Generating implementation classes of the interfaces annotated with ``@Dao``."
+msgstr ""
+
+#: ../../faq.rst:26
+msgid "Validating SQL templates."
+msgstr ""
+
+#: ../../faq.rst:29
+msgid "Runtime environment"
+msgstr ""
+
+#: ../../faq.rst:32
+msgid "Which version of JRE does Doma support?"
+msgstr ""
+
+#: ../../faq.rst:34
+msgid "JRE 8 and above."
+msgstr ""
+
+#: ../../faq.rst:37
+msgid "Which libraries are required for Doma to work?"
+msgstr ""
+
+#: ../../faq.rst:39
+msgid "None."
+msgstr ""
+
+#: ../../faq.rst:41
+msgid "Doma has no dependencies on other libraries."
+msgstr ""
+
+#: ../../faq.rst:44
+msgid "Development environment"
+msgstr ""
+
+#: ../../faq.rst:49
+msgid "Which version of JDK does Doma support?"
+msgstr ""
+
+#: ../../faq.rst:51
+msgid "JDK 8 and above."
+msgstr ""
+
+#: ../../faq.rst:54
+msgid "Which IDE do you recommend?"
+msgstr ""
+
+#: ../../faq.rst:56
+msgid "We recommend Eclipse and IntelliJ IDEA."
+msgstr ""
+
+#: ../../faq.rst:59
+msgid "In Eclipse, the jar file of Doma is added to the Java Build Path but annotation processing doesn't run."
+msgstr ""
+
+#: ../../faq.rst:61
+msgid "Enable annotation processing and add the jar file to the Factory Path too. See also :ref:`eclipse-build`."
+msgstr ""
+
+#: ../../faq.rst:65
+msgid "Where are generated source files in annotation processing?"
+msgstr ""
+
+#: ../../faq.rst:67
+msgid "In Eclipse, they are found in the .apt_generated directory."
+msgstr ""
+
+#: ../../faq.rst:70
+msgid "In Eclipse, where is the .apt_generated directory?"
+msgstr ""
+
+#: ../../faq.rst:72
+msgid "You can find it in the Navigator view."
+msgstr ""
+
+#: ../../faq.rst:75
+msgid "I get the message that the sql file is not found, but it exists."
+msgstr ""
+
+#: ../../faq.rst:77
+msgid "You may get the following message, though the file exists:"
+msgstr ""
+
+#: ../../faq.rst:83
+msgid "When you use Eclipse, check that the location of the output folder of resources is same as the one for the class files in the Java Build Path dialog. You can avoid this trouble by generating eclipse setting files automatically. See also :ref:`eclipse-build`."
+msgstr ""
+
+#: ../../faq.rst:88
+msgid "When you use Gradle, check that the resource files are copied to ``compileJava.destinationDir`` in advance of the compileJava task. You can avoid this trouble by using the Doma Compile Plugin. See also :ref:`build-with-gradle`."
+msgstr ""
+
+#: ../../faq.rst:94
+msgid "Do you provide any code generation tools?"
+msgstr ""
+
+#: ../../faq.rst:96
+msgid "Yes. We have the `Doma CodeGen plugin <https://github.com/domaframework/doma-codegen-plugin>`_ that generates Java and SQL files from Database."
+msgstr ""
+
+#: ../../faq.rst:101
+msgid "Features as a database access library"
+msgstr ""
+
+#: ../../faq.rst:104
+msgid "Does Doma generate SQL statements?"
+msgstr ""
+
+#: ../../faq.rst:106
+msgid "Yes, Doma generates the following statements:"
+msgstr ""
+
+#: ../../faq.rst:108
+msgid "SELECT"
+msgstr ""
+
+#: ../../faq.rst:109
+msgid "INSERT"
+msgstr ""
+
+#: ../../faq.rst:110
+msgid "DELETE"
+msgstr ""
+
+#: ../../faq.rst:111
+msgid "UPDATE"
+msgstr ""
+
+#: ../../faq.rst:112
+msgid "Stored procedure call"
+msgstr ""
+
+#: ../../faq.rst:113
+msgid "Stored function call"
+msgstr ""
+
+#: ../../faq.rst:116
+msgid "How are dynamic SQL statements executed?"
+msgstr ""
+
+#: ../../faq.rst:118
+msgid "There are two ways:"
+msgstr ""
+
+#: ../../faq.rst:120
+msgid "The SQL Templates."
+msgstr ""
+
+#: ../../faq.rst:121
+msgid "The Criteria API."
+msgstr ""
+
+#: ../../faq.rst:123
+msgid "See :doc:`sql` and :doc:`criteria-api` for detail information."
+msgstr ""
+
+#: ../../faq.rst:126
+msgid "Does Doma map database relationships such as one-to-one and one-to-many to Java objects?"
+msgstr ""
+
+#: ../../faq.rst:128
+msgid "Yes."
+msgstr ""
+
+#: ../../faq.rst:130
+msgid "Doma provides the Criteria API to map database relationships to Java entities."
+msgstr ""
+
+#: ../../faq.rst:132
+msgid "See :ref:`criteria_associate` for detail information."
+msgstr ""
+
+#: ../../faq.rst:135
+msgid "Does Doma provide a JDBC connection pooling feature?"
+msgstr ""
+
+#: ../../faq.rst:137
+msgid "No."
+msgstr ""
+
+#: ../../faq.rst:139
+msgid "Use Doma together with a JDBC connection pool library such as `HikariCP <https://github.com/brettwooldridge/HikariCP>`_."
+msgstr ""
+
