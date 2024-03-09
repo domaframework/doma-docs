@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/build.po\n"
+"X-Crowdin-File-ID: 24\n"
+
+#: ../../build.rst:3
+msgid "Building an application"
+msgstr ""
+
+#: ../../build.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../build.rst:9
+msgid "Before You Start"
+msgstr ""
+
+#: ../../build.rst:12
+msgid "Maven Central Repository"
+msgstr ""
+
+#: ../../build.rst:14
+msgid "You can pull the artifacts of the Doma framework from the Maven central repository. We provide two artifacts, ``doma-core`` and ``doma-processor``."
+msgstr ""
+
+#: ../../build.rst:17
+msgid "The ``doma-core`` artifact is required at runtime and compile-time. The ``doma-processor`` artifact provides annotation processors and is required at compile-time only."
+msgstr ""
+
+#: ../../build.rst:20
+msgid "The group id and artifact id of those artifacts are as follows:"
+msgstr ""
+
+#: ../../build.rst:0 ../../build.rst:0
+msgid "GroupId"
+msgstr ""
+
+#: ../../build.rst:22 ../../build.rst:25
+msgid "org.seasar.doma"
+msgstr ""
+
+#: ../../build.rst:0 ../../build.rst:0
+msgid "ArtifactId"
+msgstr ""
+
+#: ../../build.rst:23
+msgid "doma-core"
+msgstr ""
+
+#: ../../build.rst:26
+msgid "doma-processor"
+msgstr ""
+
+#: ../../build.rst:31
+msgid "Build with Gradle"
+msgstr ""
+
+#: ../../build.rst:33
+msgid "Write your build.gradle as follows:"
+msgstr ""
+
+#: ../../build.rst:42
+msgid "To simplify your build.script, we recommend that you use the `Doma Compile Plugin`_."
+msgstr ""
+
+#: ../../build.rst:44 ../../build.rst:61
+msgid "See build.gradle in the `simple-boilerplate`_ repository as an example."
+msgstr ""
+
+#: ../../build.rst:47
+msgid "Build with IntelliJ IDEA"
+msgstr ""
+
+#: ../../build.rst:49
+msgid "Use a newer version of IntelliJ IDEA, and then import your project as a Gradle project."
+msgstr ""
+
+#: ../../build.rst:54
+msgid "Build with Eclipse"
+msgstr ""
+
+#: ../../build.rst:56
+msgid "Generate eclipse setting files with Gradle, and then import your project into Eclipse. To generate the setting files, run ``gradle eclipse``."
+msgstr ""
+
+#: ../../build.rst:59
+msgid "To simplify your build.script, we recommend that you use the `Doma Compile Plugin`_ and the `AptEclipsePlugin`_."
+msgstr ""
+
