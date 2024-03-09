@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Toshihiro Nakamura
+# This file is distributed under the same license as the Doma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Toshihiro Nakamura <toshihiro.nakamura@gmail.com>, 2024
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: domaframework\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 00:27+0900\n"
+"PO-Revision-Date: 2024-03-09 22:45\n"
+"Last-Translator: Toshihiro Nakamura <toshihiro.nakamura@gmail.com>, 2024\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: domaframework\n"
+"X-Crowdin-Project-ID: 655066\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /master/docs/locale/ja/LC_MESSAGES/getting-started.po\n"
+"X-Crowdin-File-ID: 42\n"
+
+#: ../../getting-started.rst:3
+msgid "Getting started"
+msgstr ""
+
+#: ../../getting-started.rst:6
+msgid "Contents"
+msgstr ""
+
+#: ../../getting-started.rst:9
+msgid "Summary"
+msgstr ""
+
+#: ../../getting-started.rst:11
+msgid "This guide outlines the setup of your development environment and introduces basic functionalities."
+msgstr ""
+
+#: ../../getting-started.rst:14
+msgid "Install JDK"
+msgstr ""
+
+#: ../../getting-started.rst:16
+msgid "To begin, JDK 17 is required."
+msgstr ""
+
+#: ../../getting-started.rst:20
+msgid "It's important to note that Doma is compatible with JDK 8 onwards. For details on supported JDK versions, refer to the appropriate section. :ref:`Which version of JDK does Doma support?<which-version-of-jdk-does-doma-support>`."
+msgstr ""
+
+#: ../../getting-started.rst:25
+msgid "Get sample project"
+msgstr ""
+
+#: ../../getting-started.rst:27
+msgid "To obtain the sample project, clone the `getting-started <https://github.com/domaframework/getting-started>`_ repository and navigate to the new directory using the following commands:"
+msgstr ""
+
+#: ../../getting-started.rst:35
+msgid "Ensure successful project setup with:"
+msgstr ""
+
+#: ../../getting-started.rst:43
+msgid "For Windows users, execute ``gradlew build``."
+msgstr ""
+
+#: ../../getting-started.rst:46
+msgid "Sample project structure"
+msgstr ""
+
+#: ../../getting-started.rst:48
+msgid "The getting-started sample is a Gradle multi-project consisting of java-8 and java-17 sub-projects. Both are similar, with the primary difference being how SQL statements are stored: in files for java-8 and as Text Blocks in java-17."
+msgstr ""
+
+#: ../../getting-started.rst:51
+msgid "This guide will focus on the java-17 project."
+msgstr ""
+
+#: ../../getting-started.rst:54
+msgid "Import project to your IDE"
+msgstr ""
+
+#: ../../getting-started.rst:57
+msgid "Eclipse"
+msgstr ""
+
+#: ../../getting-started.rst:59
+msgid "Tested on Eclipse 4.23.0. Generate Eclipse project files using ``./gradlew eclipse`` before importing the java-8 and java-17 projects into your workspace."
+msgstr ""
+
+#: ../../getting-started.rst:64
+msgid "If you want to store SQL statements in files, `Doma Tools <https://github.com/domaframework/doma-tools>`_ can help you."
+msgstr ""
+
+#: ../../getting-started.rst:68
+msgid "IntelliJ IDEA"
+msgstr ""
+
+#: ../../getting-started.rst:70
+msgid "Tested with IntelliJ IDEA Community 2023.3.4. Import the getting-started project as a Gradle project."
+msgstr ""
+
+#: ../../getting-started.rst:75
+msgid "If you use IntelliJ IDEA Ultimate Edition, `Doma Support <https://plugins.jetbrains.com/plugin/7615-doma-support>`_ can help you."
+msgstr ""
+
+#: ../../getting-started.rst:79
+msgid "Programming styles"
+msgstr ""
+
+#: ../../getting-started.rst:81
+msgid "Doma supports two programming styles: DSL and DAO."
+msgstr ""
+
+#: ../../getting-started.rst:83
+msgid "The DSL style utilizes the Criteria API for building type-safe SQL statements, offering several benefits, such as not requiring reflection and supporting various types of associations (one-to-many, many-to-one, one-to-one)."
+msgstr ""
+
+#: ../../getting-started.rst:86
+msgid "The DAO style, on the other hand, maps SQL statements to Java interface methods."
+msgstr ""
+
+#: ../../getting-started.rst:88
+msgid "It's recommended to use the DSL style due to the Criteria API's advantages."
+msgstr ""
+
+#: ../../getting-started.rst:91
+msgid "DSL style"
+msgstr ""
+
+#: ../../getting-started.rst:93
+msgid "In the DSL style, you work with examples in the ``boilerplate.java17.repository.EmployeeRepository`` and the :doc:`criteria-api` for operations."
+msgstr ""
+
+#: ../../getting-started.rst:97
+msgid "SELECT"
+msgstr ""
+
+#: ../../getting-started.rst:99
+msgid "To execute a SELECT query and retrieve Java object results, follow this example:"
+msgstr ""
+
+#: ../../getting-started.rst:108
+msgid "You'll use a metamodel class, like ``Employee_`` for ``Employee```, which is auto-generated through annotation processing."
+msgstr ""
+
+#: ../../getting-started.rst:110
+msgid "The ``entityql`` instance from the ``Entityql`` class serves as the Criteria API's starting point."
+msgstr ""
+
+#: ../../getting-started.rst:112 ../../getting-started.rst:184
+msgid "The above code generates the following SQL statement:"
+msgstr ""
+
+#: ../../getting-started.rst:119
+msgid "DELETE"
+msgstr ""
+
+#: ../../getting-started.rst:121 ../../getting-started.rst:198
+msgid "To issue a DELETE statement, write as follows:"
+msgstr ""
+
+#: ../../getting-started.rst:131
+msgid "INSERT"
+msgstr ""
+
+#: ../../getting-started.rst:133 ../../getting-started.rst:208
+msgid "To issue an INSERT statement, write as follows:"
+msgstr ""
+
+#: ../../getting-started.rst:143
+msgid "UPDATE"
+msgstr ""
+
+#: ../../getting-started.rst:145 ../../getting-started.rst:218
+msgid "To issue an UPDATE statement, write as follows:"
+msgstr ""
+
+#: ../../getting-started.rst:155
+msgid "DAO style"
+msgstr ""
+
+#: ../../getting-started.rst:157
+msgid "You can find some examples in ``boilerplate.java17.dao.EmployeeDao``. See :doc:`dao` and :doc:`sql` for more information."
+msgstr ""
+
+#: ../../getting-started.rst:161
+msgid "SELECT (DAO)"
+msgstr ""
+
+#: ../../getting-started.rst:163
+msgid "In the DAO style, for issuing a SELECT statement to retrieve Java objects, use the ``@Sql`` annotation with Text Blocks for SQL templates:"
+msgstr ""
+
+#: ../../getting-started.rst:179
+msgid "This SQL template contains two special expressions, ``/*%expand*/`` and ``/* id */``. In process of SQL template, ``/*%expand*/`` and the following ``*`` are replaced with column list. And ``/* id */`` and the following ``0`` are replaced with the bind variable ``?``. The bound value is the ``id`` parameter of the ``selectById`` method."
+msgstr ""
+
+#: ../../getting-started.rst:196
+msgid "DELETE (DAO)"
+msgstr ""
+
+#: ../../getting-started.rst:206
+msgid "INSERT (DAO)"
+msgstr ""
+
+#: ../../getting-started.rst:216
+msgid "UPDATE (DAO)"
+msgstr ""
+
+#: ../../getting-started.rst:226
+msgid "Next Step"
+msgstr ""
+
+#: ../../getting-started.rst:228
+msgid "See other example projects:"
+msgstr ""
+
+#: ../../getting-started.rst:230
+msgid "`simple-examples <https://github.com/domaframework/simple-examples>`_"
+msgstr ""
+
+#: ../../getting-started.rst:231
+msgid "`spring-boot-jpetstore <https://github.com/domaframework/spring-boot-jpetstore>`_"
+msgstr ""
+
