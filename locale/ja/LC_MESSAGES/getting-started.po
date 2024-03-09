@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: domaframework\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-10 00:27+0900\n"
-"PO-Revision-Date: 2024-03-09 22:45\n"
+"PO-Revision-Date: 2024-03-09 22:52\n"
 "Last-Translator: Toshihiro Nakamura <toshihiro.nakamura@gmail.com>, 2024\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: ../../getting-started.rst:3
 msgid "Getting started"
-msgstr ""
+msgstr "はじめよう"
 
 #: ../../getting-started.rst:6
 msgid "Contents"
-msgstr ""
+msgstr "コンテンツ"
 
 #: ../../getting-started.rst:9
 msgid "Summary"
