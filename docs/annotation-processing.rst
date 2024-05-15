@@ -138,6 +138,7 @@ Use `the compilerArgs parameter
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
+                        <arg>-Adoma.resources.dir=${project.basedir}/src/main/resources</arg>
                         <arg>-Adoma.dao.subpackage=impl</arg>
                         <arg>-Adoma.dao.suffix=Impl</arg>
                     </compilerArgs>

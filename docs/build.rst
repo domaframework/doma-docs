@@ -99,6 +99,10 @@ Write your pom.xml as follows:
                             <version>${doma.version}</version>
                         </path>
                     </annotationProcessorPaths>
+                    <compilerArgs>
+                        <!-- if you are using a Maven project in Eclipse, this argument is required -->
+                        <arg>-Adoma.resources.dir=${project.basedir}/src/main/resources</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
@@ -122,10 +126,17 @@ See build.gradle.kts in the `getting-started`_ repository as an example.
 Maven
 ------
 
+Import your project as a Maven project.
+
 .. note::
 
-  We've managed to get our Maven project up and running in Eclipse, but we're unsure if we're following the best practices. 
-  If you have any tips or recommended approaches, we'd really appreciate your input.
+    You need to add the following argument to the Maven compiler plugin configuration in your pom.xml:
+
+    .. code-block:: xml
+
+        <compilerArgs>
+            <arg>-Adoma.resources.dir=${project.basedir}/src/main/resources</arg>
+        </compilerArgs>
 
 .. _build-with-idea:
 
