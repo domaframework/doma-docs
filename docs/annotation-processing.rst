@@ -193,12 +193,14 @@ and the ``processorArgs`` property:
                 }
             }
 
-When you run ``gradle eclipse``, eclipse setting files are generated.
+Right-click on the project in Eclipse and select Gradle > Refresh Gradle Project.
+This will reflect the Gradle annotation processing options in Eclipse.
 
 Maven
 ~~~~~
 
-See :ref:`build-with-eclipse`.
+Right-click on the project in Eclipse and select Maven > Update Project....
+This will reflect the Maven annotation processing options in Eclipse.
 
 Setting options in IntelliJ IDEA
 ================================

@@ -116,10 +116,8 @@ Build with Eclipse
 Gradle
 ------
 
-Generate eclipse setting files with Gradle, and then import your project into Eclipse.
-To generate the setting files, run ``gradle cleanEclipse eclipse``.
-
-To simplify your build.script(.kts), we recommend that you use the `com.diffplug.eclipse.apt`_ plugin.
+Import your project as a Gradle project.
+To reflect Gradle settings in Eclipse, right-click on your project and select Gradle > Refresh Gradle Project.
 
 See build.gradle.kts in the `getting-started`_ repository as an example.
 
@@ -127,6 +125,7 @@ Maven
 ------
 
 Import your project as a Maven project.
+To reflect Maven settings in Eclipse, you can right-click on your project then select Maven > Update Project...
 
 .. note::
 

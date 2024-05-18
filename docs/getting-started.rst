@@ -56,8 +56,8 @@ Import project to your IDE
 Eclipse
 -------
 
-Tested on Eclipse 4.23.0. Generate Eclipse project files using ``./gradlew eclipse`` 
-before importing the java-8 and java-17 projects into your workspace.
+Tested on Eclipse 4.23.0.
+Import the getting-started project as a Gradle project.
 
 .. note::
 
