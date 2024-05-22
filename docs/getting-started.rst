@@ -105,7 +105,7 @@ To execute a SELECT query and retrieve Java object results, follow this example:
     return entityql.from(e).where(c -> c.eq(e.id, id)).fetchOne();
   }
 
-You'll use a metamodel class, like ``Employee_`` for ``Employee```, which is auto-generated through annotation processing. 
+You'll use a metamodel class, like ``Employee_`` for ``Employee``, which is auto-generated through annotation processing. 
 
 The ``entityql`` instance from the ``Entityql`` class serves as the Criteria API's starting point. 
 
