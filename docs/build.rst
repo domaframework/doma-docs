@@ -125,6 +125,14 @@ Maven
 ------
 
 Import your project as a Maven project.
+
+Right-click on the project, then select Properties > Maven > Annotation Processing.
+Enable "Enable Project specific settings" and "Automatically configure JDT APT"
+as shown in the figure below.
+
+.. image:: images/eclipse-maven-annotation-processing.png
+    :alt: Eclipse Maven Annotation Processing
+
 To reflect Maven settings in Eclipse, you can right-click on your project then select Maven > Update Project...
 
 .. note::
