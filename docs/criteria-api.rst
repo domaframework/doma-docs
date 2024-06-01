@@ -1797,6 +1797,43 @@ The above query issues the following SQL statement:
     )
     where t0_.EMPLOYEE_ID = ?
 
+User-defined expressions
+------------------------
+
+You can define user-defined expressions by calling ``Expressions.userDefined``.
+
+In the example below, the replace function is defined:
+
+.. code-block:: java
+
+    UserDefinedExpression<String> replace(PropertyMetamodel<String> expression, PropertyMetamodel<String> from, PropertyMetamodel<String> to) {
+        return Expressions.userDefined(expression, "replace", from, to, c -> {
+            c.appendSql("replace(");
+            c.appendExpression(expression);
+            c.appendSql(", ");
+            c.appendExpression(from);
+            c.appendSql(", ");
+            c.appendExpression(to);
+            c.appendSql(")");
+        });
+    }
+
+You can use the replace function in your query as follows:
+
+.. code-block:: java
+
+    Department_ d = new Department_();
+
+    List<String> list =
+        nativeSql
+            .from(d).select(replace(d.location, Expressions.literal("NEW"), Expressions.literal("new"))).fetch();
+
+The above query issues the following SQL statement:
+
+.. code-block:: sql
+
+    select replace(t0_.LOCATION, 'NEW', 'new') from DEPARTMENT t0_
+
 Scopes (Entityql, NativeSql)
 ==========================================
 
