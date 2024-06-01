@@ -316,6 +316,7 @@ The NativeSql DSL supports the following methods:
 
 * mapStream
 * collect
+* openStream
 
 .. code-block:: java
 
@@ -331,6 +332,14 @@ The NativeSql DSL supports the following methods:
     // The following code does the same thing with the above.
     Map<Integer, List<Employee>> map2 =
         nativeSql.from(e).collect(groupingBy(Employee::getDepartmentId));
+
+    // The openStream method returns a stream.
+    // You MUST close the stream explicitly.
+    try (Stream<Employee> stream = nativeSql.from(e).openStream()) {
+      stream.forEach(employee -> {
+        // do something
+      });
+    }
 
 These methods handle the stream that wraps a JDBC ResultSet.
 So they are useful to process a large ResultSet effectively.
