@@ -299,6 +299,8 @@ For example, the DDL should be following:
 
 You can change the table name and the column names using the properties within the ``@TableGenerator`` annotation.
 
+.. _entity-version:
+
 Version
 ------------------
 

@@ -1370,9 +1370,24 @@ Batch Insert is also supported:
 
     BatchResult<Department> result = entityql.insert(d, departments).execute();
 
-The execute method may throw following exceptions:
+Multi-row Insert is also supported:
 
-* UniqueConstraintException: if an unique constraint is violated
+.. code-block:: java
+
+    Department_ d = new Department_();
+
+    Department department = ...;
+    Department department2 = ...;
+    List<Department> departments = Arrays.asList(department, department2);
+
+    MultiResult<Department> result = entityql.insertMulti(d, departments).execute();
+
+The above query issues the following SQL statement:
+
+.. code-block:: sql
+
+    insert into DEPARTMENT (DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION)
+    values (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)
 
 Upsert is also supported:
 
@@ -1393,6 +1408,10 @@ By calling on `onDuplicateKeyIgnore`, you can ignore errors when a key is duplic
         .insert(d, departments)
         .onDuplicateKeyIgnore()
         .execute();
+
+The execute method may throw following exceptions:
+
+* UniqueConstraintException: if an unique constraint is violated
 
 Insert statement (NativeSql)
 ----------------------------

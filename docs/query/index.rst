@@ -12,6 +12,7 @@ Queries
    batch-insert
    batch-update
    batch-delete
+   multi-row-insert
    function
    procedure
    factory
