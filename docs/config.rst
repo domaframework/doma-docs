@@ -223,6 +223,14 @@ create your own EntityListenerProvider.
 
 The default EntityListenerProvider get the entity listener from the accepted supplier.
 
+SQL Builder Settings
+--------------------
+
+Return a ``SqlBuilderSettings`` from the ``getSqlBuilderSettings`` method.
+
+``SqlBuilderSettings`` controls the building of SQL.
+Specifically, it can remove comments and blank lines from the SQL.
+
 Loading JDBC drivers
 ====================
 
