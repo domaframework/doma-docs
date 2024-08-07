@@ -36,8 +36,9 @@ Also the ``postInsert`` method of entity listener method is called each entity w
   * MySQL
   * PostgreSQL
   * SQL Server
+  * Oracle Database
 
-  However, in the case of SQL Server, this feature cannot be executed on tables with an auto-increment primary key.
+  However, in the case of SQL Server and Oracle, this feature cannot be executed on tables with an auto-increment primary key.
 
 Return type
 ===========
@@ -99,6 +100,40 @@ Entity properties with ``insertable`` set to ``false`` in the ``@Column`` annota
 
   @MultiInsert(include = {"name", "salary"})
   int insert(List<Employee> employees);
+
+duplicateKeyType
+----------------
+
+This property defines the strategy for handling duplicate keys during an insert operation.
+
+It can take one of three values:
+
+* ``DuplicateKeyType.UPDATE``: If a duplicate key is encountered, the existing row in the table will be updated.
+* ``DuplicateKeyType.IGNORE``: If a duplicate key is encountered, the insert operation will be ignored, and no changes will be made to the table.
+* ``DuplicateKeyType.EXCEPTION``: If a duplicate key is encountered, an exception will be thrown.
+
+.. code-block:: java
+
+  @MultiInsert(duplicateKeyType = DuplicateKeyType.UPDATE)
+  int insert(List<Employee> employees);
+
+duplicateKeys
+----------------
+
+This property represents the keys that should be used to determine if a duplicate key exists. If the duplicate key exists, the operation will use the ``duplicateKeyType`` strategy to handle the duplicate key.
+
+.. code-block:: java
+
+  @MultiInsert(duplicateKeyType = DuplicateKeyType.UPDATE, duplicateKeys = {"employeeNo"})
+  int insert(List<Employee> employees);
+
+.. note::
+
+  This property is only utilized when the ``duplicateKeyType`` strategy is either ``DuplicateKeyType.UPDATE`` or ``DuplicateKeyType.IGNORE``.
+
+.. note::
+
+  The MySQL dialect does not utilize this property.
 
 Unique constraint violation
 ============================

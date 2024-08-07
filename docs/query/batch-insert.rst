@@ -61,8 +61,8 @@ Version number
 If value that explicitly set is over ``0`` then use the value if :doc:`../entity` has property that is annotated  with ``@Version``.
 If the value is not set or is less than ``0`` the value is set ``1`` automatically.
 
-Insert target property
------------------------
+Properties of @BatchInsert
+---------------------------
 
 insertable
 ~~~~~~~~~~
@@ -91,6 +91,40 @@ Even if property is specified with this element the property is excluded from in
 
   @BatchInsert(include = {"name", "salary"})
   int[] insert(List<Employee> employees);
+
+duplicateKeyType
+~~~~~~~~~~~~~~~~
+
+This property defines the strategy for handling duplicate keys during an insert operation.
+
+It can take one of three values:
+
+* ``DuplicateKeyType.UPDATE``: If a duplicate key is encountered, the existing row in the table will be updated.
+* ``DuplicateKeyType.IGNORE``: If a duplicate key is encountered, the insert operation will be ignored, and no changes will be made to the table.
+* ``DuplicateKeyType.EXCEPTION``: If a duplicate key is encountered, an exception will be thrown.
+
+.. code-block:: java
+
+  @BatchInsert(duplicateKeyType = DuplicateKeyType.UPDATE)
+  int[] insert(List<Employee> employees);
+
+duplicateKeys
+~~~~~~~~~~~~~
+
+This property represents the keys that should be used to determine if a duplicate key exists. If the duplicate key exists, the operation will use the ``duplicateKeyType`` strategy to handle the duplicate key.
+
+.. code-block:: java
+
+  @BatchInsert(duplicateKeyType = DuplicateKeyType.UPDATE, duplicateKeys = {"employeeNo"})
+  int[] insert(List<Employee> employees);
+
+.. note::
+
+  This property is only utilized when the ``duplicateKeyType`` strategy is either ``DuplicateKeyType.UPDATE`` or ``DuplicateKeyType.IGNORE``.
+
+.. note::
+
+  The MySQL dialect does not utilize this property.
 
 Batch insert by SQL file
 ===========================
@@ -124,22 +158,13 @@ For example, you describe SQL like below to correspond above method.
 Parameter name indicate ``java.lang.Iterable`` subtype element in SQL file.
 
 Identifier auto setting and version number auto setting are not executed in batch insert by SQL file.
-Also, ``exclude`` property and ``include`` property within ``@BatchInsert`` are not referenced.
 
-Batch upsert
-===========================
+Additionally, the following properties of ``@BatchInsert`` are not used:
 
-you can specify whether to update or ignore using a ``duplicateKeyType`` property In case of duplication.
-By default, it is ``DuplicateKeyType.EXCEPTION`` , and an error will occur in case of duplicated.
-There are 3 types to choose from: ``DuplicateKeyType.UPDATE`` , ``DuplicateKeyType.IGNORE`` , ``DuplicateKeyType.EXCEPTION`` .
-
-.. code-block:: java
-
-  @BatchInsert(duplicateKeyType = DuplicateKeyType.UPDATE)
-  int[] insertOnDuplicateKeyUpdate(List<Employee> employees);
-
-  @BatchInsert(duplicateKeyType = DuplicateKeyType.IGNORE)
-  int[] insertOnDuplicateKeyIgnore(List<Employee> employees);
+* exclude
+* include
+* duplicateKeyType
+* duplicateKeys
 
 Unique constraint violation
 ============================
