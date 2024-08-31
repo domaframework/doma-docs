@@ -15,12 +15,6 @@ Install JDK
 
 To begin, JDK 17 is required. 
 
-.. note::
-
-  It's important to note that Doma is compatible with JDK 8 onwards. 
-  For details on supported JDK versions, refer to the appropriate section.
-  :ref:`Which version of JDK does Doma support?<which-version-of-jdk-does-doma-support>`.
-
 Get sample project
 ==================
 

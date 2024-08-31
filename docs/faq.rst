@@ -31,7 +31,7 @@ Runtime environment
 Which version of JRE does Doma support?
 ---------------------------------------
 
-JRE 8 and above.
+JRE 17 and above.
 
 Which libraries are required for Doma to work?
 ----------------------------------------------
@@ -48,7 +48,7 @@ Development environment
 Which version of JDK does Doma support?
 ---------------------------------------
 
-JDK 8 and above.
+JDK 17 and above.
 
 Which IDE do you recommend?
 ---------------------------

@@ -854,7 +854,7 @@ Gradle
 .. code-block:: xml
 
     dependencies {
-        implementation("org.seasar.doma:doma-template:2.60.0")
+        implementation("org.seasar.doma:doma-template:3.0.0")
     }
 
 Usage

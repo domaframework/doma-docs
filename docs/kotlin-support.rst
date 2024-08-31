@@ -152,7 +152,7 @@ You can write build.gradle.kts as follows:
 .. code-block:: kotlin
 
     dependencies {
-        implementation("org.seasar.doma:doma-kotlin:2.60.0")
+        implementation("org.seasar.doma:doma-kotlin:3.0.0")
     }
 
 Code Generation
@@ -173,8 +173,8 @@ For example, you can write build.gradle.kts as follows:
 .. code-block:: kotlin
 
     dependencies {
-        kapt("org.seasar.doma:doma-processor:2.60.0")
-        implementation("org.seasar.doma:doma-kotlin:2.60.0")
+        kapt("org.seasar.doma:doma-processor:3.0.0")
+        implementation("org.seasar.doma:doma-kotlin:3.0.0")
     }
 
 To simplify your build script, we recommend you use

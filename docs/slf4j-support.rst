@@ -19,9 +19,9 @@ Doma provides the doma-slf4j artifact to adapt SLF4J.
 .. code-block:: xml
 
     dependencies {
-        implementation("org.seasar.doma:doma-slf4j:2.60.0")
+        implementation("org.seasar.doma:doma-slf4j:3.0.0")
         // Use an arbitrary SLF4J binding
-        runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
+        runtimeOnly("ch.qos.logback:logback-classic:1.5.7")
     }
 
 Configuration

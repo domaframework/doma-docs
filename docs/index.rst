@@ -9,10 +9,10 @@
    :align: right
    :target: https://github.com/domaframework/doma
 
-Welcome to Doma 2
+Welcome to Doma
 =====================
 
-Doma 2 is a database access framework for Java 8+.
+Doma is a database access framework for Java.
 Doma has various strengths:
 
 * Verifies and generates source code at compile time using annotation processing.
