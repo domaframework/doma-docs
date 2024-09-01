@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 21:31+0900\n"
+"POT-Creation-Date: 2024-09-01 09:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Language: ja_JP\n"
 
 #: ../../index.rst:13
-msgid "Welcome to Doma 2"
-msgstr "Doma 2へようこそ"
+msgid "Welcome to Doma"
+msgstr "Doma へようこそ"
 
 #: ../../index.rst:15
-msgid "Doma 2 is a database access framework for Java 8+. Doma has various strengths:"
-msgstr "Doma 2はJava 8+向けのデータベースアクセスフレームワークです。Domaにはさまざまな強みがあります。"
+msgid "Doma is a database access framework for Java. Doma has various strengths:"
+msgstr "DomaはJavaのデータベースアクセスフレームワークです。Domaには様々な強みがあります。"
 
 #: ../../index.rst:18
 msgid "Verifies and generates source code at compile time using annotation processing."

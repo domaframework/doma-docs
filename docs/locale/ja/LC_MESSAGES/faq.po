@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2024-09-01 09:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -68,8 +68,8 @@ msgid "Which version of JRE does Doma support?"
 msgstr "Doma はどのバージョンの JRE をサポートしていますか?"
 
 #: ../../faq.rst:34
-msgid "JRE 8 and above."
-msgstr "JRE 8以降です。"
+msgid "JRE 17 and above."
+msgstr "JRE 17以降です。"
 
 #: ../../faq.rst:37
 msgid "Which libraries are required for Doma to work?"
@@ -92,8 +92,8 @@ msgid "Which version of JDK does Doma support?"
 msgstr "Doma はどのバージョンの JDK をサポートしていますか?"
 
 #: ../../faq.rst:51
-msgid "JDK 8 and above."
-msgstr "JDK 8以降です。"
+msgid "JDK 17 and above."
+msgstr "JDK 17以降です。"
 
 #: ../../faq.rst:54
 msgid "Which IDE do you recommend?"

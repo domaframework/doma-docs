@@ -190,7 +190,7 @@ msgstr "次の例を参照してください。"
 
 #: ../../criteria-api.rst:235
 msgid "Both (1) and (2) issue the same SQL statement as follows:"
-msgstr "(1) と (2) は両方とも、次のように同じ SQL ステートメントを発行します。"
+msgstr "(1) と (2) の両方とも、以下のように同じ SQL ステートメントを発行します。"
 
 #: ../../criteria-api.rst:243
 msgid "The ResultSet contains 14 rows, but the Entityql DSL returns only 3 rows because it removes duplicate Department entities. The Entityql DSL uses the id properties to know the uniqueness of the entities."
