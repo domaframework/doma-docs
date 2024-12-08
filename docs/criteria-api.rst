@@ -11,7 +11,7 @@ Introduction
 .. warning::
 
     Please use the Query DSL introduced on the :doc:`query-dsl` page instead of the Entityql and NativeSql
-    DSLs explained here. 
+    DSLs explained here.
     The Query DSL is a new, unified interface that combines both Entityql and NativeSql DSLs.
 
 There are two kinds of DSLs in the Criteria API:
@@ -1115,30 +1115,30 @@ Define the entity class corresponding to the derived table as follows:
     public class NameAndAmount {
       private String name;
       private Integer amount;
-    
+
       public NameAndAmount() {}
-    
+
       public NameAndAmount(String accounting, BigDecimal bigDecimal) {
         this.name = accounting;
         this.amount = bigDecimal.intValue();
       }
-    
+
       public String getName() {
         return name;
       }
-    
+
       public void setName(String name) {
         this.name = name;
       }
-    
+
       public Integer getAmount() {
         return amount;
       }
-    
+
       public void setAmount(Integer amount) {
         this.amount = amount;
       }
-    
+
       @Override
       public boolean equals(Object o) {
         if (this == o) return true;
@@ -1146,7 +1146,7 @@ Define the entity class corresponding to the derived table as follows:
         NameAndAmount that = (NameAndAmount) o;
         return Objects.equals(name, that.name) && Objects.equals(amount, that.amount);
       }
-    
+
       @Override
       public int hashCode() {
         return Objects.hash(name, amount);
@@ -1176,23 +1176,105 @@ The above query issues the following SQL statement:
 
 .. code-block:: sql
 
-    select 
-        t0_.NAME, 
-        t0_.AMOUNT 
-    from 
+    select
+        t0_.NAME,
+        t0_.AMOUNT
+    from
         (
-            select 
-                t2_.DEPARTMENT_NAME AS NAME, 
-                sum(t1_.SALARY) AS AMOUNT 
-            from 
-                EMPLOYEE t1_ 
-            inner join 
-                DEPARTMENT t2_ on (t1_.DEPARTMENT_ID = t2_.DEPARTMENT_ID) 
-            group by 
+            select
+                t2_.DEPARTMENT_NAME AS NAME,
+                sum(t1_.SALARY) AS AMOUNT
+            from
+                EMPLOYEE t1_
+            inner join
+                DEPARTMENT t2_ on (t1_.DEPARTMENT_ID = t2_.DEPARTMENT_ID)
+            group by
                 t2_.DEPARTMENT_NAME
-        ) t0_ 
-    order by 
+        ) t0_
+    order by
         t0_.NAME asc
+
+With expression (QueryDsl)
+----------------------------------------------
+
+We support the WITH clause.
+To specify a WITH clause, call `with` method with entity metamodel and a subquery, The entity metamodel and the results of the subquery need to match.
+
+Define the entity class corresponding to the result of the subquery as follows:
+
+.. code-block:: java
+
+    @Entity(metamodel = @Metamodel)
+    public class DepartmentCount {
+
+      @Id private Integer departmentId;
+      @Column private Integer count;
+
+      public Integer getDepartmentId() {
+        return departmentId;
+      }
+
+      public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
+      }
+
+      public Integer getCount() {
+        return count;
+      }
+
+      public void setCount(Integer count) {
+        this.count = count;
+      }
+    }
+
+A subquery using a WITH clause can be written as follows.
+
+.. code-block:: java
+    var dcCte1 = new DepartmentCount_("dcCte1");
+    var dcCte2 = new DepartmentCount_("dcCte2");
+    var dcCte1Query =
+        dsl.from(dCteInner1)
+            .leftJoin(eCteInner1, on -> on.eq(dCteInner1.departmentId, eCteInner1.departmentId))
+            .groupBy(dCteInner1.departmentId)
+            .select(dCteInner1.departmentId, Expressions.count(eCteInner1.addressId));
+    var dcCte2Query =
+        dsl.from(dCteInner2)
+            .leftJoin(eCteInner2, on -> on.eq(dCteInner2.departmentId, eCteInner2.departmentId))
+            .groupBy(dCteInner2.departmentId)
+            .select(dCteInner2.departmentId, addOne(Expressions.count(eCteInner2.addressId)));
+    var query =
+        dsl.with(dcCte1, dcCte1Query)
+            .with(dcCte2, dcCte2Query)
+            .from(e)
+            .leftJoin(dcCte1, on -> on.eq(e.departmentId, dcCte1.departmentId))
+            .leftJoin(dcCte2, on -> on.eq(e.departmentId, dcCte2.departmentId));
+    var list = query.fetch();
+
+The above query issues the following SQL statement:
+
+.. code-block:: sql
+
+    with dcCte1(DEPARTMENT_ID, COUNT) as (select t3_.DEPARTMENT_ID, count(t4_.ADDRESS_ID)
+                                          from DEPARTMENT t3_
+                                                   left outer join EMPLOYEE t4_ on (t3_.DEPARTMENT_ID = t4_.DEPARTMENT_ID)
+                                          group by t3_.DEPARTMENT_ID),
+         dcCte2(DEPARTMENT_ID, COUNT) as (select t3_.DEPARTMENT_ID, count(t4_.ADDRESS_ID) + 1
+                                          from DEPARTMENT t3_
+                                                   left outer join EMPLOYEE t4_ on (t3_.DEPARTMENT_ID = t4_.DEPARTMENT_ID)
+                                          group by t3_.DEPARTMENT_ID)
+    select t0_.EMPLOYEE_ID,
+           t0_.EMPLOYEE_NO,
+           t0_.EMPLOYEE_NAME,
+           t0_.MANAGER_ID,
+           t0_.HIREDATE,
+           t0_.SALARY,
+           t0_.DEPARTMENT_ID,
+           t0_.ADDRESS_ID,
+           t0_.VERSION
+    from EMPLOYEE t0_
+             left outer join dcCte1 t1_ on (t0_.DEPARTMENT_ID = t1_.DEPARTMENT_ID)
+             left outer join dcCte2 t2_ on (t0_.DEPARTMENT_ID = t2_.DEPARTMENT_ID);
+
 
 Delete statement
 ============================
