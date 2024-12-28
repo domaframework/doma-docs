@@ -1765,6 +1765,20 @@ To obtain a ``config`` object, call ``Config.get(this)`` within the default meth
       }
     }
 
+You can also use ``QueryDsl.of(this)`` as a shortcut for ``new QueryDsl(Config.get(this))``.
+
+.. code-block:: java
+
+    @Dao
+    public interface EmployeeDao {
+
+      default Optional<Employee> selectById(Integer id) {
+        Employee_ e = new Employee_();
+        return QueryDsl.of(this).from(e).where(c -> c.eq(e.employeeId, id)).fetchOptional();
+      }
+    }
+
+
 Overwriting the Table Name
 --------------------------
 
