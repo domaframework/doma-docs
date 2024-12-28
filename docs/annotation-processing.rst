@@ -75,6 +75,11 @@ doma.sql.validation
   To disable the validations, set ``false``.
   The default value is ``true``.
 
+doma.trace
+  Whether to output trace logs during annotation processing.
+  If set to ``true``, the annotation processors will output trace logs, including the execution time of annotation processing.
+  The default value is ``false``.
+
 doma.version.validation
   Whether to validate the versions of doma.jar between runtime and compile-time.
   If the value is ``true``, the validation runs.
