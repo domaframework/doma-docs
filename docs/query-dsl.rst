@@ -1072,6 +1072,54 @@ This generates:
     order by 
         t0_.NAME asc
 
+Common Table Expression
+-----------------------
+
+Common Table Expressions (CTEs) are supported.
+To use a CTE, a corresponding entity class must be defined.
+
+Define the entity class for the CTE as follows:
+
+.. code-block:: java
+
+    @Entity(metamodel = @Metamodel)
+    public record AverageSalary(Salary salary) {}
+
+A query using the CTE can be written as follows:
+
+.. code-block:: java
+
+    var a = new AverageSalary_();
+    var e = new Employee_();
+
+    var cteQuery =
+        dsl.from(e)
+            .select(Expressions.avg(e.salary));
+
+    var list =
+        dsl.with(a, cteQuery)
+            .from(e)
+            .innerJoin(a, on -> on.ge(e.salary, a.salary))
+            .select(e.employeeId, e.employeeName, e.salary)
+            .fetch();
+
+The above query generates the following SQL:
+
+.. code-block:: sql
+
+    with AVERAGE_SALARY(SALARY) as (
+        select
+            avg(t0_.SALARY)
+        from 
+            EMPLOYEE t0_
+    )
+    select
+        t0_.EMPLOYEE_ID,
+        t0_.EMPLOYEE_NAME,
+        t0_.SALARY from EMPLOYEE t0_
+    inner join
+        AVERAGE_SALARY t1_ on (t0_.SALARY >= t1_.SALARY)
+
 Delete Statement
 ================
 
