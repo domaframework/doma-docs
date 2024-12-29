@@ -43,6 +43,11 @@ $ sphinx-autobuild . _build/html
 
 Visit the webpage served at http://127.0.0.1:8000.
 
+Your environment is now set up.
+Please verify that the modifications to the RST file are correctly converted into an HTML file, and then submit a pull request.
+
+## Tasks to Be Performed by the Localization Manager
+
 #### Generate POT files
 
 Execute the `sphinx-build` command in the docs directory:
