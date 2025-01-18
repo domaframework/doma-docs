@@ -18,7 +18,7 @@ Entity classes
 * Define as a plain class
 * Specify a ``Metamodel`` annotation to the ``metamodel`` element of ``@Entity``
 
-.. code-block:: java
+.. code-block:: kotlin
 
     @Entity(metamodel = Metamodel())
     class Person : AbstractPerson() {
@@ -48,7 +48,7 @@ Domain classes
 * Define only one property whose name is ``value`` in the constructor
 * Use `val` for the property definition
 
-.. code-block:: java
+.. code-block:: kotlin
 
   @Domain(valueType = String::class)
   data class Name(val value: String)
@@ -61,7 +61,7 @@ Embeddable classes
 * Define properties only in the constructor
 * Use `val` for the property definitions
 
-.. code-block:: java
+.. code-block:: kotlin
 
   @Embeddable
   data class Address(val city: String, val street: String)
@@ -71,7 +71,7 @@ Dao interfaces
 
 * Specify a SQL template to ``@org.seasar.doma.Sql``
 
-.. code-block:: java
+.. code-block:: kotlin
 
   @Dao
   interface PersonDao {
@@ -85,7 +85,7 @@ Dao interfaces
     fun insert(person: Person): Int
   }
 
-.. code-block:: java
+.. code-block:: kotlin
 
   val dao: PersonDao = ...
   val person = Person(name = Name("John"), address = Address(city = "Tokyo", street = "Yaesu"))

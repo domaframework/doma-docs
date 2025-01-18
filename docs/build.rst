@@ -61,7 +61,7 @@ To simplify your build.script(.kts), we recommend that you use the `org.seasar.d
 
 See build.gradle.kts in the `getting-started`_ repository as an example.
 
-.. _build-with-maven
+.. _build-with-maven:
 
 Build with Maven
 =================
