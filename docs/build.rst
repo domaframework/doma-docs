@@ -40,8 +40,8 @@ Write your build.gradle(.kts) as follows:
             }
             
             dependencies {
-                implementation("org.seasar.doma:doma-core:3.2.0")
-                annotationProcessor("org.seasar.doma:doma-processor:3.2.0")
+                implementation("org.seasar.doma:doma-core:3.3.0")
+                annotationProcessor("org.seasar.doma:doma-processor:3.3.0")
             }
 
     .. tab:: Groovy
@@ -53,8 +53,8 @@ Write your build.gradle(.kts) as follows:
             }
             
             dependencies {
-                implementation 'org.seasar.doma:doma-core:3.2.0'
-                annotationProcessor 'org.seasar.doma:doma-processor:3.2.0'
+                implementation 'org.seasar.doma:doma-core:3.3.0'
+                annotationProcessor 'org.seasar.doma:doma-processor:3.3.0'
             }
 
 To simplify your build.script(.kts), we recommend that you use the `org.seasar.doma.compile`_ plugin.
@@ -72,7 +72,7 @@ Write your pom.xml as follows:
 
     ...
     <properties>
-        <doma.version>3.2.0</doma.version>
+        <doma.version>3.3.0</doma.version>
     </properties>
     ...
     <dependencies>
