@@ -299,6 +299,69 @@ specify a wildcard ``?`` as type arguments to the external domain class:
       }
   }
 
+Direct mapping of external domain classes to the database
+---------------------------------------------------------
+
+All external domain classes can be directly mapped to any database type.
+
+Here's an example of mapping ``java.util.UUID`` to PostgreSQL's UUID type.
+
+First, create an implementation of ``org.seasar.doma.jdbc.type.JdbcType`` to handle the mapping:
+
+.. code-block:: java
+
+    class PostgresUUIDJdbcType extends AbstractJdbcType<UUID> {
+
+      protected PostgresUUIDJdbcType() {
+        super(Types.OTHER);
+      }
+
+      @Override
+      protected UUID doGetValue(ResultSet resultSet, int index) throws SQLException {
+        String value = resultSet.getString(index);
+        return value == null ? null : UUID.fromString(value);
+      }
+
+      @Override
+      protected void doSetValue(PreparedStatement preparedStatement, int index, UUID value)
+          throws SQLException {
+        preparedStatement.setObject(index, value, type);
+      }
+
+      @Override
+      protected UUID doGetValue(CallableStatement callableStatement, int index) throws SQLException {
+        String value = callableStatement.getString(index);
+        return value == null ? null : UUID.fromString(value);
+      }
+
+      @Override
+      protected String doConvertToLogFormat(UUID value) {
+        return value.toString();
+      }
+    }
+
+Next, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``,
+and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above.
+Don't forget to annotate the class with ``@ExternalDomain``:
+
+.. code-block:: java
+
+    @ExternalDomain
+    public class PostgresUUIDConverter extends JdbcTypeProvider<UUID> {
+
+      private static final PostgresUUIDJdbcType jdbcType = new PostgresUUIDJdbcType();
+
+      @Override
+      public JdbcType<UUID> getJdbcType() {
+        return jdbcType;
+      }
+    }
+
+The rest follows the standard approach.
+Simply add ``PostgresUUIDConverter`` to the ``@DomainConverters`` annotation,
+and specify the fully qualified name of the class with the ``@DomainConverters`` annotation
+in the annotation processing options.
+
 Example
 =======
 
