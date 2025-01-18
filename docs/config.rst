@@ -252,6 +252,34 @@ which can have positive effects on SQL caching and related performance optimizat
 
 By default, no special controls are applied.
 
+Statistic Manager
+-----------------
+
+Return a ``StatisticManager`` from the ``getStatisticManager`` method.
+
+``StatisticManager`` manages statistical information related to SQL execution.
+It retains the following information for each SQL statement:
+
+- execution count
+- execution maximum time in milliseconds
+- execution minimum time in milliseconds
+- total execution time in milliseconds
+- average execution time in milliseconds
+
+Collection of statistical information is disabled by default.
+To enable it, do the following:
+
+.. code-block:: java
+
+    Config config = ...
+    config.getStatisticManager().setEnabled(true);
+
+To disable it, call ``setEnabled(false)``.
+
+The default implementation collects statistical information indefinitely while enabled.
+To prevent memory exhaustion, either call the ``clear`` method of ``StatisticManager`` periodically
+or create an appropriate implementation class for ``StatisticManager``.
+
 Loading JDBC drivers
 ====================
 
