@@ -24,5 +24,5 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Crowdinの使い方や翻訳方針に関する質問は [Issues](https://github.com/domaframework/doma-docs/issues) または [Discussions](https://github.com/domaframework/doma-docs/discussions) でお気軽にどうぞ。
 
-日本語翻訳に関すると問い合わせは日本語で登録いただいて構いません。
+日本語翻訳に関する問い合わせは日本語で登録いただいて構いません。
 
