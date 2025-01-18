@@ -131,6 +131,16 @@ Choosing SQL format contained in exception messages
 Return a ``SqlLogType`` from the ``getExceptionSqlLogType``.
 The default SqlLogType contains the formatted SQL in exception messages.
 
+Handling duplicate columns
+--------------------------
+
+Return a ``DuplicateColumnHandler`` from the ``getDuplicateColumnHandler`` method.
+In result set mappings, if a duplicate column for an entity class is found,
+the ``DuplicateColumnHandler`` handles the situation.
+
+The default ``DuplicateColumnHandler`` does nothing.
+To throw a ``DuplicateColumnException``, return a ``ThrowingDuplicateColumnHandler``.
+
 Handling unknown columns
 ------------------------
 
