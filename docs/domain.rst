@@ -187,8 +187,8 @@ the method declaration must have same type parameters that are declared in the c
 External domain classes
 =======================
 
-This feature allows you to define arbitrary classes as domain classes,
-even if the classes can be annotated with the ``@Domain`` annotation.
+This feature allows you to define any class as a domain class,
+even if you cannot annotate the class with the ``@Domain`` annotation.
 
 To define external domain classes, you have to do as follows:
 
