@@ -238,8 +238,19 @@ SQL Builder Settings
 
 Return a ``SqlBuilderSettings`` from the ``getSqlBuilderSettings`` method.
 
-``SqlBuilderSettings`` controls the building of SQL.
-Specifically, it can remove comments and blank lines from the SQL.
+``SqlBuilderSettings`` controls the following aspects of SQL building:
+
+- Whether to remove block comments from SQL
+- Whether to remove line comments from SQL
+- Whether to remove blank lines from SQL
+- Whether to enable IN list padding
+
+IN list padding is a feature that pads the parameters in an SQL IN clause with the last parameter
+when the number of parameters is less than a power of 2.
+This feature helps ensure that the same SQL statement is more likely to be generated regardless of the number of parameters,
+which can have positive effects on SQL caching and related performance optimizations.
+
+By default, no special controls are applied.
 
 Loading JDBC drivers
 ====================
