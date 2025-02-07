@@ -682,6 +682,8 @@ If it is specified, it must be evaluated to ``java.lang.String``.
 
 The directive must be followed by the asterisk ``*``.
 
+.. _expand:
+
 expand
 ~~~~~~
 
