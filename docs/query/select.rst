@@ -19,12 +19,6 @@ To execute a search using the SELECT statement, annotate the DAO method with ``@
 The ``@Select`` annotation requires an :doc:`SQL template <../sql>`. 
 Describe the SQL template in an SQL file or in the ``@Sql`` annotation.
 
-.. note::
-
-  You need creating entity class **depending on search result**.
-  For example, result set including column in EMPLOYEE table is accepted Employee class if the Employee class that correspond EMPLOYEE table is declared.
-  But, you need different class from the Employee entity class(For example EmployeeDepartment class) for result set that is get by joining EMPLOYEE table and DEPARTMENT table.
-
 Search condition
 =================
 
@@ -140,6 +134,8 @@ The elements of the ``List`` can be of the following types:
 
 If there are no search results, an empty list is returned.
 
+.. _stream-search:
+
 Stream search
 ==============
 
@@ -227,6 +223,8 @@ The caller of the DAO method will be as follows:
   @Suppress(messages = { Message.DOMA4274 })
   Stream<Employee> selectByNameAndSalary(String name, BigDecimal salary);
 
+.. _collector-search:
+
 Collector search
 ================
 
@@ -266,6 +264,23 @@ The type parameter ``RESULT`` of ``Collector<TARGET, ACCUMULATION, RESULT>`` mus
 
   Collect search is the shortcut that pass to Function within stream search.
   You can do equivalent by using `collect`` method in ``Stream`` object that is getting from stream search.
+
+Aggregate strategy
+==================
+
+The ``aggregateStrategy`` element in ``@Select`` allows query results to be mapped
+to hierarchical entity structures based on a predefined aggregate strategy.
+
+.. code-block:: java
+
+  @Select(aggregateStrategy = EmployeeStrategy.class)
+  Employee selectByName(String name);
+
+For more details, see :doc:`../aggregate-strategy`.
+
+.. note::
+
+  The aggregate strategy cannot be used in combination with :ref:`stream-search` or :ref:`collector-search`.
 
 Search options
 ============================
