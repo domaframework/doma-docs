@@ -130,7 +130,9 @@ For the ``selectById`` method, the following SELECT statement is required:
     where
         d.dept_id = /* deptId */0
 
-### Column aliasing rules
+Column aliasing rules
+~~~~~~~~~~~~~~~~~~~~~
+
 - The table aliases must match those defined in ``DeptStrategy``.
 - Column aliases must be prefixed with the table alias followed by an underscore (``_``).
   For example, ``d.dept_id`` is aliased as ``d_dept_id`` and ``e.emp_id`` as ``e_emp_id``.
