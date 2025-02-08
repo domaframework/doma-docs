@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 11:04+0900\n"
+"POT-Creation-Date: 2025-02-08 12:33+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -87,47 +87,51 @@ msgstr "``DepartmentAggregateStrategy`` は ``@Select`` の ``aggregateStrategy`
 msgid "For the ``selectById`` method, the following SELECT statement is required:"
 msgstr "``selectById`` メソッドでは、以下の SELECT ステートメントが必要になります。"
 
-#: ../../aggregate-strategy.rst:136
+#: ../../aggregate-strategy.rst:137
+msgid "The SELECT list must include the IDs of all entities that form the aggregate."
+msgstr "SELECTリストにはアグリゲートを形成するすべてのエンティティのIDを含める必要があります。"
+
+#: ../../aggregate-strategy.rst:140
 msgid "Column aliasing rules"
 msgstr "カラムエイリアスのルール"
 
-#: ../../aggregate-strategy.rst:138
+#: ../../aggregate-strategy.rst:142
 msgid "The table aliases must match those defined in ``DepartmentAggregateStrategy``."
 msgstr "テーブルエイリアスは ``DepartmentAggregateStrategy`` で定義されているものと一致する必要があります。"
 
-#: ../../aggregate-strategy.rst:139
+#: ../../aggregate-strategy.rst:143
 msgid "Column aliases must be prefixed with the table alias followed by an underscore (``_``). For example, ``d.id`` is aliased as ``d_id`` and ``e.id`` as ``e_id``."
 msgstr "カラムのエイリアスは、テーブルのエイリアスにアンダースコア（``_``）を付けた形式で指定する必要があります。例えば、``d.id`` は ``d_id``、``e.id`` は ``e_id`` としてエイリアスされます。"
 
-#: ../../aggregate-strategy.rst:143
+#: ../../aggregate-strategy.rst:147
 msgid "Using the expansion directive"
 msgstr "選択カラムリスト展開ディレクティブの使用"
 
-#: ../../aggregate-strategy.rst:145
+#: ../../aggregate-strategy.rst:149
 msgid "By using the :ref:`expansion directive <expand>`, the above SELECT statement can be written more concisely:"
-msgstr ":ref:`expansion ディレクティブ <expand>`を使用することで、上記のSELECT文をより簡潔に記述することができます。"
+msgstr ":ref:`カラムリスト展開ディレクティブ <expand>` を使用することで、上記のSELECT文をより簡潔に記述することができます。"
 
-#: ../../aggregate-strategy.rst:162
+#: ../../aggregate-strategy.rst:166
 msgid "How expansion works"
 msgstr "カラムリスト展開の仕組み"
 
-#: ../../aggregate-strategy.rst:164
+#: ../../aggregate-strategy.rst:168
 msgid "The ``/*%expand */*`` directive automatically expands into a column list using predefined aliasing rules."
 msgstr "``/*%expand */*`` ディレクティブは、あらかじめ定義されたエイリアスルールを使用して列リストに自動的に展開します。"
 
-#: ../../aggregate-strategy.rst:165
+#: ../../aggregate-strategy.rst:169
 msgid "By default, all columns from all tables are included in the result set."
 msgstr "デフォルトでは、すべてのテーブルのすべての列が結果セットに含まれます。"
 
-#: ../../aggregate-strategy.rst:167
+#: ../../aggregate-strategy.rst:171
 msgid "To selectively expand only specific tables, pass a comma-separated list of table aliases:"
 msgstr "特定のテーブルのみを選択的に展開するには、テーブルエイリアスのカンマ区切りリストを渡します。"
 
-#: ../../aggregate-strategy.rst:184
+#: ../../aggregate-strategy.rst:188
 msgid "Here, only columns from tables ``e`` (``employee``) and ``d`` (``department``) are expanded."
 msgstr "ここでは、テーブルの ``e`` (``employee``) と ``d`` (``department``) のカラムのみが展開されます。"
 
-#: ../../aggregate-strategy.rst:185
+#: ../../aggregate-strategy.rst:189
 msgid "The columns from table ``a`` (``address``) are explicitly specified."
 msgstr "テーブル ``a`` (``address``) の列は明示的に指定されています。"
 
