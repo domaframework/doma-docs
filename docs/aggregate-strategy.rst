@@ -124,13 +124,13 @@ For the ``selectById`` method, the following SELECT statement is required:
         e.department_id as e_department_id,
         e.address_id as e_address_id
     from
-        dept d
-    left outer join emp e
-        on d.dept_id = e.dept_id
-    left outer join address a
-        on e.address_id = a.address_id
+        department d
+        left outer join
+        employee e on (d.id = e.department_id)
+        left outer join
+        address a on (e.address_id = a.id)
     where
-        d.dept_id = /* deptId */0
+        d.id = /* id */0
 
 .. note::
 
