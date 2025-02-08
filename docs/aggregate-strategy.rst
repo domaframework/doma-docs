@@ -26,8 +26,8 @@ This annotation is used to define how an entity aggregate is reconstructed from 
 - The ``tableAlias`` element specifies the alias for the table corresponding to the root entity class.
   This alias must be used in the SELECT statement to correctly map query results to entity properties.
 
-Annotation linker definition
-=============================
+Association linker definition
+===============================
 
 An aggregate strategy must contain at least one field of type ``BiFunction`` annotated with ``@AssociationLinker``.
 The ``BiFunction`` is responsible for dynamically associating two entity instances.
