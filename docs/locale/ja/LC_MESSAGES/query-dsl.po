@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 12:21+0900\n"
+"POT-Creation-Date: 2024-12-29 00:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -120,15 +120,15 @@ msgid "We support the following settings:"
 msgstr "次の設定をサポートしています。"
 
 #: ../../query-dsl.rst:171
-#: ../../query-dsl.rst:1085
-#: ../../query-dsl.rst:1381
+#: ../../query-dsl.rst:1133
+#: ../../query-dsl.rst:1429
 msgid "allowEmptyWhere"
 msgstr ""
 
 #: ../../query-dsl.rst:172
-#: ../../query-dsl.rst:1087
-#: ../../query-dsl.rst:1173
-#: ../../query-dsl.rst:1383
+#: ../../query-dsl.rst:1135
+#: ../../query-dsl.rst:1221
+#: ../../query-dsl.rst:1431
 msgid "comment"
 msgstr ""
 
@@ -141,23 +141,23 @@ msgid "maxRows"
 msgstr ""
 
 #: ../../query-dsl.rst:175
-#: ../../query-dsl.rst:1089
-#: ../../query-dsl.rst:1174
-#: ../../query-dsl.rst:1385
+#: ../../query-dsl.rst:1137
+#: ../../query-dsl.rst:1222
+#: ../../query-dsl.rst:1433
 msgid "queryTimeout"
 msgstr ""
 
 #: ../../query-dsl.rst:176
-#: ../../query-dsl.rst:1090
-#: ../../query-dsl.rst:1175
-#: ../../query-dsl.rst:1386
+#: ../../query-dsl.rst:1138
+#: ../../query-dsl.rst:1223
+#: ../../query-dsl.rst:1434
 msgid "sqlLogType"
 msgstr ""
 
 #: ../../query-dsl.rst:178
-#: ../../query-dsl.rst:1093
-#: ../../query-dsl.rst:1182
-#: ../../query-dsl.rst:1392
+#: ../../query-dsl.rst:1141
+#: ../../query-dsl.rst:1230
+#: ../../query-dsl.rst:1440
 msgid "All are optional and can be applied as follows:"
 msgstr "すべてオプションで、以下のように適用できます。"
 
@@ -278,22 +278,22 @@ msgstr "カラムを選択するには、``select`` を使用します。1つの
 #: ../../query-dsl.rst:916
 #: ../../query-dsl.rst:976
 #: ../../query-dsl.rst:1053
-#: ../../query-dsl.rst:1126
-#: ../../query-dsl.rst:1153
-#: ../../query-dsl.rst:1229
-#: ../../query-dsl.rst:1252
-#: ../../query-dsl.rst:1302
-#: ../../query-dsl.rst:1324
-#: ../../query-dsl.rst:1438
-#: ../../query-dsl.rst:1475
-#: ../../query-dsl.rst:1511
-#: ../../query-dsl.rst:1540
-#: ../../query-dsl.rst:1561
-#: ../../query-dsl.rst:1594
-#: ../../query-dsl.rst:1630
-#: ../../query-dsl.rst:1674
-#: ../../query-dsl.rst:1709
-#: ../../query-dsl.rst:1785
+#: ../../query-dsl.rst:1174
+#: ../../query-dsl.rst:1201
+#: ../../query-dsl.rst:1277
+#: ../../query-dsl.rst:1300
+#: ../../query-dsl.rst:1350
+#: ../../query-dsl.rst:1372
+#: ../../query-dsl.rst:1486
+#: ../../query-dsl.rst:1523
+#: ../../query-dsl.rst:1559
+#: ../../query-dsl.rst:1588
+#: ../../query-dsl.rst:1609
+#: ../../query-dsl.rst:1642
+#: ../../query-dsl.rst:1678
+#: ../../query-dsl.rst:1722
+#: ../../query-dsl.rst:1757
+#: ../../query-dsl.rst:1847
 msgid "This generates:"
 msgstr "このクエリは次のように生成されます。"
 
@@ -717,448 +717,472 @@ msgid "A subquery using a derived table can be written as follows:"
 msgstr "派生テーブルを使用したサブクエリは次のように記述できます。"
 
 #: ../../query-dsl.rst:1076
-msgid "Delete Statement"
+msgid "Common Table Expression"
 msgstr ""
 
 #: ../../query-dsl.rst:1078
-msgid "The delete statement follows the same rules as the :ref:`query_dsl_where`."
-msgstr "DELETEステートメントは、 :ref:`query_dsl_where` と同じルールに従います。"
-
-#: ../../query-dsl.rst:1081
-msgid "Delete Settings"
+msgid "Common Table Expressions (CTEs) are supported. To use a CTE, a corresponding entity class must be defined."
 msgstr ""
 
-#: ../../query-dsl.rst:1083
-#: ../../query-dsl.rst:1379
-msgid "The following settings are supported:"
-msgstr "次の設定がサポートされています。"
-
-#: ../../query-dsl.rst:1086
-#: ../../query-dsl.rst:1176
-#: ../../query-dsl.rst:1382
-msgid "batchSize"
+#: ../../query-dsl.rst:1081
+msgid "Define the entity class for the CTE as follows:"
 msgstr ""
 
 #: ../../query-dsl.rst:1088
-#: ../../query-dsl.rst:1384
+msgid "A query using the CTE can be written as follows:"
+msgstr ""
+
+#: ../../query-dsl.rst:1106
+msgid "The above query generates the following SQL:"
+msgstr ""
+
+#: ../../query-dsl.rst:1124
+msgid "Delete Statement"
+msgstr ""
+
+#: ../../query-dsl.rst:1126
+msgid "The delete statement follows the same rules as the :ref:`query_dsl_where`."
+msgstr "DELETEステートメントは、 :ref:`query_dsl_where` と同じルールに従います。"
+
+#: ../../query-dsl.rst:1129
+msgid "Delete Settings"
+msgstr ""
+
+#: ../../query-dsl.rst:1131
+#: ../../query-dsl.rst:1427
+msgid "The following settings are supported:"
+msgstr "次の設定がサポートされています。"
+
+#: ../../query-dsl.rst:1134
+#: ../../query-dsl.rst:1224
+#: ../../query-dsl.rst:1430
+msgid "batchSize"
+msgstr ""
+
+#: ../../query-dsl.rst:1136
+#: ../../query-dsl.rst:1432
 msgid "ignoreVersion"
 msgstr ""
 
-#: ../../query-dsl.rst:1091
-#: ../../query-dsl.rst:1387
+#: ../../query-dsl.rst:1139
+#: ../../query-dsl.rst:1435
 msgid "suppressOptimisticLockException"
 msgstr ""
 
-#: ../../query-dsl.rst:1113
+#: ../../query-dsl.rst:1161
 msgid "To allow a delete statement with an empty WHERE clause, enable the `allowEmptyWhere` setting."
 msgstr "空のWHERE句でDELETEステートメントを許可するには、`allowEmptyWhere`設定を有効にしてください。"
 
-#: ../../query-dsl.rst:1116
+#: ../../query-dsl.rst:1164
 msgid "Delete Record by Entity"
 msgstr ""
 
-#: ../../query-dsl.rst:1132
+#: ../../query-dsl.rst:1180
 msgid "Batch Delete is also supported:"
 msgstr "バッチ削除もサポートされています。"
 
-#: ../../query-dsl.rst:1140
+#: ../../query-dsl.rst:1188
 msgid "Exceptions thrown by the execute method include:"
 msgstr "execute メソッドによって投げられる例外は次のとおりです。"
 
-#: ../../query-dsl.rst:1142
+#: ../../query-dsl.rst:1190
 msgid "OptimisticLockException: if the entity has a version property and an update count is 0"
 msgstr "OptimisticLockException: エンティティにバージョンプロパティがあり、更新件数が 0 の場合"
 
-#: ../../query-dsl.rst:1145
+#: ../../query-dsl.rst:1193
 msgid "Delete Records by Where Expression"
 msgstr ""
 
-#: ../../query-dsl.rst:1147
+#: ../../query-dsl.rst:1195
 msgid "To delete by a condition:"
 msgstr "条件で削除するには次のようにします。"
 
-#: ../../query-dsl.rst:1159
+#: ../../query-dsl.rst:1207
 msgid "To delete all records, use the ``all`` method:"
 msgstr "すべてのレコードを削除するには、``all`` メソッドを使用します。"
 
-#: ../../query-dsl.rst:1166
+#: ../../query-dsl.rst:1214
 msgid "Insert Statement"
 msgstr ""
 
-#: ../../query-dsl.rst:1169
+#: ../../query-dsl.rst:1217
 msgid "Insert Settings"
 msgstr ""
 
-#: ../../query-dsl.rst:1171
+#: ../../query-dsl.rst:1219
 msgid "Supported insert settings include:"
 msgstr "サポートされている追加の設定は次のとおりです:"
 
-#: ../../query-dsl.rst:1177
-#: ../../query-dsl.rst:1388
+#: ../../query-dsl.rst:1225
+#: ../../query-dsl.rst:1436
 msgid "excludeNull"
 msgstr ""
 
-#: ../../query-dsl.rst:1178
-#: ../../query-dsl.rst:1389
+#: ../../query-dsl.rst:1226
+#: ../../query-dsl.rst:1437
 msgid "include"
 msgstr ""
 
-#: ../../query-dsl.rst:1179
-#: ../../query-dsl.rst:1390
+#: ../../query-dsl.rst:1227
+#: ../../query-dsl.rst:1438
 msgid "exclude"
 msgstr ""
 
-#: ../../query-dsl.rst:1180
+#: ../../query-dsl.rst:1228
 msgid "ignoreGeneratedKeys"
 msgstr ""
 
-#: ../../query-dsl.rst:1204
+#: ../../query-dsl.rst:1252
 msgid "You can specify excluded columns:"
 msgstr "除外するカラムを指定できます。"
 
-#: ../../query-dsl.rst:1215
+#: ../../query-dsl.rst:1263
 msgid "Insert Record with Entity"
 msgstr ""
 
-#: ../../query-dsl.rst:1217
+#: ../../query-dsl.rst:1265
 msgid "Inserting a single entity:"
 msgstr "単一のエンティティの追加:"
 
-#: ../../query-dsl.rst:1236
+#: ../../query-dsl.rst:1284
 msgid "Batch Insert is also supported:"
 msgstr "バッチ追加もサポートされています。"
 
-#: ../../query-dsl.rst:1246
+#: ../../query-dsl.rst:1294
 msgid "Multi-row Insert is also supported:"
 msgstr "複数行追加もサポートされています。"
 
-#: ../../query-dsl.rst:1259
+#: ../../query-dsl.rst:1307
 msgid "Upsert is supported as well, with options to handle duplicate keys:"
 msgstr "Upsert もサポートされており、重複キーを処理するオプションがあります。"
 
-#: ../../query-dsl.rst:1261
+#: ../../query-dsl.rst:1309
 msgid "To update on duplicate key:"
 msgstr "重複キーがあった場合に更新するには次のようにします。"
 
-#: ../../query-dsl.rst:1271
+#: ../../query-dsl.rst:1319
 msgid "To ignore duplicates:"
 msgstr "重複を無視するには次のようにします。"
 
-#: ../../query-dsl.rst:1281
+#: ../../query-dsl.rst:1329
 msgid "Exceptions include:"
 msgstr "スローされる可能性のある例外は次のとおりです。"
 
-#: ../../query-dsl.rst:1283
-#: ../../query-dsl.rst:1311
+#: ../../query-dsl.rst:1331
+#: ../../query-dsl.rst:1359
 msgid "UniqueConstraintException: if a unique constraint is violated."
 msgstr "UniqueConstraintException: 一意制約に違反した場合."
 
-#: ../../query-dsl.rst:1286
+#: ../../query-dsl.rst:1334
 msgid "Insert Record with Specified Values"
 msgstr ""
 
-#: ../../query-dsl.rst:1288
+#: ../../query-dsl.rst:1336
 msgid "Inserting records by specifying values:"
 msgstr "値を指定してレコードを追加するには次のようにします。"
 
-#: ../../query-dsl.rst:1309
+#: ../../query-dsl.rst:1357
 msgid "Unique constraints may throw:"
 msgstr "ユニーク制約違反があると次の例外がスローされます"
 
-#: ../../query-dsl.rst:1313
+#: ../../query-dsl.rst:1361
 msgid "We also support the INSERT SELECT syntax:"
 msgstr "INSERT SELECT 構文もサポートしています。"
 
-#: ../../query-dsl.rst:1332
+#: ../../query-dsl.rst:1380
 msgid "For upserts, specify keys and update values on duplicates:"
 msgstr "UPSERTの場合は、キーと重複時に更新する値を指定します。"
 
-#: ../../query-dsl.rst:1354
+#: ../../query-dsl.rst:1402
 msgid "To ignore duplicates and specify keys:"
 msgstr "重複を無視する際のキーを指定するには次のようにします。"
 
-#: ../../query-dsl.rst:1372
+#: ../../query-dsl.rst:1420
 msgid "Update Statement"
 msgstr ""
 
-#: ../../query-dsl.rst:1374
+#: ../../query-dsl.rst:1422
 msgid "The update statement follows the same specifications as the :ref:`query_dsl_where`."
 msgstr "UPDATEステートメントは、 :ref:`query_dsl_where` と同じルールに従います。"
 
-#: ../../query-dsl.rst:1377
+#: ../../query-dsl.rst:1425
 msgid "Update Settings"
 msgstr ""
 
-#: ../../query-dsl.rst:1411
+#: ../../query-dsl.rst:1459
 msgid "You can also specify excluded columns:"
 msgstr "除外するカラムを指定することもできます。"
 
-#: ../../query-dsl.rst:1423
+#: ../../query-dsl.rst:1471
 msgid "To perform an update without a WHERE clause, enable the `allowEmptyWhere` setting."
 msgstr "WHERE句なしで更新を実行するには、`allowEmptyWhere`の設定を有効にしてください。"
 
-#: ../../query-dsl.rst:1426
+#: ../../query-dsl.rst:1474
 msgid "Update Record by Entity"
 msgstr ""
 
-#: ../../query-dsl.rst:1428
+#: ../../query-dsl.rst:1476
 msgid "Updating a single entity:"
 msgstr "単一のエンティティを更新するには次のようにします。"
 
-#: ../../query-dsl.rst:1445
+#: ../../query-dsl.rst:1493
 msgid "Batch Update is also supported:"
 msgstr "バッチ更新もサポートされています。"
 
-#: ../../query-dsl.rst:1455
+#: ../../query-dsl.rst:1503
 msgid "Exceptions from the execute method may include:"
 msgstr "execute メソッドによって投げられる例外は次のとおりです。"
 
-#: ../../query-dsl.rst:1457
+#: ../../query-dsl.rst:1505
 msgid "OptimisticLockException: if the entity has a version property and the update count is 0"
 msgstr "OptimisticLockException: エンティティにバージョンプロパティがあり、更新件数が 0 の場合"
 
-#: ../../query-dsl.rst:1458
-#: ../../query-dsl.rst:1484
+#: ../../query-dsl.rst:1506
+#: ../../query-dsl.rst:1532
 msgid "UniqueConstraintException: if a unique constraint is violated"
 msgstr "UniqueConstraintException: 一意制約に違反した場合"
 
-#: ../../query-dsl.rst:1461
+#: ../../query-dsl.rst:1509
 msgid "Update Records by Where Expression"
 msgstr ""
 
-#: ../../query-dsl.rst:1463
+#: ../../query-dsl.rst:1511
 msgid "To update records based on a condition:"
 msgstr "条件に基づいてレコードを更新するには次のようにします。"
 
-#: ../../query-dsl.rst:1482
+#: ../../query-dsl.rst:1530
 msgid "Exceptions may include:"
 msgstr "例外には以下のものがあります。"
 
-#: ../../query-dsl.rst:1487
+#: ../../query-dsl.rst:1535
 msgid "Property Expressions"
 msgstr ""
 
-#: ../../query-dsl.rst:1489
+#: ../../query-dsl.rst:1537
 msgid "All property expression methods are in the ``org.seasar.doma.jdbc.criteria.expression.Expressions`` class and can be used with static imports."
 msgstr "すべてのプロパティ式メソッドは ``org.seasar.doma.jdbc.criteria.expressions.Expressions`` クラスにあり、静的なインポートで使用できます。"
 
-#: ../../query-dsl.rst:1492
+#: ../../query-dsl.rst:1540
 msgid "Arithmetic Expressions"
 msgstr ""
 
-#: ../../query-dsl.rst:1494
+#: ../../query-dsl.rst:1542
 msgid "The following methods are available for arithmetic expressions:"
 msgstr "算術式には以下のメソッドがあります。"
 
-#: ../../query-dsl.rst:1496
+#: ../../query-dsl.rst:1544
 msgid "add - (+)"
 msgstr ""
 
-#: ../../query-dsl.rst:1497
+#: ../../query-dsl.rst:1545
 msgid "sub - (-)"
 msgstr ""
 
-#: ../../query-dsl.rst:1498
+#: ../../query-dsl.rst:1546
 msgid "mul - (*)"
 msgstr ""
 
-#: ../../query-dsl.rst:1499
+#: ../../query-dsl.rst:1547
 msgid "div - (/)"
 msgstr ""
 
-#: ../../query-dsl.rst:1500
+#: ../../query-dsl.rst:1548
 msgid "mod - (%)"
 msgstr ""
 
-#: ../../query-dsl.rst:1502
+#: ../../query-dsl.rst:1550
 msgid "Example of using the ``add`` method:"
 msgstr "``add`` メソッドを使用する例です。"
 
-#: ../../query-dsl.rst:1520
+#: ../../query-dsl.rst:1568
 msgid "String Functions"
 msgstr ""
 
-#: ../../query-dsl.rst:1522
+#: ../../query-dsl.rst:1570
 msgid "The following string functions are provided:"
 msgstr "次の文字列関数が提供されます。"
 
-#: ../../query-dsl.rst:1524
+#: ../../query-dsl.rst:1572
 msgid "concat"
 msgstr ""
 
-#: ../../query-dsl.rst:1525
+#: ../../query-dsl.rst:1573
 msgid "lower"
 msgstr ""
 
-#: ../../query-dsl.rst:1526
+#: ../../query-dsl.rst:1574
 msgid "upper"
 msgstr ""
 
-#: ../../query-dsl.rst:1527
+#: ../../query-dsl.rst:1575
 msgid "trim"
 msgstr ""
 
-#: ../../query-dsl.rst:1528
+#: ../../query-dsl.rst:1576
 msgid "ltrim"
 msgstr ""
 
-#: ../../query-dsl.rst:1529
+#: ../../query-dsl.rst:1577
 msgid "rtrim"
 msgstr ""
 
-#: ../../query-dsl.rst:1531
+#: ../../query-dsl.rst:1579
 msgid "Example using ``concat``:"
 msgstr "``concat`` を使用した例です。"
 
-#: ../../query-dsl.rst:1549
+#: ../../query-dsl.rst:1597
 msgid "Literal Expression"
 msgstr ""
 
-#: ../../query-dsl.rst:1551
+#: ../../query-dsl.rst:1599
 msgid "The ``literal`` method supports all basic data types."
 msgstr "``literal`` メソッドはすべての基本データ型をサポートしています。"
 
-#: ../../query-dsl.rst:1553
+#: ../../query-dsl.rst:1601
 msgid "Example of using ``literal``:"
 msgstr "``literal`` を使用する例です。"
 
-#: ../../query-dsl.rst:1572
+#: ../../query-dsl.rst:1620
 msgid "Literal expressions are not recognized as bind variables."
 msgstr "literal式はバインド変数として認識されません。"
 
-#: ../../query-dsl.rst:1575
+#: ../../query-dsl.rst:1623
 msgid "Case Expression"
 msgstr ""
 
-#: ../../query-dsl.rst:1577
+#: ../../query-dsl.rst:1625
 msgid "The following method is supported for case expressions:"
 msgstr "以下のメソッドがcase式でサポートされています。"
 
-#: ../../query-dsl.rst:1579
+#: ../../query-dsl.rst:1627
 msgid "when"
 msgstr ""
 
-#: ../../query-dsl.rst:1581
+#: ../../query-dsl.rst:1629
 msgid "Example of using ``when``:"
 msgstr "``when`` を使用する例は次のとおりです。"
 
-#: ../../query-dsl.rst:1605
+#: ../../query-dsl.rst:1653
 msgid "Subquery Select Expression"
 msgstr ""
 
-#: ../../query-dsl.rst:1607
+#: ../../query-dsl.rst:1655
 msgid "The ``select`` method supports subquery select expressions."
 msgstr "``select`` メソッドはサブクエリのselect式をサポートします。"
 
-#: ../../query-dsl.rst:1609
+#: ../../query-dsl.rst:1657
 msgid "Example usage:"
 msgstr "使用例です。"
 
-#: ../../query-dsl.rst:1645
+#: ../../query-dsl.rst:1693
 msgid "User-Defined Expressions"
 msgstr ""
 
-#: ../../query-dsl.rst:1647
+#: ../../query-dsl.rst:1695
 msgid "You can define user-defined expressions using ``Expressions.userDefined``."
 msgstr "``Expressions.userDefined`` を利用することで、ユーザー定義の式を定義できます。"
 
-#: ../../query-dsl.rst:1649
+#: ../../query-dsl.rst:1697
 msgid "Example of defining a custom ``replace`` function:"
 msgstr "カスタムの ``replace`` 関数を定義する例です。"
 
-#: ../../query-dsl.rst:1665
+#: ../../query-dsl.rst:1713
 msgid "Using the custom ``replace`` function in a query:"
 msgstr "クエリでカスタムの ``replace`` 関数を使用します。"
 
-#: ../../query-dsl.rst:1681
+#: ../../query-dsl.rst:1729
 msgid "Scopes"
 msgstr ""
 
-#: ../../query-dsl.rst:1683
+#: ../../query-dsl.rst:1731
 msgid "Scopes allow you to specify commonly-used query conditions."
 msgstr "スコープを使用すると、よく使用されるクエリ条件を指定できます。"
 
-#: ../../query-dsl.rst:1685
+#: ../../query-dsl.rst:1733
 msgid "To define a scope, create a class with a method annotated with ``@Scope``:"
 msgstr "スコープを定義するには、 ``@Scope`` で注釈されたメソッドを持つクラスを作成します。"
 
-#: ../../query-dsl.rst:1696
+#: ../../query-dsl.rst:1744
 msgid "To enable the scope, specify the scope class in the ``scopes`` element of ``@Metamodel``:"
 msgstr "スコープを有効にするには、``@Metamodel`` の ``scopes`` 要素にスコープクラスを指定します。"
 
-#: ../../query-dsl.rst:1703
+#: ../../query-dsl.rst:1751
 msgid "Now ``Department_`` includes the ``onlyTokyo`` method, which can be used as follows:"
 msgstr "``Department_`` には ``onlyTokyo`` メソッドが含まれています。このメソッドは以下のように使用できます。"
 
-#: ../../query-dsl.rst:1716
+#: ../../query-dsl.rst:1764
 msgid "To combine other query conditions with scopes, use the ``andThen`` method:"
 msgstr ""
 
-#: ../../query-dsl.rst:1725
+#: ../../query-dsl.rst:1773
 msgid "Defining multiple scopes within a class:"
 msgstr "クラス内で複数のスコープを定義する:"
 
-#: ../../query-dsl.rst:1747
+#: ../../query-dsl.rst:1795
 msgid "Tips"
 msgstr ""
 
-#: ../../query-dsl.rst:1750
+#: ../../query-dsl.rst:1798
 msgid "Execution in DAO"
 msgstr ""
 
-#: ../../query-dsl.rst:1752
+#: ../../query-dsl.rst:1800
 msgid "It can be useful to execute DSLs within a default method of the DAO interface. To obtain a ``config`` object, call ``Config.get(this)`` within the default method:"
 msgstr "DAOインタフェースのデフォルトメソッド内でDSLを実行すると便利です。 ``config`` オブジェクトを取得するには、デフォルトメソッド内で ``Config.get(this)`` を呼び出します。"
 
-#: ../../query-dsl.rst:1769
+#: ../../query-dsl.rst:1816
+msgid "You can also use ``QueryDsl.of(this)`` as a shortcut for ``new QueryDsl(Config.get(this))``."
+msgstr ""
+
+#: ../../query-dsl.rst:1831
 msgid "Overwriting the Table Name"
 msgstr ""
 
-#: ../../query-dsl.rst:1771
+#: ../../query-dsl.rst:1833
 msgid "A metamodel constructor can accept a qualified table name, which allows the metamodel to overwrite its default table name."
 msgstr "メタモデルのコンストラクタは修飾されたテーブル名を受け付けることができます。これにより、デフォルトのテーブル名を上書きできます。"
 
-#: ../../query-dsl.rst:1773
+#: ../../query-dsl.rst:1835
 msgid "This feature is useful for working with two tables that share the same structure:"
 msgstr "この機能は、同じ構造を共有する2つのテーブルを扱う場合に便利です。"
 
-#: ../../query-dsl.rst:1794
+#: ../../query-dsl.rst:1856
 msgid "Debugging"
 msgstr ""
 
-#: ../../query-dsl.rst:1796
+#: ../../query-dsl.rst:1858
 msgid "To inspect the SQL statement generated by DSLs, use the ``asSql`` method:"
 msgstr "DSL によって生成された SQL ステートメントを調べるには、``asSql`` メソッドを使用します。"
 
-#: ../../query-dsl.rst:1808
+#: ../../query-dsl.rst:1870
 msgid "The code above outputs the following:"
 msgstr "上記のコードは以下を出力します。"
 
-#: ../../query-dsl.rst:1815
+#: ../../query-dsl.rst:1877
 msgid "The ``asSql`` method does not execute the SQL statement against the database; it only builds the SQL statement and returns it as an ``Sql`` object."
 msgstr "``asSql`` メソッドはSQLステートメントをデータベースに対して実行しません。SQLステートメントのみを構築し、``Sql`` オブジェクトとして返します。"
 
-#: ../../query-dsl.rst:1817
+#: ../../query-dsl.rst:1879
 msgid "You can also obtain the ``Sql`` object by using the ``peek`` method:"
 msgstr "``peek`` メソッドを使用して ``Sql`` オブジェクトを取得することもできます。"
 
-#: ../../query-dsl.rst:1832
+#: ../../query-dsl.rst:1894
 msgid "The code above outputs SQL statements at various stages of the query:"
 msgstr "上記のコードは、クエリの様々な段階で SQL ステートメントを出力します。"
 
-#: ../../query-dsl.rst:1842
+#: ../../query-dsl.rst:1904
 msgid "Sample Projects"
 msgstr ""
 
-#: ../../query-dsl.rst:1844
+#: ../../query-dsl.rst:1906
 msgid "You can refer to the following sample projects for additional guidance:"
 msgstr "追加のガイダンスについては、以下のサンプルプロジェクトを参照してください。"
 
-#: ../../query-dsl.rst:1846
+#: ../../query-dsl.rst:1908
 msgid "`simple-examples <https://github.com/domaframework/simple-examples>`_"
 msgstr ""
 
-#: ../../query-dsl.rst:1847
+#: ../../query-dsl.rst:1909
 msgid "`kotlin-sample <https://github.com/domaframework/kotlin-sample>`_"
 msgstr ""
 

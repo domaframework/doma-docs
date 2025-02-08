@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 19:09+0900\n"
+"POT-Creation-Date: 2025-01-18 21:46+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgid "Return a JDBC ``DataSource`` from the ``getDataSource`` method. If you ne
 msgstr "``getDataSource`` メソッドから JDBC ``DataSource`` を返します。 Doma が提供するローカル トランザクションが必要な場合は、 ``LocalTransactionDataSource`` を返します。"
 
 #: ../../config.rst:20
-#: ../../config.rst:167
+#: ../../config.rst:177
 msgid "See also: :doc:`transaction`"
 msgstr ":doc:`transaction` も参照してください。"
 
@@ -285,210 +285,290 @@ msgid "Return a ``SqlLogType`` from the ``getExceptionSqlLogType``. The default 
 msgstr "``getExceptionSqlLogType`` から ``SqlLogType`` を返します。デフォルトの ``SqlLogType`` を使うと、フォーマットされた SQLが例外メッセージに含まれます。"
 
 #: ../../config.rst:135
+msgid "Handling duplicate columns"
+msgstr ""
+
+#: ../../config.rst:137
+msgid "Return a ``DuplicateColumnHandler`` from the ``getDuplicateColumnHandler`` method. In result set mappings, if a duplicate column for an entity class is found, the ``DuplicateColumnHandler`` handles the situation."
+msgstr ""
+
+#: ../../config.rst:141
+msgid "The default ``DuplicateColumnHandler`` does nothing. To throw a ``DuplicateColumnException``, return a ``ThrowingDuplicateColumnHandler``."
+msgstr ""
+
+#: ../../config.rst:145
 msgid "Handling unknown columns"
 msgstr "不明なカラムのハンドリング"
 
-#: ../../config.rst:137
+#: ../../config.rst:147
 msgid "Return a ``UnknownColumnHandler`` from the ``getUnknownColumnHandler`` method. In result set mappings, if an unknown column to an entity class is found, the UnknownColumnHandler handles the situation."
 msgstr "``getUnknownColumnHandler`` メソッドから ``UnknownColumnHandler`` を返します。結果セットのマッピング処理で、エンティティクラスのプロパティに対応しないカラムが見つかった場合、``UnknownColumnHandler`` によってハンドリングが行われます。"
 
-#: ../../config.rst:141
+#: ../../config.rst:151
 msgid "The default UnknownColumnHandler throws an ``UnknownColumnException``."
 msgstr "デフォルトの ``UnknownColumnHandle``r は ``UnknownColumnException`` をスローします。"
 
-#: ../../config.rst:144
+#: ../../config.rst:154
 msgid "Naming convention for tables and columns"
 msgstr "テーブルとカラムの命名規則"
 
-#: ../../config.rst:146
+#: ../../config.rst:156
 msgid "Return a ``Naming`` from the ``getNaming`` method. The naming element of ``@Entity`` have preference over this value. When you specify explicit value to the name elements of ``@Table`` and ``@Column``, the naming convention is not applied to them."
 msgstr "``getNaming`` メソッドから ``Naming`` を返します。 ``@Entity`` の `naming` 要素は、この値よりも優先されます。 ``@Table`` と ``@Column`` の ``name`` 要素に明示的な値を指定すると、命名規則は適用されません。"
 
-#: ../../config.rst:151
+#: ../../config.rst:161
 msgid "The default Naming does nothing."
 msgstr "デフォルトの ``Naming`` は何も行いません。"
 
-#: ../../config.rst:154
+#: ../../config.rst:164
 msgid "Naming convention for keys of java.util.Map"
 msgstr "java.util.Map のキーの命名規則"
 
-#: ../../config.rst:156
+#: ../../config.rst:166
 msgid "Return a ``MapKeyNaming`` from the ``getMapKeyNaming`` method. The MapKeyNaming is used when the result set is mapped to ``java.util.Map<String, Object>``."
 msgstr "``getMapKeyNaming`` メソッドから ``MapKeyNaming`` を返します。 ``MapKeyNaming`` は、結果セットが ``java.util.Map<String, Object>`` にマップされるときに使用されます。"
 
-#: ../../config.rst:159
+#: ../../config.rst:169
 msgid "The default MapKeyNaming does nothing."
 msgstr "デフォルトの ``MapKeyNaming`` は何も行いません。"
 
-#: ../../config.rst:162
+#: ../../config.rst:172
 msgid "Local transaction manager"
 msgstr "ローカルトランザクションマネージャ"
 
-#: ../../config.rst:164
+#: ../../config.rst:174
 msgid "Return a ``LocalTransactionManager`` from the ``getTransactionManager`` method. The ``getTransactionManager`` method throws ``UnsupportedOperationException`` as default."
 msgstr "``getTransactionManager`` メソッドから ``LocalTransactionManager`` を返します。 ``getTransactionManager`` メソッドはデフォルトとして ``UnsupportedOperationException`` をスローします。"
 
-#: ../../config.rst:170
+#: ../../config.rst:180
 msgid "Adding SQL identifiers to the SQLs as a comment"
 msgstr "SQL にコメントを追加する"
 
-#: ../../config.rst:172
+#: ../../config.rst:182
 msgid "Return a ``Commenter`` from the ``getCommenter`` method."
 msgstr "``getCommenter`` メソッドから ``Commenter`` を返します。"
 
-#: ../../config.rst:174
+#: ../../config.rst:184
 msgid "Doma provides following commenter:"
 msgstr "Doma は次のような ```Commenter`` を提供します。"
 
-#: ../../config.rst:176
+#: ../../config.rst:186
 msgid "org.seasar.doma.jdbc.CallerCommenter"
 msgstr ""
 
-#: ../../config.rst:178
+#: ../../config.rst:188
 msgid "The default Commenter does nothing."
 msgstr "デフォルトの ``Commenter`` は何も行いません。"
 
-#: ../../config.rst:181
+#: ../../config.rst:191
 msgid "Command implementors"
 msgstr ""
 
-#: ../../config.rst:183
+#: ../../config.rst:193
 msgid "Return a ``CommandImplementors`` from the ``getCommandImplementors`` method. For example, the CommandImplementors provides you a hook to execute JDBC API."
 msgstr "``getCommandImplementors`` メソッドから ``CommandImplementors`` を返します。たとえば、``CommandImplementors`` は、JDBC API を実行するためのフックを提供します。"
 
-#: ../../config.rst:187
+#: ../../config.rst:197
 msgid "Query implementors"
 msgstr ""
 
-#: ../../config.rst:189
+#: ../../config.rst:199
 msgid "Return a ``QueryImplementors`` from the ``getQueryImplementors`` method. For example, the QueryImplementors provides you a hook to rewrite SQL statements."
 msgstr "``getQueryImplementors`` メソッドから ``QueryImplementors`` を返します。たとえば、``QueryImplementors`` は、SQL ステートメントを書き直すためのフックを提供します。"
 
-#: ../../config.rst:193
+#: ../../config.rst:203
 msgid "Query timeout"
 msgstr "クエリタイムアウト"
 
-#: ../../config.rst:195
+#: ../../config.rst:205
 msgid "Return the query timeout (second) from the ``getQueryTimeout`` method. This value is used as default in :doc:`query/index`."
 msgstr "``getQueryTimeout`` メソッドからクエリタイムアウト (秒) を返します。この値は、:doc:`query/index` でデフォルトの値として使用されます。"
 
-#: ../../config.rst:199
+#: ../../config.rst:209
 msgid "Max rows"
 msgstr "最大行数"
 
-#: ../../config.rst:201
+#: ../../config.rst:211
 msgid "Return the max rows from the ``getMaxRows`` method. This value is used as default in :doc:`query/select`."
 msgstr "``getMaxRows`` メソッドから最大行数を返します。この値は :doc:`query/select` でデフォルトの値として使用されます。"
 
-#: ../../config.rst:205
+#: ../../config.rst:215
 msgid "Fetch size"
 msgstr "フェッチサイズ"
 
-#: ../../config.rst:207
+#: ../../config.rst:217
 msgid "Return the fetch size from the ``getFetchSize`` method. This value is used as default in :doc:`query/select`."
 msgstr "``getFetchSize`` メソッドからフェッチ サイズを返します。この値は :doc:`query/select` でデフォルトの値として使用されます。"
 
-#: ../../config.rst:211
+#: ../../config.rst:221
 msgid "Batch size"
 msgstr "バッチサイズ"
 
-#: ../../config.rst:213
+#: ../../config.rst:223
 msgid "Return the batch size from the ``getBatchSize`` method. This value is used as default in :doc:`query/batch-insert`, :doc:`query/batch-update` and :doc:`query/batch-delete`."
 msgstr "``getBatchSize`` メソッドからバッチサイズを返します。この値は、:doc:`query/batch-insert`、:doc:`query/batch-update`、および :doc:`query/batch-delete` でデフォルトの値として使用されます。"
 
-#: ../../config.rst:218
+#: ../../config.rst:228
 msgid "Providing entity listeners"
 msgstr "エンティティリスナーの提供"
 
-#: ../../config.rst:220
+#: ../../config.rst:230
 msgid "Return a ``EntityListenerProvider`` from the ``getEntityListenerProvider`` method. When you want to get entity listeners from a dependency injection container, create your own EntityListenerProvider."
 msgstr "``getEntityListenerProvider`` メソッドから ``EntityListenerProvider`` を返します。依存性注入コンテナからエンティティリスナーを取得する場合は、独自の ``EntityListenerProvider`` を作成してください。"
 
-#: ../../config.rst:224
+#: ../../config.rst:234
 msgid "The default EntityListenerProvider get the entity listener from the accepted supplier."
 msgstr "デフォルトの ``EntityListenerProvider`` は、受け入れられた ``Supplier`` からエンティティリスナーを取得します。"
 
-#: ../../config.rst:227
+#: ../../config.rst:237
 msgid "SQL Builder Settings"
 msgstr "SQL ビルダーの設定"
 
-#: ../../config.rst:229
+#: ../../config.rst:239
 msgid "Return a ``SqlBuilderSettings`` from the ``getSqlBuilderSettings`` method."
 msgstr "``getSqlBuilderSettings`` メソッドから ``SqlBuilderSettings`` を返します。"
 
-#: ../../config.rst:231
-msgid "``SqlBuilderSettings`` controls the building of SQL. Specifically, it can remove comments and blank lines from the SQL."
-msgstr "``SqlBuilderSettings`` は SQL の構築を制御します。具体的にはコメントや空白行を SQL から削除できます。"
+#: ../../config.rst:241
+msgid "``SqlBuilderSettings`` controls the following aspects of SQL building:"
+msgstr ""
 
-#: ../../config.rst:235
+#: ../../config.rst:243
+msgid "Whether to remove block comments from SQL"
+msgstr ""
+
+#: ../../config.rst:244
+msgid "Whether to remove line comments from SQL"
+msgstr ""
+
+#: ../../config.rst:245
+msgid "Whether to remove blank lines from SQL"
+msgstr ""
+
+#: ../../config.rst:246
+msgid "Whether to enable IN list padding"
+msgstr ""
+
+#: ../../config.rst:248
+msgid "IN list padding is a feature that pads the parameters in an SQL IN clause with the last parameter when the number of parameters is less than a power of 2. This feature helps ensure that the same SQL statement is more likely to be generated regardless of the number of parameters, which can have positive effects on SQL caching and related performance optimizations."
+msgstr ""
+
+#: ../../config.rst:253
+msgid "By default, no special controls are applied."
+msgstr ""
+
+#: ../../config.rst:256
+msgid "Statistic Manager"
+msgstr ""
+
+#: ../../config.rst:258
+msgid "Return a ``StatisticManager`` from the ``getStatisticManager`` method."
+msgstr ""
+
+#: ../../config.rst:260
+msgid "``StatisticManager`` manages statistical information related to SQL execution. It retains the following information for each SQL statement:"
+msgstr ""
+
+#: ../../config.rst:263
+msgid "execution count"
+msgstr ""
+
+#: ../../config.rst:264
+msgid "execution maximum time in milliseconds"
+msgstr ""
+
+#: ../../config.rst:265
+msgid "execution minimum time in milliseconds"
+msgstr ""
+
+#: ../../config.rst:266
+msgid "total execution time in milliseconds"
+msgstr ""
+
+#: ../../config.rst:267
+msgid "average execution time in milliseconds"
+msgstr ""
+
+#: ../../config.rst:269
+msgid "Collection of statistical information is disabled by default. To enable it, do the following:"
+msgstr ""
+
+#: ../../config.rst:277
+msgid "To disable it, call ``setEnabled(false)``."
+msgstr ""
+
+#: ../../config.rst:279
+msgid "The default implementation collects statistical information indefinitely while enabled. To prevent memory exhaustion, either call the ``clear`` method of ``StatisticManager`` periodically or create an appropriate implementation class for ``StatisticManager``."
+msgstr ""
+
+#: ../../config.rst:284
 msgid "Loading JDBC drivers"
 msgstr "JDBCドライバのロード"
 
-#: ../../config.rst:240
+#: ../../config.rst:289
 msgid "All JDBC drivers are loaded automatically by the `service provider <service provider_>`_ mechanism."
 msgstr "すべての JDBC ドライバは、 `サービスプロバイダ <service provider_>`_ メカニズムによって自動的にロードされます。"
 
-#: ../../config.rst:244
+#: ../../config.rst:293
 msgid "But in the specific environment, the mechanism doesn't work appropriately. For example, when you use Apache Tomcat, you will find the case. See also: `DriverManager, the service provider mechanism and memory leaks <tomcat driver_>`_"
 msgstr "ただし、特定の環境では、このメカニズムが適切に動作しません。たとえば、Apache Tomcat を使用すると、このケースが見つかります。参照: `DriverManager、サービス プロバイダのメカニズムとメモリリーク <tomcat driver_>`_"
 
-#: ../../config.rst:251
+#: ../../config.rst:300
 msgid "Configuration definition"
 msgstr "設定クラスの定義"
 
-#: ../../config.rst:254
+#: ../../config.rst:303
 msgid "Simple definition"
 msgstr "単純な定義"
 
-#: ../../config.rst:256
+#: ../../config.rst:305
 msgid "The simple definition is appropriate in following cases:"
 msgstr "単純な定義は、次の場合に適しています。"
 
-#: ../../config.rst:258
+#: ../../config.rst:307
 msgid "The configuration instance isn't managed in the dependency injection container"
 msgstr "設定インスタンスが依存関係注入コンテナで管理されない"
 
-#: ../../config.rst:259
+#: ../../config.rst:308
 msgid "Local transactions is used"
 msgstr "ローカルトランザクションが使用される"
 
-#: ../../config.rst:301
+#: ../../config.rst:350
 msgid "You can use the above ``DbConfig`` class as follows:"
 msgstr "上記の ``DbConfig`` クラスは次のように使用できます。"
 
-#: ../../config.rst:307
+#: ../../config.rst:356
 msgid "The above ``EmployeeDao`` interface must be annotated with the ``@Dao`` annotation as follows:"
 msgstr "上記の ``EmployeeDao`` インタフェースには、次のように ``@Dao`` アノテーションを付ける必要があります。"
 
-#: ../../config.rst:319
+#: ../../config.rst:368
 msgid "Advanced definition"
 msgstr "高度な定義"
 
-#: ../../config.rst:321
+#: ../../config.rst:370
 msgid "The advanced definition is appropriate in following cases:"
 msgstr "高度な定義は、次の場合に適しています。"
 
-#: ../../config.rst:323
+#: ../../config.rst:372
 msgid "The configuration instance is managed as a singleton object in the dependency injection container"
 msgstr "設定インスタンスが依存性注入コンテナ内のシングルトンオブジェクトとして管理される"
 
-#: ../../config.rst:324
+#: ../../config.rst:373
 msgid "The transaction manager is provided from the application server or framework you use"
 msgstr "トランザクションマネージャが使用するアプリケーションサーバーまたはフレームワークから提供される"
 
-#: ../../config.rst:326
+#: ../../config.rst:375
 msgid "Suppose the ``dialect`` and the ``dataSource`` are injected by the dependency injection container:"
 msgstr "``dialect`` と ``dataSource`` が依存性注入コンテナによって注入されると仮定します。"
 
-#: ../../config.rst:355
+#: ../../config.rst:404
 msgid "To inject the instance of the above class to your DAO implementation instance, you have to annotate your DAO interfaces with ``@AnnotateWith``:"
 msgstr "上記のクラスのインスタンスを DAO のインスタンスに注入するには、DAO インタフェースに ``@AnnotateWith`` アノテーションを付ける必要があります。"
 
-#: ../../config.rst:382
+#: ../../config.rst:431
 msgid "To avoid annotating your DAO interfaces with ``@AnnotateWith`` repeatedly, annotate the arbitrary annotation with it only once:"
 msgstr "DAO インタフェースに ``@AnnotateWith`` で繰り返しアノテーションを付けることを避けるには、任意のアノテーションに 1 回だけアノテーションを付けます。"
 
-#: ../../config.rst:393
+#: ../../config.rst:442
 msgid "Then, you can annotate your DAO interfaces with the above ``@InjectConfig`` annotation:"
 msgstr "次に、DAO インタフェースに上記の ``@InjectConfig`` アノテーションを付けることができます。"
 
