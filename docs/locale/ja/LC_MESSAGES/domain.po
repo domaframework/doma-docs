@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-01-18 21:46+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -88,8 +88,8 @@ msgid "External domain classes"
 msgstr "外部ドメインクラス"
 
 #: ../../domain.rst:190
-msgid "This feature allows you to define arbitrary classes as domain classes, even if the classes can be annotated with the ``@Domain`` annotation."
-msgstr "この機能を使用すると、クラスに ``@Domain`` アノテーションを付けられない場合でも、任意のクラスをドメインクラスとして定義できます。"
+msgid "This feature allows you to define any class as a domain class, even if you cannot annotate the class with the ``@Domain`` annotation."
+msgstr ""
 
 #: ../../domain.rst:193
 msgid "To define external domain classes, you have to do as follows:"
@@ -140,10 +140,34 @@ msgid "In the ``DomainConverter`` implementation class, specify a wildcard ``?``
 msgstr "``DomainConverter`` 実装クラスで、外部ドメインクラスへの型引数としてワイルドカード ``?`` を指定します。"
 
 #: ../../domain.rst:303
+msgid "Direct mapping of external domain classes to the database"
+msgstr ""
+
+#: ../../domain.rst:305
+msgid "All external domain classes can be directly mapped to any database type."
+msgstr ""
+
+#: ../../domain.rst:307
+msgid "Here's an example of mapping ``java.util.UUID`` to PostgreSQL's UUID type."
+msgstr ""
+
+#: ../../domain.rst:309
+msgid "First, create an implementation of ``org.seasar.doma.jdbc.type.JdbcType`` to handle the mapping:"
+msgstr ""
+
+#: ../../domain.rst:343
+msgid "Next, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``, and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above. Don't forget to annotate the class with ``@ExternalDomain``:"
+msgstr ""
+
+#: ../../domain.rst:360
+msgid "The rest follows the standard approach. Simply add ``PostgresUUIDConverter`` to the ``@DomainConverters`` annotation, and specify the fully qualified name of the class with the ``@DomainConverters`` annotation in the annotation processing options."
+msgstr ""
+
+#: ../../domain.rst:366
 msgid "Example"
 msgstr "例"
 
-#: ../../domain.rst:305
+#: ../../domain.rst:368
 msgid "The Domain classes showed above are used as follows:"
 msgstr "上記のドメインクラスは次のように使用されます。"
 

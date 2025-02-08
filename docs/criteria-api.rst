@@ -38,9 +38,9 @@ We use the following Entity classes to show you some examples:
       private Integer addressId;
       @Version private Integer version;
       @OriginalStates private Employee states;
-      @Transient private Department department;
-      @Transient private Employee manager;
-      @Transient private Address address;
+      @Association private Department department;
+      @Association private Employee manager;
+      @Association private Address address;
 
       // getters and setters
     }
@@ -56,7 +56,7 @@ We use the following Entity classes to show you some examples:
       private String location;
       @Version private Integer version;
       @OriginalStates private Department originalStates;
-      @Transient private List<Employee> employeeList = new ArrayList<>();
+      @Association private List<Employee> employeeList = new ArrayList<>();
 
       // getters and setters
     }
@@ -76,8 +76,8 @@ We use the following Entity classes to show you some examples:
       private final Integer departmentId;
       private final Integer addressId;
       @Version private final Integer version;
-      @Transient private final Dept department;
-      @Transient private final Emp manager;
+      @Association private final Dept department;
+      @Association private final Emp manager;
 
       // constructor and getters
     }

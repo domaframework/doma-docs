@@ -350,6 +350,28 @@ If an entity has fields that you don't want to persist, you can annotate them us
   @Transient
   List<String> nameList;
 
+Association
+----------------
+
+Use the ``@Association`` annotation for fields that represent associations between entities:
+
+.. code-block:: java
+
+  @Association
+  Address address;
+
+.. code-block:: java
+
+  @Association
+  List<Employee> assistants;
+
+Fields annotated with ``@Association`` are not persisted in the database.
+Instead, this annotation is used to define entity relationships within an aggregate.
+
+This annotation should be used in conjunction with the aggregate strategy,
+ensuring that related entities are treated as a single unit of consistency.
+For more details, see :doc:`aggregate-strategy`.
+
 OriginalStates
 --------------------------------------------
 

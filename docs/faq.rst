@@ -126,19 +126,18 @@ Is the generation of dynamic SQL statements supported?
 
 There are two ways:
 
-* The SQL Templates.
+* SQL Templates.
 * The Criteria API.
 
 See :doc:`sql` and :doc:`query-dsl` for detail information.
 
-Does Doma support fetching relationships like one-to-one or one-to-many?
+Does Doma support fetching relationships such as one-to-one or one-to-many?
 ----------------------------------------------------------------------------------------
 
-Yes.
+Yes, there are two ways to fetch relationships:
 
-Doma provides the Criteria API to map database relationships to Java entities.
-
-See :ref:`query_dsl_associate` for detail information.
+* **SQL Templates** with :doc:`aggregate-strategy`.
+* **The Criteria API** with :ref:`query_dsl_associate`.
 
 Does Doma provide a JDBC connection pooling feature?
 ----------------------------------------------------

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 12:21+0900\n"
+"POT-Creation-Date: 2025-02-08 10:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -168,7 +168,6 @@ msgid "Do you provide a tool to generate Java code from a database schema?"
 msgstr "データベース スキーマから Java コードを生成するツールは提供していますか?"
 
 #: ../../faq.rst:103
-#: ../../faq.rst:137
 msgid "Yes."
 msgstr "はい。"
 
@@ -221,8 +220,8 @@ msgid "There are two ways:"
 msgstr "はい、次の 2 つの方法でサポートします。"
 
 #: ../../faq.rst:129
-msgid "The SQL Templates."
-msgstr "SQL テンプレート"
+msgid "SQL Templates."
+msgstr "SQLテンプレート"
 
 #: ../../faq.rst:130
 msgid "The Criteria API."
@@ -233,26 +232,30 @@ msgid "See :doc:`sql` and :doc:`query-dsl` for detail information."
 msgstr "詳細については :doc:`sql` と :doc:`query-dsl` を参照してください。"
 
 #: ../../faq.rst:135
-msgid "Does Doma support fetching relationships like one-to-one or one-to-many?"
+msgid "Does Doma support fetching relationships such as one-to-one or one-to-many?"
 msgstr "Doma は、1 対 1 または 1 対多のような関係の取得をサポートしていますか?"
 
+#: ../../faq.rst:137
+msgid "Yes, there are two ways to fetch relationships:"
+msgstr "リレーションシップを取得するには2つの方法があります。"
+
 #: ../../faq.rst:139
-msgid "Doma provides the Criteria API to map database relationships to Java entities."
-msgstr "Doma は、データベースの関係を Java エンティティにマップするための Criteria API を提供します。"
+msgid "**SQL Templates** with :doc:`aggregate-strategy`."
+msgstr ":doc:`aggregate-strategy` を使った**SQL Templates**"
 
-#: ../../faq.rst:141
-msgid "See :ref:`query_dsl_associate` for detail information."
-msgstr "詳細については :ref:`query_dsl_associate` を参照してください。"
+#: ../../faq.rst:140
+msgid "**The Criteria API** with :ref:`query_dsl_associate`."
+msgstr ":ref:`query_dsl_associate` を使用した**Criteria API**"
 
-#: ../../faq.rst:144
+#: ../../faq.rst:143
 msgid "Does Doma provide a JDBC connection pooling feature?"
 msgstr "Doma は JDBC 接続プーリング機能を提供しますか?"
 
-#: ../../faq.rst:146
+#: ../../faq.rst:145
 msgid "No."
 msgstr "いいえ。"
 
-#: ../../faq.rst:148
+#: ../../faq.rst:147
 msgid "Use Doma together with a JDBC connection pool library such as `HikariCP <https://github.com/brettwooldridge/HikariCP>`_."
 msgstr "Doma を `HikariCP <https://github.com/brettwooldridge/HikariCP>`_ などの JDBC 接続プール ライブラリと組み合わせて使用してください。"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 20:27+0900\n"
+"POT-Creation-Date: 2025-02-08 10:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -341,38 +341,54 @@ msgid "If an entity has fields that you don't want to persist, you can annotate 
 msgstr "エンティティに永続化したくないフィールドがある場合は、 ``@Transient`` アノテーションを付けることができます。"
 
 #: ../../entity.rst:354
+msgid "Association"
+msgstr ""
+
+#: ../../entity.rst:356
+msgid "Use the ``@Association`` annotation for fields that represent associations between entities:"
+msgstr "エンティティ間の関連を表すフィールドには ``@Association`` アノテーションを使用します。"
+
+#: ../../entity.rst:368
+msgid "Fields annotated with ``@Association`` are not persisted in the database. Instead, this annotation is used to define entity relationships within an aggregate."
+msgstr "``@Association`` で注釈されたフィールドはデータベースへ永続化されません。代わりに、この注釈はアグリゲートでエンティティリレーションシップを定義するために使用されます。"
+
+#: ../../entity.rst:371
+msgid "This annotation should be used in conjunction with the aggregate strategy, ensuring that related entities are treated as a single unit of consistency. For more details, see :doc:`aggregate-strategy`."
+msgstr "このアノテーションは、アグリゲート戦略と併用し、関連するエンティティが一貫性のある単位として扱われるようにする必要があります。詳細については、:doc:`aggregate-strategy` を参照してください。"
+
+#: ../../entity.rst:376
 msgid "OriginalStates"
 msgstr "OriginalStates"
 
-#: ../../entity.rst:356
+#: ../../entity.rst:378
 msgid "If you want to include only changed values in UPDATE statements, you can define fields annotated with ``@OriginalStates``. The fields can hold the original values that were fetched from the database."
 msgstr "変更された値のみを UPDATE ステートメントに含めたい場合は、``@OriginalStates`` の注釈を付けたフィールドを定義できます。フィールドには、データベースから取得した元の値を保持できます。"
 
-#: ../../entity.rst:360
+#: ../../entity.rst:382
 msgid "Doma uses the values to know which values are changed in the application and includes the only changed values in UPDATE statements."
 msgstr "Doma は、アプリケーション内でどの値が変更されたかを知るために ``@OriginalStates`` が注釈されたフィールドを使用し、変更された値のみを UPDATE ステートメントに含めます。"
 
-#: ../../entity.rst:363
+#: ../../entity.rst:385
 msgid "The following code snippet shows how to define original states:"
 msgstr "次のコードスニペットは、``OriginalStates`` を定義する方法を示しています。"
 
-#: ../../entity.rst:370
+#: ../../entity.rst:392
 msgid "The field type must be the same as the entity type."
 msgstr "フィールドの型はエンティティのタイプと同じである必要があります。"
 
-#: ../../entity.rst:373
+#: ../../entity.rst:395
 msgid "Method definition"
 msgstr "メソッドの定義"
 
-#: ../../entity.rst:375
+#: ../../entity.rst:397
 msgid "There are no limitations in the use of methods."
 msgstr "メソッドの使用に制限はありません。"
 
-#: ../../entity.rst:378
+#: ../../entity.rst:400
 msgid "Example"
 msgstr "例"
 
-#: ../../entity.rst:380
+#: ../../entity.rst:402
 msgid "Instantiate the ``Employee`` entity class and use its instance:"
 msgstr "``Employee`` エンティティクラスをインスタンス化し、そのインスタンスを使用します。"
 

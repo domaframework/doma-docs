@@ -49,6 +49,7 @@ User Documentation
    embeddable
    entity
    dao
+   aggregate-strategy
    query/index
    query-builder/index
    criteria-api

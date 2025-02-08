@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 22:53+0900\n"
+"POT-Creation-Date: 2025-02-08 10:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -406,9 +406,9 @@ msgstr "DAO メソッドは次のように呼び出されます。"
 
 #: ../../sql.rst:273
 #: ../../sql.rst:314
-#: ../../sql.rst:703
-#: ../../sql.rst:715
-#: ../../sql.rst:754
+#: ../../sql.rst:705
+#: ../../sql.rst:717
+#: ../../sql.rst:756
 msgid "The generated SQL statement is as follows:"
 msgstr "生成される SQL ステートメントは次のとおりです。"
 
@@ -463,8 +463,8 @@ msgstr "条件ディレクティブを使用すると、条件に基づいて SQ
 #: ../../sql.rst:340
 #: ../../sql.rst:550
 #: ../../sql.rst:674
-#: ../../sql.rst:730
-#: ../../sql.rst:769
+#: ../../sql.rst:732
+#: ../../sql.rst:771
 msgid "Synopsis"
 msgstr "概要"
 
@@ -487,7 +487,7 @@ msgstr ""
 #: ../../sql.rst:572
 #: ../../sql.rst:608
 #: ../../sql.rst:636
-#: ../../sql.rst:775
+#: ../../sql.rst:777
 msgid "Suppose you have the following SQL template:"
 msgstr "次の SQL テンプレートがあるとします。"
 
@@ -693,7 +693,7 @@ msgstr "選択カラムリスト展開ディレクティブ"
 
 #: ../../sql.rst:671
 msgid "Expansion directive allows you to build column list of SELECT clause from the definition of :doc:`entity`."
-msgstr "選択カラムリストディレクティブを使用すると、:doc:`entity` の定義から SELECT 句のカラムリストを構築できます。"
+msgstr "選択カラムリスト展開ディレクティブを使用すると、:doc:`entity` の定義から SELECT 句のカラムリストを構築できます。"
 
 #: ../../sql.rst:680
 msgid "The expression ``alias`` is optional. If it is specified, it must be evaluated to ``java.lang.String``."
@@ -703,168 +703,168 @@ msgstr "式 ``alias`` はオプションです。指定した場合は、 ``java
 msgid "The directive must be followed by the asterisk ``*``."
 msgstr "ディレクティブの後にはアスタリスク ``*`` を付ける必要があります。"
 
-#: ../../sql.rst:686
+#: ../../sql.rst:688
 msgid "expand"
 msgstr ""
 
-#: ../../sql.rst:688
-#: ../../sql.rst:739
+#: ../../sql.rst:690
+#: ../../sql.rst:741
 msgid "Suppose you have the following SQL template and the entity class mapped to the template:"
 msgstr "次の SQL テンプレートと、そのテンプレートにマップされたエンティティ クラスがあるとします。"
 
-#: ../../sql.rst:709
+#: ../../sql.rst:711
 msgid "If you specify an alias to the table, specify same alias to the expansion directive:"
 msgstr "テーブルに別名を指定する場合は、展開ディレクティブにも同じ別名を指定します。"
 
-#: ../../sql.rst:724
+#: ../../sql.rst:726
 msgid "Population directive"
 msgstr "更新カラムリスト生成ディレクティブ"
 
-#: ../../sql.rst:726
+#: ../../sql.rst:728
 msgid "Population directive allows you to build column list of UPDATE SET clause from the definition of :doc:`entity`."
 msgstr "更新カラムリスト生成ディレクティブを使用すると、:doc:`entity` の定義から UPDATE SET 句のカラムリストを構築できます。"
 
-#: ../../sql.rst:737
+#: ../../sql.rst:739
 msgid "populate"
 msgstr ""
 
-#: ../../sql.rst:763
+#: ../../sql.rst:765
 msgid "Parser-level comment directive"
 msgstr "パーサーレベルコメントディレクティブ"
 
-#: ../../sql.rst:765
+#: ../../sql.rst:767
 msgid "Using a parser-level comment directive allows you to include comments in an SQL template that will be removed after the template is parsed."
 msgstr "パーサー レベルコメントディレクティブを使用すると、テンプレートが解析された後に削除されるコメントを SQL テンプレートに含めることができます。"
 
-#: ../../sql.rst:786
+#: ../../sql.rst:788
 msgid "The above SQL template is parsed into the following SQL:"
 msgstr "上記の SQL テンプレートは次の SQL に解析されます。"
 
-#: ../../sql.rst:798
+#: ../../sql.rst:800
 msgid "Comments"
 msgstr "コメント"
 
-#: ../../sql.rst:800
+#: ../../sql.rst:802
 msgid "This section show you how to distinguish between directives and normal SQL comments."
 msgstr "このセクションでは、ディレクティブと通常の SQL コメントを区別する方法を説明します。"
 
-#: ../../sql.rst:803
+#: ../../sql.rst:805
 msgid "Single line comment"
 msgstr "一行コメント"
 
-#: ../../sql.rst:805
+#: ../../sql.rst:807
 msgid "Always the string consisting of two hyphens ``--`` is a single line comment. It is never directive."
 msgstr "2 つのハイフン ``--`` で構成される文字列は常に一行コメントになります。それは決して特別な意味を持つディレクティブではありません。"
 
-#: ../../sql.rst:809
+#: ../../sql.rst:811
 msgid "Multi line comment"
 msgstr "複数行のコメント"
 
-#: ../../sql.rst:811
+#: ../../sql.rst:813
 msgid "If the character following ``/*`` is not permissible as the first character in a Java identifier and it is neither ``%``, ``#``, ``@``, ``\"`` nor ``'``, the ``/*`` is beginning of a multi line comment."
 msgstr "``/*`` に続く文字が Java 識別子の最初の文字として許可されておらず、かつそれが ``%``、``#``、``@``、``\"``、``'`` のいずれでもない場合、``/*`` は複数行コメントの始まりです。"
 
-#: ../../sql.rst:815
+#: ../../sql.rst:817
 msgid "The followings are the beginning of a multi line comment:"
 msgstr "以下は複数行のコメントの始まりです。"
 
-#: ../../sql.rst:817
+#: ../../sql.rst:819
 msgid "/\\*\\*...\\*/"
 msgstr ""
 
-#: ../../sql.rst:818
+#: ../../sql.rst:820
 msgid "/\\*+...\\*/"
 msgstr ""
 
-#: ../../sql.rst:819
+#: ../../sql.rst:821
 msgid "/\\*=...\\*/"
 msgstr ""
 
-#: ../../sql.rst:820
+#: ../../sql.rst:822
 msgid "/\\*:...\\*/"
 msgstr ""
 
-#: ../../sql.rst:821
+#: ../../sql.rst:823
 msgid "/\\*;...\\*/"
 msgstr ""
 
-#: ../../sql.rst:822
+#: ../../sql.rst:824
 msgid "/\\*(...\\*/"
 msgstr ""
 
-#: ../../sql.rst:823
+#: ../../sql.rst:825
 msgid "/\\*)...\\*/"
 msgstr ""
 
-#: ../../sql.rst:824
+#: ../../sql.rst:826
 msgid "/\\*&...\\*/"
 msgstr ""
 
-#: ../../sql.rst:826
+#: ../../sql.rst:828
 msgid "In other hand, the followings are the beginning of a directive:"
 msgstr "一方、以下はディレクティブの始まりです。"
 
-#: ../../sql.rst:828
+#: ../../sql.rst:830
 msgid "/\\* ...\\*/"
 msgstr ""
 
-#: ../../sql.rst:829
+#: ../../sql.rst:831
 msgid "/\\*a...\\*/"
 msgstr ""
 
-#: ../../sql.rst:830
+#: ../../sql.rst:832
 msgid "/\\*$...\\*/"
 msgstr ""
 
-#: ../../sql.rst:831
+#: ../../sql.rst:833
 msgid "/\\*@...\\*/"
 msgstr ""
 
-#: ../../sql.rst:832
+#: ../../sql.rst:834
 msgid "/\\*\"...\\*/"
 msgstr ""
 
-#: ../../sql.rst:833
+#: ../../sql.rst:835
 msgid "/\\*'...\\*/"
 msgstr ""
 
-#: ../../sql.rst:834
+#: ../../sql.rst:836
 msgid "/\\*#...\\*/"
 msgstr ""
 
-#: ../../sql.rst:835
+#: ../../sql.rst:837
 msgid "/\\*%...\\*/"
 msgstr ""
 
-#: ../../sql.rst:839
+#: ../../sql.rst:841
 msgid "We recommend you always use ``/**...*/`` to begin multi line comments because it is simple."
 msgstr "複数行のコメントを開始するには、簡単なので常に ``/**...*/`` を使用することをお勧めします。"
 
-#: ../../sql.rst:842
+#: ../../sql.rst:844
 msgid "doma-template module"
 msgstr "doma-template モジュール"
 
-#: ../../sql.rst:844
+#: ../../sql.rst:846
 msgid "The doma-template module helps obtain prepared SQL statements from SQL templates. The module only contains the following classes:"
 msgstr "doma-template モジュールは、SQL テンプレートから準備された SQL ステートメントを構築するのに役立ちます。モジュールには次のクラスのみが含まれています。"
 
-#: ../../sql.rst:847
+#: ../../sql.rst:849
 msgid "SqlArgument"
 msgstr ""
 
-#: ../../sql.rst:848
+#: ../../sql.rst:850
 msgid "SqlStatement"
 msgstr ""
 
-#: ../../sql.rst:849
+#: ../../sql.rst:851
 msgid "SqlTemplate"
 msgstr ""
 
-#: ../../sql.rst:852
+#: ../../sql.rst:854
 msgid "Gradle"
 msgstr ""
 
-#: ../../sql.rst:861
+#: ../../sql.rst:863
 msgid "Usage"
 msgstr "使用法"
 
