@@ -132,6 +132,10 @@ For the ``selectById`` method, the following SELECT statement is required:
     where
         d.dept_id = /* deptId */0
 
+.. note::
+
+    The SELECT list must include the IDs of all entities that form the aggregate.
+
 Column aliasing rules
 ~~~~~~~~~~~~~~~~~~~~~
 
