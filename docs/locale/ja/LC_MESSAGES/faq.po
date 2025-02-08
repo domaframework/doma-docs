@@ -245,7 +245,7 @@ msgstr ":doc:`aggregate-strategy` を使った**SQL Templates**"
 
 #: ../../faq.rst:140
 msgid "**The Criteria API** with :ref:`query_dsl_associate`."
-msgstr ":ref:`query_dsl_associate` を使用した**Criteria API**"
+msgstr ":ref:`query_dsl_associate` を使用した **Criteria API**"
 
 #: ../../faq.rst:143
 msgid "Does Doma provide a JDBC connection pooling feature?"
