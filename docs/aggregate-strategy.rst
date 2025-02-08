@@ -17,8 +17,8 @@ This annotation is used to define how an entity aggregate is reconstructed from 
 
 .. code-block:: java
 
-    @AggregateStrategy(root = Dept.class, tableAlias = "d")
-    interface DeptStrategy {
+    @AggregateStrategy(root = Department.class, tableAlias = "d")
+    interface DepartmentAggregateStrategy {
         ...
     }
 
@@ -34,20 +34,22 @@ The ``BiFunction`` is responsible for dynamically associating two entity instanc
 
 .. code-block:: java
 
-    @AggregateStrategy(root = Dept.class, tableAlias = "d")
-    interface DeptStrategy {
-        @AssociationLinker(propertyPath = "empList", tableAlias = "e")
-        BiFunction<Dept, Emp, Dept> dept = (d, e) -> {
-            d.getEmpList().add(e);
-            e.setDept(d);
+    @AggregateStrategy(root = Department.class, tableAlias = "d")
+    interface DepartmentAggregateStrategy {
+      @AssociationLinker(propertyPath = "employees", tableAlias = "e")
+      BiFunction<Department, Employee, Department> employees =
+          (d, e) -> {
+            d.getEmployees().add(e);
+            e.setDepartment(d);
             return d;
-        };
+          };
 
-        @AssociationLinker(propertyPath = "empList.address", tableAlias = "a")
-        BiFunction<Emp, Addr, Emp> address = (e, a) -> {
+      @AssociationLinker(propertyPath = "employees.address", tableAlias = "a")
+      BiFunction<Employee, Address, Employee> address =
+          (e, a) -> {
             e.setAddress(a);
             return e;
-        };
+          };
     }
 
 - The first and third type parameters of ``BiFunction`` represent the class that owns the property,
@@ -59,37 +61,37 @@ The ``BiFunction`` is responsible for dynamically associating two entity instanc
 Example
 ================
 
-The ``DeptStrategy`` described above is based on the following entity definitions:
+The ``DepartmentAggregateStrategy`` described above is based on the following entity definitions:
 
 .. code-block:: java
 
     @Entity(naming = NamingType.SNAKE_LOWER_CASE)
-    class Dept {
-        @Id Integer deptId;
-        String deptName;
-        @Association List<Emp> empList = new ArrayList<>();
+    public class Department {
+      @Id Integer id;
+      String name;
+      @Association List<Employee> employees = new ArrayList<>();
 
-        // getter, setter
+      // getter, setter
     }
 
     @Entity(naming = NamingType.SNAKE_LOWER_CASE)
-    class Emp {
-        @Id Integer empId;
-        String empName;
-        Integer deptId;
-        Integer addressId;
-        @Association Dept dept;
-        @Association Address address;
+    public class Employee {
+      @Id Integer id;
+      String name;
+      Integer departmentId;
+      Integer addressId;
+      @Association Department department;
+      @Association Address address;
 
-        // getter, setter
+      // getter, setter
     }
 
     @Entity(naming = NamingType.SNAKE_LOWER_CASE)
-    class Address {
-        @Id Integer addressId;
-        String street;
+    public class Address {
+      @Id Integer id;
+      String street;
 
-        // getter, setter
+      // getter, setter
     }
 
 In entity classes, association properties must be annotated with ``@Association``.
@@ -98,14 +100,14 @@ These properties can be linked using ``@AssociationLinker``.
 Using an aggregate strategy
 ---------------------------
 
-``DeptStrategy`` is used by specifying it in the ``aggregateStrategy`` element of ``@Select``:
+``DepartmentAggregateStrategy`` is used by specifying it in the ``aggregateStrategy`` element of ``@Select``:
 
 .. code-block:: java
 
     @Dao
-    interface DeptDao {
-        @Select(aggregateStrategy = DeptStrategy.class)
-        Dept selectById(Integer deptId);
+    interface DepartmentDao {
+      @Select(aggregateStrategy = DepartmentAggregateStrategy.class)
+      Department selectById(Integer id);
     }
 
 For the ``selectById`` method, the following SELECT statement is required:
@@ -113,14 +115,14 @@ For the ``selectById`` method, the following SELECT statement is required:
 .. code-block:: sql
 
     select
-        d.dept_id as d_dept_id,
-        d.dept_name as d_dept_name,
-        e.emp_id as e_emp_id,
-        e.emp_name as e_emp_name,
-        e.dept_id as e_dept_id,
-        e.address_id as e_address_id,
-        a.address_id as a_address_id,
-        a.street as a_street
+        d.id as d_id,
+        d.name as d_name,
+        a.id as a_id,
+        a.street as a_street,
+        e.id as e_id,
+        e.name as e_name,
+        e.department_id as e_department_id,
+        e.address_id as e_address_id
     from
         dept d
     left outer join emp e
@@ -133,9 +135,9 @@ For the ``selectById`` method, the following SELECT statement is required:
 Column aliasing rules
 ~~~~~~~~~~~~~~~~~~~~~
 
-- The table aliases must match those defined in ``DeptStrategy``.
+- The table aliases must match those defined in ``DepartmentAggregateStrategy``.
 - Column aliases must be prefixed with the table alias followed by an underscore (``_``).
-  For example, ``d.dept_id`` is aliased as ``d_dept_id`` and ``e.emp_id`` as ``e_emp_id``.
+  For example, ``d.id`` is aliased as ``d_id`` and ``e.id`` as ``e_id``.
 
 Using the expansion directive
 -----------------------------
@@ -145,15 +147,16 @@ By using the :ref:`expansion directive <expand>`, the above SELECT statement can
 .. code-block:: sql
 
     select
-        /*%expand */*
+        /*%expand*/*
     from
-        dept d
-    left outer join emp e
-        on d.dept_id = e.dept_id
-    left outer join address a
-        on e.address_id = a.address_id
+        department d
+        left outer join
+        employee e on (d.id = e.department_id)
+        left outer join
+        address a on (e.address_id = a.id)
     where
-        d.dept_id = /* deptId */0
+        d.id = /* id */0
+
 
 How expansion works
 ~~~~~~~~~~~~~~~~~~~
@@ -167,17 +170,17 @@ To selectively expand only specific tables, pass a comma-separated list of table
 
     select
         /*%expand "e, d" */*,
-        a.address_id as a_address_id,
+        a.id as a_id,
         a.street as a_street
     from
-        dept d
-    left outer join emp e
-        on d.dept_id = e.dept_id
-    left outer join address a
-        on e.address_id = a.address_id
+        department d
+        left outer join
+        employee e on (d.id = e.department_id)
+        left outer join
+        address a on (e.address_id = a.id)
     where
-        d.dept_id = /* deptId */0
+        d.id = /* id */0
 
-- Here, only columns from tables ``e`` (``emp``) and ``d`` (``dept``) are expanded.
+- Here, only columns from tables ``e`` (``employee``) and ``d`` (``department``) are expanded.
 - The columns from table ``a`` (``address``) are explicitly specified.
 
