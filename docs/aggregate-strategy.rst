@@ -1,5 +1,5 @@
 =============================
-Aggregate strategy interfaces
+Aggregate strategy
 =============================
 
 .. contents::

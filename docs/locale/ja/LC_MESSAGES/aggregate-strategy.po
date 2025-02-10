@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 12:33+0900\n"
+"POT-Creation-Date: 2025-02-11 05:46+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Language: ja_JP\n"
 
 #: ../../aggregate-strategy.rst:3
-msgid "Aggregate strategy interfaces"
-msgstr "アグリゲート戦略インタフェース"
+msgid "Aggregate strategy"
+msgstr "アグリゲート戦略"
 
 #: ../../aggregate-strategy.rst:6
 msgid "Contents"
