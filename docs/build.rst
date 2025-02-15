@@ -36,7 +36,7 @@ Write your build.gradle(.kts) as follows:
         .. code-block:: kotlin
 
             plugins {
-                id("org.seasar.doma.compile") version "3.0.1"
+                id("org.domaframework.doma.compile") version "3.0.1"
             }
             
             dependencies {
@@ -49,7 +49,7 @@ Write your build.gradle(.kts) as follows:
         .. code-block:: groovy
 
             plugins {
-                id 'org.seasar.doma.compile' version '3.0.1'
+                id 'org.domaframework.doma.compile' version '3.0.1'
             }
             
             dependencies {
@@ -57,7 +57,7 @@ Write your build.gradle(.kts) as follows:
                 annotationProcessor 'org.seasar.doma:doma-processor:3.3.0'
             }
 
-To simplify your build.script(.kts), we recommend that you use the `org.seasar.doma.compile`_ plugin.
+To simplify your build.script(.kts), we recommend that you use the `org.domaframework.doma.compile`_ plugin.
 
 See build.gradle.kts in the `getting-started`_ repository as an example.
 
@@ -163,6 +163,6 @@ Import your project as a Maven project.
 Build and run using Maven.
 
 
-.. _org.seasar.doma.compile: https://github.com/domaframework/doma-compile-plugin
+.. _org.domaframework.doma.compile: https://github.com/domaframework/doma-compile-plugin
 .. _com.diffplug.eclipse.apt: https://plugins.gradle.org/plugin/com.diffplug.eclipse.apt
 .. _getting-started: https://github.com/domaframework/getting-started
