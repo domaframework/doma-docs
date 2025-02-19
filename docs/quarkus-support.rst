@@ -25,7 +25,7 @@ Gradle
 
     dependencies {
         annotationProcessor("org.seasar.doma:doma-processor:3.3.0")
-        implementation("org.seasar.doma:doma-core:3.3.0")
+        implementation("org.seasar.doma:doma-core:3.4.0")
         implementation("io.quarkiverse.doma:quarkus-doma:0.0.13")
     }
 

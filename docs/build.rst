@@ -40,7 +40,7 @@ Write your build.gradle(.kts) as follows:
             }
             
             dependencies {
-                implementation("org.seasar.doma:doma-core:3.3.0")
+                implementation("org.seasar.doma:doma-core:3.4.0")
                 annotationProcessor("org.seasar.doma:doma-processor:3.3.0")
             }
 
@@ -53,7 +53,7 @@ Write your build.gradle(.kts) as follows:
             }
             
             dependencies {
-                implementation 'org.seasar.doma:doma-core:3.3.0'
+                implementation 'org.seasar.doma:doma-core:3.4.0'
                 annotationProcessor 'org.seasar.doma:doma-processor:3.3.0'
             }
 
