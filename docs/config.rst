@@ -364,6 +364,32 @@ The above ``EmployeeDao`` interface must be annotated with the ``@Dao`` annotati
       Employee selectById(Integer id);
   }
 
+More Simple definition
+----------------------
+
+You can build the configuration more easily by using ``org.seasar.doma.jdbc.SimpleConfig``.
+
+``SimpleConfig`` determines the ``Dialect`` based on the connection string and manages transactions using local transactions.
+
+Here is an example of building a ``Config`` using ``SimpleConfig``.
+
+.. code-block:: java
+
+  Config config = SimpleConfig.builder("jdbc:h2:mem:tutorial;DB_CLOSE_DELAY=-1", "sa", null)
+    .naming(Naming.SNAKE_UPPER_CASE)
+    .queryTimeout(10)
+    .build();
+
+You can use the above ``config`` instance as follows:
+
+.. code-block:: java
+
+  EmployeeDao dao = new EmployeeDaoImpl(config);
+
+.. note::
+
+  ``SimpleConfig`` is primarily intended for use in sample or test code.
+
 Advanced definition
 -------------------
 
