@@ -190,14 +190,8 @@ External domain classes
 This feature allows you to define any class as a domain class,
 even if you cannot annotate the class with the ``@Domain`` annotation.
 
-To define external domain classes, you have to do as follows:
-
-- Create a class that implements ``org.seasar.doma.jdbc.domain.DomainConverter`` and
-  annotate ``@ExternalDomain`` to the class
-- Create a class that is annotated with ``@DomainConverters``
-- Specify the class annotated with ``@ExternalDomain`` to the ``@DomainConverters``'s ``value`` element
-- Specify the full qualified name of the class annotated with ``@DomainConverters`` to
-  the option of :doc:`annotation-processing`
+To define external domain classes, you have to create a class that implements
+``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate ``@ExternalDomain`` to the class.
 
 Suppose, for instance, there is the ``PhoneNumber`` class that you can change:
 
@@ -220,7 +214,7 @@ Suppose, for instance, there is the ``PhoneNumber`` class that you can change:
       }
   }
 
-First, to define the ``PhoneNumber`` class as an external domain class, create following class:
+To define the ``PhoneNumber`` class as an external domain class, create following class:
 
 .. code-block:: java
 
@@ -236,25 +230,6 @@ First, to define the ``PhoneNumber`` class as an external domain class, create f
               return null;
           }
           return new PhoneNumber(value);
-      }
-  }
-
-Then create following class and specify the above class to the ``@DomainConverters``'s ``value`` element:
-
-.. code-block:: java
-
-  @DomainConverters({ PhoneNumberConverter.class })
-  public class DomainConvertersProvider {
-  }
-
-Finally, specify the full qualified name of the above class to the option of :doc:`annotation-processing`.
-If you use Gradle, specify the option in the build script as follows:
-
-.. code-block:: groovy
-
-  compileJava {
-      options {
-          compilerArgs = ['-Adoma.domain.converters=example.DomainConvertersProvider']
       }
   }
 
@@ -340,9 +315,8 @@ First, create an implementation of ``org.seasar.doma.jdbc.type.JdbcType`` to han
       }
     }
 
-Next, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``,
-and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above.
-Don't forget to annotate the class with ``@ExternalDomain``:
+Then, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``,
+and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above:
 
 .. code-block:: java
 
@@ -357,10 +331,7 @@ Don't forget to annotate the class with ``@ExternalDomain``:
       }
     }
 
-The rest follows the standard approach.
-Simply add ``PostgresUUIDConverter`` to the ``@DomainConverters`` annotation,
-and specify the fully qualified name of the class with the ``@DomainConverters`` annotation
-in the annotation processing options.
+Don't forget to annotate the class with ``@ExternalDomain``.
 
 Example
 =======
