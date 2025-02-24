@@ -77,8 +77,8 @@ msgid "Groovy"
 msgstr ""
 
 #: ../../build.rst:60
-msgid "To simplify your build.script(.kts), we recommend that you use the `org.seasar.doma.compile`_ plugin."
-msgstr "build.script(.kts) を簡素化するには、`org.seasar.doma.compile`_ プラグインを使用することをお勧めします。"
+msgid "To simplify your build.script(.kts), we recommend that you use the `org.domaframework.doma.compile`_ plugin."
+msgstr "build.script(.kts) を簡素化するには、`org.domaframework.doma.compile`_ プラグインを使用することをお勧めします。"
 
 #: ../../build.rst:62
 #: ../../build.rst:122
