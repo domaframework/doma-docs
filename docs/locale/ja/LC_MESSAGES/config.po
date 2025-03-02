@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-18 21:46+0900\n"
+"POT-Creation-Date: 2025-02-24 14:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -541,34 +541,58 @@ msgid "The above ``EmployeeDao`` interface must be annotated with the ``@Dao`` a
 msgstr "上記の ``EmployeeDao`` インタフェースには、次のように ``@Dao`` アノテーションを付ける必要があります。"
 
 #: ../../config.rst:368
+msgid "More Simple definition"
+msgstr "さらに単純な定義"
+
+#: ../../config.rst:370
+msgid "You can build the configuration more easily by using ``org.seasar.doma.jdbc.SimpleConfig``."
+msgstr "``org.seasar.doma.jdbc.SimpleConfig`` を使用すると、より簡単に構成を構築できます。"
+
+#: ../../config.rst:372
+msgid "``SimpleConfig`` determines the ``Dialect`` based on the connection string and manages transactions using local transactions."
+msgstr "``SimpleConfig`` は接続文字列に基づいて``Dialect`` を決定し、ローカルトランザクションを使用してトランザクションを管理します。"
+
+#: ../../config.rst:374
+msgid "Here is an example of building a ``Config`` using ``SimpleConfig``."
+msgstr "ここでは、``SimpleConfig`` を使用して ``Config`` を構築する例を示します。"
+
+#: ../../config.rst:383
+msgid "You can use the above ``config`` instance as follows:"
+msgstr "上記の ``config`` インスタンスは以下のように使用できます。"
+
+#: ../../config.rst:391
+msgid "``SimpleConfig`` is primarily intended for use in sample or test code."
+msgstr "``SimpleConfig`` は、主にサンプルコードまたはテストコードで使用するために使用されます。"
+
+#: ../../config.rst:394
 msgid "Advanced definition"
 msgstr "高度な定義"
 
-#: ../../config.rst:370
+#: ../../config.rst:396
 msgid "The advanced definition is appropriate in following cases:"
 msgstr "高度な定義は、次の場合に適しています。"
 
-#: ../../config.rst:372
+#: ../../config.rst:398
 msgid "The configuration instance is managed as a singleton object in the dependency injection container"
 msgstr "設定インスタンスが依存性注入コンテナ内のシングルトンオブジェクトとして管理される"
 
-#: ../../config.rst:373
+#: ../../config.rst:399
 msgid "The transaction manager is provided from the application server or framework you use"
 msgstr "トランザクションマネージャが使用するアプリケーションサーバーまたはフレームワークから提供される"
 
-#: ../../config.rst:375
+#: ../../config.rst:401
 msgid "Suppose the ``dialect`` and the ``dataSource`` are injected by the dependency injection container:"
 msgstr "``dialect`` と ``dataSource`` が依存性注入コンテナによって注入されると仮定します。"
 
-#: ../../config.rst:404
+#: ../../config.rst:430
 msgid "To inject the instance of the above class to your DAO implementation instance, you have to annotate your DAO interfaces with ``@AnnotateWith``:"
 msgstr "上記のクラスのインスタンスを DAO のインスタンスに注入するには、DAO インタフェースに ``@AnnotateWith`` アノテーションを付ける必要があります。"
 
-#: ../../config.rst:431
+#: ../../config.rst:457
 msgid "To avoid annotating your DAO interfaces with ``@AnnotateWith`` repeatedly, annotate the arbitrary annotation with it only once:"
 msgstr "DAO インタフェースに ``@AnnotateWith`` で繰り返しアノテーションを付けることを避けるには、任意のアノテーションに 1 回だけアノテーションを付けます。"
 
-#: ../../config.rst:442
+#: ../../config.rst:468
 msgid "Then, you can annotate your DAO interfaces with the above ``@InjectConfig`` annotation:"
 msgstr "次に、DAO インタフェースに上記の ``@InjectConfig`` アノテーションを付けることができます。"
 

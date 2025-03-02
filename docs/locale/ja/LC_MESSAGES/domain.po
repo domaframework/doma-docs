@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-18 21:46+0900\n"
+"POT-Creation-Date: 2025-02-24 14:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -89,85 +89,61 @@ msgstr "外部ドメインクラス"
 
 #: ../../domain.rst:190
 msgid "This feature allows you to define any class as a domain class, even if you cannot annotate the class with the ``@Domain`` annotation."
-msgstr ""
+msgstr "この機能を使用すると、``@Domain`` アノテーションでクラスに注釈を付けることができなくても、任意のクラスをドメインクラスとして定義できます。"
 
 #: ../../domain.rst:193
-msgid "To define external domain classes, you have to do as follows:"
-msgstr "外部ドメイン クラスを定義するには、次のようにします。"
+msgid "To define external domain classes, you have to create a class that implements ``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate ``@ExternalDomain`` to the class."
+msgstr "外部ドメインクラスを定義するには、``org.seasar.doma.jdbc.domainConverter`` を実装するクラスを作成し、``@ExternalDomain`` を注釈する必要があります。"
 
-#: ../../domain.rst:195
-msgid "Create a class that implements ``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate ``@ExternalDomain`` to the class"
-msgstr "``org.seasar.Doma.jdbc.domain.DomainConverter`` を実装するクラスを作成し、クラスに ``@ExternalDomain`` アノテーションを付ける"
-
-#: ../../domain.rst:197
-msgid "Create a class that is annotated with ``@DomainConverters``"
-msgstr "``@DomainConverters`` アノテーションを付けたクラスを作成する"
-
-#: ../../domain.rst:198
-msgid "Specify the class annotated with ``@ExternalDomain`` to the ``@DomainConverters``'s ``value`` element"
-msgstr "``@DomainConverters`` の ``value`` 要素に ``@ExternalDomain`` アノテーションを付けたクラスを指定する"
-
-#: ../../domain.rst:199
-msgid "Specify the full qualified name of the class annotated with ``@DomainConverters`` to the option of :doc:`annotation-processing`"
-msgstr ":doc:`annotation-processing` のオプションに ``@DomainConverters`` アノテーションを付けたクラスの完全修飾名を指定する"
-
-#: ../../domain.rst:202
+#: ../../domain.rst:196
 msgid "Suppose, for instance, there is the ``PhoneNumber`` class that you can change:"
-msgstr "たとえば、ソースコードを変更でない ``PhoneNumber`` クラスがあるとします。"
+msgstr "たとえば、ソースコードを変更できない ``PhoneNumber`` クラスがあるとします。"
 
-#: ../../domain.rst:223
-msgid "First, to define the ``PhoneNumber`` class as an external domain class, create following class:"
-msgstr "まず、``PhoneNumber`` クラスを外部ドメインクラスとして定義するために、次のクラスを作成します。"
+#: ../../domain.rst:217
+msgid "To define the ``PhoneNumber`` class as an external domain class, create following class:"
+msgstr "``PhoneNumber`` クラスを外部ドメインクラスとして定義するには、次のクラスを作成します。"
 
-#: ../../domain.rst:242
-msgid "Then create following class and specify the above class to the ``@DomainConverters``'s ``value`` element:"
-msgstr "次に、次のクラスを作成し、上記のクラスを ``@DomainConverters`` の ``value`` 要素に指定します。"
-
-#: ../../domain.rst:250
-msgid "Finally, specify the full qualified name of the above class to the option of :doc:`annotation-processing`. If you use Gradle, specify the option in the build script as follows:"
-msgstr "最後に、:doc:`annotation-processing` のオプションに上記クラスの完全修飾名を指定します。 Gradle を使用する場合は、ビルド スクリプトで次のようにオプションを指定します。"
-
-#: ../../domain.rst:262
+#: ../../domain.rst:237
 msgid "Using type parameters in external domain classes"
 msgstr "外部ドメインクラスにおける型パラメータの使用"
 
-#: ../../domain.rst:264
+#: ../../domain.rst:239
 msgid "All external domain class declarations have type parameters:"
 msgstr "外部ドメインクラスには任意の数の型パラメータを宣言できます。"
 
-#: ../../domain.rst:281
+#: ../../domain.rst:256
 msgid "In the ``DomainConverter`` implementation class, specify a wildcard ``?`` as type arguments to the external domain class:"
 msgstr "``DomainConverter`` 実装クラスで、外部ドメインクラスへの型引数としてワイルドカード ``?`` を指定します。"
 
-#: ../../domain.rst:303
+#: ../../domain.rst:278
 msgid "Direct mapping of external domain classes to the database"
-msgstr ""
+msgstr "外部ドメインクラスのデータベースへの直接マッピング"
 
-#: ../../domain.rst:305
+#: ../../domain.rst:280
 msgid "All external domain classes can be directly mapped to any database type."
-msgstr ""
+msgstr "すべての外部ドメインクラスは、直接任意のデータベースの型にマッピングできます。"
 
-#: ../../domain.rst:307
+#: ../../domain.rst:282
 msgid "Here's an example of mapping ``java.util.UUID`` to PostgreSQL's UUID type."
-msgstr ""
+msgstr "``java.util.UUID`` を PostgreSQL の UUID 型にマッピングする例を次に示します。"
 
-#: ../../domain.rst:309
+#: ../../domain.rst:284
 msgid "First, create an implementation of ``org.seasar.doma.jdbc.type.JdbcType`` to handle the mapping:"
-msgstr ""
+msgstr "まず、マッピングを処理するために ``org.seasar.doma.jdbc.type.JdbcType`` の実装を作成します。"
 
-#: ../../domain.rst:343
-msgid "Next, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``, and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above. Don't forget to annotate the class with ``@ExternalDomain``:"
-msgstr ""
+#: ../../domain.rst:318
+msgid "Then, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``, and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above:"
+msgstr "次に、``org.seasar.doma.it.domain.JdbcTypeProvider`` を拡張したクラスを作成し、``getJdbcType`` メソッドで上記で作成した ``JdbcType`` 実装のインスタンスを返します。"
 
-#: ../../domain.rst:360
-msgid "The rest follows the standard approach. Simply add ``PostgresUUIDConverter`` to the ``@DomainConverters`` annotation, and specify the fully qualified name of the class with the ``@DomainConverters`` annotation in the annotation processing options."
-msgstr ""
+#: ../../domain.rst:334
+msgid "Don't forget to annotate the class with ``@ExternalDomain``."
+msgstr "クラスに ``@ExternalDomain`` を注釈することを忘れないでください。"
 
-#: ../../domain.rst:366
+#: ../../domain.rst:337
 msgid "Example"
 msgstr "例"
 
-#: ../../domain.rst:368
+#: ../../domain.rst:339
 msgid "The Domain classes showed above are used as follows:"
 msgstr "上記のドメインクラスは次のように使用されます。"
 
