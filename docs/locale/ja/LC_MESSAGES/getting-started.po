@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 12:36+0900\n"
+"POT-Creation-Date: 2025-03-15 09:14+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -88,126 +88,134 @@ msgid "Tested with IntelliJ IDEA Community 2023.3.4. Import the getting-started 
 msgstr "IntelliJ IDEA Community 2023.3.4 でテストされています。プロジェクトを Gradle プロジェクトとしてインポートしてください。"
 
 #: ../../getting-started.rst:67
-msgid "If you use IntelliJ IDEA Ultimate Edition, `Doma Support <https://plugins.jetbrains.com/plugin/7615-doma-support>`_ can help you."
-msgstr "IntelliJ IDEA Ultimate Edition を使用している場合、`Doma Support <https://plugins.jetbrains.com/plugin/7615-doma-support>`_ が役立つかもしれません。"
+msgid "You can use the following IntelliJ IDEA plugins to support Doma. Since they have overlapping features, please choose one:"
+msgstr "次のIntelliJ IDEAプラグインを使用してDomaをサポートできます。機能が重複しているため、いずれか一方をお選びください。"
 
-#: ../../getting-started.rst:71
+#: ../../getting-started.rst:69
+msgid "`Doma Support <https://plugins.jetbrains.com/plugin/7615-doma-support>`_: Supports only the Ultimate Edition."
+msgstr "`Doma Support <https://plugins.jetbrains.com/plugin/7615-doma-support>`_: Ultimate Editionのみをサポートします。"
+
+#: ../../getting-started.rst:70
+msgid "`Doma Tools for IntelliJ <https://plugins.jetbrains.com/plugin/26701-doma-tools/>`_: Supports the Community Edition. Currently in beta."
+msgstr "`Doma Tools for IntelliJ <https://plugins.jetbrains.com/plugin/26701-doma-tools/>`_: Community Edition をサポート。現在ベータ版。"
+
+#: ../../getting-started.rst:73
 msgid "Programming styles"
 msgstr "プログラミングスタイル"
 
-#: ../../getting-started.rst:73
+#: ../../getting-started.rst:75
 msgid "Doma supports two programming styles: DSL and DAO."
 msgstr "Doma は、DSL と DAO という 2 つのプログラミング スタイルをサポートしています。"
 
-#: ../../getting-started.rst:75
+#: ../../getting-started.rst:77
 msgid "The DSL style utilizes the Criteria API for building type-safe SQL statements, offering several benefits, such as not requiring reflection and supporting various types of associations (one-to-many, many-to-one, one-to-one)."
 msgstr "DSL スタイルは、タイプ セーフな SQL ステートメントを構築するために Criteria API を利用します。Criteria API は、リフレクションを使わない、さまざまなタイプの関連付け (1 対多、多対 1、1 対 1) をサポートする、などいくつかの利点があります。"
 
-#: ../../getting-started.rst:78
+#: ../../getting-started.rst:80
 msgid "The DAO style, on the other hand, maps SQL statements to Java interface methods."
 msgstr "一方、DAO スタイルは、SQL ステートメントを Java インターフェイスのメソッドにマップします。こちらは、SQLの特長を最大限に活かす方法と言えます。"
 
-#: ../../getting-started.rst:80
+#: ../../getting-started.rst:82
 msgid "It's recommended to use the DSL style due to the Criteria API's advantages."
 msgstr "アプリケーションの特性に応じてスタイルを選択することをお勧めします。2つのスタイルは混在させることもできます。"
 
-#: ../../getting-started.rst:83
+#: ../../getting-started.rst:85
 msgid "DSL style"
 msgstr "DSL スタイル"
 
-#: ../../getting-started.rst:85
+#: ../../getting-started.rst:87
 msgid "In the DSL style, you work with examples in the ``boilerplate.java17.repository.EmployeeRepository`` and the :doc:`query-dsl` for operations."
 msgstr "DSL スタイルでは、``boilerplate.java17.repository.EmployeeRepository`` と :doc:`query-dsl` を使った例を使用します。"
 
-#: ../../getting-started.rst:89
+#: ../../getting-started.rst:91
 msgid "SELECT"
 msgstr ""
 
-#: ../../getting-started.rst:91
+#: ../../getting-started.rst:93
 msgid "To execute a SELECT query and retrieve Java object results, follow this example:"
 msgstr "SELECT ステートメントを実行して Java オブジェクトの結果を取得するには、次の例に従います。"
 
-#: ../../getting-started.rst:100
+#: ../../getting-started.rst:102
 msgid "You'll use a metamodel class, like ``Employee_`` for ``Employee``, which is auto-generated through annotation processing."
 msgstr "クエリを組み立てるために ``Employee`` エンティティクラスのメタモデルクラスである ``Employee_`` を使用します。メタモデルクラスは、アノテーション処理を通じて自動生成されるクラスです。"
 
-#: ../../getting-started.rst:102
+#: ../../getting-started.rst:104
 msgid "The ``queryDsl`` instance from the ``QueryDsl`` class serves as the Criteria API's starting point."
 msgstr "``QueryDsl`` クラスの ``queryDsl`` インスタンスは、Criteria API の開始点として機能します。"
 
-#: ../../getting-started.rst:104
-#: ../../getting-started.rst:176
+#: ../../getting-started.rst:106
+#: ../../getting-started.rst:178
 msgid "The above code generates the following SQL statement:"
 msgstr "上記のコードは次の SQL ステートメントを生成します。"
 
-#: ../../getting-started.rst:111
+#: ../../getting-started.rst:113
 msgid "DELETE"
 msgstr ""
 
-#: ../../getting-started.rst:113
-#: ../../getting-started.rst:190
+#: ../../getting-started.rst:115
+#: ../../getting-started.rst:192
 msgid "To issue a DELETE statement, write as follows:"
 msgstr "DELETE ステートメントを発行するには、次のように記述します。"
 
-#: ../../getting-started.rst:123
+#: ../../getting-started.rst:125
 msgid "INSERT"
 msgstr ""
 
-#: ../../getting-started.rst:125
-#: ../../getting-started.rst:200
+#: ../../getting-started.rst:127
+#: ../../getting-started.rst:202
 msgid "To issue an INSERT statement, write as follows:"
 msgstr "INSERT ステートメントを発行するには、次のように記述します。"
 
-#: ../../getting-started.rst:135
+#: ../../getting-started.rst:137
 msgid "UPDATE"
 msgstr ""
 
-#: ../../getting-started.rst:137
-#: ../../getting-started.rst:210
+#: ../../getting-started.rst:139
+#: ../../getting-started.rst:212
 msgid "To issue an UPDATE statement, write as follows:"
 msgstr "UPDATE ステートメントを発行するには、次のように記述します。"
 
-#: ../../getting-started.rst:147
+#: ../../getting-started.rst:149
 msgid "DAO style"
 msgstr "DAO スタイル"
 
-#: ../../getting-started.rst:149
+#: ../../getting-started.rst:151
 msgid "You can find some examples in ``boilerplate.java17.dao.EmployeeDao``. See :doc:`dao` and :doc:`sql` for more information."
 msgstr "いくつかの例は ``boilerplate.java17.dao.EmployeeDao`` にあります。詳細については、:doc:`dao` および :doc:`sql` を参照してください。"
 
-#: ../../getting-started.rst:153
+#: ../../getting-started.rst:155
 msgid "SELECT (DAO)"
 msgstr ""
 
-#: ../../getting-started.rst:155
+#: ../../getting-started.rst:157
 msgid "In the DAO style, for issuing a SELECT statement to retrieve Java objects, use the ``@Sql`` annotation with Text Blocks for SQL templates:"
 msgstr "DAO スタイルで SELECT ステートメントを発行して Java オブジェクトを取得するには、SQL テンプレートのテキストブロックで ``@Sql`` アノテーションを使用します。"
 
-#: ../../getting-started.rst:171
+#: ../../getting-started.rst:173
 msgid "This SQL template contains two special expressions, ``/*%expand*/`` and ``/* id */``. In process of SQL template, ``/*%expand*/`` and the following ``*`` are replaced with column list. And ``/* id */`` and the following ``0`` are replaced with the bind variable ``?``. The bound value is the ``id`` parameter of the ``selectById`` method."
 msgstr "このSQLテンプレートには、``/*%expand*/`` と ``/* id */`` の二つの特別な表現が含まれています。SQLテンプレートの処理中に、``/*%expand*/`` とその後の ``*`` はカラムリストに置き換えられます。そして、``/* id */`` とその後の ``0`` はバインド変数 ``?`` に置き換えられます。バインドされる値は ``selectById`` メソッドの ``id`` パラメータです。"
 
-#: ../../getting-started.rst:188
+#: ../../getting-started.rst:190
 msgid "DELETE (DAO)"
 msgstr ""
 
-#: ../../getting-started.rst:198
+#: ../../getting-started.rst:200
 msgid "INSERT (DAO)"
 msgstr ""
 
-#: ../../getting-started.rst:208
+#: ../../getting-started.rst:210
 msgid "UPDATE (DAO)"
 msgstr ""
 
-#: ../../getting-started.rst:218
+#: ../../getting-started.rst:220
 msgid "Next Step"
 msgstr "次のステップ"
 
-#: ../../getting-started.rst:220
+#: ../../getting-started.rst:222
 msgid "See other example projects:"
 msgstr "他のサンプルプロジェクトを参照してください。"
 
-#: ../../getting-started.rst:222
+#: ../../getting-started.rst:224
 msgid "`simple-examples <https://github.com/domaframework/simple-examples>`_"
 msgstr ""
 
