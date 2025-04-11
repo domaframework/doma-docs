@@ -46,20 +46,6 @@ The value ``new`` means that the object of annotated class is created with a con
   }
 
 .. note::
-  In Java 14 and later version, you can annotate `records`_ with ``@Domain``:
-
-  .. code-block:: java
-
-    @Domain(valueType = String.class, accessorMethod = "value")
-    public record PhoneNumber(String value) {
-      public String getAreaCode() {
-        ...
-      }
-    }
-
-.. _records: https://openjdk.java.net/jeps/359
-
-.. warning::
 
   To annotate records with ``@Domain`` is a little redundant,
   because you must specify some properties to ``@Domain`` such as ``valueType``.
