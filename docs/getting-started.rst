@@ -66,8 +66,8 @@ Import the getting-started project as a Gradle project.
 
   You can use the following IntelliJ IDEA plugins to support Doma. Since they have overlapping features, please choose one:
 
-  - `Doma Support <https://plugins.jetbrains.com/plugin/7615-doma-support>`_: Supports only the Ultimate Edition.
-  - `Doma Tools for IntelliJ <https://plugins.jetbrains.com/plugin/26701-doma-tools/>`_: Supports the Community Edition. Currently in beta.
+  - `Doma Support <https://plugins.jetbrains.com/plugin/7615-doma-support>`_
+  - `Doma Tools for IntelliJ <https://plugins.jetbrains.com/plugin/26701-doma-tools/>`_
 
 Programming styles
 ==================
