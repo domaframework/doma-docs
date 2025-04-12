@@ -16,12 +16,12 @@ Gradle
 
 Doma provides the doma-slf4j artifact to adapt SLF4J.
 
-.. code-block:: xml
+.. code-block:: kotlin
 
     dependencies {
-        implementation("org.seasar.doma:doma-slf4j:3.6.0")
+        implementation("org.seasar.doma:doma-slf4j:{{ doma_version }}")
         // Use an arbitrary SLF4J binding
-        runtimeOnly("ch.qos.logback:logback-classic:1.5.7")
+        runtimeOnly("ch.qos.logback:logback-classic:{{ logback_classic_version }}")
     }
 
 Configuration

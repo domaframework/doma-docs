@@ -853,10 +853,10 @@ The module only contains the following classes:
 Gradle
 ------
 
-.. code-block:: xml
+.. code-block:: kotlin
 
     dependencies {
-        implementation("org.seasar.doma:doma-template:3.6.0")
+        implementation("org.seasar.doma:doma-template:{{ doma_version }}")
     }
 
 Usage

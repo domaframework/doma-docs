@@ -36,12 +36,12 @@ Write your build.gradle(.kts) as follows:
         .. code-block:: kotlin
 
             plugins {
-                id("org.domaframework.doma.compile") version "3.0.1"
+                id("org.domaframework.doma.compile") version "{{ doma_compile_version }}"
             }
             
             dependencies {
-                implementation("org.seasar.doma:doma-core:3.6.0")
-                annotationProcessor("org.seasar.doma:doma-processor:3.6.0")
+                implementation("org.seasar.doma:doma-core:{{ doma_version }}")
+                annotationProcessor("org.seasar.doma:doma-processor:{{ doma_version }}")
             }
 
     .. tab:: Groovy
@@ -53,8 +53,8 @@ Write your build.gradle(.kts) as follows:
             }
             
             dependencies {
-                implementation 'org.seasar.doma:doma-core:3.6.0'
-                annotationProcessor 'org.seasar.doma:doma-processor:3.6.0'
+                implementation 'org.seasar.doma:doma-core:{{ doma_version }}'
+                annotationProcessor 'org.seasar.doma:doma-processor:{{ doma_version }}'
             }
 
 To simplify your build.script(.kts), we recommend that you use the `org.domaframework.doma.compile`_ plugin.
@@ -72,7 +72,7 @@ Write your pom.xml as follows:
 
     ...
     <properties>
-        <doma.version>3.6.0</doma.version>
+        <doma.version>{{ doma_version }}</doma.version>
     </properties>
     ...
     <dependencies>

@@ -177,3 +177,18 @@ gettext_uuid = False
 
 gettext_compact = False
 
+html_context = {
+    'doma_version': '3.6.0',
+    'doma_compile_version': '3.0.1',
+    'doma_codegen_version': '3.0.0',
+    'eclipse_apt_version': '4.3.0',
+    'logback_classic_version': '1.5.18',
+    'quarkus_doma_version': '1.0.2'
+}
+
+def render_jinja(app, docname, source):
+    rendered = app.builder.templates.render_string(source[0], app.config.html_context)
+    source[0] = rendered
+
+def setup(app):
+    app.connect("source-read", render_jinja)

@@ -24,9 +24,9 @@ Gradle
 .. code-block:: kotlin
 
     dependencies {
-        annotationProcessor("org.seasar.doma:doma-processor:3.6.0")
-        implementation("org.seasar.doma:doma-core:3.6.0")
-        implementation("io.quarkiverse.doma:quarkus-doma:0.0.13")
+        annotationProcessor("org.seasar.doma:doma-processor:{{ doma_version }}")
+        implementation("org.seasar.doma:doma-core:{{ doma_version }}")
+        implementation("io.quarkiverse.doma:quarkus-doma:{{ quarkus_doma_version }}")
     }
 
 Maven
@@ -36,8 +36,8 @@ Maven
 
     ...
     <properties>
-        <doma.version>3.6.0</doma.version>
-        <quarkus-doma.version>0.0.9</quarkus-doma.version>
+        <doma.version>{{ doma_version }}</doma.version>
+        <quarkus-doma.version>{{ quarkus_doma_version }}</quarkus-doma.version>
         <compiler-plugin.version>3.9.0</compiler-plugin.version>
     </properties>
     ...

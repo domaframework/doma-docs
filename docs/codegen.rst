@@ -42,7 +42,7 @@ The basic build.gradle(.kts) example is as follows:
             
             plugins {
                 id("java")
-                id("org.domaframework.doma.codegen") version "3.0.0"
+                id("org.domaframework.doma.codegen") version "{{ doma_codegen_version }}"
             }
             
             domaCodeGen {
@@ -81,7 +81,7 @@ The basic build.gradle(.kts) example is as follows:
             
             plugins {
                 id 'java'
-                id 'org.domaframework.doma.codegen' version '3.0.0'
+                id 'org.domaframework.doma.codegen' version '{{ doma_codegen_version }}'
             }
             
             domaCodeGen {

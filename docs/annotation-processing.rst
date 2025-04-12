@@ -169,7 +169,7 @@ and the ``processorArgs`` property:
         .. code-block:: kotlin
 
             plugins {
-                id("com.diffplug.eclipse.apt") version "3.43.0"
+                id("com.diffplug.eclipse.apt") version "{{ eclipse_apt_version }}"
             }
 
             tasks {
@@ -187,7 +187,7 @@ and the ``processorArgs`` property:
         .. code-block:: groovy
         
             plugins {
-                id 'com.diffplug.eclipse.apt' version '3.43.0'
+                id 'com.diffplug.eclipse.apt' version '{{ eclipse_apt_version }}'
             }
             
             compileJava {
