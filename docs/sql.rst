@@ -160,7 +160,6 @@ The ``@Sql`` annotation must be combined with following annotations:
 * @BatchInsert
 * @BatchUpdate
 * @BatchDelete
-* @MultiInsert
 
 Directives
 ==========
