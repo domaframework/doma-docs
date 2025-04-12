@@ -1,5 +1,5 @@
 =============================
-Aggregate strategy
+Aggregate strategies
 =============================
 
 .. contents::
