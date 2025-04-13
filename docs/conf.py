@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Doma'
-copyright = '2018, Toshihiro Nakamura'
+copyright = '2025, Doma Authors'
 author = 'Toshihiro Nakamura'
 
 # The short X.Y version
