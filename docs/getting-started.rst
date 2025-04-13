@@ -72,14 +72,13 @@ Import the getting-started project as a Gradle project.
 Programming styles
 ==================
 
-Doma supports two programming styles: DSL and DAO. 
+Doma supports two programming styles —DSL and DAO— and
+it is recommended to use them together to maximize their advantages.
 
-The DSL style utilizes the Criteria API for building type-safe SQL statements, offering several benefits, 
-such as not requiring reflection and supporting various types of associations (one-to-many, many-to-one, one-to-one). 
-
-The DAO style, on the other hand, maps SQL statements to Java interface methods. 
-
-It's recommended to use the DSL style due to the Criteria API's advantages.
+The DSL style leverages the type-safe Criteria API, making it ideal for automatically generating simple dynamic SQL.
+On the other hand, the DAO style maps SQL statements to Java interface methods and is well suited for automatically
+generating conventional SQL for insert, update, and delete operations,
+as well as for manually writing complex SQL.
 
 DSL style
 =========
