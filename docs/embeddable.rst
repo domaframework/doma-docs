@@ -31,6 +31,17 @@ The following code snippet shows how to define an embeddable:
       }
   }
 
+You can annotate not only classes but also records with ``@Embeddable``:
+
+.. code-block:: java
+
+  @Embeddable
+  public record Address(
+    String city,
+    String street,
+    @Column(name = "ZIP_CODE")String zip) {
+  }
+
 The embeddable class is used as the entity field type:
 
 .. code-block:: java
@@ -59,20 +70,6 @@ The above entity definition is equivalent to following one:
       @Column(name = "ZIP_CODE")
       String zip;
   }
-
-.. note::
-  In Java 14 and later version, you can annotate `records`_ with ``@Embeddable``:
-
-  .. code-block:: java
-
-    @Embeddable
-    public record Address(
-      String city,
-      String street,
-      @Column(name = "ZIP_CODE")String zip) {
-    }
-
-.. _records: https://openjdk.java.net/jeps/359
 
 Naming convention
 -----------------
