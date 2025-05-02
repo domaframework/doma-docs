@@ -1189,6 +1189,30 @@ Exceptions thrown by the execute method include:
 
 * OptimisticLockException: if the entity has a version property and an update count is 0
 
+Delete Record by Entity and Retrieve the Deleted Record
+----------------------------------------------------------
+
+By calling the ``returning`` method, you can delete an entity and retrieve the deleted entity at the same time:
+
+.. code-block:: java
+
+    Department result = queryDsl.delete(d).single(department).returning().fetchOne();
+
+This generates the following SQL:
+
+.. code-block:: sql
+
+    delete from DEPARTMENT where DEPARTMENT_ID = ? and VERSION = ?
+    returning DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION
+
+You can also specify which properties to return in the ``returning`` method.
+
+To receive the result as an ``Optional``, use the ``fetchOptional`` method instead of ``fetchOne``.
+
+.. note::
+
+  Only H2 Database, PostgreSQL, SQL Server, and SQLite Dialects support this feature.
+
 Delete Records by Where Expression
 ----------------------------------
 
@@ -1329,6 +1353,37 @@ To ignore duplicates:
 Exceptions include:
 
 * UniqueConstraintException: if a unique constraint is violated.
+
+Insert Record with Entity and Retrieve the Inserted Record
+----------------------------------------------------------
+
+By calling the ``returning`` method, you can insert an entity and retrieve the inserted entity at the same time:
+
+.. code-block:: java
+
+    Department result = queryDsl.insert(d).single(department).returning().fetchOne();
+
+This generates the following SQL:
+
+.. code-block:: sql
+
+    insert into DEPARTMENT (DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION)
+    values (?, ?, ?, ?, ?) returning DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION
+
+You can also specify which properties to return in the ``returning`` method.
+
+To receive the result as an ``Optional``, use the ``fetchOptional`` method instead of ``fetchOne``.
+
+The ``returning`` method is also supported for multi-row inserts.
+In that case, the ``fetch`` method returns a List of inserted entities:
+
+.. code-block:: java
+
+    List<Department> results = queryDsl.insert(d).multi(departmentList).returning().fetch();
+
+.. note::
+
+  Only H2 Database, PostgreSQL, SQL Server, and SQLite Dialects support this feature.
 
 Insert Record with Specified Values
 -----------------------------------
@@ -1504,6 +1559,31 @@ Exceptions from the execute method may include:
 
 * OptimisticLockException: if the entity has a version property and the update count is 0
 * UniqueConstraintException: if a unique constraint is violated
+
+Update Record by Entity and Retrieve the Updated Record
+----------------------------------------------------------
+
+By calling the ``returning`` method, you can update an entity and retrieve the updated entity at the same time:
+
+.. code-block:: java
+
+    Department result = queryDsl.update(d).single(department).returning().fetchOne();
+
+This generates the following SQL:
+
+.. code-block:: sql
+
+    update DEPARTMENT set DEPARTMENT_NO = ?, DEPARTMENT_NAME = ?, LOCATION = ?, VERSION = ? + 1
+    where DEPARTMENT_ID = ? and VERSION = ?
+    returning DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION
+
+You can also specify which properties to return in the ``returning`` method.
+
+To receive the result as an ``Optional``, use the ``fetchOptional`` method instead of ``fetchOne``.
+
+.. note::
+
+  Only H2 Database, PostgreSQL, SQL Server, and SQLite Dialects support this feature.
 
 Update Records by Where Expression
 ----------------------------------
