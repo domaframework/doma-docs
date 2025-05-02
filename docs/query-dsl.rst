@@ -1237,6 +1237,9 @@ To delete all records, use the ``all`` method:
 Insert Statement
 ================
 
+If a unique constraint violation occurs during the execution of an insert statement,
+a ``UniqueConstraintException`` will be thrown.
+
 Insert Settings
 ---------------
 
@@ -1286,6 +1289,9 @@ You can specify excluded columns:
 Insert Record with Entity
 -------------------------
 
+single
+~~~~~~
+
 Inserting a single entity:
 
 .. code-block:: java
@@ -1305,6 +1311,32 @@ This generates:
     insert into DEPARTMENT (DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION)
     values (?, ?, ?, ?, ?)
 
+
+Functionality equivalent to ``INSERT ... ON CONFLICT`` is supported.
+
+Use the ``onDuplicateKeyUpdate`` method when you want to perform an update in case of a duplicate key:
+
+.. code-block:: java
+
+    Result<Department> = queryDsl
+        .insert(d)
+        .single(department)
+        .onDuplicateKeyUpdate()
+        .execute();
+
+Use the ``onDuplicateKeyIgnore`` method when you want to do nothing in case of a duplicate key:
+
+.. code-block:: java
+
+    Result<Department> = queryDsl
+        .insert(d)
+        .single(department)
+        .onDuplicateKeyIgnore()
+        .execute();
+
+batch
+~~~~~
+
 Batch Insert is also supported:
 
 .. code-block:: java
@@ -1314,6 +1346,31 @@ Batch Insert is also supported:
     List<Department> departments = Arrays.asList(department, department2);
 
     BatchResult<Department> result = queryDsl.insert(d).batch(departments).execute();
+
+Functionality equivalent to ``INSERT ... ON CONFLICT`` is supported.
+
+Use the ``onDuplicateKeyUpdate`` method when you want to perform an update in case of a duplicate key:
+
+.. code-block:: java
+
+    BatchResult<Department> = queryDsl
+        .insert(d)
+        .batch(departments)
+        .onDuplicateKeyUpdate()
+        .execute();
+
+Use the ``onDuplicateKeyIgnore`` method when you want to do nothing in case of a duplicate key:
+
+.. code-block:: java
+
+    BatchResult<Department> = queryDsl
+        .insert(d)
+        .batch(departments)
+        .onDuplicateKeyIgnore()
+        .execute();
+
+multi
+~~~~~
 
 Multi-row Insert is also supported:
 
@@ -1328,31 +1385,27 @@ This generates:
     insert into DEPARTMENT (DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION)
     values (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)
 
-Upsert is supported as well, with options to handle duplicate keys:
+Functionality equivalent to ``INSERT ... ON CONFLICT`` is supported.
 
-To update on duplicate key:
+Use the ``onDuplicateKeyUpdate`` method when you want to perform an update in case of a duplicate key:
 
 .. code-block:: java
 
-    BatchResult<Department> = queryDsl
+    MultiResult<Department> = queryDsl
         .insert(d)
         .multi(departments)
         .onDuplicateKeyUpdate()
         .execute();
 
-To ignore duplicates:
+Use the ``onDuplicateKeyIgnore`` method when you want to do nothing in case of a duplicate key:
 
 .. code-block:: java
 
-    BatchResult<Department> = queryDsl
+    MultiResult<Department> = queryDsl
         .insert(d)
         .multi(departments)
         .onDuplicateKeyIgnore()
         .execute();
-
-Exceptions include:
-
-* UniqueConstraintException: if a unique constraint is violated.
 
 Insert Record with Entity and Retrieve the Inserted Record
 ----------------------------------------------------------
@@ -1409,10 +1462,6 @@ This generates:
     insert into DEPARTMENT (DEPARTMENT_ID, DEPARTMENT_NO, DEPARTMENT_NAME, LOCATION, VERSION)
     values (?, ?, ?, ?, ?)
 
-Unique constraints may throw:
-
-* UniqueConstraintException: if a unique constraint is violated.
-
 We also support the INSERT SELECT syntax:
 
 .. code-block:: java
@@ -1432,7 +1481,9 @@ This generates:
     LOCATION, VERSION) select t0_.DEPARTMENT_ID, t0_.DEPARTMENT_NO, t0_.DEPARTMENT_NAME,
     t0_.LOCATION, t0_.VERSION from DEPARTMENT t0_ where t0_.DEPARTMENT_ID in (?, ?)
 
-For upserts, specify keys and update values on duplicates:
+Functionality equivalent to ``INSERT ... ON CONFLICT`` is supported.
+
+Use the ``onDuplicateKeyUpdate`` method when you want to perform an update in case of a duplicate key:
 
 .. code-block:: java
 
@@ -1454,7 +1505,7 @@ For upserts, specify keys and update values on duplicates:
         })
         .execute();
 
-To ignore duplicates and specify keys:
+Use the ``onDuplicateKeyIgnore`` method when you want to do nothing in case of a duplicate key:
 
 .. code-block:: java
 
@@ -1473,6 +1524,9 @@ To ignore duplicates and specify keys:
 
 Update Statement
 ================
+
+If a unique constraint violation occurs during the execution of an update statement,
+a ``UniqueConstraintException`` will be thrown.
 
 The update statement follows the same specifications as the :ref:`query_dsl_where`.
 
@@ -1558,7 +1612,6 @@ Batch Update is also supported:
 Exceptions from the execute method may include:
 
 * OptimisticLockException: if the entity has a version property and the update count is 0
-* UniqueConstraintException: if a unique constraint is violated
 
 Update Record by Entity and Retrieve the Updated Record
 ----------------------------------------------------------
@@ -1606,10 +1659,6 @@ This generates:
 
     update EMPLOYEE t0_ set t0_.DEPARTMENT_ID = ?
     where t0_.MANAGER_ID is not null and t0_.SALARY >= ?
-
-Exceptions may include:
-
-* UniqueConstraintException: if a unique constraint is violated
 
 Property Expressions
 ====================
