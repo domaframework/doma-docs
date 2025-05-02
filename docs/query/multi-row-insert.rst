@@ -43,6 +43,14 @@ Also the ``postInsert`` method of entity listener method is called each entity w
 Return type
 ===========
 
+When using the returning property
+---------------------------------
+
+See :ref:`multi-row-insert-returning`.
+
+When not using the returning property
+-------------------------------------
+
 If the type argument of the ``Iterable`` parameter is an immutable entity class, the return type must be ``org.seasar.doma.jdbc.MultiResult`` with that entity class as an element.
 
 If the type argument of the ``Iterable`` parameter is a mutable entity class, the return type must be ``int`` that represents updated count.
@@ -134,6 +142,40 @@ This property represents the keys that should be used to determine if a duplicat
 .. note::
 
   The MySQL dialect does not utilize this property.
+
+.. _multi-row-insert-returning:
+
+returning
+---------
+
+By specifying ``@Returning`` in the ``returning`` property,
+you can generate SQL equivalent to the ``INSERT .. RETURNING`` clause.
+
+.. code-block:: java
+
+  @Dao
+  public interface EmployeeDao {
+      @MultiInsert(returning = @Returning)
+      List<Employee> insert(List<Employee> employees);
+
+      @MultiInsert(returning = @Returning(include = { "employeeId", "version" }))
+      List<Employee> insertReturningIdAndVersion(List<Employee> employees);
+
+      @MultiInsert(returning = @Returning(exclude = { "password" }))
+      List<Employee> insertReturningExceptPassword(List<Employee> employees);
+  }
+
+You can use the ``include`` property of ``@Returning`` to specify which entity properties
+(corresponding to database columns) should be returned by the RETURNING clause.
+Alternatively, you can use the ``exclude`` property to specify which properties should not be returned.
+When both properties are specified, the ``exclude`` property takes precedence.
+
+The return type must be a ``List`` of entity instances.
+
+.. note::
+
+  Only H2 Database, PostgreSQL, SQL Server, and SQLite Dialects support this feature.
+
 
 Unique constraint violation
 ============================

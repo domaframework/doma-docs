@@ -24,6 +24,14 @@ Also the ``postDelete`` method of entity listener is called when after executing
 Return value
 ============
 
+When using the returning property
+---------------------------------
+
+See :ref:`delete-returning`.
+
+When not using the returning property
+-------------------------------------
+
 Return value must be ``org.seasar.doma.jdbc.Result`` that make the entity class an element if parameter is immutable entity class.
 
 Return value must be ``int`` that is represented updated count if the above conditions are not satisfied.
@@ -75,6 +83,44 @@ But in this case ``OptimisticLockException`` is not thrown even if delete count 
 
   @Delete(suppressOptimisticLockException = true)
   int delete(Employee employee);
+
+.. _delete-returning:
+
+returning
+~~~~~~~~~
+
+By specifying ``@Returning`` in the ``returning`` property,
+you can generate SQL equivalent to the ``DELETE .. RETURNING`` clause.
+
+.. code-block:: java
+
+  @Dao
+  public interface EmployeeDao {
+      @Delete(returning = @Returning)
+      Employee delete(Employee employee);
+
+      @Delete(returning = @Returning(include = { "employeeId", "version" }))
+      Employee deleteReturningIdAndVersion(Employee employee);
+
+      @Delete(returning = @Returning(exclude = { "password" }))
+      Employee deleteReturningExceptPassword(Employee employee);
+
+      @Delete(returning = @Returning, suppressOptimisticLockException = true)
+      Optional<Employee> deleteOrIgnore(Employee employee);
+  }
+
+You can use the ``include`` property of ``@Returning`` to specify which entity properties
+(corresponding to database columns) should be returned by the RETURNING clause.
+Alternatively, you can use the ``exclude`` property to specify which properties should not be returned.
+When both properties are specified, the ``exclude`` property takes precedence.
+
+The return type must be either an entity class
+or an ``Optional`` containing an entity class as its element.
+
+.. note::
+
+  Only H2 Database, PostgreSQL, SQL Server, and SQLite Dialects support this feature.
+
 
 Delete by SQL file
 ===========================
