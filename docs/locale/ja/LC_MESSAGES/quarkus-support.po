@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 23:36+0900\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -108,7 +108,7 @@ msgid "Support for native images"
 msgstr "ネイティブイメージのサポート"
 
 #: ../../quarkus-support.rst:188
-msgid "The quarkus-doma module recognizes reflective classes and resources, and includes them into your native image without additional configurations."
+msgid "The quarkus-doma module automatically recognizes reflective classes and resources, including them in your native image without requiring additional configuration."
 msgstr "quarkus-domaモジュールは、リフレクションクラスとリソースを認識し、追加の設定なしでネイティブイメージに含めます。"
 
 #: ../../quarkus-support.rst:191

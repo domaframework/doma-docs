@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../query/sql-processor.rst:8
-msgid "SQL processors can handle the SQL statements generated from corresponding SQL templates. To mark a DAO method as an SQL processor, annotate the method with ``@SqlProcessor``:"
-msgstr "SQL プロセッサは、対応する SQL テンプレートから生成された SQL ステートメントを処理できます。 DAO メソッドを SQL プロセッサとしてマークするには、メソッドに ``@SqlProcessor`` アノテーションを付けます。"
+msgid "SQL processors allow you to handle SQL statements that are generated from corresponding SQL templates. To designate a DAO method as an SQL processor, annotate it with ``@SqlProcessor``:"
+msgstr "SQL プロセッサは、対応する SQL テンプレートから生成された SQL ステートメントを処理できます。DAO メソッドを SQL プロセッサとして指定するには、``@SqlProcessor`` を使用して注釈を付けてください。"
 
 #: ../../query/sql-processor.rst:22
-msgid "Being aware of SQL injection vulnerabilities is essential. If it's possible, consider alternative ways other than SQL processors."
-msgstr "SQL インジェクションの脆弱性を認識しておくことが重要です。可能であれば、SQL プロセッサ以外の代替方法を検討してください。"
+msgid "It is essential to be aware of SQL injection vulnerabilities when using this feature. Whenever possible, consider using alternatives to SQL processors for better security."
+msgstr "この機能を使用する際には、SQLインジェクションの脆弱性に注意することが不可欠です。可能な限り、より安全な代替手段を検討してください。"
 
 #: ../../query/sql-processor.rst:26
 msgid "Return type"

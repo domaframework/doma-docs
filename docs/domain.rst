@@ -47,9 +47,9 @@ The value ``new`` indicates that instances of the annotated class will be create
 
 .. note::
 
-  Annotating records with ``@Domain`` can be somewhat redundant,
-  since you must specify properties like ``valueType`` in the ``@Domain`` annotation.
-  As an alternative, you can annotate records with ``@DataType``:
+  You can use ``@DataType`` instead of ``@Domain`` for records.
+  The information corresponding to the ``valueType`` element of ``@Domain``
+  is resolved from the type of the constructor parameter.
 
   .. code-block:: java
 
@@ -64,7 +64,7 @@ The value ``new`` indicates that instances of the annotated class will be create
 Instantiation with a static factory method
 ------------------------------------------
 
-To create instances using a static factory method instead,
+To create instances using a static factory method,
 specify the method name in the ``factoryMethod`` element of the ``@Domain`` annotation.
 
 The method must be static and non-private:

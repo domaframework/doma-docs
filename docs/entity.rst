@@ -40,7 +40,7 @@ The following code snippet shows how to inherit from another entity class:
     }
 
   In this case, the entity is recognized as :ref:`immutable`
-  even though the immutable property of ``@Entity`` is ``false``.
+  even though the ``immutable`` property of ``@Entity`` is ``false``.
 
 .. _records: https://openjdk.java.net/jeps/359
 
@@ -67,6 +67,8 @@ To use the entity listener, specify it in the ``listener`` property of the ``@En
   }
 
 An entity subclass inherits its parent's entity listener.
+
+.. _naming-convention:
 
 Naming convention
 ---------------------------
@@ -135,7 +137,7 @@ You can specify the corresponding table name with the ``@Table`` annotation:
       ...
   }
 
-If the ``@Table`` annotation is not specified, the table name is determined by the `Naming Convention`_.
+If the ``@Table`` annotation is not specified, the table name is determined by the :ref:`naming-convention` .
 
 Field definition
 ==================
@@ -182,7 +184,7 @@ properties to ``false`` within the ``@Column`` annotation:
   @Column(insertable = false, updatable = false)
   String employeeName;
 
-If the ``@Column`` annotation is not specified, the column name is determined by the `Naming Convention`_.
+If the ``@Column`` annotation is not specified, the column name is determined by the :ref:`naming-convention` .
 
 .. note::
 

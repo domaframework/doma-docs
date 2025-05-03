@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-24 14:52+0900\n"
+"POT-Creation-Date: 2025-05-03 18:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,8 +24,8 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../domain.rst:8
-msgid "A domain class represents a table column and it allows you to handle the column value as a Java object. In the Doma framework, a **domain** means all the values which a data type may contain. In short, a domain class is a user defined class that can be map to a column. The use of the domain classes is optional."
-msgstr "ドメインクラスはデータベースのカラムを表し、カラムの値を Java オブジェクトとして処理できるようにします。 Doma フレームワークでは、**ドメイン** はデータ型に含まれる可能性のあるすべての値を意味します。つまり、ドメインクラスは、カラムにマップできるユーザー定義のクラスです。ドメインクラスの使用はオプションです。"
+msgid "A domain class represents a table column and allows you to handle column values as Java objects. In the Doma framework, a **domain** refers to all the values that a data type may contain. In essence, a domain class is a user-defined class that can be mapped to a database column. Using domain classes is optional but recommended for type safety."
+msgstr "ドメインクラスはデータベースのカラムを表し、カラムの値をJavaオブジェクトとして処理できるようにします。Domaフレームワークでは、\"ドメイン\"はデータ型に含まれる可能性のあるすべての値を意味します。つまり、ドメインクラスは、カラムにマップできるユーザー定義のクラスです。ドメインクラスの使用はオプションですが、型の安全性のために推奨されます。"
 
 #: ../../domain.rst:13
 msgid "Every domain class is either an internal domain class or an external domain class."
@@ -36,114 +36,110 @@ msgid "Internal domain classes"
 msgstr "内部ドメインクラス"
 
 #: ../../domain.rst:18
-msgid "The internal domain class must be annotated with ``@Domain``. The ``@Domain``'s ``valueType`` element corresponds to a data type of a column. Specify any type of :doc:`basic` to the ``valueType`` element."
-msgstr "内部ドメインクラスには ``@Domain`` アノテーションを付ける必要があります。 ``@Domain`` の ``valueType`` 要素は、カラムのデータ型に対応します。 ``valueType`` 要素には任意のタイプの :doc:`basic` を指定します。"
+msgid "Internal domain classes must be annotated with ``@Domain``. The ``valueType`` element of the ``@Domain`` annotation specifies the data type of the corresponding database column. You must specify a type from :doc:`basic` for the ``valueType`` element."
+msgstr "内部ドメインクラスには ``@Domain`` アノテーションを付ける必要があります。 ``@Domain`` の ``valueType`` 要素は、対応するデータベースのカラムのデータ型を指定します。``valueType`` 要素には :doc:`basic` からタイプを指定しなければなりません。"
 
 #: ../../domain.rst:23
 msgid "Instantiation with a constructor"
 msgstr "コンストラクタを使用したインスタンス化"
 
 #: ../../domain.rst:25
-msgid "The default value of the ``@Domain``'s ``factoryMethod`` element is ``new``. The value ``new`` means that the object of annotated class is created with a constructor."
-msgstr "``@Domain`` の ``factoryMethod`` 要素のデフォルト値は ``new`` です。値 ``new`` は、アノテーションが付けられたクラスのオブジェクトがコンストラクタを使用して作成されることを意味します。"
+msgid "The default value of the ``factoryMethod`` element in the ``@Domain`` annotation is ``new``. The value ``new`` indicates that instances of the annotated class will be created using a constructor."
+msgstr "``@Domain`` の ``factoryMethod`` 要素のデフォルト値は ``new`` です。値 ``new`` は、アノテーションが付けられたクラスのインスタンスがコンストラクタを使用して作成されることを意味します。"
 
-#: ../../domain.rst:49
-msgid "In Java 14 and later version, you can annotate `records`_ with ``@Domain``:"
-msgstr "Java 14 以降のバージョンでは、`records`_ に ``@Domain`` アノテーションを付けることができます。"
+#: ../../domain.rst:50
+msgid "You can use ``@DataType`` instead of ``@Domain`` for records. The information corresponding to the ``valueType`` element of ``@Domain`` is resolved from the type of the constructor parameter."
+msgstr "レコードには ``@Domain`` の代わりに ``@DataType`` を使用できます。 ``@Domain`` の ``valueType`` 要素に対応する情報は、コンストラクタパラメーターの型から解決されます。"
 
-#: ../../domain.rst:64
-msgid "To annotate records with ``@Domain`` is a little redundant, because you must specify some properties to ``@Domain`` such as ``valueType``. Instead of ``@Domain``, you can annotate records with ``@DataType``:"
-msgstr "レコードに ``@Domain`` アノテーションを付けるのは少し冗長です。 ``valueType`` などのいくつかのプロパティを明示的に ``@Domain`` に指定する必要があるためです。 ``@Domain`` の代わりに、レコードに ``@DataType`` アノテーションを付けることができます。"
-
-#: ../../domain.rst:79
+#: ../../domain.rst:65
 msgid "Instantiation with a static factory method"
 msgstr "静的ファクトリメソッドによるインスタンス化"
 
-#: ../../domain.rst:81
-msgid "To create the object of annotated class with a static factory method, specify the method name to the ``@Domain``'s ``factoryMethod`` element."
-msgstr "アノテーションが付与されたクラスのオブジェクトを静的ファクトリメソッドで作成するには、 ``@Domain`` の ``factoryMethod`` 要素にメソッド名を指定します。"
+#: ../../domain.rst:67
+msgid "To create instances using a static factory method, specify the method name in the ``factoryMethod`` element of the ``@Domain`` annotation."
+msgstr "静的ファクトリメソッドを使用してインスタンスを作成するには、``@Domain`` アノテーションの ``factoryMethod`` 要素にメソッド名を指定します。"
 
-#: ../../domain.rst:84
+#: ../../domain.rst:70
 msgid "The method must be static and non-private:"
 msgstr "メソッドは静的で非プライベートである必要があります。"
 
-#: ../../domain.rst:110
+#: ../../domain.rst:96
 msgid "With a static factory method, you can apply the ``@Domain`` annotation to enum types:"
 msgstr "静的ファクトリメソッドを使用すると、``@Domain`` アノテーションを列挙型に適用できます。"
 
-#: ../../domain.rst:143
+#: ../../domain.rst:129
 msgid "Using type parameters in internal domain classes"
 msgstr "内部ドメインクラスにおける型パラメータの使用"
 
-#: ../../domain.rst:145
-msgid "All internal domain class declarations have type parameters:"
-msgstr "内部ドメインクラスには任意の数の型パラメータを宣言できます。"
+#: ../../domain.rst:131
+msgid "Internal domain classes can include type parameters as shown below:"
+msgstr "以下に示すように、内部ドメインクラスには型パラメータを含めることができます。"
 
-#: ../../domain.rst:164
-msgid "When you create the object of annotated class with a static factory method, the method declaration must have same type parameters that are declared in the class declaration:"
-msgstr "静的ファクトリメソッドを使用してアノテーション付きクラスのオブジェクトを作成する場合、メソッド宣言にはクラス宣言と同じ型パラメータが必要です。"
+#: ../../domain.rst:150
+msgid "When creating instances using a static factory method, the method declaration must include the same type parameters as those declared in the class:"
+msgstr "静的ファクトリメソッドを使用してインスタンスを作成する場合、メソッド宣言にはクラスで宣言された型パラメータと同じものを含める必要があります。"
 
-#: ../../domain.rst:188
+#: ../../domain.rst:174
 msgid "External domain classes"
 msgstr "外部ドメインクラス"
 
-#: ../../domain.rst:190
+#: ../../domain.rst:176
 msgid "This feature allows you to define any class as a domain class, even if you cannot annotate the class with the ``@Domain`` annotation."
 msgstr "この機能を使用すると、``@Domain`` アノテーションでクラスに注釈を付けることができなくても、任意のクラスをドメインクラスとして定義できます。"
 
-#: ../../domain.rst:193
-msgid "To define external domain classes, you have to create a class that implements ``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate ``@ExternalDomain`` to the class."
-msgstr "外部ドメインクラスを定義するには、``org.seasar.doma.jdbc.domainConverter`` を実装するクラスを作成し、``@ExternalDomain`` を注釈する必要があります。"
+#: ../../domain.rst:179
+msgid "To define external domain classes, you must create a class that implements ``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate it with ``@ExternalDomain``."
+msgstr "外部ドメインクラスを定義するには、``org.seasar.doma.jdbc.domain.DomainConverter`` を実装するクラスを作成し、``@ExternalDomain`` を注釈する必要があります。"
 
-#: ../../domain.rst:196
-msgid "Suppose, for instance, there is the ``PhoneNumber`` class that you can change:"
-msgstr "たとえば、ソースコードを変更できない ``PhoneNumber`` クラスがあるとします。"
+#: ../../domain.rst:182
+msgid "Consider, for example, the following ``PhoneNumber`` class that you cannot modify directly:"
+msgstr "例えば、次のような ``PhoneNumber`` クラスがあり、直接修正することはできないとします:"
 
-#: ../../domain.rst:217
-msgid "To define the ``PhoneNumber`` class as an external domain class, create following class:"
-msgstr "``PhoneNumber`` クラスを外部ドメインクラスとして定義するには、次のクラスを作成します。"
+#: ../../domain.rst:203
+msgid "To define the ``PhoneNumber`` class as an external domain class, create the following converter class:"
+msgstr "``PhoneNumber`` クラスを外部ドメインクラスとして定義するには、次のコンバータクラスを作成します。"
 
-#: ../../domain.rst:237
+#: ../../domain.rst:223
 msgid "Using type parameters in external domain classes"
 msgstr "外部ドメインクラスにおける型パラメータの使用"
 
-#: ../../domain.rst:239
-msgid "All external domain class declarations have type parameters:"
-msgstr "外部ドメインクラスには任意の数の型パラメータを宣言できます。"
+#: ../../domain.rst:225
+msgid "External domain classes can also use type parameters, as shown below:"
+msgstr "以下に示すように、外部ドメインクラスも型パラメータを使用できます。"
 
-#: ../../domain.rst:256
-msgid "In the ``DomainConverter`` implementation class, specify a wildcard ``?`` as type arguments to the external domain class:"
-msgstr "``DomainConverter`` 実装クラスで、外部ドメインクラスへの型引数としてワイルドカード ``?`` を指定します。"
+#: ../../domain.rst:242
+msgid "In the ``DomainConverter`` implementation class, use a wildcard ``?`` as the type argument when referring to the external domain class:"
+msgstr "``DomainConverter`` 実装クラスで、外部ドメインクラスへの型引数としてワイルドカード ``?`` を使用します。"
 
-#: ../../domain.rst:278
+#: ../../domain.rst:264
 msgid "Direct mapping of external domain classes to the database"
 msgstr "外部ドメインクラスのデータベースへの直接マッピング"
 
-#: ../../domain.rst:280
+#: ../../domain.rst:266
 msgid "All external domain classes can be directly mapped to any database type."
 msgstr "すべての外部ドメインクラスは、直接任意のデータベースの型にマッピングできます。"
 
-#: ../../domain.rst:282
+#: ../../domain.rst:268
 msgid "Here's an example of mapping ``java.util.UUID`` to PostgreSQL's UUID type."
 msgstr "``java.util.UUID`` を PostgreSQL の UUID 型にマッピングする例を次に示します。"
 
-#: ../../domain.rst:284
+#: ../../domain.rst:270
 msgid "First, create an implementation of ``org.seasar.doma.jdbc.type.JdbcType`` to handle the mapping:"
 msgstr "まず、マッピングを処理するために ``org.seasar.doma.jdbc.type.JdbcType`` の実装を作成します。"
 
-#: ../../domain.rst:318
-msgid "Then, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``, and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above:"
+#: ../../domain.rst:304
+msgid "Then, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``. In the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above:"
 msgstr "次に、``org.seasar.doma.it.domain.JdbcTypeProvider`` を拡張したクラスを作成し、``getJdbcType`` メソッドで上記で作成した ``JdbcType`` 実装のインスタンスを返します。"
 
-#: ../../domain.rst:334
-msgid "Don't forget to annotate the class with ``@ExternalDomain``."
-msgstr "クラスに ``@ExternalDomain`` を注釈することを忘れないでください。"
+#: ../../domain.rst:320
+msgid "Remember to annotate this class with ``@ExternalDomain``."
+msgstr "このクラスに ``@ExternalDomain`` を注釈することを忘れないでください。"
 
-#: ../../domain.rst:337
+#: ../../domain.rst:323
 msgid "Example"
 msgstr "例"
 
-#: ../../domain.rst:339
-msgid "The Domain classes showed above are used as follows:"
+#: ../../domain.rst:325
+msgid "The Domain classes shown above are used as follows:"
 msgstr "上記のドメインクラスは次のように使用されます。"
 

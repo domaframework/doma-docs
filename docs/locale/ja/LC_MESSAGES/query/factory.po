@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../query/factory.rst:8
-msgid "To get instances from the factory methods of ``java.sql.Connection``, annotate DAO methods with one of following annotations;"
+msgid "To obtain instances from the factory methods of ``java.sql.Connection``, annotate DAO methods with one of the following annotations:"
 msgstr "``java.sql.Connection`` のファクトリメソッドからインスタンスを取得するには、DAO メソッドに次のいずれかのアノテーションを付けます。"
 
 #: ../../query/factory.rst:11

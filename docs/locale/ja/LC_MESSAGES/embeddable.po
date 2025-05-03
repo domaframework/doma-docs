@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,98 +24,98 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../embeddable.rst:8
-msgid "Embeddable classes group the properties for :doc:`../entity`."
-msgstr "埋め込み可能クラスは、:doc:`../entity` のプロパティをグループ化します。"
+msgid "Embeddable classes group properties for entity classes."
+msgstr "埋め込み可能クラスは、エンティティクラスのプロパティをグループ化します。"
 
 #: ../../embeddable.rst:11
 msgid "Embeddable definition"
 msgstr "埋め込み可能クラスの定義"
 
 #: ../../embeddable.rst:13
-msgid "The following code snippet shows how to define an embeddable:"
-msgstr "次のコードスニペットは、埋め込み可能クラスを定義する方法を示しています。"
+msgid "Here is an example of how to define an embeddable class:"
+msgstr "埋め込み可能クラスを定義する方法の例を示します:"
 
 #: ../../embeddable.rst:34
+msgid "You can apply the ``@Embeddable`` annotation to both classes and records:"
+msgstr "クラスとレコードの両方に ``@Embeddable`` アノテーションを適用できます。"
+
+#: ../../embeddable.rst:45
 msgid "The embeddable class is used as the entity field type:"
 msgstr "埋め込み可能クラスはエンティティフィールドの型として使用されます。"
 
-#: ../../embeddable.rst:46
+#: ../../embeddable.rst:57
 msgid "The above entity definition is equivalent to following one:"
 msgstr "上記のエンティティ定義は、次のエンティティ定義と同等です。"
 
-#: ../../embeddable.rst:64
-msgid "In Java 14 and later version, you can annotate `records`_ with ``@Embeddable``:"
-msgstr "Java 14 以降のバージョンでは、`records`_ に ``@Embeddable`` アノテーションを付けることができます。"
-
-#: ../../embeddable.rst:78
+#: ../../embeddable.rst:75
 msgid "Naming convention"
 msgstr "命名規則"
 
-#: ../../embeddable.rst:80
-msgid "A naming convention is inherited from the enclosing :doc:`../entity`."
-msgstr "命名規則は、埋め込み可能クラスを利用している :doc:`../entity` から継承されます。"
+#: ../../embeddable.rst:77
+msgid "The naming convention is inherited from the enclosing entity class."
+msgstr "命名規則は、囲んでいるエンティティクラスから継承されます。"
 
-#: ../../embeddable.rst:83
+#: ../../embeddable.rst:80
 msgid "Field definition"
 msgstr "フィールドの定義"
 
-#: ../../embeddable.rst:85
-msgid "By default, the fields are persistent and correspond to the database columns or result set columns."
-msgstr "デフォルトでは、フィールドは永続的で、データベースまたは結果セットのカラムに対応します。"
+#: ../../embeddable.rst:82
+msgid "By default, all fields are persistent and correspond to database columns or result set columns."
+msgstr "デフォルトでは、すべてのフィールドは永続的で、データベースまたは結果セットのカラムに対応します。"
 
-#: ../../embeddable.rst:87
+#: ../../embeddable.rst:84
 msgid "The field type must be one of the following:"
 msgstr "フィールドの型は次のいずれかである必要があります。"
 
-#: ../../embeddable.rst:89
+#: ../../embeddable.rst:86
 msgid ":doc:`basic`"
 msgstr ""
 
-#: ../../embeddable.rst:90
+#: ../../embeddable.rst:87
 msgid ":doc:`domain`"
 msgstr ""
 
-#: ../../embeddable.rst:91
+#: ../../embeddable.rst:88
 msgid "java.util.Optional, whose element is either :doc:`basic` or :doc:`domain`"
 msgstr "要素を :doc:`basic` または :doc:`domain` のいずれかとする java.util.Optional"
 
-#: ../../embeddable.rst:92
+#: ../../embeddable.rst:89
 msgid "java.util.OptionalInt"
 msgstr ""
 
-#: ../../embeddable.rst:93
+#: ../../embeddable.rst:90
 msgid "java.util.OptionalLong"
 msgstr ""
 
-#: ../../embeddable.rst:94
+#: ../../embeddable.rst:91
 msgid "java.util.OptionalDouble"
 msgstr ""
 
-#: ../../embeddable.rst:105
+#: ../../embeddable.rst:102
 msgid "Column"
 msgstr "カラム"
 
-#: ../../embeddable.rst:107
+#: ../../embeddable.rst:104
 msgid "You can specify the corresponding column name with the ``@Column`` annotation:"
 msgstr "カラム名を ``@Column``  アノテーションで指定できます。"
 
-#: ../../embeddable.rst:115
+#: ../../embeddable.rst:112
 msgid "Transient"
 msgstr "Transient"
 
-#: ../../embeddable.rst:117
+#: ../../embeddable.rst:114
 msgid "If an embeddable has fields that you don’t want to persist, you can annotate them using ``@Transient``:"
 msgstr "埋め込み可能オブジェクトに永続化したくないフィールドがある場合は、 ``@Transient`` アノテーションを指定できます。"
 
-#: ../../embeddable.rst:120
+#: ../../embeddable.rst:117
 msgid "Method definition"
 msgstr "メソッドの定義"
 
-#: ../../embeddable.rst:122
+#: ../../embeddable.rst:119
 msgid "There are no limitations in the use of methods."
 msgstr "メソッドの使用に制限はありません。"
 
-#: ../../embeddable.rst:125
+#: ../../embeddable.rst:122
 msgid "Example"
 msgstr "例"
 

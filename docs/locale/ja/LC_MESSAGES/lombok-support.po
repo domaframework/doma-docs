@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../lombok-support.rst:8
-msgid "Doma supports `Lombok <https://projectlombok.org/>`_ 1.16.12 or above."
+msgid "Doma supports `Lombok <https://projectlombok.org/>`_ version 1.16.12 and later."
 msgstr "Doma は、`Lombok <https://projectlombok.org/>`_ 1.16.12 以降をサポートしています。"
 
 #: ../../lombok-support.rst:12
@@ -36,20 +36,20 @@ msgid "Overview"
 msgstr "概要"
 
 #: ../../lombok-support.rst:17
-msgid "Both Lombok and Doma provide annotation processors. Because the execution order of annotation processors is not determined in Java, Doma's annotation processors are not always aware of the class modifications made by Lombok annotation processors."
-msgstr "Lombok と Doma は両方ともアノテーションプロセッサを提供します。アノテーションプロセッサの実行順序は Java では決定されないため、Doma のアノテーションプロセッサは、Lombok アノテーションプロセッサによって行われたクラスの変更を常に認識するとは限りません。"
+msgid "Both Lombok and Doma use annotation processors. Since Java does not guarantee a specific execution order for annotation processors, Doma's annotation processors may not always be aware of the class modifications made by Lombok's annotation processors."
+msgstr "Lombok と Doma は両方ともアノテーションプロセッサを使用します。Java はアノテーションプロセッサの実行順を保証していないため、Lombok のアノテーションプロセッサによって行われたクラスの変更を Doma のアノテーションプロセッサが常に認識しているわけではありません。"
 
 #: ../../lombok-support.rst:22
-msgid "To resolve the issue, Doma's annotation processors recognize several of Lombok's annotations and change their behavior. For example, if Doma's annotation processors find a class annotated with ``@lombok.Value``, they suppose that the class has a constructor whose arguments cover all instance fields."
-msgstr "この問題を解決するために、Doma のアノテーションプロセッサは Lombok のアノテーションのいくつかを認識し、その動作を変更します。たとえば、Doma のアノテーション プロセッサが ``@lombok.Value`` アノテーションが付けられたクラスを見つけた場合、そのクラスにはすべてのインスタンス フィールドに対応するパラメータを引数で受け取るコンストラクタがあると想定します。"
+msgid "To address this issue, Doma's annotation processors recognize several Lombok annotations and adjust their behavior accordingly. For example, when Doma's annotation processors encounter a class annotated with ``@lombok.Value``, they assume that the class has a constructor with parameters matching all its instance fields."
+msgstr "この問題を解決するために、DomaのアノテーションプロセッサはLombokのアノテーションのいくつかを認識し、その動作を調整します。例えば、Domaのアノテーションプロセッサが ``@lombok.Value`` が付けられたクラスを見つけると、そのクラスには全てのインスタンスフィールドに対応するパラメータを持つコンストラクタがあると仮定します。"
 
 #: ../../lombok-support.rst:28
 msgid "Best practices"
 msgstr "ベストプラクティス"
 
 #: ../../lombok-support.rst:30
-msgid "We show you recommended ways to define classes with Lombok annotations."
-msgstr "Lombok アノテーションを使用してクラスを定義するための推奨方法を示します。"
+msgid "Below are recommended patterns for defining classes with Lombok annotations."
+msgstr "以下は、Lombok アノテーションを使用してクラスを定義するための推奨パターンです。"
 
 #: ../../lombok-support.rst:33
 msgid "Entity class definition"

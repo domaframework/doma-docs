@@ -19,7 +19,7 @@ Query definition
 
 :doc:`query/index` can be defined using annotations.
 
-You can use :doc:`query-builder/index` in a `default method`_ when you need to build queries dynamically in Java code.
+You can use :doc:`query-builder/index` or :doc:`query-dsl` in a :ref:`dao-default-method` when you need to build queries dynamically in Java code.
 
 .. _dao-default-method:
 

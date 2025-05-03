@@ -177,10 +177,10 @@ you can generate SQL equivalent to the ``UPDATE .. RETURNING`` clause.
       Optional<Employee> updateOrIgnore(Employee employee);
   }
 
-You can use the ``include`` property of ``@Returning`` to specify which entity properties
+You can use the ``include`` element of ``@Returning`` to specify which entity properties
 (corresponding to database columns) should be returned by the RETURNING clause.
-Alternatively, you can use the ``exclude`` property to specify which properties should not be returned.
-When both properties are specified, the ``exclude`` property takes precedence.
+Alternatively, you can use the ``exclude`` element to specify which properties should not be returned.
+If the same entity property is included in both ``include`` and ``exclude`` elements, it will not be returned.
 
 The return type must be either an entity class
 or an ``Optional`` containing an entity class as its element.
@@ -199,8 +199,8 @@ set the ``sqlFile`` property to ``true`` within the ``@Update`` annotation and p
 
   When updating via SQL file, the rules differ depending on whether you use :ref:`populate`.
 
-Case of using comment that generates update column list
--------------------------------------------------------
+Case of using the populate directive
+------------------------------------
 
 The first parameter type must be an entity class.
 There is no limit on the number of parameters that can be specified.
@@ -223,8 +223,8 @@ For example, you would write an SQL file like the one below to correspond to the
 
 The rules for controlling update target properties are the same as in :ref:`auto-update`.
 
-Case of not using comment that generates update column list
------------------------------------------------------------
+Case of not using the populate directive
+----------------------------------------
 
 You can use an arbitrary type as a parameter.
 There is no limit on the number of parameters that can be specified.

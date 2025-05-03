@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../query/batch-delete.rst:8
-msgid "Annotate with ``@BatchDelete`` to Dao method for execute batch delete."
-msgstr "DAOメソッドに ``@BatchDelete`` アノテーションを付けてバッチ削除を実行します。"
+msgid "Annotate a Dao method with ``@BatchDelete`` to execute batch delete operations."
+msgstr "DAO メソッドに ``@BatchDelete`` を付けて、バッチ削除操作を実行します。"
 
 #: ../../query/batch-delete.rst:19
-msgid "By default DELETE statement is auto generated. You can mapping arbitrary SQL file by specifying ``true`` to ``sqlFile`` property within the ``@BatchDelete`` annotation."
-msgstr "デフォルトでは、DELETE ステートメントが自動生成されます。 ``@BatchDelete`` アノテーション内の ``sqlFile`` プロパティに ``true`` を指定することで、任意の SQL ファイルをマッピングできます。"
+msgid "By default, the DELETE statement is automatically generated. You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` in the ``@BatchDelete`` annotation."
+msgstr "デフォルトでは、DELETE ステートメントが自動生成されます。@BatchDelete アノテーション内の ``sqlFile`` プロパティに ``true`` を設定することで、任意の SQL ファイルをマッピングできます。"
 
 #: ../../query/batch-delete.rst:22
 msgid "The ``preDelete`` method of entity listener is called each entity when before executing delete if the entity listener is specified at :doc:`../entity` parameter. Also the ``postDelete`` method of entity listener method is called each entity when after executing delete."
@@ -83,7 +83,7 @@ msgid "ignoreVersion"
 msgstr "ignoreVersion"
 
 #: ../../query/batch-delete.rst:55
-msgid "If ``ignoreVersion`` property within ``@BatchDelete`` annotation is ``true``, version number is not include in delete condition. ``BatchOptimisticLockException`` is not thrown, even if delete count is 0."
+msgid "If the ``ignoreVersion`` property of the ``@BatchDelete`` annotation is set to ``true``, the version number is not included in the delete condition. ``BatchOptimisticLockException`` is not thrown, even if the delete count is 0."
 msgstr "``@BatchDelete`` アノテーション内の ``ignoreVersion`` プロパティが ``true`` の場合、バージョン番号は削除条件に含まれません。削除数が0であっても ``BatchOptimisticLockException`` はスローされません。"
 
 #: ../../query/batch-delete.rst:64
@@ -92,8 +92,8 @@ msgid "suppressOptimisticLockException"
 msgstr "suppressOptimisticLockException"
 
 #: ../../query/batch-delete.rst:66
-msgid "In case of ``suppressOptimisticLockException`` property within ``@BatchDelete`` is ``true``, version number is include in delete condition but ``BatchOptimisticLockException`` is not thrown even if delete count is 0."
-msgstr "``@BatchDelete`` 内の ``suppressOptimisticLockException`` プロパティが ``true`` の場合、削除条件にバージョン番号が含まれますが、削除数が 0 であっても ``BatchOptimisticLockException`` はスローされません。"
+msgid "When the ``suppressOptimisticLockException`` property of the ``@BatchDelete`` annotation is set to ``true``, the version number is included in the delete condition but ``BatchOptimisticLockException`` is not thrown even if the delete count is 0."
+msgstr "``@BatchDelete`` アノテーションの ``suppressOptimisticLockException`` プロパティが ``true`` に設定されている場合、削除条件にバージョン番号が含まれますが、削除件数がゼロでも ``BatchOptimisticLockException`` はスローされません。"
 
 #: ../../query/batch-delete.rst:75
 msgid "Batch delete by SQL file"
@@ -132,12 +132,12 @@ msgid "``BatchOptimisticLockException`` representing optimistic concurrency cont
 msgstr "この SQL で削除件数が 0 以上の場合、楽観的排他制御の失敗を表す ``BatchOptimisticLockException`` がスローされます。"
 
 #: ../../query/batch-delete.rst:119
-msgid "If ``ignoreVersion`` property within ``@BatchDelete`` annotation is true, ``BatchOptimisticLockException`` is not thrown even if deleted count is 0 or multiple."
-msgstr "``@BatchDelete`` アノテーション内の ``ignoreVersion`` プロパティが ``true`` の場合、削除件数が何であれ ``BatchOptimisticLockException`` はスローされません。"
+msgid "If the ``ignoreVersion`` property of the ``@BatchDelete`` annotation is set to true, ``BatchOptimisticLockException`` is not thrown even if the deleted count is 0 or multiple."
+msgstr "``@BatchDelete`` アノテーションの ``ignoreVersion`` プロパティが ``true`` に設定されている場合、削除件数が 0 または複数でも ``BatchOptimisticLockException`` はスローされません。"
 
 #: ../../query/batch-delete.rst:130
-msgid "If ``suppressOptimisticLockException`` property within ``@BatchDelete`` is ``true``, ``BatchOptimisticLockException`` is not thrown even if deleted count is 0 or multiple."
-msgstr "``@BatchDelete`` 内の ``suppressOptimisticLockException`` プロパティが ``true`` の場合、削除件数が何であっても ``BatchOptimisticLockException`` はスローされません。"
+msgid "If the ``suppressOptimisticLockException`` property of the ``@BatchDelete`` annotation is set to ``true``, ``BatchOptimisticLockException`` is not thrown even if the deleted count is 0 or multiple."
+msgstr "``@BatchDelete`` アノテーションの ``suppressOptimisticLockException`` プロパティが ``true`` に設定されている場合、削除された件数が 0 または複数であっても ``BatchOptimisticLockException`` はスローされません。"
 
 #: ../../query/batch-delete.rst:139
 msgid "Query timeout"
@@ -160,7 +160,7 @@ msgid "You can specify batch size to ``batchSize`` property within ``@BatchDelet
 msgstr "バッチサイズは ``@BatchDelete`` アノテーション内の ``batchSize`` プロパティに指定できます。"
 
 #: ../../query/batch-delete.rst:161
-msgid "This specify is applied regardless of using or not using SQL file. It you do not specify the value to ``batchSize`` property, batch size that is specified at :doc:`../config` class is applied."
+msgid "This setting applies regardless of whether you use a SQL file or not. If you do not specify a value for the ``batchSize`` property, the batch size configured in the :doc:`../config` class is used."
 msgstr "この指定は、SQL ファイルの使用の有無に関係なく適用されます。 ``batchSize`` プロパティに値を指定しない場合は、:doc:`../config` クラスで指定されたバッチサイズが適用されます。"
 
 #: ../../query/batch-delete.rst:165
@@ -172,6 +172,6 @@ msgid "You can specify SQL log output format to ``sqlLog`` property within ``@Ba
 msgstr "SQLログの出力形式は ``@BatchDelete`` アノテーション内の ``sqlLog`` プロパティに指定できます。"
 
 #: ../../query/batch-delete.rst:174
-msgid "``SqlLogType.RAW`` represent outputting log that is sql with a binding parameter."
-msgstr "``SqlLogType.RAW`` はバインドパラメータ付きの SQL をログ出力することを表します。"
+msgid "``SqlLogType.RAW`` outputs the SQL statement with its binding parameters in the log."
+msgstr "``SqlLogType.RAW`` は、SQLステートメントとそのバインドパラメータをログに出力します。"
 

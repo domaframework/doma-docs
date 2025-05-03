@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,8 @@ msgid "Overview"
 msgstr "概要"
 
 #: ../../basic.rst:11
-msgid "The Java types can be mapped to database column types are called \"Basic classes\" in Doma."
-msgstr "Doma では、データベースのカラム型にマッピング可能なJava型を **基本クラス** と呼びます。"
+msgid "In Doma, \"Basic classes\" are Java types that can be mapped directly to database column types."
+msgstr "Doma において「基本クラス」とは、データベースのカラム型に直接マッピングできるJava型です。"
 
 #: ../../basic.rst:14
 msgid "List of basic classes"
@@ -40,7 +40,7 @@ msgid "primitive types except ``char``"
 msgstr "``char`` を除くプリミティブ型"
 
 #: ../../basic.rst:17
-msgid "wrapper class for above primitive types"
+msgid "wrapper classes for the above primitive types"
 msgstr "上記のプリミティブ型のラッパー クラス"
 
 #: ../../basic.rst:18
@@ -124,22 +124,22 @@ msgstr "時制クラスの違い"
 
 #: ../../basic.rst:40
 #: ../../basic.rst:49
-msgid "represents SQL DATE"
-msgstr "SQL日付を表します"
+msgid "Represents SQL DATE"
+msgstr "SQL DATEを表します"
 
 #: ../../basic.rst:43
 #: ../../basic.rst:52
-msgid "represents SQL TIME"
-msgstr "SQL時間を表します"
+msgid "Represents SQL TIME"
+msgstr "SQL TIMEを表します"
 
 #: ../../basic.rst:46
 #: ../../basic.rst:55
-msgid "represents SQL TIMESTAMP and may hold nanoseconds if RDBMS supports it"
-msgstr "SQL TIMESTAMP を表し、RDBMS がサポートしている場合はナノ秒を保持する可能性があります"
+msgid "Represents SQL TIMESTAMP and can store nanoseconds if the RDBMS supports it"
+msgstr "SQL TIMESTAMP を表し、RDBMS がサポートしている場合はナノ秒を保持できます"
 
 #: ../../basic.rst:58
-msgid "represents SQL TIMESTAMP and doesn't hold nanoseconds"
-msgstr "SQL TIMESTAMP を表し、ナノ秒を保持しません"
+msgid "Represents SQL TIMESTAMP but does not store nanoseconds"
+msgstr "SQL TIMESTAMP を表しますが、ナノ秒は保存しません"
 
 #: ../../basic.rst:61
 msgid "Examples"

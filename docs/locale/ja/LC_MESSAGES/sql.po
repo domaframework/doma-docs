@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 10:56+0900\n"
+"POT-Creation-Date: 2025-05-03 18:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -28,27 +28,27 @@ msgid "Overview"
 msgstr "概要"
 
 #: ../../sql.rst:11
-msgid "Doma supports SQL templates, called \"two-way SQL\". \"Two-way SQL\" means that the SQL templates can be used in two ways:"
-msgstr "Doma は、 **two-way SQL** と呼ばれる SQL テンプレートをサポートしています。 two-way SQLは、SQL テンプレートを次の 2 通りの方法で使用できることを意味します。"
+msgid "Doma supports SQL templates known as \"two-way SQL\". The term \"two-way SQL\" indicates that these templates can be used in two ways:"
+msgstr "Doma は、 **two-way SQL** と呼ばれる SQL テンプレートをサポートしています。two-way SQLは、SQL テンプレートを次の 2 通りの方法で使用できることを意味します。"
 
 #: ../../sql.rst:14
-msgid "To build dynamic SQL statements from the templates."
-msgstr "テンプレートから動的 SQL ステートメントを構築する"
+msgid "Building dynamic SQL statements from the templates."
+msgstr "テンプレートから動的 SQL ステートメントを構築する。"
 
 #: ../../sql.rst:15
-msgid "To execute the templates in SQL tools as they are."
-msgstr "SQLツールでテンプレートをそのまま実行する"
+msgid "Executing the templates directly in SQL tools without modification."
+msgstr "SQLツールで直接テンプレートを実行する。"
 
 #: ../../sql.rst:17
 msgid "Every SQL template must correspond to a DAO method. For example, suppose you have the pair of an SQL template and a DAO method as follows:"
 msgstr "すべての SQL テンプレートは DAO メソッドに対応する必要があります。たとえば、次のような SQL テンプレートと DAO メソッドのペアがあるとします。"
 
 #: ../../sql.rst:28
-msgid "The ``employeeId`` expression enclosed between ``/*`` and ``*/`` corresponds to the method parameter \"employeeId\" of the DAO. In runtime, the SQL comment and following number ``/* employeeId */99`` is replaced with a bind variable ``?`` and the method parameter \"employeeId\" is passed to the variable. The SQL statement generated from the SQL template is as follows:"
-msgstr "``/*`` と ``*/`` で囲まれた ``employeeId`` 式は、DAO のメソッドパラメータ ``employeeId`` に対応します。実行時には、SQL コメントとそれに続く数値 ``/*employeeId */99`` がバインド変数 ``?`` に置き換えられ、メソッド パラメータ ``employeeId`` がその変数に渡されます。 SQL テンプレートから生成された SQL ステートメントは次のとおりです。"
+msgid "The ``employeeId`` expression enclosed between ``/*`` and ``*/`` corresponds to the method parameter \"employeeId\" of the DAO. At runtime, the SQL comment and the following number ``/* employeeId */99`` are replaced with a bind variable ``?``, and the method parameter \"employeeId\" is bound to this variable. The SQL statement generated from the SQL template is as follows:"
+msgstr "``/*`` と ``*/`` で囲まれた ``employeeId`` 式は、DAO のメソッドパラメータ ``employeeId`` に対応します。実行時には、SQL コメントとそれに続く数値 ``/*employeeId */99`` がバインド変数 ``?`` に置き換えられ、メソッド パラメータ ``employeeId`` がその変数に渡されます。 SQL テンプレートから生成される SQL ステートメントは次のとおりです。"
 
 #: ../../sql.rst:38
-msgid "The number ``99`` in the SQL template is test data and never used in runtime. The test data is only useful when you execute the SQL template as is. In other words, you can check whether the SQL template is grammatically correct with your favorite SQL tools."
+msgid "The number ``99`` in the SQL template is test data that is never used at runtime. This test data is only useful when you execute the SQL template directly in your database tools. In other words, you can check whether the SQL template is grammatically correct with your favorite SQL tools."
 msgstr "SQL テンプレート内の数字 ``99`` はテストデータであり、実行時には決して使用されません。テストデータは、SQL テンプレートをそのまま実行する場合にのみ役立ちます。つまり、お気に入りの SQL ツールを使用して、SQL テンプレートが文法的に正しいかどうかを確認できます。"
 
 #: ../../sql.rst:42
@@ -64,7 +64,7 @@ msgid "You can specify SQL templates in text files:"
 msgstr "SQL テンプレートはテキストファイルに記載できます。"
 
 #: ../../sql.rst:60
-msgid "Above ``selectById`` and ``deleteByName`` methods are mapped onto their own SQL files. DAO methods must be annotated with one of following annotations:"
+msgid "The ``selectById`` and ``deleteByName`` methods above are mapped to their corresponding SQL files. DAO methods must be annotated with one of the following annotations:"
 msgstr "上記の ``selectById`` メソッドと ``deleteByName`` メソッドは、それぞれ独自の SQL ファイルにマップされます。 DAO メソッドには、次のいずれかのアノテーションを付ける必要があります。"
 
 #: ../../sql.rst:63
@@ -101,8 +101,8 @@ msgid "Encoding"
 msgstr "エンコーディング"
 
 #: ../../sql.rst:74
-msgid "The SQL files must be saved as UTF-8 encoded."
-msgstr "SQL ファイルは UTF-8 エンコードで保存する必要があります。"
+msgid "All SQL files must be saved with UTF-8 encoding."
+msgstr "すべてのSQLファイルはUTF-8エンコーディングで保存しなければなりません。"
 
 #: ../../sql.rst:77
 msgid "Location"
@@ -117,8 +117,8 @@ msgid "Format of file path"
 msgstr "ファイルパスの形式"
 
 #: ../../sql.rst:84
-msgid "The SQL file path must follow the following format:"
-msgstr "SQL ファイルのパスは次の形式に従う必要があります。"
+msgid "SQL file paths must follow this format:"
+msgstr "SQLファイルのパスはこの形式に従う必要があります:"
 
 #: ../../sql.rst:86
 msgid "META-INF/*path-format-of-dao-interface*/*dao-method*.sql"
@@ -145,7 +145,7 @@ msgid "META-INF/aaa/bbb/EmployeeDao/selectById-*postgres*.sql"
 msgstr ""
 
 #: ../../sql.rst:105
-msgid "The SQL files specific to RDBMSs are given priority. For example, in the environment where PostgreSQL is used, \"META-INF/aaa/bbb/EmployeeDao/selectById-postgres.sql\" is chosen instead of \"META-INF/aaa/bbb/EmployeeDao/selectById.sql\"."
+msgid "RDBMS-specific SQL files take precedence over generic ones. For example, in a PostgreSQL environment, \"META-INF/aaa/bbb/EmployeeDao/selectById-postgres.sql\" will be chosen instead of \"META-INF/aaa/bbb/EmployeeDao/selectById.sql\"."
 msgstr "RDBMS 固有の SQL ファイルが存在する場合、優先的に利用されます。例えば、PostgreSQLを使用する環境では、「META-INF/aaa/bbb/EmployeeDao/selectById.sql」ではなく「META-INF/aaa/bbb/EmployeeDao/selectById-postgres.sql」が選択されます。"
 
 #: ../../sql.rst:110
@@ -300,329 +300,331 @@ msgstr ""
 msgid "@BatchDelete"
 msgstr ""
 
-#: ../../sql.rst:165
+#: ../../sql.rst:167
 msgid "Directives"
 msgstr "ディレクティブ"
 
-#: ../../sql.rst:167
+#: ../../sql.rst:169
 msgid "In SQL templates, the SQL comments following the specific rules are recognised as directives. Supported directives are as follows:"
 msgstr "SQL テンプレートでは、特定のルールに従った SQL コメントがディレクティブとして認識されます。サポートされているディレクティブは次のとおりです。"
 
-#: ../../sql.rst:170
+#: ../../sql.rst:172
 msgid "`Bind variable directive`_"
 msgstr "`バインド変数ディレクティブ`_"
 
-#: ../../sql.rst:171
+#: ../../sql.rst:173
 msgid "`Literal variable directive`_"
 msgstr "`リテラル変数ディレクティブ`_"
 
-#: ../../sql.rst:172
+#: ../../sql.rst:174
 msgid "`Embedded variable directive`_"
 msgstr "`埋込み変数ディレクティブ`_"
 
-#: ../../sql.rst:173
+#: ../../sql.rst:175
 msgid "`Condition directive`_"
 msgstr "`条件ディレクティブ`_"
 
-#: ../../sql.rst:174
+#: ../../sql.rst:176
 msgid "`Loop directive`_"
 msgstr "`ループディレクティブ`_"
 
-#: ../../sql.rst:175
+#: ../../sql.rst:177
 msgid "`Expansion directive`_"
 msgstr "`選択カラムリスト展開ディレクティブ`_"
 
-#: ../../sql.rst:176
+#: ../../sql.rst:178
 msgid "`Population directive`_"
 msgstr "`更新カラムリスト生成ディレクティブ`_"
 
-#: ../../sql.rst:177
+#: ../../sql.rst:179
 msgid "`Parser-level comment directive`_"
 msgstr "`パーサーレベルコメントディレクティブ`_"
 
-#: ../../sql.rst:181
+#: ../../sql.rst:183
 msgid "See also :doc:`expression` for information of the expression language available in directives."
 msgstr "ディレクティブで使用できる式言語については、:doc:`expression` も参照してください。"
 
-#: ../../sql.rst:186
+#: ../../sql.rst:188
 msgid "Bind variable directive"
 msgstr "バインド変数ディレクティブ"
 
-#: ../../sql.rst:188
-msgid "Bind variable directive is represented with the format ``/*...*/``. The expression enclosed between ``/*`` and ``*/`` is evaluated and its evaluation result is passed to bind variable in SQL statement. The directive must be followed by test data, which is never used in runtime."
+#: ../../sql.rst:190
+msgid "The bind variable directive is written in the format ``/*...*/``. The expression enclosed between ``/*`` and ``*/`` is evaluated, and its result is passed to a bind variable in the SQL statement. The directive must be followed by test data, which is never used at runtime."
 msgstr "バインド変数ディレクティブは ``/*...*/`` の形式で表されます。 ``/*`` と ``*/`` で囲まれた式が評価され、その評価結果がSQL文のバインド変数に渡されます。ディレクティブの後にはテストデータを続ける必要がありますが、テスト データは実行時には使用されません。"
 
-#: ../../sql.rst:194
+#: ../../sql.rst:196
 msgid "Basic and domain parameters"
 msgstr "パラメータ"
 
-#: ../../sql.rst:196
+#: ../../sql.rst:198
 msgid "The parameter whose type is one of :doc:`basic` and :doc:`domain` is recognised as a bind variable."
 msgstr "型が :doc:`basic` または :doc:`domain` のいずれかのパラメータはバインド変数として認識されます。"
 
-#: ../../sql.rst:199
-#: ../../sql.rst:224
-#: ../../sql.rst:256
-#: ../../sql.rst:295
+#: ../../sql.rst:201
+#: ../../sql.rst:226
+#: ../../sql.rst:258
+#: ../../sql.rst:297
 msgid "The following example is the pair of a DAO method and an SQL template:"
 msgstr "次の例は、DAO メソッドと SQL テンプレートのペアです。"
 
-#: ../../sql.rst:209
+#: ../../sql.rst:211
 msgid "The following SQL statement is generated from the SQL template:"
 msgstr "次の SQL ステートメントが上述の SQL テンプレートから生成されます。"
 
-#: ../../sql.rst:216
+#: ../../sql.rst:218
 msgid "Parameters in IN clause"
 msgstr "IN句のパラメータ"
 
-#: ../../sql.rst:218
-msgid "The parameter whose type is a subtype of ``java.lang.Iterable`` or an array type is recognised as bind variables in IN clause."
-msgstr "``java.lang.Iterable`` のサブタイプもしくは配列のパラーメータはIN句のバインド変数だと認識されます。"
+#: ../../sql.rst:220
+msgid "Parameters with a type that is a subtype of ``java.lang.Iterable`` or an array type are recognized as bind variables in an IN clause."
+msgstr "``java.lang.Iterable`` のサブタイプまたは配列型のパラメータは、IN句のバインド変数として認識されます。"
 
-#: ../../sql.rst:221
+#: ../../sql.rst:223
 msgid "The type argument of ``java.lang.Iterable`` must be one of :doc:`basic` and :doc:`domain`. The directives must be followed by test data enclosed between ``(`` and ``)``."
 msgstr "``java.lang.Iterable`` のサブタイプもしくは配列の要素の型は :doc:`basic` または :doc:`domain` でなければいけません。ディレクトティブの直後には ``(`` と ``)`` で囲まれたテストデータが必須です。"
 
-#: ../../sql.rst:234
+#: ../../sql.rst:236
 msgid "In case that the ``employeeIdList`` contains five elements, the following SQL statement is generated from the SQL template:"
 msgstr "``employeeIdList`` に 5 つの要素が含まれる場合、SQL テンプレートから次の SQL ステートメントが生成されます。"
 
-#: ../../sql.rst:241
+#: ../../sql.rst:243
 msgid "In case that the ``employeeIdList`` is empty, the IN clause is replaced with ``in (null)`` in runtime:"
 msgstr "``employeeIdList`` が空の場合、実行時に IN 句は ``in (null)`` に置き換えられます。"
 
-#: ../../sql.rst:249
+#: ../../sql.rst:251
 msgid "Literal variable directive"
 msgstr "リテラル変数ディレクティブ"
 
-#: ../../sql.rst:251
-msgid "Literal variable directive is represented with the format ``/*^...*/``. The expression enclosed between ``/*^`` and ``*/`` is evaluated and its evaluation result is converted to literal format to be embedded in SQL statement. The directive must be followed by test data, which is never used in runtime."
+#: ../../sql.rst:253
+msgid "The literal variable directive is written in the format ``/*^...*/``. The expression enclosed between ``/*^`` and ``*/`` is evaluated, and its result is converted to a literal format that is embedded directly in the SQL statement. The directive must be followed by test data, which is never used at runtime."
 msgstr "リテラル変数ディレクティブは ``/*^...*/`` の形式で表されます。 ``/*^`` と ``*/`` で囲まれた式を評価し、その評価結果をリテラル形式に変換してSQL文に埋め込みます。ディレクティブの後にはテスト データを続ける必要がありますが、テスト データは実行時には使用されません。"
 
-#: ../../sql.rst:266
-#: ../../sql.rst:305
+#: ../../sql.rst:268
+#: ../../sql.rst:307
 msgid "The DAO method is invoked as follows:"
 msgstr "DAO メソッドは次のように呼び出されます。"
 
-#: ../../sql.rst:273
-#: ../../sql.rst:314
-#: ../../sql.rst:705
-#: ../../sql.rst:717
-#: ../../sql.rst:756
+#: ../../sql.rst:275
+#: ../../sql.rst:316
+#: ../../sql.rst:707
+#: ../../sql.rst:719
+#: ../../sql.rst:758
 msgid "The generated SQL statement is as follows:"
 msgstr "生成される SQL ステートメントは次のとおりです。"
 
-#: ../../sql.rst:281
+#: ../../sql.rst:283
 msgid "Literal variable directives are helpful to avoid bind variables and fix SQL plans."
 msgstr "リテラル変数ディレクティブは、バインド変数を回避し、SQL 実行計画を固定するのに役立ちます。"
 
-#: ../../sql.rst:285
+#: ../../sql.rst:287
 msgid "Literal variable directives do not escape parameters for SQL injection. But the directives reject parameters containing the single quotation ``'``."
 msgstr "リテラル変数ディレクティブは、SQL インジェクションを引き起こす可能性のある文字列をエスケープしません。ただし、ディレクティブは一重引用符 ``'`` を含むパラメータを拒否します。"
 
-#: ../../sql.rst:289
+#: ../../sql.rst:291
 msgid "Embedded variable directive"
 msgstr "埋め込み変数ディレクティブ"
 
-#: ../../sql.rst:291
-msgid "Embedded variable directive is represented with the format ``/*#...*/``. The expression enclosed between ``/*#`` and ``*/`` is evaluated and its evaluation result is embedded in SQL statement."
+#: ../../sql.rst:293
+msgid "The embedded variable directive is written in the format ``/*#...*/``. The expression enclosed between ``/*#`` and ``*/`` is evaluated, and its result is embedded directly in the SQL statement."
 msgstr "埋込み変数ディレクティブは ``/*#...*/`` の形式で表現します。 ``/*#`` と ``*/`` で囲まれた式が評価され、その評価結果がSQL文に埋め込まれます。"
 
-#: ../../sql.rst:322
+#: ../../sql.rst:324
 msgid "Embedded variable directives are helpful to build SQL fragments such as ORDER BY clause."
 msgstr "埋め込み変数ディレクティブは、ORDER BY 句などの SQL フラグメントを構築するのに役立ちます。"
 
-#: ../../sql.rst:326
-msgid "To prevent SQL injection vulnerabilities, embedded variable directives reject parameters containing the following values:"
-msgstr "SQL インジェクションの脆弱性を防ぐために、埋め込み変数ディレクティブは次の値を含むパラメータを拒否します。"
-
-#: ../../sql.rst:329
-msgid "a single quotation ``'``"
-msgstr "一重引用符 ``'``"
-
-#: ../../sql.rst:330
-msgid "a semi colon ``;``"
-msgstr "セミコロン ``;``"
+#: ../../sql.rst:328
+msgid "To prevent SQL injection vulnerabilities, embedded variable directives reject parameters containing any of the following characters or sequences:"
+msgstr "SQL インジェクションの脆弱性を防ぐために、埋め込み変数ディレクティブは次の文字またはシーケンスを含むパラメータを拒否します。"
 
 #: ../../sql.rst:331
-msgid "two hyphen ``--``"
-msgstr "ハイフン 2 つ ``--``"
+msgid "Single quotation mark ``'``"
+msgstr "一重引用符 ``'``"
 
 #: ../../sql.rst:332
-msgid "a slash and an asterisk ``/*``"
+msgid "Semicolon ``;``"
+msgstr "セミコロン ``;``"
+
+#: ../../sql.rst:333
+msgid "Double hyphen ``--``"
+msgstr "ダブルハイフン ``--``"
+
+#: ../../sql.rst:334
+msgid "Slash followed by an asterisk ``/*``"
 msgstr "スラッシュとアスタリスク ``/*``"
 
-#: ../../sql.rst:335
+#: ../../sql.rst:337
 msgid "Condition directive"
 msgstr "条件ディレクティブ"
 
-#: ../../sql.rst:337
+#: ../../sql.rst:339
 msgid "Condition directive allows you to build SQL statements conditionally."
 msgstr "条件ディレクティブを使用すると、条件に基づいて SQL ステートメントを作成できます。"
 
-#: ../../sql.rst:340
-#: ../../sql.rst:550
-#: ../../sql.rst:674
-#: ../../sql.rst:732
-#: ../../sql.rst:771
+#: ../../sql.rst:342
+#: ../../sql.rst:552
+#: ../../sql.rst:676
+#: ../../sql.rst:734
+#: ../../sql.rst:773
 msgid "Synopsis"
 msgstr "概要"
 
-#: ../../sql.rst:354
-msgid "The expressions ``condition``, ``condition2``, and ``condition3`` must be evaluated to either ``boolean`` or ``java.lang.Boolean``."
-msgstr "式 ``condition``、``condition2``、および ``condition3`` は、``boolean`` または ``java.lang.Boolean`` のいずれかに評価される必要があります。"
+#: ../../sql.rst:356
+msgid "The expressions ``condition``, ``condition2``, and ``condition3`` must evaluate to either a primitive ``boolean`` or ``java.lang.Boolean`` object."
+msgstr "式 ``condition``, ``condition2``, および ``condition3`` は、``boolean`` または ``java.lang.Boolean`` のいずれかに評価される必要があります。"
 
-#: ../../sql.rst:357
+#: ../../sql.rst:359
 msgid "The ``elseif`` directives and the ``else`` directive are optional."
 msgstr "`elseif` ディレクティブと `else` ディレクティブはオプションです。"
 
-#: ../../sql.rst:360
+#: ../../sql.rst:362
 msgid "if"
 msgstr ""
 
-#: ../../sql.rst:362
-#: ../../sql.rst:388
-#: ../../sql.rst:477
-#: ../../sql.rst:502
-#: ../../sql.rst:572
-#: ../../sql.rst:608
-#: ../../sql.rst:636
-#: ../../sql.rst:777
+#: ../../sql.rst:364
+#: ../../sql.rst:390
+#: ../../sql.rst:479
+#: ../../sql.rst:504
+#: ../../sql.rst:574
+#: ../../sql.rst:610
+#: ../../sql.rst:638
+#: ../../sql.rst:779
 msgid "Suppose you have the following SQL template:"
 msgstr "次の SQL テンプレートがあるとします。"
 
-#: ../../sql.rst:371
+#: ../../sql.rst:373
 msgid "If the ``employeeId`` is not ``null``, the generated SQL statement is as follows:"
 msgstr "``employeeId`` が ``null`` でない場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:377
+#: ../../sql.rst:379
 msgid "If the ``employeeId`` is ``null``, the generated SQL statement is as follows:"
 msgstr "``employeeId`` が ``null`` の場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:383
+#: ../../sql.rst:385
 msgid "The SQL keyword ``where`` is removed automatically."
 msgstr "SQL キーワード ``where`` は自動的に削除されます。"
 
-#: ../../sql.rst:386
+#: ../../sql.rst:388
 msgid "elseif and else"
 msgstr "elseifとelse"
 
-#: ../../sql.rst:407
+#: ../../sql.rst:409
 msgid "If the ``employeeId != null`` is evaluated ``true``, the generated SQL statement is as follows:"
 msgstr "``employeeId != null`` が ``true`` と評価された場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:418
+#: ../../sql.rst:420
 msgid "If the ``employeeId == null && department_id != null`` is evaluated ``true``, the generated SQL statement is as follows:"
 msgstr "``employeeId == null && department_id != null`` が  ``true`` と評価された場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:430
-#: ../../sql.rst:444
+#: ../../sql.rst:432
 msgid "The SQL keyword ``and`` followed by ``department_id`` is remove automatically:"
 msgstr "SQL キーワード ``and`` は自動的に削除されます。"
 
-#: ../../sql.rst:432
+#: ../../sql.rst:434
 msgid "If the ``employeeId == null && department_id == null`` is evaluated ``true``, the generated SQL statement is as follows:"
 msgstr "``employeeId == null && department_id == null``  が ``true`` と評価された場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:447
+#: ../../sql.rst:446
+msgid "The SQL keyword ``and`` followed by ``department_id`` is automatically removed."
+msgstr "SQL キーワード ``and`` の次に続く ``departmentId`` が自動的に削除されます。"
+
+#: ../../sql.rst:449
 msgid "Nested condition directive"
 msgstr "入れ子になった条件ディレクティブ"
 
-#: ../../sql.rst:449
+#: ../../sql.rst:451
 msgid "You can nest condition directives as follows:"
 msgstr "次のように条件ディレクティブをネストできます。"
 
-#: ../../sql.rst:466
+#: ../../sql.rst:468
 msgid "Removal of clauses on the condition directive"
 msgstr "条件ディレクティブの句の削除"
 
-#: ../../sql.rst:468
-msgid "Following clauses can become unnecessary on the condition directive:"
-msgstr "条件ディレクティブでは次の句が不要になる場合があります。"
-
 #: ../../sql.rst:470
-#: ../../sql.rst:601
-msgid "WHERE"
-msgstr ""
-
-#: ../../sql.rst:471
-#: ../../sql.rst:602
-msgid "HAVING"
-msgstr ""
+msgid "The following clauses may become unnecessary when using condition directives:"
+msgstr "条件ディレクティブでは次の句が不要になる場合があります:"
 
 #: ../../sql.rst:472
 #: ../../sql.rst:603
-msgid "ORDER BY"
+msgid "WHERE"
 msgstr ""
 
 #: ../../sql.rst:473
 #: ../../sql.rst:604
-msgid "GROUP BY"
+msgid "HAVING"
+msgstr ""
+
+#: ../../sql.rst:474
+#: ../../sql.rst:605
+msgid "ORDER BY"
 msgstr ""
 
 #: ../../sql.rst:475
 #: ../../sql.rst:606
-msgid "In the case, they are removed automatically."
-msgstr "その場合は自動的に削除されます。"
+msgid "GROUP BY"
+msgstr ""
 
-#: ../../sql.rst:486
-#: ../../sql.rst:512
+#: ../../sql.rst:477
+msgid "In such cases, these clauses are automatically removed."
+msgstr "このような場合、これらの節は自動的に削除されます。"
+
+#: ../../sql.rst:488
+#: ../../sql.rst:514
 msgid "If the ``employeeId != null`` is evaluated ``false``, the generated SQL statement is as follows:"
 msgstr "``employeeId != null`` が ``false`` と評価された場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:493
+#: ../../sql.rst:495
 msgid "Because the SQL clause ``where`` followed by ``/*%if ...*/`` is unnecessary, it is removed automatically."
 msgstr "SQL 句 ``where`` の後に ``/* %i f ...*/`` が続く部分は不要なため、自動的に削除されます。"
 
-#: ../../sql.rst:497
+#: ../../sql.rst:499
 msgid "Removal of AND and OR keywords on the condition directives"
 msgstr "条件ディレクティブの AND および OR キーワードの削除"
 
-#: ../../sql.rst:499
-msgid "AND and OR keywords can become unnecessary on the condition directive. In the case, they are removed automatically."
+#: ../../sql.rst:501
+msgid "AND and OR keywords may become unnecessary when using condition directives. In such cases, these keywords are automatically removed."
 msgstr "AND キーワードと OR キーワードは、条件ディレクティブでは不要になる場合があります。その場合は自動的に削除されます。"
 
-#: ../../sql.rst:519
+#: ../../sql.rst:521
 msgid "Because the SQL keyword ``and`` following ``/*%end*/`` is unnecessary, it is removed automatically."
 msgstr "``/* %end*/`` に続くSQLキーワード ``and`` は不要なため、自動的に削除されます。"
 
-#: ../../sql.rst:523
+#: ../../sql.rst:525
 msgid "Restriction on condition directive"
 msgstr "条件ディレクティブの制限"
 
-#: ../../sql.rst:525
-msgid "``/*%if condition*/`` and ``/*%end*/`` must be included in same SQL clause and in same statement level."
-msgstr "``/* %if condition*/`` と ``/* %end*/`` は、同じ SQL 句および同じ文レベルに含める必要があります。"
+#: ../../sql.rst:527
+msgid "The ``/*%if condition*/`` and ``/*%end*/`` directives must be included in the same SQL clause and at the same statement level."
+msgstr "``/*%if condition*/`` と ``/*%end*/`` は、同じ SQL 句および同じステートメントレベルに含める必要があります。"
 
-#: ../../sql.rst:528
+#: ../../sql.rst:530
 msgid "The following template is invalid, because ``/*%if condition*/`` is in the FROM clause and ``/*%end*/`` is in the WHERE clause:"
 msgstr "次のテンプレートは無効です。 ``/* %ifcondition*/`` が FROM 句にあり、``/* %end*/`` が WHERE 句にあるためです。"
 
-#: ../../sql.rst:536
+#: ../../sql.rst:538
 msgid "The following template is invalid, because ``/*%if condition*/`` is in the outer statement and ``/*%end*/`` is in the inner statement:"
 msgstr "次のテンプレートは、外側のステートメントに ``/* %if condition*/`` があり、内側のステートメントに ``/* %end*/`` があるため、無効です。"
 
-#: ../../sql.rst:545
+#: ../../sql.rst:547
 msgid "Loop directive"
 msgstr "ループディレクティブ"
 
-#: ../../sql.rst:547
+#: ../../sql.rst:549
 msgid "Loop directive allows you to build SQL statements using loop."
 msgstr "ループディレクティブを使用すると、ループを使用して SQL ステートメントを構築できます。"
 
-#: ../../sql.rst:558
-msgid "The ``item`` is the loop variable. The expression ``sequence`` must be evaluated to a subtype of ``java.lang.Iterable`` or an array type."
-msgstr "``item`` はループ変数です。式 ``sequence`` は ``java.lang.Iterable`` のサブタイプまたは配列型として評価される必要があります。"
+#: ../../sql.rst:560
+msgid "Here, ``item`` is the loop variable. The expression ``sequence`` must evaluate to a subtype of ``java.lang.Iterable`` or an array type."
+msgstr "ここで、``item`` はループ変数です。式 ``sequence`` は ``java.lang.Iterable`` のサブタイプまたは配列型として評価される必要があります。"
 
-#: ../../sql.rst:561
-msgid "In the inside between ``/*%for item : sequence*/`` and ``/*%end*/``, two extra loop variables are available:"
-msgstr "``/* %for item : sequence*/`` と ``/* %end*/`` の間の内部では、2 つの追加のループ変数が利用可能です。"
+#: ../../sql.rst:563
+msgid "Inside the loop (between ``/*%for item : sequence*/`` and ``/*%end*/``), two additional loop variables are available:"
+msgstr "``/*%for item : sequence*/`` と ``/*%end*/`` の間のループ内部には、2つの追加ループ変数が利用可能です。"
 
 #: ../../sql.rst:0
 msgid "item_index"
 msgstr ""
 
-#: ../../sql.rst:564
+#: ../../sql.rst:566
 msgid "The index (0-based number) of the current item in the loop"
 msgstr "ループ内の現在の項目のインデックス (0 から始まる番号)"
 
@@ -630,241 +632,245 @@ msgstr "ループ内の現在の項目のインデックス (0 から始まる�
 msgid "item_has_next"
 msgstr ""
 
-#: ../../sql.rst:565
+#: ../../sql.rst:567
 msgid "Boolean value that tells if the current item is the last in the sequence or not"
 msgstr "現在の項目がシーケンスの最後であるかどうかを示すブール値"
 
-#: ../../sql.rst:567
+#: ../../sql.rst:569
 msgid "The prefix ``item`` indicates the name of the loop variable."
 msgstr "接頭辞 ``item`` はループ変数の名前を示します。"
 
-#: ../../sql.rst:570
+#: ../../sql.rst:572
 msgid "for and item_has_next"
 msgstr "for と item_has_next"
 
-#: ../../sql.rst:584
+#: ../../sql.rst:586
 msgid "If the sequence ``names`` contains three items, the generated SQL statement is as follows:"
 msgstr "シーケンス ``names`` に 3 つの項目が含まれる場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:597
+#: ../../sql.rst:599
 msgid "Removal of clauses on the loop directive"
 msgstr "ループディレクティブの句の削除"
 
-#: ../../sql.rst:599
+#: ../../sql.rst:601
 msgid "Following clauses can become unnecessary on the loop directive:"
 msgstr "ループ ディレクティブでは次の句が不要になる場合があります。"
 
-#: ../../sql.rst:620
-#: ../../sql.rst:650
+#: ../../sql.rst:608
+msgid "In the case, they are removed automatically."
+msgstr "その場合は自動的に削除されます。"
+
+#: ../../sql.rst:622
+#: ../../sql.rst:652
 msgid "If the sequence ``names`` is empty, the generated SQL statement is as follows:"
 msgstr "シーケンス ``names`` が空の場合、生成される SQL ステートメントは次のようになります。"
 
-#: ../../sql.rst:627
+#: ../../sql.rst:629
 msgid "Because the SQL clause ``where`` followed by ``/*%for ...*/`` is unnecessary, it is removed automatically."
 msgstr "SQL 句 ``where`` の後に ``/* %for ...``*/`` が続く部分は不要なため、自動的に削除されます。"
 
-#: ../../sql.rst:631
+#: ../../sql.rst:633
 msgid "Removal of AND and OR keywords on the loop directive"
 msgstr "ループディレクティブの AND および OR キーワードの削除"
 
-#: ../../sql.rst:633
+#: ../../sql.rst:635
 msgid "AND and OR keywords can become unnecessary on the loop directive. In the case, they are removed automatically."
 msgstr "AND キーワードと OR キーワードは、ループ ディレクティブでは不要になる場合があります。その場合は自動的に削除されます。"
 
-#: ../../sql.rst:657
+#: ../../sql.rst:659
 msgid "Because the SQL keyword ``or`` following ``/*%end*/`` is unnecessary, it is removed automatically."
 msgstr "``/* %end*/`` に続く SQL キーワード ``or`` は不要なため、自動的に削除されます。"
 
-#: ../../sql.rst:661
+#: ../../sql.rst:663
 msgid "Restriction on loop directive"
 msgstr "ループディレクティブの制限事項"
 
-#: ../../sql.rst:663
+#: ../../sql.rst:665
 msgid "``/*%for ...*/`` and ``/*%end*/`` must be included in same SQL clause and in same statement level."
 msgstr "``/* %for ...*/`` と ``/* %end*/`` は、同じ SQL 句および同じ文レベルに含める必要があります。"
 
-#: ../../sql.rst:666
+#: ../../sql.rst:668
 msgid "See also `Restriction on condition directive`_."
 msgstr "`条件ディレクティブの制限`_ も参照してください。"
 
-#: ../../sql.rst:669
+#: ../../sql.rst:671
 msgid "Expansion directive"
 msgstr "選択カラムリスト展開ディレクティブ"
 
-#: ../../sql.rst:671
-msgid "Expansion directive allows you to build column list of SELECT clause from the definition of :doc:`entity`."
-msgstr "選択カラムリスト展開ディレクティブを使用すると、:doc:`entity` の定義から SELECT 句のカラムリストを構築できます。"
+#: ../../sql.rst:673
+msgid "The expansion directive automatically generates a column list for the SELECT clause based on an entity definition."
+msgstr "選択カラムリスト展開ディレクティブは、エンティティ定義に基づいてSELECT句の列リストを自動生成します。"
 
-#: ../../sql.rst:680
-msgid "The expression ``alias`` is optional. If it is specified, it must be evaluated to ``java.lang.String``."
+#: ../../sql.rst:682
+msgid "The expression ``alias`` is optional. When specified, it must evaluate to a ``java.lang.String``."
 msgstr "式 ``alias`` はオプションです。指定した場合は、 ``java.lang.String`` として評価される必要があります。"
 
-#: ../../sql.rst:683
-msgid "The directive must be followed by the asterisk ``*``."
+#: ../../sql.rst:685
+msgid "The directive must be followed by an asterisk ``*``."
 msgstr "ディレクティブの後にはアスタリスク ``*`` を付ける必要があります。"
 
-#: ../../sql.rst:688
+#: ../../sql.rst:690
 msgid "expand"
 msgstr ""
 
-#: ../../sql.rst:690
-#: ../../sql.rst:741
+#: ../../sql.rst:692
+#: ../../sql.rst:743
 msgid "Suppose you have the following SQL template and the entity class mapped to the template:"
 msgstr "次の SQL テンプレートと、そのテンプレートにマップされたエンティティ クラスがあるとします。"
 
-#: ../../sql.rst:711
+#: ../../sql.rst:713
 msgid "If you specify an alias to the table, specify same alias to the expansion directive:"
 msgstr "テーブルに別名を指定する場合は、展開ディレクティブにも同じ別名を指定します。"
 
-#: ../../sql.rst:726
+#: ../../sql.rst:728
 msgid "Population directive"
 msgstr "更新カラムリスト生成ディレクティブ"
 
-#: ../../sql.rst:728
-msgid "Population directive allows you to build column list of UPDATE SET clause from the definition of :doc:`entity`."
-msgstr "更新カラムリスト生成ディレクティブを使用すると、:doc:`entity` の定義から UPDATE SET 句のカラムリストを構築できます。"
+#: ../../sql.rst:730
+msgid "The population directive automatically generates a column list for the UPDATE SET clause based on an entity definition."
+msgstr "更新カラムリスト生成ディレクティブは、エンティティ定義に基づいてUPDATE SET句の列リストを自動生成します。"
 
-#: ../../sql.rst:739
+#: ../../sql.rst:741
 msgid "populate"
 msgstr ""
 
-#: ../../sql.rst:765
+#: ../../sql.rst:767
 msgid "Parser-level comment directive"
 msgstr "パーサーレベルコメントディレクティブ"
 
-#: ../../sql.rst:767
-msgid "Using a parser-level comment directive allows you to include comments in an SQL template that will be removed after the template is parsed."
-msgstr "パーサー レベルコメントディレクティブを使用すると、テンプレートが解析された後に削除されるコメントを SQL テンプレートに含めることができます。"
+#: ../../sql.rst:769
+msgid "The parser-level comment directive allows you to include comments in an SQL template that will be removed when the template is parsed."
+msgstr "パーサーレベルのコメントディレクティブを使用すると、テンプレート解析時に除去されるコメントをSQLテンプレートに含めることができます。"
 
-#: ../../sql.rst:788
+#: ../../sql.rst:790
 msgid "The above SQL template is parsed into the following SQL:"
 msgstr "上記の SQL テンプレートは次の SQL に解析されます。"
 
-#: ../../sql.rst:800
+#: ../../sql.rst:802
 msgid "Comments"
 msgstr "コメント"
 
-#: ../../sql.rst:802
-msgid "This section show you how to distinguish between directives and normal SQL comments."
+#: ../../sql.rst:804
+msgid "This section explains how to distinguish between directives and normal SQL comments."
 msgstr "このセクションでは、ディレクティブと通常の SQL コメントを区別する方法を説明します。"
 
-#: ../../sql.rst:805
+#: ../../sql.rst:807
 msgid "Single line comment"
 msgstr "一行コメント"
 
-#: ../../sql.rst:807
-msgid "Always the string consisting of two hyphens ``--`` is a single line comment. It is never directive."
-msgstr "2 つのハイフン ``--`` で構成される文字列は常に一行コメントになります。それは決して特別な意味を持つディレクティブではありません。"
+#: ../../sql.rst:809
+msgid "A string beginning with two hyphens ``--`` is always treated as a single line comment, never as a directive."
+msgstr "文字列が二重ハイフン ``--`` で始まる場合は常に、ディレクティブではなく、一行コメントとして扱われます。"
 
-#: ../../sql.rst:811
+#: ../../sql.rst:813
 msgid "Multi line comment"
 msgstr "複数行のコメント"
 
-#: ../../sql.rst:813
-msgid "If the character following ``/*`` is not permissible as the first character in a Java identifier and it is neither ``%``, ``#``, ``@``, ``\"`` nor ``'``, the ``/*`` is beginning of a multi line comment."
+#: ../../sql.rst:815
+msgid "If the character following ``/*`` is not valid as the first character in a Java identifier and is not one of ``%``, ``#``, ``@``, ``\"``, or ``'``, then ``/*`` marks the beginning of a multi-line comment."
 msgstr "``/*`` に続く文字が Java 識別子の最初の文字として許可されておらず、かつそれが ``%``、``#``、``@``、``\"``、``'`` のいずれでもない場合、``/*`` は複数行コメントの始まりです。"
 
-#: ../../sql.rst:817
+#: ../../sql.rst:819
 msgid "The followings are the beginning of a multi line comment:"
 msgstr "以下は複数行のコメントの始まりです。"
 
-#: ../../sql.rst:819
+#: ../../sql.rst:821
 msgid "/\\*\\*...\\*/"
 msgstr ""
 
-#: ../../sql.rst:820
+#: ../../sql.rst:822
 msgid "/\\*+...\\*/"
 msgstr ""
 
-#: ../../sql.rst:821
+#: ../../sql.rst:823
 msgid "/\\*=...\\*/"
 msgstr ""
 
-#: ../../sql.rst:822
+#: ../../sql.rst:824
 msgid "/\\*:...\\*/"
 msgstr ""
 
-#: ../../sql.rst:823
+#: ../../sql.rst:825
 msgid "/\\*;...\\*/"
 msgstr ""
 
-#: ../../sql.rst:824
+#: ../../sql.rst:826
 msgid "/\\*(...\\*/"
 msgstr ""
 
-#: ../../sql.rst:825
+#: ../../sql.rst:827
 msgid "/\\*)...\\*/"
 msgstr ""
 
-#: ../../sql.rst:826
+#: ../../sql.rst:828
 msgid "/\\*&...\\*/"
 msgstr ""
 
-#: ../../sql.rst:828
+#: ../../sql.rst:830
 msgid "In other hand, the followings are the beginning of a directive:"
 msgstr "一方、以下はディレクティブの始まりです。"
 
-#: ../../sql.rst:830
+#: ../../sql.rst:832
 msgid "/\\* ...\\*/"
 msgstr ""
 
-#: ../../sql.rst:831
+#: ../../sql.rst:833
 msgid "/\\*a...\\*/"
 msgstr ""
 
-#: ../../sql.rst:832
+#: ../../sql.rst:834
 msgid "/\\*$...\\*/"
 msgstr ""
 
-#: ../../sql.rst:833
+#: ../../sql.rst:835
 msgid "/\\*@...\\*/"
 msgstr ""
 
-#: ../../sql.rst:834
+#: ../../sql.rst:836
 msgid "/\\*\"...\\*/"
 msgstr ""
 
-#: ../../sql.rst:835
+#: ../../sql.rst:837
 msgid "/\\*'...\\*/"
 msgstr ""
 
-#: ../../sql.rst:836
+#: ../../sql.rst:838
 msgid "/\\*#...\\*/"
 msgstr ""
 
-#: ../../sql.rst:837
+#: ../../sql.rst:839
 msgid "/\\*%...\\*/"
 msgstr ""
 
-#: ../../sql.rst:841
-msgid "We recommend you always use ``/**...*/`` to begin multi line comments because it is simple."
-msgstr "複数行のコメントを開始するには、簡単なので常に ``/**...*/`` を使用することをお勧めします。"
+#: ../../sql.rst:843
+msgid "We recommend always using ``/**...*/`` for multi-line comments because it's straightforward and clearly distinguishable from directives."
+msgstr "複数行コメントには常に``/**...*/``を使用することをお勧めします。これは簡単で、ディレクティブと明確に区別できるからです。"
 
-#: ../../sql.rst:844
+#: ../../sql.rst:846
 msgid "doma-template module"
 msgstr "doma-template モジュール"
 
-#: ../../sql.rst:846
+#: ../../sql.rst:848
 msgid "The doma-template module helps obtain prepared SQL statements from SQL templates. The module only contains the following classes:"
 msgstr "doma-template モジュールは、SQL テンプレートから準備された SQL ステートメントを構築するのに役立ちます。モジュールには次のクラスのみが含まれています。"
 
-#: ../../sql.rst:849
+#: ../../sql.rst:851
 msgid "SqlArgument"
 msgstr ""
 
-#: ../../sql.rst:850
+#: ../../sql.rst:852
 msgid "SqlStatement"
 msgstr ""
 
-#: ../../sql.rst:851
+#: ../../sql.rst:853
 msgid "SqlTemplate"
 msgstr ""
 
-#: ../../sql.rst:854
+#: ../../sql.rst:856
 msgid "Gradle"
 msgstr ""
 
-#: ../../sql.rst:863
+#: ../../sql.rst:865
 msgid "Usage"
 msgstr "使用法"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 10:56+0900\n"
+"POT-Creation-Date: 2025-04-13 09:35+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -20,98 +20,98 @@ msgid "Welcome to Doma"
 msgstr "Doma へようこそ"
 
 #: ../../index.rst:15
-msgid "Doma is a database access framework for Java. Doma has various strengths:"
-msgstr "DomaはJavaのデータベースアクセスフレームワークです。Domaには様々な強みがあります。"
+msgid "Doma is a database access framework for Java with several notable strengths:"
+msgstr "Domaは、いくつかの優れた特長を備えたJava用のデータベースアクセスフレームワークです。"
+
+#: ../../index.rst:17
+msgid "It checks and generates source code at compile time using annotation processing."
+msgstr "コンパイル時にアノテーション処理を使用してソースコードを検証および生成します。"
 
 #: ../../index.rst:18
-msgid "Verifies and generates source code at compile time using annotation processing."
-msgstr "コンパイル時にアノテーションプロセッサーを使用して、ソースコードを検証および生成します。"
+msgid "It supports associations between entities."
+msgstr "エンティティ間の関連付けをサポートします。"
 
 #: ../../index.rst:19
-msgid "Provides type-safe Criteria API."
+msgid "It offers a type-safe Criteria API."
 msgstr "型安全なCriteria APIを提供します。"
 
 #: ../../index.rst:20
-msgid "Supports Kotlin."
-msgstr "Kotlinをサポートします"
+msgid "It includes SQL templates, known as “two-way SQL.”"
+msgstr "\"two-way SQL\"と呼ばれるSQLテンプレートを含みます。"
 
 #: ../../index.rst:21
-msgid "Uses SQL templates, called \"two-way SQL\"."
-msgstr "\"two-way SQL\"と呼ばれるSQLテンプレートをサポートします。"
+msgid "It runs independently, without relying on any other libraries."
+msgstr "他のライブラリに依存せずに独立して実行されます。"
 
-#: ../../index.rst:22
-msgid "Has no dependence on other libraries."
-msgstr "他のライブラリに依存しません。"
-
-#: ../../index.rst:24
+#: ../../index.rst:23
 msgid "This document consists of following sections:"
 msgstr "このドキュメントは、以下のセクションで構成されています。"
 
-#: ../../index.rst:26
+#: ../../index.rst:25
 msgid "`User Documentation`_"
 msgstr "`ユーザー向けドキュメンテーション`_"
 
-#: ../../index.rst:27
+#: ../../index.rst:26
 msgid "`About Doma`_"
 msgstr "`Domaについて`_"
 
-#: ../../index.rst:28
+#: ../../index.rst:27
 msgid "`Links`_"
 msgstr "`リンク集`_"
 
-#: ../../index.rst:30
+#: ../../index.rst:29
 msgid "Please help with the improvement and localization of our documentation."
 msgstr "私たちのドキュメントの改善とローカライズをお手伝いください。"
 
-#: ../../index.rst:33
+#: ../../index.rst:32
 msgid "For matters related to the English version of the documentation and general issues concerning the documentation, please add issues or pull requests to `the GitHub repository <https://github.com/domaframework/doma-docs>`_."
 msgstr "ドキュメントに関する英語版および一般的な問題については、 `GitHub リポジトリ <https://github.com/domaframework/doma-docs>`_ に issue や pull request を追加してください。"
 
-#: ../../index.rst:36
+#: ../../index.rst:35
 msgid "For localization into Japanese, please perform translations and voting through `the project on Crowdin <https://crowdin.com/project/doma-docs>`_."
 msgstr "日本語にローカライズするには、`Crowdin プロジェクト <https://crowdin.com/project/doma-docs>`_ を介して翻訳や投票を行ってください。"
 
-#: ../../index.rst:40
+#: ../../index.rst:39
 msgid "User Documentation"
 msgstr "ユーザー向けドキュメンテーション"
 
-#: ../../index.rst:70
+#: ../../index.rst:69
 msgid "About Doma"
 msgstr "Domaについて"
 
-#: ../../index.rst:78
+#: ../../index.rst:77
 msgid "Links"
 msgstr "リンク集"
 
-#: ../../index.rst:80
+#: ../../index.rst:79
 msgid "`News and announcements <https://twitter.com/domaframework>`_"
 msgstr "`ニュースやアナウンス <https://twitter.com/domaframework>`_"
 
-#: ../../index.rst:81
+#: ../../index.rst:80
 msgid "`GitHub repository <https://github.com/domaframework/doma>`_"
 msgstr "`GitHub リポジトリ <https://github.com/domaframework/doma>`_"
 
-#: ../../index.rst:82
+#: ../../index.rst:81
 msgid "`Release Notes <https://github.com/domaframework/doma/releases>`_"
 msgstr "`リリースノート <https://github.com/domaframework/doma/releases>`_"
 
-#: ../../index.rst:83
+#: ../../index.rst:82
 msgid "`JavaDoc <https://www.javadoc.io/doc/org.seasar.doma/doma-core/latest/index.html>`_"
 msgstr ""
 
-#: ../../index.rst:84
+#: ../../index.rst:83
 msgid "`Examples <https://github.com/domaframework/simple-examples>`_"
 msgstr "`サンプルプロジェクト <https://github.com/domaframework/simple-examples>`_"
 
-#: ../../index.rst:85
+#: ../../index.rst:84
 msgid "`Doma Compile Plugin <https://github.com/domaframework/doma-compile-plugin>`_"
 msgstr ""
 
-#: ../../index.rst:86
+#: ../../index.rst:85
 msgid "`Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-plugin>`_"
 msgstr ""
 
-#: ../../index.rst:87
+#: ../../index.rst:86
 msgid "`Doma version 1 <http://doma.seasar.org/>`_"
 msgstr "`Doma v1.x のWebサイト <http://doma.seasar.org/>`_"
 

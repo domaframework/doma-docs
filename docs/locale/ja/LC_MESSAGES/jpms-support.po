@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -92,10 +92,10 @@ msgid "Usage"
 msgstr "使用法"
 
 #: ../../jpms-support.rst:35
-msgid "Doma uses reflection to access Entity properties. For this to work, you have to open packages containing Entity classes:"
-msgstr "Doma はリフレクションを使用してエンティティのフィールドにアクセスします。これを機能させるには、Entity クラスを含むパッケージを開く必要があります。"
+msgid "Doma uses reflection to access Entity properties. For this to work, you need to open packages containing Entity classes:"
+msgstr "Doma はリフレクションを使用してエンティティのフィールドにアクセスします。これを機能させるには、Entity クラスを含むパッケージをオープンする必要があります。"
 
 #: ../../jpms-support.rst:47
-msgid "You can open your module instead of packages:"
-msgstr "パッケージの代わりにモジュールを開くこともできます。"
+msgid "Alternatively, you can open your entire module instead of specific packages:"
+msgstr "また、特定のパッケージではなく、モジュール全体をオープンにすることもできます："
 

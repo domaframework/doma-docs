@@ -48,7 +48,7 @@ doma.entity.field.prefix
 doma.expr.functions
   The fully qualified name of the class that implements ``org.seasar.doma.expr.ExpressionFunctions``.
   The default value is ``org.seasar.doma.expr.ExpressionFunctions``.
-  This option determines which functions are available in expression comments.
+  This option determines which functions are available in expressions within SQL directives.
 
 doma.metamodel.enabled
   Controls whether meta classes are generated for the Criteria API.
@@ -70,7 +70,7 @@ doma.resources.dir
   If not specified, the resource directory defaults to the same directory where classes are generated.
 
 doma.sql.validation
-  Controls whether to validate the existence of SQL files and the grammar of SQL comments.
+  Controls whether to validate the existence of SQL files and the grammar of SQL directives.
   When set to ``true``, validations will run.
   To disable validations, set this to ``false``.
   The default value is ``true``.
@@ -94,7 +94,7 @@ Setting Options in Gradle
 =========================
 
 Use `the compilerArgs property
-<https://docs.gradle.org/5.0/dsl/org.gradle.api.tasks.compile.CompileOptions.html#org.gradle.api.tasks.compile.CompileOptions:compilerArgs>`_:
+<https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.CompileOptions.html#org.gradle.api.tasks.compile.CompileOptions:compilerArgs>`_:
 
 .. tabs::
 

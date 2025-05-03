@@ -7,7 +7,7 @@ Query builders
 
 The package ``org.seasar.doma.jdbc.builder`` provides SQL builders.
 
-When it is difficult to build a SQL statement with :doc:`../query/index` and :doc:`../query-dsl`,
+When it is difficult to build a SQL statement with :doc:`../query/index` or :doc:`../query-dsl`,
 consider to use the SQL builders in :ref:`dao-default-method`.
 
 Search

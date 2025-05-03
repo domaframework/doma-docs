@@ -165,10 +165,10 @@ you can generate SQL equivalent to the ``INSERT .. RETURNING`` clause.
       List<Employee> insertReturningExceptPassword(List<Employee> employees);
   }
 
-You can use the ``include`` property of ``@Returning`` to specify which entity properties
+You can use the ``include`` element of ``@Returning`` to specify which entity properties
 (corresponding to database columns) should be returned by the RETURNING clause.
-Alternatively, you can use the ``exclude`` property to specify which properties should not be returned.
-When both properties are specified, the ``exclude`` property takes precedence.
+Alternatively, you can use the ``exclude`` element to specify which properties should not be returned.
+If the same entity property is included in both ``include`` and ``exclude`` elements, it will not be returned.
 
 The return type must be a ``List`` of entity instances.
 

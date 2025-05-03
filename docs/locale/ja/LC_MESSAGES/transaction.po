@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,11 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../transaction.rst:8
-msgid "Doma supports local transaction. This document explains how to configure and use the local transaction."
+msgid "Doma provides support for local transactions. This document explains how to configure and use local transactions in your application."
 msgstr "Doma はローカルトランザクションをサポートしています。このドキュメントでは、ローカルトランザクションの設定方法と使用方法について説明します。"
 
 #: ../../transaction.rst:11
-msgid "If you want to use global transaction, use frameworks or application servers which support JTA (Java Transaction API)."
+msgid "If you want to use global transactions, use frameworks or application servers that support JTA (Java Transaction API)."
 msgstr "グローバルトランザクションを使用する場合は、JTA (Java Transaction API) をサポートするフレームワークまたはアプリケーションサーバーを使用してください。"
 
 #: ../../transaction.rst:14
@@ -40,23 +40,23 @@ msgid "Configuration"
 msgstr "設定"
 
 #: ../../transaction.rst:19
-msgid "To use local transaction, these conditions are required:"
+msgid "To use local transactions, the following conditions are required:"
 msgstr "ローカル トランザクションを使用するには、次の条件が必要です。"
 
 #: ../../transaction.rst:21
-msgid "Return ``LocalTransactionDataSource`` from ``getDataSource`` in ``Config``"
-msgstr "``Config`` の ``getDataSource`` から ``LocalTransactionDataSource`` を返します。"
+msgid "Return a ``LocalTransactionDataSource`` from the ``getDataSource`` method in your ``Config`` implementation"
+msgstr "``Config`` の ``getDataSource`` メソッドから ``LocalTransactionDataSource`` を返します。"
 
 #: ../../transaction.rst:22
-msgid "Generate ``LocalTransactionManager`` using the ``LocalTransactionDataSource`` above in the constructor"
-msgstr "コンストラクターで上記の ``LocalTransactionDataSource`` を使用して ``LocalTransactionManager`` を生成します"
+msgid "Create a ``LocalTransactionManager`` using the ``LocalTransactionDataSource`` in the constructor"
+msgstr "コンストラクターで ``LocalTransactionDataSource`` を使用して ``LocalTransactionManager`` を作成します"
 
 #: ../../transaction.rst:23
-msgid "Use the ``LocalTransactionManager`` above to control database access"
-msgstr "上記の ``LocalTransactionManager`` を使用してデータベースアクセスを制御します"
+msgid "Use this ``LocalTransactionManager`` to control database access"
+msgstr "この``LocalTransactionManager``を使用してデータベースアクセスを制御します"
 
 #: ../../transaction.rst:25
-msgid "There are several ways to generate and get the ``LocalTransactionManager``, but the simplest way is to generate it in the constructor of ``Config`` implementation class and make the ``Config`` implementation class singleton."
+msgid "There are several ways to create and access the ``LocalTransactionManager``, but the simplest approach is to create it in the constructor of your ``Config`` implementation class and make that ``Config`` implementation a singleton."
 msgstr "``LocalTransactionManager`` を生成・取得する方法はいくつかありますが、最も簡単な方法は ``Config`` 実装クラスのコンストラクタ内で生成し、 ``Config`` 実装クラスをシングルトンにする方法です。"
 
 #: ../../transaction.rst:29
@@ -68,15 +68,15 @@ msgid "Usage"
 msgstr "使用法"
 
 #: ../../transaction.rst:74
-msgid "We use the following DAO interface in example code:"
-msgstr "コード例では次の DAO インターフェイスを使用します。"
+msgid "The following examples use this DAO interface:"
+msgstr "次の例ではこのDAOインターフェースを使用します。"
 
 #: ../../transaction.rst:93
 msgid "Start and finish transactions"
 msgstr "トランザクションの開始と終了"
 
 #: ../../transaction.rst:95
-msgid "You can start a transaction with one of following methods of ``TransactionManager``:"
+msgid "You can start a transaction using one of the following methods of ``TransactionManager``:"
 msgstr "次の ``TransactionManager`` のメソッドのいずれかを使用してトランザクションを開始できます。"
 
 #: ../../transaction.rst:97
@@ -92,26 +92,26 @@ msgid "notSupported"
 msgstr ""
 
 #: ../../transaction.rst:101
-msgid "Use a lambda expression to write a process which you want to run in a transaction."
-msgstr "ラムダ式を使用して、トランザクションで実行する処理を記述します。"
+msgid "Use a lambda expression to define the code you want to execute within a transaction."
+msgstr "ラムダ式を使用して、トランザクションで実行するコードを定義します。"
 
 #: ../../transaction.rst:115
-msgid "The transaction is committed if the lambda expression finishes successfully. The transaction is rolled back if the lambda expression throws an exception."
-msgstr "ラムダ式が正常に終了すると、トランザクションはコミットされます。ラムダ式が例外をスローした場合、トランザクションはロールバックされます。"
+msgid "The transaction is automatically committed if the lambda expression completes successfully. If the lambda expression throws an exception, the transaction is automatically rolled back."
+msgstr "トランザクションはラムダ式が正常に完了した場合、自動的にコミットされます。ラムダ式が例外をスローした場合、トランザクションは自動的にロールバックされます。"
 
 #: ../../transaction.rst:119
 msgid "Explicit rollback"
 msgstr "明示的なロールバック"
 
 #: ../../transaction.rst:121
-msgid "Besides throwing an exception, you can use ``setRollbackOnly`` method to rollback a transaction."
-msgstr "例外をスローする以外に、 ``setRollbackOnly`` メソッドを使用してトランザクションをロールバックすることもできます。"
+msgid "Besides throwing an exception, you can use the ``setRollbackOnly`` method to explicitly roll back a transaction."
+msgstr "例外をスローする以外に、``setRollbackOnly`` メソッドを使用してトランザクションを明示的にロールバックすることもできます。"
 
 #: ../../transaction.rst:138
 msgid "Savepoint"
 msgstr "セーブポイント"
 
 #: ../../transaction.rst:140
-msgid "With a savepoint, you can cancel specific changes in a transaction."
-msgstr "セーブポイントを使用すると、トランザクション内の特定の変更をキャンセルできます。"
+msgid "Savepoints allow you to roll back specific portions of a transaction while keeping other changes."
+msgstr "セーブポイントを使用すると、トランザクションの特定の部分をロールバックしながら他の変更を維持できます。"
 

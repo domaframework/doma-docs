@@ -136,8 +136,8 @@ Does Doma support fetching relationships such as one-to-one or one-to-many?
 
 Yes, there are two ways to fetch relationships:
 
-* **SQL Templates** with :doc:`aggregate-strategy`.
-* **The Criteria API** with :ref:`query_dsl_associate`.
+* :doc:`aggregate-strategy` with SQL Templates.
+* :ref:`query_dsl_associate` with The Criteria API.
 
 Does Doma provide a JDBC connection pooling feature?
 ----------------------------------------------------

@@ -55,7 +55,6 @@ doma-slf4j provides several loggers as follows:
 * org.seasar.doma.jdbc.LogKind.SQL.UPDATE
 
 For more information, see the `source code <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma/slf4j/Slf4jJdbcLogger.java>`_.
-It's straightforward and easy to understand.
 
 Examples
 ========

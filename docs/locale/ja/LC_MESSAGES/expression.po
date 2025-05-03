@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 22:53+0900\n"
+"POT-Creation-Date: 2025-05-03 18:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,20 +24,20 @@ msgid "Contents"
 msgstr "コンテンツ"
 
 #: ../../expression.rst:8
-msgid "You can write simple expressions in directives of :doc:`sql`. The grammar is almost the same as Java. However, not everything is possible that Java can do."
-msgstr ":doc:`sql` のディレクティブ内に簡単な式を記述できます。文法はJavaとほぼ同じです。ただし、Java でできることの全てができるわけではありません。"
+msgid "You can write simple expressions in SQL :ref:`sql-directives`. The grammar is very similar to Java, although not all Java features are supported."
+msgstr "SQL :ref:`sql-directives` で簡単な式を書くことができます。文法はJavaに非常に似ていますが、すべてのJavaの機能がサポートされているわけではありません。"
 
 #: ../../expression.rst:14
-msgid "Especially, the big difference is how to use optional types like ``java.util.Optional``. In the expression, a value of ``Optional`` type is always converted to a value of the element type automatically. For example a value of the ``Optional<String>`` type is treated as a value of ``String`` type. Therefore, we can't call methods of ``Optional`` type, nor do we call methods which have an ``Optional`` type in the parameters."
-msgstr "特に大きな違いは、``java.util.Optional`` のようなオプション型の使い方です。式の中では、``Optional`` 型の値は常に要素型の値に自動的に変換されます。たとえば、``Optional<String>`` 型の値は、``String`` 型の値として扱われます。したがって、 ``Optional`` 型のメソッドを呼び出すことはできません。また、パラメータに ``Optional`` 型を持つメソッドを呼び出すこともできません。"
+msgid "A key difference is in how optional types like ``java.util.Optional`` are handled. In expressions, values of ``Optional`` type are automatically converted to values of their element type. For example, a value of ``Optional<String>`` is treated as a ``String``. As a result, you cannot call methods on the ``Optional`` object itself, nor can you call methods that take ``Optional`` parameters."
+msgstr "オプション型 (例: ``java.util.Optional``) の扱いには重要な違いがあります。式の中では、``Optional`` 型の値はその要素型の値に自動的に変換されます。例えば、``Optional<String>`` の値は ``String`` として扱われます。その結果、``Optional`` オブジェクト自体のメソッドを呼び出すことはできず、また、``Optional`` パラメータを取るメソッドを呼び出すこともできません。"
 
 #: ../../expression.rst:21
-msgid "When you want to check existence of a value, use ``/*%if optional != null */`` instead of ``/*%if optional.isPresent() */``."
-msgstr "値の存在を確認したい場合は、``/*%if optional.isPresent() */`` ではなく ``/*%if optional != null */`` を使用します。"
+msgid "To check if an optional value exists, use ``/*%if optional != null */`` instead of ``/*%if optional.isPresent() */``."
+msgstr "オプションの値が存在するかどうかを確認する場合は、``/*%if optional.isPresent() */`` ではなく、``/*%if optional != null */`` を使用してください。"
 
 #: ../../expression.rst:24
-msgid "The same is true for ``java.util.OptionalInt``, ``java.util.OptionalDouble``, and ``java.util.OptionalLong``."
-msgstr "``java.util.OptionalInt``、``java.util.OptionalDouble``、および ``java.util.OptionalLong`` についても同様です。"
+msgid "This behavior applies to all optional types including ``java.util.OptionalInt``, ``java.util.OptionalDouble``, and ``java.util.OptionalLong``."
+msgstr "この挙動は、``java.util.OptionalInt``、``java.util.OptionalDouble``、および ``java.util.OptionalLong`` を含むすべてのオプショナル型に適用されます。"
 
 #: ../../expression.rst:28
 msgid "Literals"
@@ -135,7 +135,7 @@ msgid "java.lang.String"
 msgstr ""
 
 #: ../../expression.rst:56
-msgid "The numeral types are distinguished by suffix letters such as ``L`` or ``F`` at the end of the literals. The suffixes must be capital letters."
+msgid "Numeric types are distinguished by suffix letters such as ``L`` or ``F`` at the end of the literals. Note that these suffixes must be capital letters."
 msgstr "数値の種類は、リテラルの末尾にある ``L`` や ``F`` などの接尾辞によって区別されます。接尾辞は大文字である必要があります。"
 
 #: ../../expression.rst:67
@@ -207,12 +207,12 @@ msgid "Greater than or equal to operator"
 msgstr "大なりイコール演算子"
 
 #: ../../expression.rst:87
-msgid "To use comparison operators, operands must implement ``java.lang.Comparable``."
+msgid "To use comparison operators, the operands must implement ``java.lang.Comparable``."
 msgstr "比較演算子を使用するには、被演算子で ``java.lang.Comparable`` を実装する必要があります。"
 
 #: ../../expression.rst:89
-msgid "The operands for ``<``, ``<=``, ``>`` and ``>=`` must not be ``null``."
-msgstr "``<``, ``<=``, ``>`` と ``>=`` の 被演算子 は ``null`` であってはなりません。"
+msgid "For the operators ``<``, ``<=``, ``>``, and ``>=``, the operands must not be ``null``."
+msgstr "``<``, ``<=``, ``>``, ``>=`` の被演算子は ``null`` であってはなりません。"
 
 #: ../../expression.rst:99
 msgid "Logical operators"
@@ -247,8 +247,8 @@ msgid "Logical OR operator"
 msgstr "論理和演算子"
 
 #: ../../expression.rst:111
-msgid "With parentheses, you can override the precedence of operators."
-msgstr "括弧を使用すると、演算子の優先順位をオーバーライドできます。"
+msgid "You can use parentheses to control the precedence of operators."
+msgstr "括弧を使用して、演算子の優先順位を制御できます。"
 
 #: ../../expression.rst:121
 msgid "Arithmetic operators"
@@ -299,16 +299,16 @@ msgid "Remainder operator"
 msgstr "剰余演算子"
 
 #: ../../expression.rst:139
-msgid "Operands must be numeric type."
-msgstr "被演算子は数値型である必要があります。"
+msgid "All operands must be of numeric type."
+msgstr "すべてのオペランドは数値型でなければなりません。"
 
 #: ../../expression.rst:147
 msgid "String concatenation operator"
 msgstr "文字列連結演算子"
 
 #: ../../expression.rst:149
-msgid "You can concatenate characters using a concatenation operator ``+``."
-msgstr "連結演算子 ``+`` を使用して文字を連結できます。"
+msgid "You can concatenate strings using the concatenation operator ``+``."
+msgstr "連結演算子 ``+`` を使用して文字列を連結できます。"
 
 #: ../../expression.rst:151
 msgid "The operand must be one of the following types:"
@@ -323,27 +323,27 @@ msgid "Calling instance methods"
 msgstr "インスタンスメソッドの呼び出し"
 
 #: ../../expression.rst:165
-msgid "You can call instance methods with the method names separated by dots ``.``. The method visibility must be public."
-msgstr "メソッド名をドット ``.`` で区切ってインスタンスメソッドを呼び出すことができます。メソッドの可視性はパブリックである必要があります。"
+msgid "You can call instance methods using dot notation (`.`). The called methods must have public visibility."
+msgstr "インスタンスメソッドはドット表記（`.`）を使用して呼び出すことができます。呼び出されたメソッドは公開されている必要があります。"
 
 #: ../../expression.rst:175
 msgid "If the method has no argument, specify ``()`` after the method name."
 msgstr "メソッドに引数がない場合は、メソッド名の後に ``()`` を指定します。"
 
 #: ../../expression.rst:185
-msgid "Accessing to instance fields"
+msgid "Accessing instance fields"
 msgstr "インスタンスフィールドへのアクセス"
 
 #: ../../expression.rst:187
-msgid "You can access instance fields with the field names separated by dots ``.``. Even if the visibility is private, you can access it."
-msgstr "フィールド名をドット ``.`` で区切ってインスタンスフィールドにアクセスできます。可視性が非公開であっても、アクセスできます。"
+msgid "You can access instance fields using dot notation (`.`). Fields can be accessed regardless of their visibility, even if they are private."
+msgstr "インスタンスフィールドにはドット記法 (`.`) を使用してアクセスできます。フィールドは、その可視性に関係なく、プライベートであってもアクセス可能です。"
 
 #: ../../expression.rst:196
 msgid "Calling static methods"
 msgstr "静的メソッドの呼び出し"
 
 #: ../../expression.rst:198
-msgid "You can call static methods by continuing the method names with the fully qualified class names enclosed in ``@``. The method visibility must be public."
+msgid "You can call static methods by prefixing the method name with the fully qualified class name enclosed in ``@`` symbols. The method must have public visibility."
 msgstr "静的メソッドを呼び出すには、 ``@`` で囲んだ完全修飾クラス名をメソッド名に続けます。メソッドの可視性はパブリックである必要があります。"
 
 #: ../../expression.rst:210
@@ -351,15 +351,15 @@ msgid "Accessing to static fields"
 msgstr "静的フィールドへのアクセス"
 
 #: ../../expression.rst:212
-msgid "You can access static fields by continuing the field name with the fully qualified class name enclosed in ``@``. Even if the visibility is private, you can access it."
-msgstr "静的フィールドにアクセスするには、フィールド名に ``@`` で囲まれた完全修飾クラス名を続けます。可視性が非公開であっても、アクセスできます。"
+msgid "You can access static fields by prefixing the field name with the fully qualified class name enclosed in ``@`` symbols. Fields can be accessed regardless of their visibility, even if they are private."
+msgstr "静的フィールドにアクセスするには、フィールド名に ``@`` で囲まれた完全修飾クラス名を添えます。可視性に関係なく、仮にそれが非公開であってもアクセスできます。"
 
 #: ../../expression.rst:224
 msgid "Using built-in functions"
 msgstr "組み込み関数の使用"
 
 #: ../../expression.rst:226
-msgid "Built-in functions are utilities mainly for changing values of binding variables before binding them to SQL."
+msgid "Built-in functions are utilities primarily designed to transform values of binding variables before they are bound to SQL statements."
 msgstr "組み込み関数は、主に SQL にバインドする前にバインド変数の値を変更するためのユーティリティです。"
 
 #: ../../expression.rst:229
@@ -367,8 +367,8 @@ msgid "For example, when you run a prefix search with a LIKE clause, you can wri
 msgstr "たとえば、LIKE 句を使用して前方検索を実行する場合は、次のように記述できます。"
 
 #: ../../expression.rst:237
-msgid "``@prefix(employee.employeeName)`` means that we pass ``employee.employeeName`` to the ``@prefix`` function. The ``@prefix`` function converts the character sequence which is received by the parameter to a string for forward match search. It also escapes special characters. For example, if the value of ``employee.employeeName`` is ``ABC``, it's converted to ``ABC%``. If the value of ``employee.employeeName`` contains ``%`` such as ``AB%C``, the ``%`` is escaped with a default escape sequence ``$``, therefore the value is converted to ``AB$%C%``."
-msgstr "``@prefix(employee.employeeName)`` は、``@prefix`` 関数に ``employee.employeeName`` を渡すことを意味します。 ``@prefix`` 関数はパラメータで受け取った文字列を前方一致検索用の文字列に変換します。特殊文字もエスケープされます。たとえば、 ``employee.employeeName`` の値が ``ABC`` の場合、 ``ABC%`` に変換されます。 ``employee.employeeName`` の値に ``AB%C`` などの ``%`` が含まれている場合、その ``%`` はデフォルトのエスケープシーケンス ``$`` でエスケープされるため、値は ``AB$%C%`` に変換されます。"
+msgid "``@prefix(employee.employeeName)`` passes the value of ``employee.employeeName`` to the ``@prefix`` function. This function converts the received character sequence into a string suitable for prefix (forward match) search. It also escapes any special characters in the string. For example, if the value of ``employee.employeeName`` is ``ABC``, it's converted to ``ABC%``. If the value of ``employee.employeeName`` contains ``%`` such as ``AB%C``, the ``%`` is escaped with a default escape sequence ``$``, therefore the value is converted to ``AB$%C%``."
+msgstr "``@prefix(employee.employeeName)`` は、 ``employee.employeeName`` の値を ``@prefix`` 関数に渡します。この関数は受け取った文字列を前方一致検索に適した文字列に変換し、特殊文字をエスケープします。例えば、``employee.employeeName`` の値が ``ABC`` の場合、これは ``ABC%`` に変換されます。``employee.employeeName`` の値に ``%`` が含まれている場合、例え ``AB%C`` のように、``%`` はデフォルトのエスケープシーケンス ``$`` によってエスケープされ、そのため値は ``AB$%C%`` に変換されます。"
 
 #: ../../expression.rst:247
 msgid "You can use following function signatures:"
@@ -513,28 +513,28 @@ msgid "Using custom functions"
 msgstr "カスタム関数の使用"
 
 #: ../../expression.rst:340
-msgid "You can define and use your own functions."
+msgid "You can define and use your own custom functions."
 msgstr "独自の関数を定義して使用できます。"
 
 #: ../../expression.rst:342
-msgid "You need to follow these settings when you use custom functions which you define by yourself:"
-msgstr "自分で定義したカスタム関数を使用する場合は、次の設定に従う必要があります。"
+msgid "To use custom functions that you define, follow these steps:"
+msgstr "定義したカスタム関数を利用するには、次の手順に従います。"
 
 #: ../../expression.rst:344
-msgid "The function is defined as a method of a class which implements ``org.seasar.doma.expr.ExpressionFunctions``."
-msgstr "この関数は ``org.seasar.doma.expr.ExpressionFunctions`` を実装したクラスのメソッドとして定義される"
+msgid "Define the function as a method in a class that implements ``org.seasar.doma.expr.ExpressionFunctions``."
+msgstr "関数は``org.seasar.doma.expr.ExpressionFunctions``を実装するクラスのメソッドとして定義します。"
 
 #: ../../expression.rst:346
-msgid "The method is a public instance method."
-msgstr "このメソッドはパブリック インスタンス メソッドである"
+msgid "The method must be a public instance method."
+msgstr "このメソッドはパブリック インスタンス メソッドである必要があります。"
 
 #: ../../expression.rst:347
-msgid "The class is registered as an option in :doc:`annotation-processing`. The key of the option is ``doma.expr.functions``."
-msgstr "このクラスは ``doma.expr.functions`` をキーとして :doc:`annotation-processing` のオプションに指定される"
+msgid "Register the class as an option in the annotation processing configuration. Use ``doma.expr.functions`` as the option key."
+msgstr "アノテーション処理設定でクラスをオプションとして登録します。オプションキーには ``doma.expr.functions`` を使用してください。"
 
 #: ../../expression.rst:349
-msgid "The instance of the class you create is used in an RDBMS dialect in your configuration class (The implementations of RDBMS dialect provided by Doma can receive ``ExpressionFunctions`` in the constructor)."
-msgstr "作成したクラスのインスタンスは SQLダイアレクト で使用される (Doma によって提供される ダイアレクト の実装は コンストラクタで ``ExpressionFunctions`` を受け取ることができる)"
+msgid "Use an instance of your class in the RDBMS dialect within your configuration class (Doma's RDBMS dialect implementations accept an ``ExpressionFunctions`` parameter in their constructors)."
+msgstr "構成クラス内でRDBMS方言のクラスのインスタンスを使用します（Doma の RDBMS 方言の実装は、コンストラクタに ``ExpressionFunctions`` パラメータを受け入れます）。"
 
 #: ../../expression.rst:353
 msgid "To call a custom function, add ``@`` at the beginning of the function name like built-in functions. For example, you can call ``myfunc`` function like this:"

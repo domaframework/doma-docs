@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -70,8 +70,8 @@ msgid "java.util.Map<String, Object>"
 msgstr ""
 
 #: ../../query/function.rst:30
-msgid "java.util.Optional, whose element type is one of :doc:`../basic`, :doc:`../domain`, :doc:`../entity`, and java.util.Map<String, Object>"
-msgstr "要素の型が :doc:`../basic`、:doc:`../domain`、:doc:`../entity`、java.util.Map<String, Object>のいずれかであるjava.util.Optional"
+msgid "java.util.Optional, whose element type is one of :doc:`../basic`, :doc:`../domain`, :doc:`../entity`, or java.util.Map<String, Object>"
+msgstr "要素の型が :doc:`../basic`、:doc:`../domain`、:doc:`../entity`、java.util.Map<String, Object> のいずれかである java.util.Optional"
 
 #: ../../query/function.rst:32
 #: ../../query/function.rst:44
@@ -117,7 +117,7 @@ msgid "Function name"
 msgstr "ファクション名"
 
 #: ../../query/function.rst:51
-msgid "The annotated method name is recognized as the function name by default. To override it, you can specify the value to the ``@Function``'s ``name`` element:"
+msgid "The annotated method name is recognized as the function name by default. To override it, you can specify a value for the ``@Function``'s ``name`` element:"
 msgstr "アノテーションが付けられたメソッド名は、デフォルトで関数名として認識されます。これをオーバーライドするには、 ``@Function`` の ``name`` 要素に値を指定します。"
 
 #: ../../query/function.rst:60
@@ -125,12 +125,12 @@ msgid "Parameters"
 msgstr "パラメータ"
 
 #: ../../query/function.rst:62
-msgid "The order of stored function's parameters must correspond with the order of DAO method parameters."
+msgid "The order of stored function parameters must correspond with the order of DAO method parameters."
 msgstr "ストアドファンクションのパラメータの順序は、DAO メソッドのパラメータの順序と一致する必要があります。"
 
 #: ../../query/function.rst:64
-msgid "All parameters must be annotated with one of following annotations:"
-msgstr "すべてのパラメータには、次のいずれかの注釈を付ける必要があります。"
+msgid "All parameters must be annotated with one of the following annotations:"
+msgstr "すべてのパラメータには、次のいずれかのアノテーションを付ける必要があります。"
 
 #: ../../query/function.rst:66
 msgid "@In"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-24 14:52+0900\n"
+"POT-Creation-Date: 2025-05-03 13:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -28,11 +28,11 @@ msgid "Maven Central Repository"
 msgstr "Maven セントラル リポジトリ"
 
 #: ../../build.rst:11
-msgid "You can pull the artifacts of the Doma framework from the Maven central repository. We provide two artifacts, ``doma-core`` and ``doma-processor``."
-msgstr "Doma フレームワークのアーティファクトを Maven 中央リポジトリから取得できます。 ``doma-core`` と ``doma-processor`` という 2 つのアーティファクトが提供されています。"
+msgid "You can obtain the Doma framework artifacts from the Maven central repository. We provide two artifacts: ``doma-core`` and ``doma-processor``."
+msgstr "Doma フレームワークのアーティファクトを Maven セントラルリポジトリから取得できます。 ``doma-core`` と ``doma-processor`` という 2 つのアーティファクトが提供されています。"
 
 #: ../../build.rst:14
-msgid "The ``doma-core`` artifact is required at runtime and compile-time. The ``doma-processor`` artifact provides annotation processors and is required at compile-time only."
+msgid "The ``doma-core`` artifact is required at both runtime and compile-time. The ``doma-processor`` artifact, which provides annotation processors, is required only at compile-time."
 msgstr "``doma-core`` アーティファクトは、実行時およびコンパイル時に必要です。 ``doma-processor`` アーティファクトはアノテーション プロセッサを提供し、コンパイル時のみに必要です。"
 
 #: ../../build.rst:17
@@ -77,8 +77,8 @@ msgid "Groovy"
 msgstr ""
 
 #: ../../build.rst:60
-msgid "To simplify your build.script(.kts), we recommend that you use the `org.domaframework.doma.compile`_ plugin."
-msgstr "build.script(.kts) を簡素化するには、`org.domaframework.doma.compile`_ プラグインを使用することをお勧めします。"
+msgid "We recommend using the `org.domaframework.doma.compile`_ plugin to simplify your build script."
+msgstr "ビルドスクリプトを簡素化するために `org.domaframework.doma.compile`_ プラグインの使用をお勧めします。"
 
 #: ../../build.rst:62
 #: ../../build.rst:122
@@ -117,7 +117,7 @@ msgid "Import your project as a Maven project."
 msgstr "プロジェクトを Maven プロジェクトとしてインポートします。"
 
 #: ../../build.rst:129
-msgid "Right-click on the project, then select Properties > Maven > Annotation Processing. Enable \"Enable Project specific settings\" and \"Automatically configure JDT APT\" as shown in the figure below."
+msgid "Right-click on the project and select Properties > Maven > Annotation Processing. Enable both \"Enable Project specific settings\" and \"Automatically configure JDT APT\" as shown below."
 msgstr "プロジェクトを右クリックして Properties > Maven > Annotation Processing を選択し、下図のように「Enable Project specific settings」と「Automatically configure JDT APT」を有効にしてください。"
 
 #: ../../build.rst:-1
@@ -125,11 +125,11 @@ msgid "Eclipse Maven Annotation Processing"
 msgstr ""
 
 #: ../../build.rst:136
-msgid "To reflect Maven settings in Eclipse, you can right-click on your project then select Maven > Update Project..."
-msgstr "Eclipse で Maven の設定を反映するには、プロジェクトを右クリックし、 Maven > Update Project... を選択します。"
+msgid "To refresh Maven settings in Eclipse, right-click on your project and select Maven > Update Project..."
+msgstr "Eclipse で Maven の設定を更新するには、プロジェクトを右クリックし、Maven > Update Project... を選択します。"
 
 #: ../../build.rst:140
-msgid "You need to add the following argument to the Maven compiler plugin configuration in your pom.xml:"
+msgid "You must add the following argument to the Maven compiler plugin configuration in your pom.xml:"
 msgstr "pom.xml の Maven コンパイラプラグイン構成に次の引数を追加する必要があります。"
 
 #: ../../build.rst:151

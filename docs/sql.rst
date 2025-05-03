@@ -161,6 +161,8 @@ The ``@Sql`` annotation must be combined with following annotations:
 * @BatchUpdate
 * @BatchDelete
 
+.. _sql-directives:
+
 Directives
 ==========
 

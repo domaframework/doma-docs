@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 13:53+0000\n"
+"POT-Creation-Date: 2025-05-03 18:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgid "Overview"
 msgstr "概要"
 
 #: ../../slf4j-support.rst:11
-msgid "Doma uses java util logging as underling logging framework, but you can replace it with `SLF4J <http://www.slf4j.org/>`_ easily."
+msgid "Doma uses Java Util Logging as its underlying logging framework, but you can easily replace it with `SLF4J <http://www.slf4j.org/>`_."
 msgstr "Doma は基礎となるロギングフレームワークとして java util ロギングを使用しますが、これを `SLF4J <http://www.slf4j.org/>`_ に簡単に置き換えることができます。"
 
 #: ../../slf4j-support.rst:15
@@ -36,15 +36,15 @@ msgid "Gradle"
 msgstr "Gradle"
 
 #: ../../slf4j-support.rst:17
-msgid "Doma provides the doma-slf4j artifact to adapt SLF4J."
-msgstr "Doma は、SLF4J を適応させるための doma-slf4j アーティファクトを提供します。"
+msgid "Doma provides the doma-slf4j artifact to integrate with SLF4J."
+msgstr "Doma は、SLF4J と統合するための doma-slf4j アーティファクトを提供します。"
 
 #: ../../slf4j-support.rst:28
 msgid "Configuration"
 msgstr "設定"
 
 #: ../../slf4j-support.rst:30
-msgid "Return a ``org.seasar.doma.slf4j.Slf4jJdbcLogger`` instance from the ``getJdbcLogger`` method of the ``org.seasar.doma.jdbc.Config`` implementation class."
+msgid "Return an ``org.seasar.doma.slf4j.Slf4jJdbcLogger`` instance from the ``getJdbcLogger`` method of your ``org.seasar.doma.jdbc.Config`` implementation class."
 msgstr "``org.seasar.doma.slf4j.Slf4jJdbcLogger`` インスタンスを ``org.seasar.doma.jdbc.Config`` の実装クラスの ``getJdbcLogger`` メソッドから返してください。"
 
 #: ../../slf4j-support.rst:33
@@ -124,26 +124,26 @@ msgid "org.seasar.doma.jdbc.LogKind.SQL.UPDATE"
 msgstr ""
 
 #: ../../slf4j-support.rst:57
-msgid "See `source code <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma/slf4j/Slf4jJdbcLogger.java>`_ for more information. It's simple."
-msgstr "詳細については、 `ソース コード  <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma/slf4j/Slf4jJdbcLogger.java>`_ を参照してください。"
+msgid "For more information, see the `source code <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma/slf4j/Slf4jJdbcLogger.java>`_."
+msgstr "詳細については、`ソースコード <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma.slf4j/Slf4jJdbcLogger.java>` を参照してください。"
 
-#: ../../slf4j-support.rst:61
+#: ../../slf4j-support.rst:60
 msgid "Examples"
 msgstr "例"
 
-#: ../../slf4j-support.rst:63
-msgid "Below, we show you `logback <http://logback.qos.ch/>`_ configurations."
+#: ../../slf4j-support.rst:62
+msgid "Below are some sample `logback <http://logback.qos.ch/>`_ configurations."
 msgstr "以下に、`logback <http://logback.qos.ch/>`_ の設定例を示します。"
 
-#: ../../slf4j-support.rst:66
+#: ../../slf4j-support.rst:65
 msgid "Log all"
 msgstr "すべてログに記録する"
 
-#: ../../slf4j-support.rst:85
+#: ../../slf4j-support.rst:84
 msgid "Log all SQL statements"
 msgstr "すべての SQL ステートメントをログに記録する"
 
-#: ../../slf4j-support.rst:104
+#: ../../slf4j-support.rst:103
 msgid "Log only SELECT statements"
 msgstr "SELECT ステートメントのみをログに記録する"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 10:56+0900\n"
+"POT-Creation-Date: 2025-05-03 18:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid "What does \"Doma\" mean?"
 msgstr "「Doma」とはどういう意味ですか？"
 
 #: ../../faq.rst:14
-msgid "The name \"Doma\" comes from the \"Dao Oriented database MApping framework\"."
+msgid "The name \"Doma\" is derived from \"Dao Oriented database MApping framework\"."
 msgstr "「Doma」という名前は、「Dao Oriented database MApping framework」に由来しています。"
 
 #: ../../faq.rst:17
@@ -172,8 +172,8 @@ msgid "Yes."
 msgstr "はい。"
 
 #: ../../faq.rst:105
-msgid "We have the `Doma CodeGen plugin <https://github.com/domaframework/doma-codegen-plugin>`_ that generates Java and SQL files from Database."
-msgstr "データベースからJavaファイルとSQLファイルを生成する `Doma CodeGen plugin <https://github.com/domaframework/doma-codegen-plugin>`_ を提供します。"
+msgid "We provide the `Doma CodeGen plugin <https://github.com/domaframework/doma-codegen-plugin>`_ that generates Java and SQL files from your database schema."
+msgstr "データベーススキーマからJavaファイルとSQLファイルを生成する `Doma CodeGen plugin <https://github.com/domaframework/doma-codegen-plugin>`_ を提供します。"
 
 #: ../../faq.rst:109
 msgid "Features as a database access library"
@@ -228,7 +228,7 @@ msgid "The Criteria API."
 msgstr "Criteria API"
 
 #: ../../faq.rst:132
-msgid "See :doc:`sql` and :doc:`query-dsl` for detail information."
+msgid "See :doc:`sql` and :doc:`query-dsl` for detailed information."
 msgstr "詳細については :doc:`sql` と :doc:`query-dsl` を参照してください。"
 
 #: ../../faq.rst:135
@@ -240,12 +240,12 @@ msgid "Yes, there are two ways to fetch relationships:"
 msgstr "リレーションシップを取得するには2つの方法があります。"
 
 #: ../../faq.rst:139
-msgid "**SQL Templates** with :doc:`aggregate-strategy`."
-msgstr ":doc:`aggregate-strategy` を使った **SQL Templates**"
+msgid ":doc:`aggregate-strategy` with SQL Templates."
+msgstr "SQLテンプレートを用いた :doc:`aggregate-strategy`"
 
 #: ../../faq.rst:140
-msgid "**The Criteria API** with :ref:`query_dsl_associate`."
-msgstr ":ref:`query_dsl_associate` を使用した **Criteria API**"
+msgid ":ref:`query_dsl_associate` with The Criteria API."
+msgstr "`:ref:`query_dsl_associate` と Criteria API。"
 
 #: ../../faq.rst:143
 msgid "Does Doma provide a JDBC connection pooling feature?"

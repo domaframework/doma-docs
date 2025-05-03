@@ -21,7 +21,7 @@ See also: :doc:`transaction`
 
 .. note::
 
-   The DataSource is a required configuration item.
+   This is a required configuration item.
 
 DataSource's name
 -----------------
@@ -77,7 +77,7 @@ instantiate MysqlDialect by specifying the version as follows:
 
 .. note::
 
-    The SQL dialect is a required configuration item.
+    This is a required configuration item.
 
 .. _config-logger:
 
@@ -154,7 +154,7 @@ Naming convention for tables and columns
 ----------------------------------------
 
 Return a ``Naming`` from the ``getNaming`` method.
-The naming element of ``@Entity`` takes precedence over this value.
+The ``naming`` element of ``@Entity`` takes precedence over this value.
 When you specify explicit values for the name elements of ``@Table`` and ``@Column``,
 the naming convention is not applied to them.
 
@@ -434,8 +434,7 @@ you have to annotate your DAO interfaces with ``@AnnotateWith``:
 
   @Dao
   @AnnotateWith(annotations = {
-      @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = javax.inject.Inject.class),
-      @Annotation(target = AnnotationTarget.CONSTRUCTOR_PARAMETER, type = javax.inject.Named.class, elements = "\"config\"") })
+      @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = javax.inject.Inject.class) })
   public interface EmployeeDao {
 
       @Select
@@ -446,8 +445,7 @@ you have to annotate your DAO interfaces with ``@AnnotateWith``:
 
   @Dao
   @AnnotateWith(annotations = {
-      @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = javax.inject.Inject.class),
-      @Annotation(target = AnnotationTarget.CONSTRUCTOR_PARAMETER, type = javax.inject.Named.class, elements = "\"config\"") })
+      @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = javax.inject.Inject.class)) })
   public interface DepartmentDao {
 
       @Select
@@ -460,8 +458,7 @@ annotate the arbitrary annotation with it only once:
 .. code-block:: java
 
   @AnnotateWith(annotations = {
-      @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = javax.inject.Inject.class),
-      @Annotation(target = AnnotationTarget.CONSTRUCTOR_PARAMETER, type = javax.inject.Named.class, elements = "\"config\"") })
+      @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = javax.inject.Inject.class)  })
   public @interface InjectConfig {
   }
 

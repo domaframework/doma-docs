@@ -115,14 +115,14 @@ Gradle Tasks
 
 The Doma CodeGen Plugin provides the following tasks:
 
-- domaCodeGen*Name*All - Generates all.
-- domaCodeGen*Name*Dao - Generates DAO source files.
-- domaCodeGen*Name*Dto - Reads ResultSet metadata and generate a DTO source file.
-- domaCodeGen*Name*Entity - Generates Entity source files.
-- domaCodeGen*Name*Sql - Generates SQL files.
-- domaCodeGen*Name*SqlTest - Generates SQL test source files.
+- domaCodeGenXxxAll - Generates all.
+- domaCodeGenXxxDao - Generates DAO source files.
+- domaCodeGenXxxDto - Reads ResultSet metadata and generate a DTO source file.
+- domaCodeGenXxxEntity - Generates Entity source files.
+- domaCodeGenXxxSql - Generates SQL files.
+- domaCodeGenXxxSqlTest - Generates SQL test source files.
 
-Note that the *Name* part in each task name is replaced with the block name defined under the ``domaCodeGen`` block.  
+Note that the *Xxx* part in each task name is replaced with the block name defined under the ``domaCodeGen`` block.
 In the usage example above, the *Dev* part corresponds to the ``dev`` block.
 
 To check all defined task names, run the `tasks` task:

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 11:25+0900\n"
+"POT-Creation-Date: 2025-05-03 18:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -28,19 +28,19 @@ msgid "Overview"
 msgstr "概要"
 
 #: ../../codegen.rst:11
-msgid "`Doma CodeGen Plugin <https://plugins.gradle.org/plugin/org.domaframework.doma.codegen>`_ is a Gradle plugin. It generates Java, Kotlin, and SQL files from Database."
-msgstr "`Doma CodeGenプラグイン <https://plugins.gradle.org/plugin/org.domaframework.doma.codegen>`_ は Gradle プラグインです。データベースから Java、Kotlin、SQL ファイルを生成します。"
+msgid "The `Doma CodeGen Plugin <https://plugins.gradle.org/plugin/org.domaframework.doma.codegen>`_ is a Gradle plugin that generates Java, Kotlin, and SQL files from a database schema."
+msgstr "`Doma CodeGenプラグイン <https://plugins.gradle.org/plugin/org.domaframework.doma.codegen>`_ は Gradle プラグインです。データベーススキーマから Java、Kotlin、および SQL ファイルを生成します。"
 
 #: ../../codegen.rst:14
-msgid "Are you looking for the documentation for Ant-based Doma-Gen?"
+msgid "Are you looking for documentation for Ant-based Doma-Gen?"
 msgstr "AntベースのDoma-Genのドキュメントをお探しですか?"
 
 #: ../../codegen.rst:17
-msgid "The documentation for Ant-based Doma-Gen is available at `the Doma-Gen GitHub repository <https://github.com/domaframework/doma-gen/tree/master/docs>`_."
+msgid "Documentation for Ant-based Doma-Gen is available at `the Doma-Gen GitHub repository <https://github.com/domaframework/doma-gen/tree/master/docs>`_."
 msgstr "AntベースのDoma-Genのドキュメントは、 `Doma-Gen GitHub リポジトリ <https://github.com/domaframework/doma-gen/tree/master/docs>`_ にあります。"
 
 #: ../../codegen.rst:20
-msgid "Ant-based Doma-Gen is not currently maintained. Please use the Doma CodeGen Plugin explained on this page instead."
+msgid "Please note that Ant-based Doma-Gen is no longer maintained. We recommend using the Doma CodeGen Plugin described on this page instead."
 msgstr "AntベースのDoma-Genは現在メンテナンスされていません。代わりにこのページで説明されているDoma CodeGenプラグインを使用してください。"
 
 #: ../../codegen.rst:23
@@ -80,36 +80,36 @@ msgid "Gradle Tasks"
 msgstr "Gradle タスク"
 
 #: ../../codegen.rst:116
-msgid "The Doma CodeGen Plugin provides following tasks:"
+msgid "The Doma CodeGen Plugin provides the following tasks:"
 msgstr "Doma CodeGen プラグインは以下のタスクを提供します。"
 
 #: ../../codegen.rst:118
-msgid "domaCodeGen*Name*All - Generates all."
-msgstr "domaCodeGen*Name*All - すべてを生成します。"
+msgid "domaCodeGenXxxAll - Generates all."
+msgstr "domaCodeGenXxxAll - すべてを生成します。"
 
 #: ../../codegen.rst:119
-msgid "domaCodeGen*Name*Dao - Generates DAO source files."
-msgstr "domaCodeGen*Name*Dao - DAO ソースファイルを生成します。"
+msgid "domaCodeGenXxxDao - Generates DAO source files."
+msgstr "domaCodeGenXxxDao - DAO ソースファイルを生成します。"
 
 #: ../../codegen.rst:120
-msgid "domaCodeGen*Name*Dto - Reads ResultSet metadata and generate a DTO source file."
-msgstr "domaCodeGen*Name*Dto - 結果セットのメタデータを読み、DTO ソースファイルを生成します。"
+msgid "domaCodeGenXxxDto - Reads ResultSet metadata and generate a DTO source file."
+msgstr "domaCodeGenXxxDto - 結果セットのメタデータを読み、DTO ソースファイルを生成します。"
 
 #: ../../codegen.rst:121
-msgid "domaCodeGen*Name*Entity - Generates Entity source files."
-msgstr "domaCodeGen*Name*Entity - エンティティソースファイルを生成します。"
+msgid "domaCodeGenXxxEntity - Generates Entity source files."
+msgstr "domaCodeGenXxxEntity - エンティティソースファイルを生成します。"
 
 #: ../../codegen.rst:122
-msgid "domaCodeGen*Name*Sql - Generates SQL files."
-msgstr "domaCodeGen*Name*Sql - SQLファイルを生成します。"
+msgid "domaCodeGenXxxSql - Generates SQL files."
+msgstr "domaCodeGenXxxSql - SQLファイルを生成します。"
 
 #: ../../codegen.rst:123
-msgid "domaCodeGen*Name*SqlTest - Generates SQL test source files."
-msgstr "domaCodeGen*Name*SqlTest - SQL テストソースファイルを生成します。"
+msgid "domaCodeGenXxxSqlTest - Generates SQL test source files."
+msgstr "domaCodeGenXxxSqlTest - SQL テストソースファイルを生成します。"
 
 #: ../../codegen.rst:125
-msgid "Note that each *Name* part in the above task names is replaced with the block name defined under the ``domaCodeGen`` block. In the above usage example, the *Dev* part is corresponding to the ``dev`` block."
-msgstr "上記のタスク名の *Name* 部分は、``domaCodeGen`` ブロックの下で定義されているブロック名に置き換えられます。 上記の使用例では、*Dev* 部分は ``dev`` ブロックに対応しています。"
+msgid "Note that the *Xxx* part in each task name is replaced with the block name defined under the ``domaCodeGen`` block. In the usage example above, the *Dev* part corresponds to the ``dev`` block."
+msgstr "上記のタスク名の *Xxx* 部分は、``domaCodeGen`` ブロックの下で定義されているブロック名に置き換えられます。上記の使用例では、*Dev* 部分は ``dev`` ブロックに対応しています。"
 
 #: ../../codegen.rst:128
 msgid "To check all defined task names, run the `tasks` task:"
@@ -124,8 +124,8 @@ msgid "named config"
 msgstr "名前付きの設定"
 
 #: ../../codegen.rst:140
-msgid "A named config must be under the ``domaCodeGen`` block. The name of the config is arbitrary. You can make multiple configs under the ``domaCodeGen`` block."
-msgstr "名前付きの設定は ``domaCodeGen`` ブロックの下になければなりません。設定の名前は任意です。``domaCodeGen`` ブロックの下に複数の設定を行うことができます。"
+msgid "A named configuration must be defined under the ``domaCodeGen`` block. You can choose any name for your configuration. Multiple configurations can be defined under the ``domaCodeGen`` block."
+msgstr "``domaCodeGen`` ブロックの下に名前付き設定を定義する必要があります。設定には任意の名前を選択できます。複数の設定を ``domaCodeGen`` ブロックの下に定義できます。"
 
 #: ../../codegen.rst:144
 msgid "In the following example, we define two configs - ``sales`` and ``account``:"
@@ -376,8 +376,8 @@ msgid "entity"
 msgstr ""
 
 #: ../../codegen.rst:266
-msgid "An ``entity`` block must be under a named config:"
-msgstr "``entity`` ブロックは名前付きの設定の下になければなりません："
+msgid "The ``entity`` block must be defined within a named configuration:"
+msgstr "``entity`` ブロックは名前付きの設定内で定義されなければなりません："
 
 #: ../../codegen.rst:303
 #: ../../codegen.rst:431
@@ -654,7 +654,7 @@ msgid "Generating Kotlin code"
 msgstr "Kotlinコードの生成"
 
 #: ../../codegen.rst:499
-msgid "To generate Kotlin code, specify ``LanguageType.KOTLIN`` to the languageType option as follows:"
+msgid "To generate Kotlin code, set the languageType option to ``LanguageType.KOTLIN`` as follows:"
 msgstr "Kotlin コードを生成するには、languageType オプションに ``LanguageType.KOTLIN`` を指定します。"
 
 #: ../../codegen.rst:551
@@ -662,8 +662,8 @@ msgid "Using custom template files"
 msgstr "カスタムテンプレートファイルの使用"
 
 #: ../../codegen.rst:553
-msgid "Default template files are located in `the source code repository of the Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-plugin/tree/master/codegen/src/main/resources/org/seasar/doma/gradle/codegen/template>`_. They are listed as follows:"
-msgstr "デフォルトのテンプレートファイルは、 `Doma CodeGen Plugin のソースコードリポジトリ <https://github.com/domaframework/doma-codegen-plugin/tree/master/codegen/src/main/resources/org/seasar/doma/gradle/codegen/template>`_ にあります。"
+msgid "The default template files can be found in `the source code repository of the Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-plugin/tree/master/codegen/src/main/resources/org/seasar/doma/gradle/codegen/template>`_. These files include:"
+msgstr "デフォルトのテンプレートファイルは、 `Doma CodeGen Plugin のソースコードリポジトリ <https://github.com/domaframework/doma-codegen-plugin/tree/master/codegen/src/main/resources/org/seasar/doma/gradle/codegen/template>`_ にあります。これらのファイルには以下が含まれます:"
 
 #: ../../codegen.rst:561
 msgid "Template File"
@@ -744,8 +744,8 @@ msgid "selectByIdAndVersion.sql.ftl"
 msgstr ""
 
 #: ../../codegen.rst:583
-msgid "To create custom template files, copy them and modify their contents without changing file names. Then put them in the directory which is specified to the `templateDir` option."
-msgstr "カスタムテンプレートファイルを作成するには、ファイル名を変更せずにコピーして内容を変更します。 次に、 `templateDir` オプションに指定されたディレクトリに配置します。"
+msgid "To create custom templates, copy the default files, modify their contents without changing the filenames, and place them in the directory specified by the `templateDir` option."
+msgstr "カスタムテンプレートを作成するには、デフォルトファイルをコピーし、ファイル名を変更せずにその内容を変更し、`templateDir`オプションで指定されたディレクトリに配置します。"
 
 #: ../../codegen.rst:629
 msgid "The Doma CodeGen Plugin uses `Apache FreeMarker <https://freemarker.apache.org/>`_ to process the template files."
