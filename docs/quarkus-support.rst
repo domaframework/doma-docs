@@ -89,8 +89,8 @@ Hot reloading
 
 In development mode, the quarkus-doma module reloads SQL and Script files when they are changed.
 
-Automatic bean registration
----------------------------
+Automatic bean register
+------------------------
 
 The quarkus-doma module registers all DAO beans to the Quarkus CDI container.
 
