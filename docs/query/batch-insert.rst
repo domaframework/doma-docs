@@ -3,7 +3,7 @@ Batch insert
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Annotate a Dao method with ``@BatchInsert`` to execute batch insert operations.
 

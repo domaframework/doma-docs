@@ -3,7 +3,7 @@ Select
 ===============
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 To perform a search operation using the SELECT statement, annotate the DAO method with ``@Select``.
 

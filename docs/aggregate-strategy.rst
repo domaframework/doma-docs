@@ -3,7 +3,7 @@ Aggregate strategies
 =============================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 The aggregate strategy defines how to construct an entity aggregate from an arbitrary SELECT statement.
 It provides a structured way to map relational query results into hierarchical entity structures by specifying

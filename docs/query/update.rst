@@ -3,7 +3,7 @@ Update
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Annotate DAO methods with ``@Update`` to execute update operations.
 

@@ -3,7 +3,7 @@ DAO interfaces
 ==================
 
 .. contents:: Contents
-   :depth: 3
+   :depth: 4
 
 A Data Access Object (DAO) is an interface that provides structured access to databases.
 

@@ -3,7 +3,7 @@ Batch update
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Annotate a Dao method with ``@BatchUpdate`` to execute batch update operations.
 

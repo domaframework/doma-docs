@@ -3,7 +3,7 @@ Stored procedure
 ================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 To call stored procedures, you must annotate DAO methods with the ``@Procedure`` annotation:
 

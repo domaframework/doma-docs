@@ -3,7 +3,7 @@ Embeddable classes
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Embeddable classes group properties for entity classes.
 

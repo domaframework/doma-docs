@@ -3,7 +3,7 @@ Transaction
 ==================
 
 .. contents:: Contents
-   :depth: 3
+   :depth: 4
 
 Doma provides support for local transactions.
 This document explains how to configure and use local transactions in your application.

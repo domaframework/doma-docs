@@ -3,7 +3,7 @@ Domain classes
 ==============
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 A domain class represents a table column and allows you to handle column values as Java objects.
 In the Doma framework, a **domain** refers to all the values that a data type may contain.

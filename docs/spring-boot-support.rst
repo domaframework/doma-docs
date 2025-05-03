@@ -3,7 +3,7 @@ Spring Boot support
 ===================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Overview
 ========

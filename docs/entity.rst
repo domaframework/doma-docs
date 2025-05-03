@@ -3,7 +3,7 @@ Entity classes
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Entity classes correspond to database tables or query result sets.
 

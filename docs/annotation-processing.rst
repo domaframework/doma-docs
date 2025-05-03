@@ -3,7 +3,7 @@ Annotation Processing
 =====================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Doma uses the `Pluggable Annotation Processing API <https://www.jcp.org/en/jsr/detail?id=269>`_ at compile time.
 

@@ -3,7 +3,7 @@ Batch delete
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Annotate a Dao method with ``@BatchDelete`` to execute batch delete operations.
 

@@ -3,7 +3,7 @@ Frequently Asked Questions
 ==========================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 General
 =======

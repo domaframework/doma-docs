@@ -3,7 +3,7 @@ Kotlin support
 ==============
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Doma supports `Kotlin <https://kotlinlang.org/>`_ 1.4.0 or later.
 

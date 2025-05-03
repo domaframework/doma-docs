@@ -3,7 +3,7 @@ Expression language
 ===================
 
 .. contents:: Contents
-   :depth: 3
+   :depth: 4
 
 You can write simple expressions in SQL :ref:`sql-directives`.
 The grammar is very similar to Java,

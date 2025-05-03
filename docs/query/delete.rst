@@ -3,7 +3,7 @@ Delete
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Annotate a Dao method with ``@Delete`` to execute delete operations.
 

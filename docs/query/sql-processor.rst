@@ -3,7 +3,7 @@ SQL processor
 =============
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 SQL processors allow you to handle SQL statements that are generated from corresponding SQL templates.
 To designate a DAO method as an SQL processor, annotate it with ``@SqlProcessor``:

@@ -3,7 +3,7 @@ Script
 ======
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 To run a series of static SQL statements,
 annotate DAO methods with ``@Script``:

@@ -3,7 +3,7 @@ Stored function
 ===============
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 To call stored functions, you must annotate DAO methods with the ``@Function`` annotation:
 

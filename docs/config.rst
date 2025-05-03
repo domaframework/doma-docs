@@ -3,7 +3,7 @@ Configuration
 =============
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Configurable items must be returned from the methods of a class that implements
 the ``org.seasar.doma.jdbc.Config`` interface.

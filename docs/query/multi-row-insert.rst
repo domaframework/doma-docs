@@ -3,7 +3,7 @@ Multi-row insert
 ==================
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Annotate the DAO method with ``@MultiInsert`` to execute a multi-row insert.
 

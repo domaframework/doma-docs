@@ -3,7 +3,7 @@ Lombok support
 ==============
 
 .. contents::
-   :depth: 3
+   :depth: 4
 
 Doma supports `Lombok <https://projectlombok.org/>`_ version 1.16.12 and later.
 
