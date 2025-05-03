@@ -8,7 +8,7 @@ Transaction
 Doma provides support for local transactions.
 This document explains how to configure and use local transactions in your application.
 
-If you want to use global transaction, use frameworks or application servers
+If you want to use a global transaction, use frameworks or application servers
 which support JTA (Java Transaction API).
 
 See also :ref:`config-configuration-definition` .
@@ -16,7 +16,7 @@ See also :ref:`config-configuration-definition` .
 Configuration
 =============
 
-To use local transaction, these conditions are required:
+To use a local transaction, these conditions are required:
 
 * Return ``LocalTransactionDataSource`` from ``getDataSource`` in ``Config``
 * Generate ``LocalTransactionManager`` using the ``LocalTransactionDataSource`` above in the constructor
