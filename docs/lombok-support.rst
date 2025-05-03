@@ -35,9 +35,9 @@ Entity class definition
 immutable entity classes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Specify ``true`` to the ``immutable`` element of ``@Entity``
-* Specify either ``@lombok.Value`` or ``@lombok.AllArgsConstructor``
-* Specify ``@lombok.Getter`` to generate getters, in case of ``@lombok.AllArgsConstructor``
+* Set the ``immutable`` element of ``@Entity`` to ``true``
+* Use either ``@lombok.Value`` or ``@lombok.AllArgsConstructor``
+* Use ``@lombok.Getter`` to generate getters when using ``@lombok.AllArgsConstructor``
 
 .. code-block:: java
 
