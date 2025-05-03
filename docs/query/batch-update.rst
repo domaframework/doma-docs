@@ -45,10 +45,10 @@ Each element in the array represents the number of rows affected by the correspo
 Version number and optimistic concurrency control in auto generated SQL
 -----------------------------------------------------------------------
 
-Optimistic concurrency control is executed if you satisfied below conditions.
+Optimistic concurrency control is executed if the following conditions are met:
 
-* :doc:`../entity` within parameter java.lang.Iterable subtype has property that is annotated with @Version
-* The ignoreVersion element within @BatchUpdate annotation is false
+* The :doc:`../entity` within the parameter's java.lang.Iterable subtype has a property that is annotated with @Version
+* The ignoreVersion element within the @BatchUpdate annotation is false
 
 When optimistic concurrency control is enabled, the version number is included with the identifier in the update condition and is incremented by 1.
 If the update count is 0, a ``BatchOptimisticLockException`` is thrown, indicating an optimistic concurrency control failure.
@@ -70,10 +70,10 @@ In this case, ``BatchOptimisticLockException`` is not thrown even if the update 
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of ``suppressOptimisticLockException`` property within ``@BatchUpdate`` is ``true``,
-if property that annotated with ``@Version`` is exists then version number is include in update condition and be increment by 1
-but ``BatchOptimisticLockException`` is not thrown even if update count is 0.
-However, version property value within entity is increment by 1.
+If the ``suppressOptimisticLockException`` property within the ``@BatchUpdate`` annotation is ``true``,
+and a property annotated with ``@Version`` exists, then the version number is included in the update condition and is incremented by 1.
+However, a ``BatchOptimisticLockException`` is not thrown even if the update count is 0.
+In this case, the version property value within the entity is still incremented by 1.
 
 .. code-block:: java
 
@@ -86,7 +86,7 @@ Update target property
 updatable
 ~~~~~~~~~
 
-The ``updatable`` property within ``@Column`` annotation that is specified ``false`` is excluded from updating target if :doc:`../entity` has property that is annotated with ``@Column``.
+A property with its ``updatable`` property in the ``@Column`` annotation set to ``false`` is excluded from the update operation if the :doc:`../entity` has a property that is annotated with ``@Column``.
 
 exclude
 ~~~~~~~
@@ -102,9 +102,9 @@ Even if the ``updatable`` property of the ``@Column`` annotation is set to ``tru
 include
 ~~~~~~~
 
-Only property that is specified with ``include`` property within ``@BatchUpdate`` annotation is included to updating target.
-If same property are specified with both of ``include`` property and ``exclude`` property within ``@BatchUpdate`` the property is excluded from updating target.
-Even if property is specified with this element the property is excluded from updating target if ``updatable`` property within ``@Column`` annotation is ``false``.
+Only properties that are specified in the ``include`` property of the ``@BatchUpdate`` annotation are included in the update operation.
+If the same property is specified in both the ``include`` property and the ``exclude`` property of the ``@BatchUpdate`` annotation, the property is excluded from the update operation.
+Even if a property is specified in this element, it is excluded from the update operation if the ``updatable`` property in the ``@Column`` annotation is ``false``.
 
 .. code-block:: java
 
@@ -114,14 +114,14 @@ Even if property is specified with this element the property is excluded from up
 Batch update by SQL file
 =========================
 
-To execute batch updating by SQL file,
-you set ``true`` to ``sqlFile`` property within ``@BatchUpdate`` annotation and prepare SQL file that correspond method.
+To execute batch updates using an SQL file,
+set the ``sqlFile`` property to ``true`` in the ``@BatchUpdate`` annotation and prepare an SQL file that corresponds to the method.
 
 .. note::
 
-  In batch updating by SQL file, rule is different according to using or not using :ref:`populate`.
+  In batch updates using SQL files, the rules differ depending on whether you use :ref:`populate` or not.
 
-Case of using comment that generating update column list
+Case of using a comment that generates the update column list
 ---------------------------------------------------------
 
 .. code-block:: java
@@ -132,23 +132,23 @@ Case of using comment that generating update column list
   @BatchUpdate
   BatchResult<ImmutableEmployee> update(List<ImmutableEmployee> employees);
 
-Parameter type must be ``java.lang.Iterable`` subtype that has :doc:`../entity` as an element.
-Specifiable parameter is only one.
-Parameter must not be ``null``.
-Return value array element count become equal ``Iterable`` element count.
-Update count is returned to array each element.
+The parameter type must be a ``java.lang.Iterable`` subtype that has :doc:`../entity` as its element type.
+Only one parameter can be specified.
+The parameter must not be ``null``.
+The return value array element count equals the ``Iterable`` element count.
+The update count is returned in each element of the array.
 
-For example, you describe SQL like below to correspond above method.
+For example, you would write an SQL file like the one below to correspond to the above method.
 
 .. code-block:: sql
 
   update employee set /*%populate*/ id = id where name = /* employees.name */'hoge'
 
-Parameter name indicate ``Iterable`` subtype element in SQL file.
+The parameter name indicates the ``Iterable`` subtype element in the SQL file.
 
-The rule that is about update target property  equals :ref:`auto-batch-update`.
+The rules about update target properties are the same as in :ref:`auto-batch-update`.
 
-Case of not using comment that generating update column list
+Case of not using a comment that generates the update column list
 ------------------------------------------------------------
 
 .. code-block:: java
@@ -159,54 +159,54 @@ Case of not using comment that generating update column list
   @BatchUpdate
   BatchResult<ImmutableEmployee> update(List<ImmutableEmployee> employees);
 
-Parameter type must be ``java.lang.Iterable`` subtype that has arbitrary type as an element.
-Specifiable parameter is only one.
-Parameter must not be ``null``.
-Return value array element count become equal ``Iterable`` element count.
-Update count is returned to array each element.
+The parameter type must be a ``java.lang.Iterable`` subtype that has an arbitrary type as its element type.
+Only one parameter can be specified.
+The parameter must not be ``null``.
+The return value array element count equals the ``Iterable`` element count.
+The update count is returned in each element of the array.
 
-For example, you describe SQL like below to correspond above method.
+For example, you would write an SQL file like the one below to correspond to the above method.
 
 .. code-block:: sql
 
   update employee set name = /* employees.name */'hoge', salary = /* employees.salary */100
   where id = /* employees.id */0
 
-Parameter name indicate ``Iterable`` subtype element in SQL file.
+The parameter name indicates the ``Iterable`` subtype element in the SQL file.
 
-Version number auto updating is not executed in batch update by SQL file.
-Also, ``exclude`` property and ``include`` property within ``@BatchUpdate`` annotation are not referenced.
+Automatic version number updating is not executed in batch updates using SQL files.
+Also, the ``exclude`` property and the ``include`` property of the ``@BatchUpdate`` annotation are not referenced.
 
 Version number and optimistic concurrency control in SQL file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Optimistic concurrency control is performed when the following conditions are met:
 
-* java.lang.Iterable subtype element in parameter is :doc:`../entity`
-  and has property that is annotated @Version existing at :doc:`../entity`.
-* ignoreVersion property within @BatchUpdate annotation is false.
+* The java.lang.Iterable subtype element in the parameter is a :doc:`../entity`
+  and has a property that is annotated with @Version.
+* The ignoreVersion property within the @BatchUpdate annotation is false.
 
-However, describing to SQL file for Optimistic concurrency control SQL is application developer's responsibility.
-For example like below SQL, you must specify version number in WHERE clauses and increment version number by 1 in SET clauses.
+However, writing SQL for optimistic concurrency control is the application developer's responsibility.
+For example, in the SQL below, you must specify the version number in the WHERE clause and increment the version number by 1 in the SET clause.
 
 .. code-block:: sql
 
   update EMPLOYEE set DELETE_FLAG = 1, VERSION = /* employees.version */1 + 1
   where ID = /* employees.id */1 and VERSION = /* employees.version */1
 
-``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown, if this SQL updated count is 0.
-``BatchOptimisticLockException`` is not thrown and version property within entity is increment by 1 if updated count is not 0.
+A ``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown if this SQL update count is 0.
+A ``BatchOptimisticLockException`` is not thrown and the version property within the entity is incremented by 1 if the update count is not 0.
 
-If optimistic concurrency control is enable, version number is included with identifier in update condition and is updated increment by 1.
-``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown, if at that time updated count is 0.
-On the other hand, if update count is 1, ``BatchOptimisticLockException`` is not thrown and entity version property is increment by 1.
+If optimistic concurrency control is enabled, the version number is included with the identifier in the update condition and is incremented by 1.
+A ``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown if the update count is 0.
+On the other hand, if the update count is 1, a ``BatchOptimisticLockException`` is not thrown and the entity version property is incremented by 1.
 
 ignoreVersion
 ^^^^^^^^^^^^^
 
-If ``ignoreVersion`` property within ``@BatchUpdate`` annotation is true,
-``BatchOptimisticLockException`` is not thrown, even if update count is 0 or multiple.
-Also, entity version property is not modified.
+If the ``ignoreVersion`` property within the ``@BatchUpdate`` annotation is true,
+a ``BatchOptimisticLockException`` is not thrown, even if the update count is 0 or multiple.
+Also, the entity version property is not modified.
 
 .. code-block:: java
 
@@ -216,9 +216,9 @@ Also, entity version property is not modified.
 suppressOptimisticLockException
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In case of ``suppressOptimisticLockException`` property within ``@BatchUpdate`` is ``true``,
-``BatchOptimisticLockException`` is not thrown even if update count is 0.
-However, entity version property value is incremented by 1.
+If the ``suppressOptimisticLockException`` property within the ``@BatchUpdate`` annotation is ``true``,
+a ``BatchOptimisticLockException`` is not thrown even if the update count is 0.
+However, the entity version property value is still incremented by 1.
 
 .. code-block:: java
 
@@ -228,42 +228,42 @@ However, entity version property value is incremented by 1.
 Unique constraint violation
 ============================
 
-``UniqueConstraintException`` is thrown regardless of with or without using sql file if unique constraint violation is occurred.
+A ``UniqueConstraintException`` is thrown regardless of whether you are using an SQL file or not if a unique constraint violation occurs.
 
 Query timeout
 ==================
 
-You can specify seconds of query timeout to ``queryTimeout`` property within ``@BatchUpdate`` annotation.
+You can specify the number of seconds for query timeout in the ``queryTimeout`` property of the ``@BatchUpdate`` annotation.
 
 .. code-block:: java
 
   @BatchUpdate(queryTimeout = 10)
   int[] update(List<Employee> employees);
 
-This specifying is applied regardless of with or without using sql file.
-Query timeout that is specified in config class is used if ``queryTimeout`` property is not set value.
+This specification is applied regardless of whether you are using an SQL file or not.
+The query timeout that is specified in the config class is used if the ``queryTimeout`` property is not set.
 
 Batch size
 ============
 
-You can specify batch size to ``batchSize`` property within ``@BatchUpdate`` annotation.
+You can specify the batch size in the ``batchSize`` property of the ``@BatchUpdate`` annotation.
 
 .. code-block:: java
 
   @BatchUpdate(batchSize = 10)
   int[] update(List<Employee> employees);
 
-This specify is applied Regardless of using or not using SQL file.
-It you do not specify the value to ``batchSize`` property, batch size that is specified at :doc:`../config` class is applied.
+This specification is applied regardless of whether you are using an SQL file or not.
+If you do not specify a value for the ``batchSize`` property, the batch size that is specified in the :doc:`../config` class is used.
 
 SQL log output format
 ======================
 
-You can specify SQL log output format to ``sqlLog`` property within ``@BatchUpdate`` annotation.
+You can specify the SQL log output format in the ``sqlLog`` property of the ``@BatchUpdate`` annotation.
 
 .. code-block:: java
 
   @BatchUpdate(sqlLog = SqlLogType.RAW)
   int[] update(List<Employee> employees);
 
-``SqlLogType.RAW`` represent outputting log that is sql with a binding parameter.
+``SqlLogType.RAW`` represents outputting a log that contains SQL with binding parameters.
