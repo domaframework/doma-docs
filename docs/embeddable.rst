@@ -5,12 +5,12 @@ Embeddable classes
 .. contents::
    :depth: 3
 
-Embeddable classes group the properties for :doc:`../entity`.
+Embeddable classes group properties for entity classes.
 
 Embeddable definition
 =====================
 
-The following code snippet shows how to define an embeddable:
+Here is an example of how to define an embeddable class:
 
 .. code-block:: java
 
@@ -31,7 +31,7 @@ The following code snippet shows how to define an embeddable:
       }
   }
 
-You can annotate not only classes but also records with ``@Embeddable``:
+You can apply the ``@Embeddable`` annotation to both classes and records:
 
 .. code-block:: java
 
@@ -74,12 +74,12 @@ The above entity definition is equivalent to following one:
 Naming convention
 -----------------
 
-A naming convention is inherited from the enclosing :doc:`../entity`.
+The naming convention is inherited from the enclosing entity class.
 
 Field definition
 ================
 
-By default, the fields are persistent and correspond to the database columns or result set columns.
+By default, all fields are persistent and correspond to database columns or result set columns.
 
 The field type must be one of the following:
 

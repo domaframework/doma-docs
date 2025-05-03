@@ -5,7 +5,7 @@ Select
 .. contents::
    :depth: 3
 
-To execute a search using the SELECT statement, annotate the DAO method with ``@Select``.
+To perform a search operation using the SELECT statement, annotate the DAO method with ``@Select``.
 
 .. code-block:: java
 
@@ -22,8 +22,8 @@ Describe the SQL template in an SQL file or in the ``@Sql`` annotation.
 Search condition
 =================
 
-The search condition make use of method parameters.
-The available types of parameters are as follows:
+Search conditions are defined using method parameters.
+The following parameter types are supported:
 
 * :doc:`../basic`
 * :doc:`../domain`
@@ -34,8 +34,8 @@ The available types of parameters are as follows:
 * java.util.OptionalLong
 * java.util.OptionalDouble
 
-If the parameter type is one of either :doc:`../basic` or :doc:`../domain`, it is permissible to set the argument to ``null``. 
-If the parameter type is anything other than these, the argument must not be ``null``.
+If the parameter type is either a basic type or a domain type, you can pass ``null`` as an argument.
+For all other parameter types, the argument must not be ``null``.
 
 Query using basic classes or domain classes
 ----------------------------------------------
@@ -180,8 +180,8 @@ Type parameter ``RESULT`` must match to Dao method return value.
 Returning a Stream
 ---------------------------
 
-You define ``java.util.stream.Stream`` to method return value.
-You can use following type at property within ``Stream``.
+Define the method return type as ``java.util.stream.Stream``.
+The Stream can contain elements of the following types:
 
 * :doc:`../basic`
 * :doc:`../domain`
@@ -262,8 +262,8 @@ The type parameter ``RESULT`` of ``Collector<TARGET, ACCUMULATION, RESULT>`` mus
 
 .. note::
 
-  Collect search is the shortcut that pass to Function within stream search.
-  You can do equivalent by using `collect`` method in ``Stream`` object that is getting from stream search.
+  Collector search is a shortcut for passing a collector to a Function in stream search.
+  You can achieve the same result by calling the ``collect`` method on the ``Stream`` object obtained from a stream search.
 
 Aggregate strategy
 ==================
@@ -307,9 +307,8 @@ You can obtain an instance of ``SelectOptions`` through a static ``get`` method.
 Paging
 ----------
 
-To implement paging, specify the starting position with the ``offset`` method and 
-the number of records to retrieve with the ``limit`` method in ``SelectOptions``. 
-Then, pass an instance of ``SelectOptions`` to the DAO method.
+To implement pagination, use the ``offset`` method to specify the starting position and the ``limit`` method to specify the number of records to retrieve in ``SelectOptions``. 
+Then pass this ``SelectOptions`` instance to the DAO method.
 
 .. code-block:: java
 
@@ -394,9 +393,8 @@ Depending on the dialect, some or all of the methods for pessimistic concurrency
 Count
 ---------
 
-By calling the ``count`` method of ``SelectOptions``, you can retrieve the total count of records. 
-Typically, this is used in combination with paging options to retrieve the total count of records 
-when not filtering through paging.
+Use the ``count`` method of ``SelectOptions`` to retrieve the total number of records. 
+This is typically used with pagination to get the total record count before any pagination filtering is applied.
 
 .. code-block:: java
 
@@ -411,7 +409,7 @@ If the ``count`` method hasn't been executed before the DAO method call, the ``g
 Ensure the existence of search results
 =======================================
 
-If you want to ensure that there is at least one search result, specify ``true`` for the ``ensureResult`` element of ``@Select``.
+To ensure that at least one result is returned from the search, set the ``ensureResult`` property of the ``@Select`` annotation to ``true``.
 
 .. code-block:: java
 
@@ -498,4 +496,4 @@ You can specify the format of SQL log output in the ``sqlLog`` element of the ``
   @Select(sqlLog = SqlLogType.RAW)
   List<Employee> selectById(Integer id);
 
-``SqlLogType.RAW`` indicates logging SQL with bound parameters.
+``SqlLogType.RAW`` outputs the SQL statement with its binding parameters in the log.

@@ -33,7 +33,7 @@ Usage
 =====
 
 Doma uses reflection to access Entity properties.
-For this to work, you have to open packages containing Entity classes:
+For this to work, you need to open packages containing Entity classes:
 
 .. code-block:: java
 
@@ -44,7 +44,7 @@ For this to work, you have to open packages containing Entity classes:
       opens example.app.entity;
     }
 
-You can open your module instead of packages:
+Alternatively, you can open your entire module instead of specific packages:
 
 .. code-block:: java
 

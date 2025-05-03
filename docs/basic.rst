@@ -8,13 +8,13 @@ Basic classes
 Overview
 ========
 
-The Java types can be mapped to database column types are called "Basic classes" in Doma.
+Java types that can be mapped to database column types are called "Basic classes" in Doma.
 
 List of basic classes
 =====================
 
 * primitive types except ``char``
-* wrapper class for above primitive types
+* wrapper classes for the above primitive types
 * enum types
 * byte[]
 * java.lang.String
@@ -43,7 +43,7 @@ Differences between temporal classes
   represents SQL TIME
 
 :java.time.LocalDateTime:
-  represents SQL TIMESTAMP and may hold nanoseconds if RDBMS supports it
+  represents SQL TIMESTAMP and may hold nanoseconds if the RDBMS supports it
 
 :java.sql.Date:
   represents SQL DATE
@@ -52,7 +52,7 @@ Differences between temporal classes
   represents SQL TIME
 
 :java.sql.Timestamp:
-  represents SQL TIMESTAMP and may hold nanoseconds if RDBMS supports it
+  represents SQL TIMESTAMP and may hold nanoseconds if the RDBMS supports it
 
 :java.util.Date:
   represents SQL TIMESTAMP and doesn't hold nanoseconds

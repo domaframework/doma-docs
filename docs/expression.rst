@@ -5,24 +5,24 @@ Expression language
 .. contents:: Contents
    :depth: 3
 
-You can write simple expressions in directives of :doc:`sql`.
-The grammar is almost the same as Java.
-However, not everything is possible that Java can do.
+You can write simple expressions in SQL directives.
+The grammar is very similar to Java,
+although not all Java features are supported.
 
 .. note::
 
-  Especially, the big difference is how to use optional types like ``java.util.Optional``.
-  In the expression, a value of ``Optional`` type is always converted
-  to a value of the element type automatically.
-  For example a value of the ``Optional<String>`` type is treated as a value of ``String`` type.
-  Therefore, we can't call methods of ``Optional`` type,
-  nor do we call methods which have an ``Optional`` type in the parameters.
+  A key difference is in how optional types like ``java.util.Optional`` are handled.
+  In expressions, values of ``Optional`` type are automatically converted
+  to values of their element type.
+  For example, a value of ``Optional<String>`` is treated as a ``String``.
+  As a result, you cannot call methods on the ``Optional`` object itself,
+  nor can you call methods that take ``Optional`` parameters.
 
-  When you want to check existence of a value, use ``/*%if optional != null */``
+  To check if an optional value exists, use ``/*%if optional != null */``
   instead of ``/*%if optional.isPresent() */``.
 
-  The same is true for ``java.util.OptionalInt``, ``java.util.OptionalDouble``,
-  and ``java.util.OptionalLong``.
+  This behavior applies to all optional types including ``java.util.OptionalInt``, 
+  ``java.util.OptionalDouble``, and ``java.util.OptionalLong``.
 
 Literals
 ========
@@ -53,8 +53,8 @@ You can use the following literals:
 | "a"      | java.lang.String     |
 +----------+----------------------+
 
-The numeral types are distinguished by suffix letters such as ``L`` or ``F``
-at the end of the literals. The suffixes must be capital letters.
+Numeric types are distinguished by suffix letters such as ``L`` or ``F``
+at the end of the literals. Note that these suffixes must be capital letters.
 
 .. code-block:: sql
 
@@ -84,9 +84,9 @@ You can use the following comparison operators:
 | >=        |   Greater than or equal to operator |
 +-----------+-------------------------------------+
 
-To use comparison operators, operands must implement ``java.lang.Comparable``.
+To use comparison operators, the operands must implement ``java.lang.Comparable``.
 
-The operands for ``<``, ``<=``, ``>`` and ``>=`` must not be ``null``.
+For the operators ``<``, ``<=``, ``>``, and ``>=``, the operands must not be ``null``.
 
 .. code-block:: sql
 
@@ -108,7 +108,7 @@ Operator  Description
 ||        Logical OR operator
 ========= ===========================
 
-With parentheses, you can override the precedence of operators.
+You can use parentheses to control the precedence of operators.
 
 .. code-block:: sql
 
@@ -136,7 +136,7 @@ You can use the following arithmetic operators:
 | %        |    Remainder operator      |
 +----------+----------------------------+
 
-Operands must be numeric type.
+All operands must be of numeric type.
 
 .. code-block:: sql
 
@@ -146,7 +146,7 @@ Operands must be numeric type.
 String concatenation operator
 =============================
 
-You can concatenate characters using a concatenation operator ``+``.
+You can concatenate strings using the concatenation operator ``+``.
 
 The operand must be one of the following types:
 
@@ -162,8 +162,8 @@ The operand must be one of the following types:
 Calling instance methods
 ========================
 
-You can call instance methods with the method names separated by dots ``.``.
-The method visibility must be public.
+You can call instance methods using dot notation (`.`).
+The called methods must have public visibility.
 
 .. code-block:: sql
 
@@ -184,8 +184,8 @@ If the method has no argument, specify ``()`` after the method name.
 Accessing to instance fields
 ============================
 
-You can access instance fields with the field names separated by dots ``.``.
-Even if the visibility is private, you can access it.
+You can access instance fields using dot notation (`.`).
+Fields can be accessed regardless of their visibility, even if they are private.
 
 .. code-block:: sql
 
@@ -195,9 +195,9 @@ Even if the visibility is private, you can access it.
 Calling static methods
 ======================
 
-You can call static methods by continuing the method names
-with the fully qualified class names enclosed in ``@``.
-The method visibility must be public.
+You can call static methods by prefixing the method name
+with the fully qualified class name enclosed in ``@`` symbols.
+The method must have public visibility.
 
 .. code-block:: sql
 
@@ -209,9 +209,9 @@ The method visibility must be public.
 Accessing to static fields
 ==========================
 
-You can access static fields by continuing the field name
-with the fully qualified class name enclosed in ``@``.
-Even if the visibility is private, you can access it.
+You can access static fields by prefixing the field name
+with the fully qualified class name enclosed in ``@`` symbols.
+Fields can be accessed regardless of their visibility, even if they are private.
 
 .. code-block:: sql
 
@@ -223,8 +223,8 @@ Even if the visibility is private, you can access it.
 Using built-in functions
 ========================
 
-Built-in functions are utilities mainly for changing values of binding variables
-before binding them to SQL.
+Built-in functions are utilities primarily designed to transform values of binding variables
+before they are bound to SQL statements.
 
 For example, when you run a prefix search with a LIKE clause,
 you can write like this:
@@ -234,11 +234,11 @@ you can write like this:
   select * from employee where
       employee_name like /* @prefix(employee.employeeName) */'smith' escape '$'
 
-``@prefix(employee.employeeName)`` means that we pass ``employee.employeeName``
+``@prefix(employee.employeeName)`` passes the value of ``employee.employeeName``
 to the ``@prefix`` function.
-The ``@prefix`` function converts the character sequence which is received by the parameter
-to a string for forward match search.
-It also escapes special characters.
+This function converts the received character sequence
+into a string suitable for prefix (forward match) search.
+It also escapes any special characters in the string.
 For example, if the value of ``employee.employeeName`` is ``ABC``, it's converted to ``ABC%``.
 If the value of ``employee.employeeName`` contains ``%`` such as ``AB%C``,
 the ``%`` is escaped with a default escape sequence ``$``,
@@ -337,18 +337,18 @@ These functions are correspond to the methods of ``org.seasar.doma.expr.Expressi
 Using custom functions
 ======================
 
-You can define and use your own functions.
+You can define and use your own custom functions.
 
-You need to follow these settings when you use custom functions which you define by yourself:
+To use custom functions that you define, follow these steps:
 
-* The function is defined as a method of a class which implements
+* Define the function as a method in a class that implements
   ``org.seasar.doma.expr.ExpressionFunctions``.
-* The method is a public instance method.
-* The class is registered as an option in :doc:`annotation-processing`.
-  The key of the option is ``doma.expr.functions``.
-* The instance of the class you create is used in an RDBMS dialect in your configuration class
-  (The implementations of RDBMS dialect provided by Doma can receive
-  ``ExpressionFunctions`` in the constructor).
+* The method must be a public instance method.
+* Register the class as an option in the annotation processing configuration.
+  Use ``doma.expr.functions`` as the option key.
+* Use an instance of your class in the RDBMS dialect within your configuration class
+  (Doma's RDBMS dialect implementations accept an ``ExpressionFunctions`` parameter
+  in their constructors).
 
 To call a custom function, add ``@`` at the beginning of the function name like built-in functions.
 For example, you can call ``myfunc`` function like this:

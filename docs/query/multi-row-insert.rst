@@ -25,8 +25,8 @@ By using multi-row insert, you can issue SQL statements such as the following:
     insert into EMPLOYEE (EMPLOYEE_ID, EMPLOYEE_NO, EMPLOYEE_NAME, AGE, VERSION)
     values (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)
 
-The ``preInsert`` method of entity listener is called each entity when before executing insert if the entity listener is specified at :doc:`../entity` parameter.
-Also the ``postInsert`` method of entity listener method is called each entity when after executing insert.
+If an entity listener is specified for the entity class, its ``preInsert`` method is called for each entity before executing the insert operation.
+Similarly, the ``postInsert`` method is called for each entity after the insert operation completes.
 
 .. note::
 
@@ -180,7 +180,7 @@ The return type must be a ``List`` of entity instances.
 Unique constraint violation
 ============================
 
-``org.seasar.doma.jdbc.UniqueConstraintException`` is thrown if unique constraint violation is occurred.
+An ``org.seasar.doma.jdbc.UniqueConstraintException`` is thrown if a unique constraint violation occurs.
 
 Query timeout
 ==================
@@ -192,7 +192,7 @@ You can specify seconds of query timeout to ``queryTimeout`` property within ``@
   @MultiInsert(queryTimeout = 10)
   int insert(List<Employee> employees);
 
-Query timeout that is specified in config class is used if ``queryTimeout`` property is not set value.
+If no value is set for the ``queryTimeout`` property, the query timeout specified in the config class is used.
 
 SQL log output format
 =====================
@@ -204,4 +204,4 @@ You can specify SQL log output format to ``sqlLog`` property within ``@MultiInse
   @MultiInsert(sqlLog = SqlLogType.RAW)
   int insert(List<Employee> employees);
 
-``SqlLogType.RAW`` represent outputting log that is sql with a binding parameter.
+``SqlLogType.RAW`` outputs the SQL statement with its binding parameters in the log.

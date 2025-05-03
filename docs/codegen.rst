@@ -8,16 +8,16 @@ Doma CodeGen Plugin
 Overview
 ========
 
-`Doma CodeGen Plugin <https://plugins.gradle.org/plugin/org.domaframework.doma.codegen>`_ is a Gradle plugin. 
-It generates Java, Kotlin, and SQL files from Database.
+The `Doma CodeGen Plugin <https://plugins.gradle.org/plugin/org.domaframework.doma.codegen>`_ is a Gradle plugin 
+that generates Java, Kotlin, and SQL files from a database schema.
 
-.. admonition:: Are you looking for the documentation for Ant-based Doma-Gen?
+.. admonition:: Are you looking for documentation for Ant-based Doma-Gen?
     :class: important
 
-    The documentation for Ant-based Doma-Gen is available at 
+    Documentation for Ant-based Doma-Gen is available at 
     `the Doma-Gen GitHub repository <https://github.com/domaframework/doma-gen/tree/master/docs>`_.
 
-    Ant-based Doma-Gen is not currently maintained. Please use the Doma CodeGen Plugin explained on this page instead.
+    Please note that Ant-based Doma-Gen is no longer maintained. We recommend using the Doma CodeGen Plugin described on this page instead.
 
 How to use
 ====================
@@ -113,7 +113,7 @@ To generate all files, run `domaCodeGenDevAll` task:
 Gradle Tasks
 ====================
 
-The Doma CodeGen Plugin provides following tasks:
+The Doma CodeGen Plugin provides the following tasks:
 
 - domaCodeGen*Name*All - Generates all.
 - domaCodeGen*Name*Dao - Generates DAO source files.
@@ -122,8 +122,8 @@ The Doma CodeGen Plugin provides following tasks:
 - domaCodeGen*Name*Sql - Generates SQL files.
 - domaCodeGen*Name*SqlTest - Generates SQL test source files.
 
-Note that each *Name* part in the above task names is replaced with the block name defined under the ``domaCodeGen`` block.  
-In the above usage example, the *Dev* part is corresponding to the ``dev`` block.
+Note that the *Name* part in each task name is replaced with the block name defined under the ``domaCodeGen`` block.  
+In the usage example above, the *Dev* part corresponds to the ``dev`` block.
 
 To check all defined task names, run the `tasks` task:
 
@@ -137,9 +137,9 @@ Config Options
 named config
 ------------
 
-A named config must be under the ``domaCodeGen`` block.  
-The name of the config is arbitrary.  
-You can make multiple configs under the ``domaCodeGen`` block.  
+A named configuration must be defined under the ``domaCodeGen`` block.  
+You can choose any name for your configuration.  
+Multiple configurations can be defined under the ``domaCodeGen`` block.  
 
 In the following example, we define two configs - ``sales`` and ``account``:
 
@@ -263,7 +263,7 @@ In the following example, we define two configs - ``sales`` and ``account``:
 entity
 ------
 
-An ``entity`` block must be under a named config:
+The ``entity`` block must be defined within a named configuration:
 
 .. tabs::
 
@@ -496,7 +496,7 @@ Customization
 Generating Kotlin code
 ----------------------
 
-To generate Kotlin code, specify ``LanguageType.KOTLIN`` to the languageType option as follows:
+To generate Kotlin code, set the languageType option to ``LanguageType.KOTLIN`` as follows:
 
 .. tabs::
 
@@ -550,9 +550,9 @@ To generate Kotlin code, specify ``LanguageType.KOTLIN`` to the languageType opt
 Using custom template files
 ---------------------------
 
-Default template files are located in 
+The default template files can be found in 
 `the source code repository of the Doma CodeGen Plugin <https://github.com/domaframework/doma-codegen-plugin/tree/master/codegen/src/main/resources/org/seasar/doma/gradle/codegen/template>`_.  
-They are listed as follows:
+These files include:
 
 .. list-table::
    :widths: 33 33 33
@@ -580,8 +580,8 @@ They are listed as follows:
      - org.seasar.doma.gradle.codege.desc.SqlDesc
      - SQL files
 
-To create custom template files, copy them and modify their contents without changing file names.
-Then put them in the directory which is specified to the `templateDir` option.
+To create custom templates, copy the default files, modify their contents without changing the filenames,
+and place them in the directory specified by the `templateDir` option.
 
 .. tabs::
 

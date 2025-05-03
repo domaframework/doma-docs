@@ -5,7 +5,7 @@ Insert
 .. contents::
    :depth: 3
 
-Annotate with ``@Insert`` to Dao method for execute insert.
+Annotate a Dao method with ``@Insert`` to execute insert operations.
 
 .. code-block:: java
 
@@ -18,11 +18,11 @@ Annotate with ``@Insert`` to Dao method for execute insert.
       Result<ImmutableEmployee> insert(ImmutableEmployee employee);
   }
 
-By default insert statement is auto generated.
-You can mapping arbitrary SQL file by setting true to ``sqlFile`` element of ``@Insert``.
+By default, the INSERT statement is automatically generated.
+You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` in the ``@Insert`` annotation.
 
-Entity listener ``preInsert`` method is called when before executing insert if the entity listener is specified :doc:`../entity` parameter.
-Also entity listener ``postInsert`` method is called when after executing insert.
+If an entity listener is specified for the entity class parameter, its ``preInsert`` method is called before executing the insert operation.
+Similarly, the ``postInsert`` method is called after the insert operation completes.
 
 Return value
 ============
@@ -116,7 +116,7 @@ the property is excluded from insertion if value is ``null``.
 duplicateKeyType
 ~~~~~~~~~~~~~~~~
 
-This property defines the strategy for handling duplicate keys during an insert operation.
+This property defines how to handle duplicate keys during an insert operation.
 
 It can take one of three values:
 
@@ -226,7 +226,7 @@ Additionally, the following properties of ``@Insert`` are not used:
 Unique constraint violation
 ===========================
 
-``UniqueConstraintException`` is thrown regardless with or without using sql file if unique constraint violation is occurred.
+A ``UniqueConstraintException`` is thrown if a unique constraint violation occurs, regardless of whether you use a SQL file or not.
 
 Query timeout
 ==================

@@ -12,8 +12,8 @@ how entities should be linked together.
 Aggregate strategy definition
 =============================
 
-An aggregate strategy is represented by annotating an interface with ``@AggregateStrategy``.
-This annotation is used to define how an entity aggregate is reconstructed from a query result.
+An aggregate strategy is defined by annotating an interface with ``@AggregateStrategy``.
+This annotation specifies how an entity aggregate is reconstructed from a query result.
 
 .. code-block:: java
 
@@ -23,14 +23,14 @@ This annotation is used to define how an entity aggregate is reconstructed from 
     }
 
 - The ``root`` element specifies the entity class that serves as the root of the aggregate.
-- The ``tableAlias`` element specifies the alias for the table corresponding to the root entity class.
+- The ``tableAlias`` element defines the alias for the table corresponding to the root entity class.
   This alias must be used in the SELECT statement to correctly map query results to entity properties.
 
 Association linker definition
 ===============================
 
 An aggregate strategy must contain at least one field of type ``BiFunction`` annotated with ``@AssociationLinker``.
-The ``BiFunction`` is responsible for dynamically associating two entity instances.
+This ``BiFunction`` is responsible for dynamically associating two entity instances.
 
 .. code-block:: java
 
@@ -52,7 +52,7 @@ The ``BiFunction`` is responsible for dynamically associating two entity instanc
           };
     }
 
-- The first and third type parameters of ``BiFunction`` represent the class that owns the property,
+- In the ``BiFunction``, the first and third type parameters represent the class that owns the property,
   while the second type parameter represents the property type.
 - The ``propertyPath`` element specifies the target property's name as a dot-separated path from the root entity class.
 - The ``tableAlias`` element specifies the alias for the table corresponding to the entity class used as the second
@@ -110,7 +110,7 @@ Using an aggregate strategy
       Department selectById(Integer id);
     }
 
-For the ``selectById`` method, the following SELECT statement is required:
+The ``selectById`` method requires a SELECT statement like the following:
 
 .. code-block:: sql
 
@@ -139,9 +139,9 @@ For the ``selectById`` method, the following SELECT statement is required:
 Column aliasing rules
 ~~~~~~~~~~~~~~~~~~~~~
 
-- The table aliases must match those defined in ``DepartmentAggregateStrategy``.
-- Column aliases must be prefixed with the table alias followed by an underscore (``_``).
-  For example, ``d.id`` is aliased as ``d_id`` and ``e.id`` as ``e_id``.
+- Table aliases must match those defined in ``DepartmentAggregateStrategy``.
+- Column aliases must begin with the table alias followed by an underscore (``_``).
+  For example, ``d.id`` should be aliased as ``d_id`` and ``e.id`` as ``e_id``.
 
 Using the expansion directive
 -----------------------------
@@ -165,7 +165,7 @@ By using the :ref:`expansion directive <expand>`, the above SELECT statement can
 How expansion works
 ~~~~~~~~~~~~~~~~~~~
 
-- The ``/*%expand */*`` directive automatically expands into a column list using predefined aliasing rules.
+- The ``/*%expand*/*`` directive automatically expands into a column list following predefined aliasing rules.
 - By default, all columns from all tables are included in the result set.
 
 To selectively expand only specific tables, pass a comma-separated list of table aliases:

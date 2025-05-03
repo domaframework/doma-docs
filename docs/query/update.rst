@@ -5,7 +5,7 @@ Update
 .. contents::
    :depth: 3
 
-Annotate with ``@Update`` to Dao method for execute update.
+Annotate DAO methods with ``@Update`` to execute update operations.
 
 .. code-block:: java
 
@@ -18,11 +18,11 @@ Annotate with ``@Update`` to Dao method for execute update.
       Result<ImmutableEmployee> update(ImmutableEmployee employee);
   }
 
-By default UPDATE statement is auto generated.
-You can mapping arbitrary SQL file by specifying ``true`` to ``sqlFile`` property within the ``@Update`` annotation.
+By default, the UPDATE statement is automatically generated.
+You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` within the ``@Update`` annotation.
 
-The ``preUpdate`` method of entity listener is called when before executing update if the entity listener is specified at entity class parameter.
-Also the ``postUpdate`` method of entity listener  method is called when after executing update.
+If an entity listener is specified for the entity class parameter, the ``preUpdate`` method of the entity listener is called before executing the update.
+Similarly, the ``postUpdate`` method of the entity listener is called after executing the update.
 
 Return value
 ============
@@ -35,18 +35,18 @@ See :ref:`update-returning`.
 When not using the returning property
 -------------------------------------
 
-Return value must be ``org.seasar.doma.jdbc.Result`` that has entity class as an element if parameter is immutable entity class.
+The return value must be an ``org.seasar.doma.jdbc.Result`` that has an entity class as its element if the parameter is an immutable entity class.
 
-Return value must be ``int`` that is represented updated count if the above conditions are not satisfied.
+The return value must be an ``int`` representing the number of updated rows if the above condition is not satisfied.
 
 .. _auto-update:
 
 Update by auto generated SQL
 ============================
 
-Parameter type must be entity class.
-Specifiable parameter is only one.
-Parameter must not be null.
+The parameter type must be an entity class.
+Only one parameter can be specified.
+The parameter must not be null.
 
 .. code-block:: java
 
@@ -59,22 +59,22 @@ Parameter must not be null.
 Version number and optimistic concurrency control in auto generated SQL
 ------------------------------------------------------------------------
 
-Optimistic concurrency control is executed if you satisfied below conditions.
+Optimistic concurrency control is executed if the following conditions are met:
 
-* Entity class within parameter has property that is annotated with @Version
-* The ignoreVersion element within @Update annotation is false
+* The entity class parameter has a property that is annotated with @Version
+* The ignoreVersion element within the @Update annotation is false
 
-If optimistic concurrency control is enable, version number is included with identifier in update condition and is updated increment by 1.
-``OptimisticLockException`` representing optimistic concurrency control failure is thrown, if at that time updated count is 0.
-Also, ``OptimisticLockException`` is not thrown and version property within entity is increment by 1 if updated count is not 0.
+If optimistic concurrency control is enabled, the version number is included with the identifier in the update condition and is incremented by 1.
+An ``OptimisticLockException`` representing optimistic concurrency control failure is thrown if the updated count is 0.
+If the updated count is not 0, no ``OptimisticLockException`` is thrown and the version property within the entity is incremented by 1.
 
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If ``ignoreVersion`` property within ``@Update`` annotation is true,
-version number is not include in update condition and be included in SET clauses within UPDATE statement.
-Version number is updated by setting value at application.
-``OptimisticLockException`` is not thrown in this case, even if update count is 0.
+If the ``ignoreVersion`` property within the ``@Update`` annotation is set to true,
+the version number is not included in the update condition but is included in the SET clauses of the UPDATE statement.
+The version number is updated by setting a value at the application level.
+An ``OptimisticLockException`` is not thrown in this case, even if the update count is 0.
 
 .. code-block:: java
 
@@ -84,10 +84,10 @@ Version number is updated by setting value at application.
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of ``suppressOptimisticLockException`` property within ``@Update`` is true,
-if property that annotated with ``@Version`` is exists then version number is include in update condition and be increment by 1
-but ``OptimisticLockException`` is not thrown even if update count is 0.
-However, version property value within entity is increment by 1.
+When the ``suppressOptimisticLockException`` property within the ``@Update`` annotation is set to true,
+if a property annotated with ``@Version`` exists, then the version number is included in the update condition and incremented by 1,
+but an ``OptimisticLockException`` is not thrown even if the update count is 0.
+However, the version property value within the entity is still incremented by 1.
 
 .. code-block:: java
 
@@ -100,13 +100,13 @@ Control updating target property
 updatable
 ~~~~~~~~~
 
-The ``updatable`` property within ``@Column`` annotation that is specified ``false`` is excluded from updating target if entity class has property that is annotated with ``@Column``.
+If the entity class has properties annotated with ``@Column``, those with the ``updatable`` property set to ``false`` are excluded from the update targets.
 
 exclude
 ~~~~~~~
 
-Property that is specified with ``exclude`` property within the ``@Update`` annotation is excluded from updating target.
-Even if ``updatable`` property within ``@Column`` annotation is  specified ``true`` the property is excluded from updating target if the property is specified by this element.
+Properties specified in the ``exclude`` property of the ``@Update`` annotation are excluded from the update targets.
+Even if the ``updatable`` property within the ``@Column`` annotation is set to ``true``, the property is excluded from the update targets if specified in this element.
 
 .. code-block:: java
 
@@ -116,9 +116,9 @@ Even if ``updatable`` property within ``@Column`` annotation is  specified ``tru
 include
 ~~~~~~~
 
-Only property that is specified with ``include`` property within ``@Update`` annotation is included to updating target.
-If same property are specified with both of ``include`` property and ``exclude`` property within ``@Update`` the property is excluded from updating target.
-Even if property is specified with this element the property is excluded from updating target if ``updatable`` property within ``@Column`` annotation is ``false``.
+Only properties specified in the ``include`` property of the ``@Update`` annotation are included in the update targets.
+If the same property is specified in both the ``include`` and ``exclude`` properties of ``@Update``, the property is excluded from the update targets.
+Even if a property is specified in this element, it is excluded from the update targets if the ``updatable`` property within the ``@Column`` annotation is ``false``.
 
 .. code-block:: java
 
@@ -128,9 +128,9 @@ Even if property is specified with this element the property is excluded from up
 excludeNull
 ~~~~~~~~~~~
 
-Property that value is ``null`` is excluded from updating target if ``excludeNull`` property within ``@Update`` annotation is specified ``true``.
-If this element is ``true``, even if ``updatable`` property within ``@Column`` annotation is specified ``true`` or property is specified with ``include`` property within ``@Update`` annotation
-the property is excluded from insertion target if value is ``null``.
+Properties with a value of ``null`` are excluded from the update targets if the ``excludeNull`` property within the ``@Update`` annotation is set to ``true``.
+If this element is ``true``, even if the ``updatable`` property within the ``@Column`` annotation is set to ``true`` or the property is specified in the ``include`` property of the ``@Update`` annotation,
+the property is excluded from the update targets if its value is ``null``.
 
 .. code-block:: java
 
@@ -140,13 +140,13 @@ the property is excluded from insertion target if value is ``null``.
 includeUnchanged
 ~~~~~~~~~~~~~~~~
 
-This element is enable only if property that annotated with ``@OriginalStates`` is exists within updating target entity class.
+This element is only effective if a property annotated with ``@OriginalStates`` exists within the entity class being updated.
 
-All property within entity is updating target if this element is true.
-That is, the column corresponding to all property is included in SET clauses within UPDATE statement.
+If this element is true, all properties within the entity are update targets.
+That is, the columns corresponding to all properties are included in the SET clauses of the UPDATE statement.
 
-Only properties that have actually changed since the entity is updating target if this element is ``false``.
-That is, only the column corresponding to modified property is included in SET clauses within UPDATE statement.
+If this element is ``false``, only properties that have actually changed since the entity was loaded are update targets.
+That is, only the columns corresponding to modified properties are included in the SET clauses of the UPDATE statement.
 
 .. code-block:: java
 
@@ -191,22 +191,22 @@ or an ``Optional`` containing an entity class as its element.
   Only H2 Database, PostgreSQL, SQL Server, and SQLite Dialects support this feature.
 
 Update by SQL file
-=====================
+=================
 
-To execute updating by SQL file,
-you set ``true`` to ``sqlFile`` property within ``@Update`` annotation and prepare SQL file that correspond method.
+To execute an update using an SQL file,
+set the ``sqlFile`` property to ``true`` within the ``@Update`` annotation and prepare an SQL file that corresponds to the method.
 
 .. note::
 
-  In updating by SQL file, rule is different with or without use ref:`populate`.
+  When updating via SQL file, the rules differ depending on whether you use :ref:`populate`.
 
-Case of using comment that generating update column list
----------------------------------------------------------
+Case of using comment that generates update column list
+------------------------------------------------------
 
-First parameter type must be entity class.
-Specifiable parameters count is no limit.
-You can set ``null`` to parameter if parameter type is basic type or domain class.
-Parameter must not be ``null`` if the type is other than that.
+The first parameter type must be an entity class.
+There is no limit on the number of parameters that can be specified.
+You can set ``null`` to a parameter if the parameter type is a basic type or domain class.
+The parameter must not be ``null`` if it is of any other type.
 
 .. code-block:: java
 
@@ -214,23 +214,23 @@ Parameter must not be ``null`` if the type is other than that.
   int update(Employee employee, BigDecimal salary);
 
   @Update(sqlFile = true)
-  Result<ImmutableEmployee> update(ImmutableEmployee employee, , BigDecimal salary);
+  Result<ImmutableEmployee> update(ImmutableEmployee employee, BigDecimal salary);
 
-For example, you describe SQL file like below to correspond above method.
+For example, you would write an SQL file like the one below to correspond to the above method:
 
 .. code-block:: sql
 
   update employee set /*%populate*/ id = id where salary > /* salary */0
 
-The rule about controlling updating target property is same as :ref:`auto-update`.
+The rules for controlling update target properties are the same as in :ref:`auto-update`.
 
-Case of not using comment that generating update column list
-------------------------------------------------------------
+Case of not using comment that generates update column list
+---------------------------------------------------------
 
-You can use arbitrary type as parameter.
-Specifiable parameters count is no limit.
-You can set ``null`` to parameter if parameter type is basic type or domain class.
-Parameter must not be ``null`` if the type is other than that.
+You can use an arbitrary type as a parameter.
+There is no limit on the number of parameters that can be specified.
+You can set ``null`` to a parameter if the parameter type is a basic type or domain class.
+The parameter must not be ``null`` if it is of any other type.
 
 .. code-block:: java
 
@@ -240,42 +240,42 @@ Parameter must not be ``null`` if the type is other than that.
   @Update(sqlFile = true)
   Result<ImmutableEmployee> update(ImmutableEmployee employee);
 
-For example, you describe SQL file like below to correspond above method.
+For example, you would write an SQL file like the one below to correspond to the above method:
 
 .. code-block:: sql
 
   update employee set name = /* employee.name */'hoge', salary = /* employee.salary */100
   where id = /* employee.id */0
 
-``exclude`` property and ``include`` property, ``excludeNull`` property, ``includeUnchanged`` property they are within ``@Update`` annotation are not referenced in updating by SQL file.
+The ``exclude``, ``include``, ``excludeNull``, and ``includeUnchanged`` properties within the ``@Update`` annotation are not referenced when updating via SQL file.
 
 
 Version number and optimistic concurrency control in SQL file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Optimistic concurrency control is executed if you satisfied below conditions.
+Optimistic concurrency control is executed if the following conditions are met:
 
-* Entity class is included in parameter.
-* Entity class at first from the left within parameter has property that is annotated with @Version
-* The ignoreVersion element within @Update annotation is false
+* An entity class is included in the parameters.
+* The leftmost entity class parameter has a property that is annotated with @Version
+* The ignoreVersion element within the @Update annotation is false
 
-However, describing to SQL file for Optimistic concurrency control SQL is application developer's responsibility.
-For example like below SQL, you must specify version number in WHERE clauses and increment version number by 1 in SET clauses.
+However, writing SQL for optimistic concurrency control is the application developer's responsibility.
+For example, in the SQL below, you must specify the version number in the WHERE clause and increment the version number by 1 in the SET clause.
 
 .. code-block:: sql
 
   update EMPLOYEE set DELETE_FLAG = 1, VERSION = /* employee.version */1 + 1
   where ID = /* employee.id */1 and VERSION = /* employee.version */1
 
-``OptimisticLockException`` representing optimistic concurrency control failure is thrown, if this SQL updated count is 0.
-``OptimisticLockException`` is not thrown and version property within entity is increment by 1 if updated count is not 0.
+An ``OptimisticLockException`` representing optimistic concurrency control failure is thrown if this SQL statement's update count is 0.
+If the update count is not 0, no ``OptimisticLockException`` is thrown and the version property within the entity is incremented by 1.
 
 ignoreVersion
 ^^^^^^^^^^^^^
 
-If ``ignoreVersion`` property within ``@Update`` annotation is true,
-``OptimisticLockException`` is not thrown even if update count is 0.
-Also, version property value within entity is not modified.
+If the ``ignoreVersion`` property within the ``@Update`` annotation is set to true,
+an ``OptimisticLockException`` is not thrown even if the update count is 0.
+Also, the version property value within the entity is not modified.
 
 .. code-block:: java
 
@@ -285,9 +285,9 @@ Also, version property value within entity is not modified.
 suppressOptimisticLockException
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If ``suppressOptimisticLockException`` property within ``@Update`` annotation is true,
-``OptimisticLockException`` is not thrown even if update count is 0.
-However, version property value within entity is incremented by 1.
+If the ``suppressOptimisticLockException`` property within the ``@Update`` annotation is set to true,
+an ``OptimisticLockException`` is not thrown even if the update count is 0.
+However, the version property value within the entity is still incremented by 1.
 
 .. code-block:: java
 
@@ -297,29 +297,29 @@ However, version property value within entity is incremented by 1.
 Unique constraint violation
 ===========================
 
-``UniqueConstraintException`` is thrown regardless of with or without using sql file if unique constraint violation is occurred.
+A ``UniqueConstraintException`` is thrown if a unique constraint violation occurs, regardless of whether an SQL file is used or not.
 
 Query timeout
-==================
+============
 
-You can specify seconds of query timeout to ``queryTimeout`` property within ``@Update`` annotation.
+You can specify the query timeout in seconds using the ``queryTimeout`` property within the ``@Update`` annotation.
 
 .. code-block:: java
 
   @Update(queryTimeout = 10)
   int update(Employee employee);
 
-This specifying is applied regardless of with or without using sql file.
-Query timeout that is specified in :doc:`../config` is used if ``queryTimeout`` property is not set value.
+This specification applies regardless of whether an SQL file is used or not.
+If the ``queryTimeout`` property is not set, the query timeout specified in :doc:`../config` is used.
 
 SQL log output format
-======================
+====================
 
-You can specify SQL log output format to ``sqlLog`` property within ``@Update`` annotation.
+You can specify the SQL log output format using the ``sqlLog`` property within the ``@Update`` annotation.
 
 .. code-block:: java
 
   @Update(sqlLog = SqlLogType.RAW)
   int update(Employee employee);
 
-``SqlLogType.RAW`` represent outputting log that is sql with a binding parameter.
+``SqlLogType.RAW`` indicates that the log output will contain the SQL with binding parameters.

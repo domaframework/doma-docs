@@ -28,7 +28,7 @@ If the stored function returns a single result, the return type must be one of t
 * :doc:`../entity`
 * java.util.Map<String, Object>
 * java.util.Optional, whose element type is one of :doc:`../basic`, :doc:`../domain`,
-  :doc:`../entity`, and java.util.Map<String, Object>
+  :doc:`../entity`, or java.util.Map<String, Object>
 * java.util.OptionalInt
 * java.util.OptionalLong
 * java.util.OptionalDouble
@@ -49,7 +49,7 @@ Function name
 =============
 
 The annotated method name is recognized as the function name by default.
-To override it, you can specify the value to the ``@Function``'s ``name`` element:
+To override it, you can specify a value for the ``@Function``'s ``name`` element:
 
 .. code-block:: java
 
@@ -59,9 +59,9 @@ To override it, you can specify the value to the ``@Function``'s ``name`` elemen
 Parameters
 ==========
 
-The order of stored function's parameters must correspond with the order of DAO method parameters.
+The order of stored function parameters must correspond with the order of DAO method parameters.
 
-All parameters must be annotated with one of following annotations:
+All parameters must be annotated with one of the following annotations:
 
 * @In
 * @InOut

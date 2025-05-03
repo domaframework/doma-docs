@@ -5,7 +5,7 @@ Batch update
 .. contents::
    :depth: 3
 
-Annotate with ``@BatchUpdate`` to Dao method for execute batch update.
+Annotate a Dao method with ``@BatchUpdate`` to execute batch update operations.
 
 .. code-block:: java
 
@@ -18,29 +18,29 @@ Annotate with ``@BatchUpdate`` to Dao method for execute batch update.
       BatchResult<ImmutableEmployee> update(List<ImmutableEmployee> employees);
   }
 
-By default UPDATE statement is auto generated.
-You can mapping arbitrary SQL file by specifying ``true`` to ``sqlFile`` property within the ``@BatchUpdate`` annotation.
+By default, the UPDATE statement is automatically generated.
+You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` in the ``@BatchUpdate`` annotation.
 
-The ``preUpdate`` method of entity listener is called each entity when before executing update if the entity listener is specified at :doc:`../entity` parameter.
-Also the ``postUpdate`` method of entity listener method is called each entity when after executing update.
+If an entity listener is specified for the entity class, its ``preUpdate`` method is called for each entity before executing the update operation.
+Similarly, the ``postUpdate`` method is called for each entity after the update operation completes.
 
 Return value
 =============
 
-Return value must be ``org.seasar.doma.jdbc.BatchResult`` that has entity class as an element if parameter ``Iterable`` subtype element is immutable entity class.
+If the elements of the parameter (which must be an ``Iterable`` subtype) are immutable entity classes, the return value must be ``org.seasar.doma.jdbc.BatchResult`` with the entity class as its element type.
 
-Return value must be ``int[]`` that is represented each updating process's updated count if the above conditions are not satisfied.
+If the above condition is not met, the return value must be ``int[]``, where each element represents the number of rows affected by each update operation.
 
 .. _auto-batch-update:
 
 Batch update by auto generated SQL
 ===================================
 
-Parameter type must be ``java.lang.Iterable`` subtype that has :doc:`../entity` as an element.
-Specifiable parameter is only one.
-Parameter must not be ``null``.
-Return value array element count become equal ``Iterable`` element count.
-Update count is returned to array each element.
+The parameter type must be a subtype of ``java.lang.Iterable`` with entity classes as its elements.
+Only one parameter can be specified.
+The parameter must not be ``null``.
+The number of elements in the return value array will equal the number of elements in the ``Iterable``.
+Each element in the array represents the number of rows affected by the corresponding update operation.
 
 Version number and optimistic concurrency control in auto generated SQL
 -----------------------------------------------------------------------
@@ -50,17 +50,17 @@ Optimistic concurrency control is executed if you satisfied below conditions.
 * :doc:`../entity` within parameter java.lang.Iterable subtype has property that is annotated with @Version
 * The ignoreVersion element within @BatchUpdate annotation is false
 
-If optimistic concurrency control is enable, version number is included with identifier in update condition and is updated increment by 1.
-``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown, if at that time updated count is 0.
-Also, ``BatchOptimisticLockException`` is not thrown and version property within entity is increment by 1 if updated count is 1.
+When optimistic concurrency control is enabled, the version number is included with the identifier in the update condition and is incremented by 1.
+If the update count is 0, a ``BatchOptimisticLockException`` is thrown, indicating an optimistic concurrency control failure.
+If the update count is 1, the version property in the entity is incremented by 1 and no exception is thrown.
 
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If ``ignoreVersion`` property within ``@BatchUpdate`` annotation is true,
-version number is not include in update condition and be included in SET clauses within UPDATE statement.
-Version number is updated by setting value at application.
-``BatchOptimisticLockException`` is not thrown in this case, even if update count is 0.
+If the ``ignoreVersion`` property of the ``@BatchUpdate`` annotation is set to ``true``,
+the version number is not included in the update condition but is included in the SET clauses of the UPDATE statement.
+The version number is updated with the value set in the application.
+In this case, ``BatchOptimisticLockException`` is not thrown even if the update count is 0.
 
 .. code-block:: java
 
@@ -91,8 +91,8 @@ The ``updatable`` property within ``@Column`` annotation that is specified ``fal
 exclude
 ~~~~~~~
 
-Property that is specified with ``exclude`` property within the ``@BatchUpdate`` annotation is excluded from updating target.
-Even if ``updatable`` property within ``@Column`` annotation is  specified ``true`` the property is excluded from updating target if the property is specified by this element.
+Properties specified in the ``exclude`` property of the ``@BatchUpdate`` annotation are excluded from the update operation.
+Even if the ``updatable`` property of the ``@Column`` annotation is set to ``true``, a property will be excluded from the update if it is listed in the ``exclude`` property.
 
 .. code-block:: java
 
@@ -180,7 +180,7 @@ Also, ``exclude`` property and ``include`` property within ``@BatchUpdate`` anno
 Version number and optimistic concurrency control in SQL file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Optimistic concurrency control is executed if you satisfied below conditions.
+Optimistic concurrency control is performed when the following conditions are met:
 
 * java.lang.Iterable subtype element in parameter is :doc:`../entity`
   and has property that is annotated @Version existing at :doc:`../entity`.

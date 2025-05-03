@@ -5,8 +5,8 @@ Transaction
 .. contents:: Contents
    :depth: 3
 
-Doma supports local transaction.
-This document explains how to configure and use the local transaction.
+Doma provides support for local transactions.
+This document explains how to configure and use local transactions in your application.
 
 If you want to use global transaction, use frameworks or application servers
 which support JTA (Java Transaction API).

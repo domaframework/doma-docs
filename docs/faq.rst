@@ -11,7 +11,7 @@ General
 What does "Doma" mean?
 ----------------------
 
-The name "Doma" comes from the "Dao Oriented database MApping framework".
+The name "Doma" is derived from "Dao Oriented database MApping framework".
 
 What is annotation processing? 
 ------------------------------
@@ -102,8 +102,8 @@ Do you provide a tool to generate Java code from a database schema?
 
 Yes.
 
-We have the `Doma CodeGen plugin <https://github.com/domaframework/doma-codegen-plugin>`_
-that generates Java and SQL files from Database.
+We provide the `Doma CodeGen plugin <https://github.com/domaframework/doma-codegen-plugin>`_
+that generates Java and SQL files from your database schema.
 
 Features as a database access library
 =====================================
@@ -129,7 +129,7 @@ There are two ways:
 * SQL Templates.
 * The Criteria API.
 
-See :doc:`sql` and :doc:`query-dsl` for detail information.
+See :doc:`sql` and :doc:`query-dsl` for detailed information.
 
 Does Doma support fetching relationships such as one-to-one or one-to-many?
 ----------------------------------------------------------------------------------------

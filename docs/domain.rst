@@ -5,9 +5,9 @@ Domain classes
 .. contents::
    :depth: 3
 
-A domain class represents a table column and it allows you to handle the column value as a Java object.
-In the Doma framework, a **domain** means all the values which a data type may contain.
-In short, a domain class is a user defined class that can be map to a column.
+A domain class represents a table column and allows you to handle column values as Java objects.
+In the Doma framework, a **domain** refers to all the values that a data type may contain.
+In short, a domain class is a user-defined class that can be mapped to a column.
 The use of the domain classes is optional.
 
 Every domain class is either an internal domain class or an external domain class.
@@ -16,14 +16,14 @@ Internal domain classes
 =======================
 
 The internal domain class must be annotated with ``@Domain``.
-The ``@Domain``'s ``valueType`` element corresponds to a data type of a column.
+The ``valueType`` element of the ``@Domain`` annotation corresponds to the data type of a database column.
 Specify any type of :doc:`basic` to the ``valueType`` element.
 
 Instantiation with a constructor
 --------------------------------
 
-The default value of the ``@Domain``'s ``factoryMethod`` element is ``new``.
-The value ``new`` means that the object of annotated class is created with a constructor.
+The default value of the ``factoryMethod`` element in the ``@Domain`` annotation is ``new``.
+The value ``new`` indicates that instances of the annotated class will be created using a constructor.
 
 .. code-block:: java
 
@@ -47,9 +47,9 @@ The value ``new`` means that the object of annotated class is created with a con
 
 .. note::
 
-  To annotate records with ``@Domain`` is a little redundant,
-  because you must specify some properties to ``@Domain`` such as ``valueType``.
-  Instead of ``@Domain``, you can annotate records with ``@DataType``:
+  Annotating records with ``@Domain`` can be somewhat redundant,
+  since you must specify properties like ``valueType`` to ``@Domain``.
+  As an alternative, you can annotate records with ``@DataType``:
 
   .. code-block:: java
 
@@ -64,8 +64,8 @@ The value ``new`` means that the object of annotated class is created with a con
 Instantiation with a static factory method
 ------------------------------------------
 
-To create the object of annotated class with a static factory method,
-specify the method name to the ``@Domain``'s ``factoryMethod`` element.
+To create instances using a static factory method instead,
+specify the method name in the ``factoryMethod`` element of the ``@Domain`` annotation.
 
 The method must be static and non-private:
 
@@ -128,7 +128,7 @@ With a static factory method, you can apply the ``@Domain`` annotation to enum t
 Using type parameters in internal domain classes
 ------------------------------------------------
 
-All internal domain class declarations have type parameters:
+Internal domain classes can include type parameters as shown below:
 
 .. code-block:: java
 
@@ -147,8 +147,8 @@ All internal domain class declarations have type parameters:
   }
 
 
-When you create the object of annotated class with a static factory method,
-the method declaration must have same type parameters that are declared in the class declaration:
+When creating instances using a static factory method,
+the method declaration must include the same type parameters as those declared in the class:
 
 .. code-block:: java
 
@@ -176,10 +176,10 @@ External domain classes
 This feature allows you to define any class as a domain class,
 even if you cannot annotate the class with the ``@Domain`` annotation.
 
-To define external domain classes, you have to create a class that implements
-``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate ``@ExternalDomain`` to the class.
+To define external domain classes, you must create a class that implements
+``org.seasar.doma.jdbc.domain.DomainConverter`` and annotate it with ``@ExternalDomain``.
 
-Suppose, for instance, there is the ``PhoneNumber`` class that you can change:
+Consider, for example, the following ``PhoneNumber`` class that you cannot modify directly:
 
 .. code-block:: java
 
@@ -200,7 +200,7 @@ Suppose, for instance, there is the ``PhoneNumber`` class that you can change:
       }
   }
 
-To define the ``PhoneNumber`` class as an external domain class, create following class:
+To define the ``PhoneNumber`` class as an external domain class, create the following converter class:
 
 .. code-block:: java
 
@@ -222,7 +222,7 @@ To define the ``PhoneNumber`` class as an external domain class, create followin
 Using type parameters in external domain classes
 ------------------------------------------------
 
-All external domain class declarations have type parameters:
+External domain classes can also use type parameters, as shown below:
 
 .. code-block:: java
 
@@ -240,7 +240,7 @@ All external domain class declarations have type parameters:
   }
 
 In the ``DomainConverter`` implementation class,
-specify a wildcard ``?`` as type arguments to the external domain class:
+use a wildcard ``?`` as the type argument when referring to the external domain class:
 
 .. code-block:: java
 
@@ -301,8 +301,8 @@ First, create an implementation of ``org.seasar.doma.jdbc.type.JdbcType`` to han
       }
     }
 
-Then, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``,
-and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above:
+Then, create a class that extends ``org.seasar.doma.it.domain.JdbcTypeProvider``.
+In the ``getJdbcType`` method, return an instance of the ``JdbcType`` implementation created above:
 
 .. code-block:: java
 
@@ -317,12 +317,12 @@ and in the ``getJdbcType`` method, return an instance of the ``JdbcType`` implem
       }
     }
 
-Don't forget to annotate the class with ``@ExternalDomain``.
+Remember to annotate this class with ``@ExternalDomain``.
 
 Example
 =======
 
-The Domain classes showed above are used as follows:
+The Domain classes shown above are used as follows:
 
 .. code-block:: java
 
@@ -339,7 +339,7 @@ The Domain classes showed above are used as follows:
       JobType jobType;
 
       @Version
-      Integer versionNo();
+      Integer versionNo;
 
       ...
   }

@@ -19,13 +19,13 @@ To call stored procedures, you must annotate DAO methods with the ``@Procedure``
 Return Type
 ===========
 
-The return type must be ``void``.
+The method return type must be ``void``.
 
 Procedure name
 ==============
 
-The annotated method name is recognized as the procedure name by default.
-To override it, you can specify the value to the ``@Procedure``'s ``name`` element:
+By default, the annotated method name is used as the procedure name.
+To specify a different name, set the ``name`` property of the ``@Procedure`` annotation:
 
 .. code-block:: java
 
@@ -35,7 +35,7 @@ To override it, you can specify the value to the ``@Procedure``'s ``name`` eleme
 Parameters
 ==========
 
-The order of stored procedure's parameters must correspond with the order of DAO method parameters.
+The order of the stored procedure parameters must match the order of the DAO method parameters.
 
 All parameters must be annotated with one of following annotations:
 

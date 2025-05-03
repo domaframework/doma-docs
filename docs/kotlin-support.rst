@@ -10,13 +10,13 @@ Doma supports `Kotlin <https://kotlinlang.org/>`_ 1.4.0 or later.
 Best practices
 ==============
 
-Here are some recommended methods, such as defining classes and building them with Kotlin.
+Here are some recommended approaches for defining classes and working with Kotlin in Doma.
 
 Entity classes
 --------------
 
 * Define as a plain class
-* Specify a ``Metamodel`` annotation to the ``metamodel`` element of ``@Entity``
+* Specify a ``Metamodel`` annotation in the ``metamodel`` element of ``@Entity``
 
 .. code-block:: kotlin
 
@@ -45,7 +45,7 @@ Domain classes
 
 * Define as a data class
 * Define only one constructor
-* Define only one property whose name is ``value`` in the constructor
+* Define only one property named ``value`` in the constructor
 * Use `val` for the property definition
 
 .. code-block:: kotlin
@@ -69,7 +69,7 @@ Embeddable classes
 Dao interfaces
 --------------
 
-* Specify a SQL template to ``@org.seasar.doma.Sql``
+* Specify a SQL template with ``@org.seasar.doma.Sql``
 
 .. code-block:: kotlin
 
@@ -93,16 +93,16 @@ Dao interfaces
 
 .. _kotlin-specific-criteria-api:
 
-Kotlin specific Criteria API
+Kotlin-specific Criteria API
 ----------------------------
 
 .. note::
 
-    Prefer the Kotlin specific Criteria API to DAO interfaces.
+    It is recommended to use the Kotlin-specific Criteria API rather than DAO interfaces.
 
-Doma provides ``KQueryDsl``, a Criteria API specifically for Kotlin.
-It is very similar with the ``QueryDsl``, which is described in :doc:`query-dsl`.
-The biggest feature of the ``KQueryDsl`` is simplicity.
+Doma provides ``KQueryDsl``, a Criteria API specifically designed for Kotlin.
+It is very similar to the ``QueryDsl``, which is described in :doc:`query-dsl`.
+The main advantage of ``KQueryDsl`` is its simplicity.
 
 .. code-block:: kotlin
 
@@ -121,11 +121,11 @@ The biggest feature of the ``KQueryDsl`` is simplicity.
         }
         .fetch()
 
-You can see mode sample code `here <https://github.com/domaframework/kotlin-sample>`_.
+You can find more sample code `here <https://github.com/domaframework/kotlin-sample>`_.
 
 The ``KQueryDsl`` is included in the doma-kotlin module.
-Note that you should depend on doma-kotlin instead of doma-core in your build script.
-You can write build.gradle.kts as follows:
+Note that you should use doma-kotlin instead of doma-core in your build script.
+You can configure your build.gradle.kts as follows:
 
 .. code-block:: kotlin
 
@@ -137,7 +137,7 @@ Code Generation
 ---------------
 
 Use :doc:`codegen`.
-This plugin support Kotlin code generation.
+This plugin supports Kotlin code generation.
 
 Using kapt in Gradle
 --------------------
@@ -145,7 +145,7 @@ Using kapt in Gradle
 Annotation processors are supported in Kotlin with the
 `kapt <https://kotlinlang.org/docs/reference/kapt.html>`_ compiler plugin.
 
-Add the dependencies using the `kapt` and `implementation` configuration in your dependencies block.
+Add the dependencies using the `kapt` and `implementation` configurations in your dependencies block.
 For example, you can write build.gradle.kts as follows:
 
 .. code-block:: kotlin
@@ -155,8 +155,8 @@ For example, you can write build.gradle.kts as follows:
         implementation("org.seasar.doma:doma-kotlin:{{ doma_version }}")
     }
 
-To simplify your build script, we recommend you use
-the `Doma Compile Plugin <https://github.com/domaframework/doma-compile-plugin>`_:
+To simplify your build script, we recommend using
+the `Doma Compile Plugin <https://github.com/domaframework/doma-compile-plugin>`_.
 
 Sample project
 ==============

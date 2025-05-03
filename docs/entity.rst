@@ -19,9 +19,9 @@ The following code snippet shows how to define an entity:
       ...
   }
 
-An entity class can inherit other entity class.
+An entity class can inherit from another entity class.
 
-The following code snippet shows how to inherit other entity class:
+The following code snippet shows how to inherit from another entity class:
 
 .. code-block:: java
 
@@ -39,7 +39,7 @@ The following code snippet shows how to inherit other entity class:
     public record Employee(...) {
     }
 
-  In the case, the entity is recognize as :ref:`immutable`
+  In this case, the entity is recognized as :ref:`immutable`
   even though the immutable property of ``@Entity`` is ``false``.
 
 .. _records: https://openjdk.java.net/jeps/359
@@ -57,7 +57,7 @@ The following code snippet shows how to define an entity listener:
       ...
   }
 
-To use the entity listener, specify it to the ``listener`` property within the ``@Entity`` annotation:
+To use the entity listener, specify it in the ``listener`` property of the ``@Entity`` annotation:
 
 .. code-block:: java
 
@@ -66,12 +66,12 @@ To use the entity listener, specify it to the ``listener`` property within the `
       ...
   }
 
-An entity subclass inherits parent`s entity listener.
+An entity subclass inherits its parent's entity listener.
 
 Naming convention
 ---------------------------
 
-Naming convention maps the names between:
+Naming conventions define the mapping between:
 
 * the database tables and the Java entity classes
 * the database column and the Java entity fields
@@ -85,10 +85,10 @@ The following code snippet shows how to apply the naming convention to an entity
       ...
   }
 
-When the ``name`` property within the ``@Table`` or ``@Column`` annotation is explicitly specified,
+When the ``name`` property of the ``@Table`` or ``@Column`` annotation is explicitly specified,
 the naming convention is ignored.
 
-An entity subclass inherits parent's naming convention.
+An entity subclass inherits its parent's naming convention.
 
 .. _immutable:
 
@@ -117,10 +117,10 @@ The following code snippet shows how to define an immutable entity:
       ...
   }
 
-The ``immutable`` property within the ``@Entity`` annotation must be ``true``.
+The ``immutable`` property of the ``@Entity`` annotation must be set to ``true``.
 The persistent field must be ``final``.
 
-An entity subclass inherits parent's immutable property.
+An entity subclass inherits its parent's immutable property.
 
 Table
 ------------------
@@ -135,7 +135,7 @@ You can specify the corresponding table name with the ``@Table`` annotation:
       ...
   }
 
-Without the ``@Table`` annotation, the table name is resolved by `Naming Convention`_.
+Without the ``@Table`` annotation, the table name is determined by the `Naming Convention`_.
 
 Field definition
 ==================
@@ -153,7 +153,7 @@ The field type must be one of the following:
 * java.util.OptionalDouble
 
 
-The following code snippet shows how to define a filed:
+The following code snippet shows how to define a field:
 
 .. code-block:: java
 
@@ -174,19 +174,19 @@ You can specify the corresponding column name with the ``@Column`` annotation:
   String employeeName;
 
 
-To exclude fields from INSERT or UPDATE statements, specify ``false`` to the ``insertable`` or ``updatable``
-property within the ``@Column`` annotation:
+To exclude fields from INSERT or UPDATE statements, set the ``insertable`` or ``updatable``
+properties to ``false`` within the ``@Column`` annotation:
 
 .. code-block:: java
 
   @Column(insertable = false, updatable = false)
   String employeeName;
 
-Without the ``@Column`` annotation, the column name is resolved by `Naming Convention`_.
+Without the ``@Column`` annotation, the column name is determined by the `Naming Convention`_.
 
 .. note::
 
-  When the filed type is :doc:`embeddable`, you cannot specify the ``@Column`` annotation to the field.
+  When the field type is :doc:`embeddable`, you cannot apply the ``@Column`` annotation to the field.
 
 Id
 --------------------
@@ -198,7 +198,7 @@ The database primary keys are represented with the ``@Id`` annotation:
   @Id
   Integer id;
 
-When there is a composite primary key, use the ``@Id`` annotation many times:
+For composite primary keys, apply the ``@Id`` annotation to multiple fields:
 
 .. code-block:: java
 
@@ -210,7 +210,7 @@ When there is a composite primary key, use the ``@Id`` annotation many times:
 
 .. note::
 
-  When the filed type is :doc:`embeddable`, you cannot specify the ``@Id`` annotation to the field.
+  When the field type is :doc:`embeddable`, you cannot apply the ``@Id`` annotation to the field.
 
 .. _identity-auto-generation:
 
@@ -231,15 +231,14 @@ The field type must be one of the following:
 
 .. note::
 
-  The generated values are assign to the field only when the field is either ``null`` or less than ``0``.
-  If you use one of the primitive types as filed type,
-  initialize the field with tha value that is less than ``0``, such as ``-1``.
+  The generated values are assigned to the field only when the field is either ``null`` or less than ``0``.
+  If you use one of the primitive types as field type,
+  initialize the field with a value that is less than ``0``, such as ``-1``.
 
 Id generation by IDENTITY
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate values using the RDBMS IDENTITY function, specify the ``GenerationType.IDENTITY`` enum value
-to ``strategy`` property within the ``@GeneratedValue``:
+To generate values using the RDBMS IDENTITY function, set the ``strategy`` property of the ``@GeneratedValue`` annotation to ``GenerationType.IDENTITY``:
 
 .. code-block:: java
 
@@ -251,13 +250,12 @@ In advance, define the database primary key as IDENTITY.
 
 .. warning::
 
-  All RDBMS doesn't support the IDENTITY function.
+  Not all RDBMS systems support the IDENTITY function.
 
 Id generation by SEQUENCE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate values using the RDBMS SEQUENCE, specify the ``GenerationType.SEQUENCE`` enum value
-to ``strategy`` property within the ``@GeneratedValue`` annotation.
+To generate values using the RDBMS SEQUENCE, set the ``strategy`` property of the ``@GeneratedValue`` annotation to ``GenerationType.SEQUENCE``.
 And use the ``@SequenceGenerator`` annotation:
 
 .. code-block:: java
@@ -268,18 +266,17 @@ And use the ``@SequenceGenerator`` annotation:
   Integer id;
 
 In advance, define the SEQUENCE in the database.
-The SEQUENCE definitions such as the name, the allocation size and the initial size must
-correspond the properties within the ``@SequenceGenerator`` annotation.
+The SEQUENCE definitions (such as name, allocation size, and initial size) must
+match the properties specified in the ``@SequenceGenerator`` annotation.
 
 .. warning::
 
-  All RDBMS doesn't support the SEQUENCE.
+  Not all RDBMS systems support SEQUENCES.
 
 Id generation by TABLE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate values using the RDBMS TABLE, specify the ``GenerationType.TABLE`` enum value
-to ``strategy`` property within the ``@GeneratedValue`` annotation.
+To generate values using the RDBMS TABLE, set the ``strategy`` property of the ``@GeneratedValue`` annotation to ``GenerationType.TABLE``.
 And use the ``@TableGenerator`` annotation:
 
 .. code-block:: java
@@ -290,8 +287,8 @@ And use the ``@TableGenerator`` annotation:
   Integer id;
 
 In advance, define the TABLE in the database.
-The TABLE`s definition must correspond to the properties within the ``@TableGenerator`` annotation.
-For example, the DDL should be following:
+The TABLE's definition must correspond to the properties within the ``@TableGenerator`` annotation.
+For example, the DDL should look like this:
 
 .. code-block:: sql
 
@@ -323,7 +320,7 @@ The field type must be one of the following:
 
 .. note::
 
-  When the filed type is :doc:`embeddable`, you cannot specify the ``@Version`` annotation to the field.
+  When the field type is :doc:`embeddable`, you cannot apply the ``@Version`` annotation to the field.
 
 Tenant Id
 ------------------------------
@@ -338,7 +335,7 @@ The column corresponding to the annotated field is included in the WHERE clause 
 
 .. note::
 
-  When the filed type is :doc:`embeddable`, you cannot specify the ``@TenantId`` annotation to the field.
+  When the field type is :doc:`embeddable`, you cannot apply the ``@TenantId`` annotation to the field.
 
 Transient
 ----------------
@@ -379,8 +376,8 @@ If you want to include only changed values in UPDATE statements,
 you can define fields annotated with ``@OriginalStates``.
 The fields can hold the original values that were fetched from the database.
 
-Doma uses the values to know which values are changed in the application and
-includes the only changed values in UPDATE statements.
+Doma uses these values to determine which fields have changed in the application and
+includes only the modified values in UPDATE statements.
 
 The following code snippet shows how to define original states:
 

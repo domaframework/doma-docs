@@ -8,11 +8,11 @@ Building an application
 Maven Central Repository
 ========================
 
-You can pull the artifacts of the Doma framework from the Maven central repository.
-We provide two artifacts, ``doma-core`` and ``doma-processor``.
+You can obtain the Doma framework artifacts from the Maven central repository.
+We provide two artifacts: ``doma-core`` and ``doma-processor``.
 
-The ``doma-core`` artifact is required at runtime and compile-time.
-The ``doma-processor`` artifact provides annotation processors and is required at compile-time only.
+The ``doma-core`` artifact is required at both runtime and compile-time.
+The ``doma-processor`` artifact, which provides annotation processors, is required only at compile-time.
 
 The group id and artifact id of those artifacts are as follows:
 
@@ -57,14 +57,14 @@ Write your build.gradle(.kts) as follows:
                 annotationProcessor 'org.seasar.doma:doma-processor:{{ doma_version }}'
             }
 
-To simplify your build.script(.kts), we recommend that you use the `org.domaframework.doma.compile`_ plugin.
+We recommend using the `org.domaframework.doma.compile`_ plugin to simplify your build script.
 
 See build.gradle.kts in the `getting-started`_ repository as an example.
 
 .. _build-with-maven:
 
 Build with Maven
-=================
+===============
 
 Write your pom.xml as follows:
 
@@ -126,18 +126,18 @@ Maven
 
 Import your project as a Maven project.
 
-Right-click on the project, then select Properties > Maven > Annotation Processing.
-Enable "Enable Project specific settings" and "Automatically configure JDT APT"
-as shown in the figure below.
+Right-click on the project and select Properties > Maven > Annotation Processing.
+Enable both "Enable Project specific settings" and "Automatically configure JDT APT"
+as shown below.
 
 .. image:: images/eclipse-maven-annotation-processing.png
     :alt: Eclipse Maven Annotation Processing
 
-To reflect Maven settings in Eclipse, you can right-click on your project then select Maven > Update Project...
+To refresh Maven settings in Eclipse, right-click on your project and select Maven > Update Project...
 
 .. note::
 
-    You need to add the following argument to the Maven compiler plugin configuration in your pom.xml:
+    You must add the following argument to the Maven compiler plugin configuration in your pom.xml:
 
     .. code-block:: xml
 

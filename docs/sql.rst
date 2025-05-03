@@ -8,8 +8,8 @@ SQL templates
 Overview
 ========
 
-Doma supports SQL templates, called "two-way SQL".
-"Two-way SQL" means that the SQL templates can be used in two ways:
+Doma supports SQL templates known as "two-way SQL".
+The term "two-way SQL" indicates that these templates can be used in two ways:
 
 * To build dynamic SQL statements from the templates.
 * To execute the templates in SQL tools as they are.
@@ -27,16 +27,16 @@ For example, suppose you have the pair of an SQL template and a DAO method as fo
 
 The ``employeeId`` expression enclosed between ``/*`` and ``*/`` corresponds to
 the method parameter "employeeId" of the DAO.
-In runtime, the SQL comment and following number ``/* employeeId */99`` is replaced with a bind variable ``?``
-and the method parameter "employeeId" is passed to the variable.
+At runtime, the SQL comment and the following number ``/* employeeId */99`` are replaced with a bind variable ``?``,
+and the method parameter "employeeId" is bound to this variable.
 The SQL statement generated from the SQL template is as follows:
 
 .. code-block:: sql
 
   select * from employee where employee_id = ?
 
-The number ``99`` in the SQL template is test data and never used in runtime.
-The test data is only useful when you execute the SQL template as is.
+The number ``99`` in the SQL template is test data that is never used at runtime.
+This test data is only useful when you execute the SQL template directly in your database tools.
 In other words, you can check whether the SQL template is grammatically correct with your favorite SQL tools.
 
 Each SQL template is represented either a text file or an annotation.
@@ -57,8 +57,8 @@ You can specify SQL templates in text files:
     int deleteByName(Employee employee);
   }
 
-Above ``selectById`` and ``deleteByName`` methods are mapped onto their own SQL files.
-DAO methods must be annotated with one of following annotations:
+The ``selectById`` and ``deleteByName`` methods above are mapped to their corresponding SQL files.
+DAO methods must be annotated with one of the following annotations:
 
 * @Select
 * @Insert(sqlFile = true)
@@ -71,7 +71,7 @@ DAO methods must be annotated with one of following annotations:
 Encoding
 --------
 
-The SQL files must be saved as UTF-8 encoded.
+All SQL files must be saved with UTF-8 encoding.
 
 Location
 --------
@@ -81,7 +81,7 @@ The SQL files must be located in directories below a "META-INF" directory which 
 Format of file path
 -------------------
 
-The SQL file path must follow the following format:
+SQL file paths must follow this format:
 
   META-INF/*path-format-of-dao-interface*/*dao-method*.sql
 
@@ -102,10 +102,10 @@ For example, the file path specific to PostgreSQL is as follows:
 
   META-INF/aaa/bbb/EmployeeDao/selectById-*postgres*.sql
 
-The SQL files specific to RDBMSs are given priority.
-For example, in the environment where PostgreSQL is used,
+RDBMS-specific SQL files take precedence over generic ones.
+For example, in a PostgreSQL environment,
 "META-INF/aaa/bbb/EmployeeDao/selectById-postgres.sql"
-is chosen instead of "META-INF/aaa/bbb/EmployeeDao/selectById.sql".
+will be chosen instead of "META-INF/aaa/bbb/EmployeeDao/selectById.sql".
 
 The RDBMS names are stem from dialects:
 
@@ -185,10 +185,10 @@ Supported directives are as follows:
 Bind variable directive
 -----------------------
 
-Bind variable directive is represented with the format ``/*...*/``.
-The expression enclosed between ``/*`` and ``*/`` is evaluated and
-its evaluation result is passed to bind variable in SQL statement.
-The directive must be followed by test data, which is never used in runtime.
+The bind variable directive is written in the format ``/*...*/``.
+The expression enclosed between ``/*`` and ``*/`` is evaluated, and
+its result is passed to a bind variable in the SQL statement.
+The directive must be followed by test data, which is never used at runtime.
 
 Basic and domain parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,8 +215,8 @@ The following SQL statement is generated from the SQL template:
 Parameters in IN clause
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The parameter whose type is a subtype of ``java.lang.Iterable`` or an array type is
-recognised as bind variables in IN clause.
+Parameters with a type that is a subtype of ``java.lang.Iterable`` or an array type are
+recognized as bind variables in an IN clause.
 
 The type argument of ``java.lang.Iterable`` must be one of :doc:`basic` and :doc:`domain`.
 The directives must be followed by test data enclosed between ``(`` and ``)``.
@@ -248,10 +248,10 @@ the IN clause is replaced with ``in (null)`` in runtime:
 Literal variable directive
 --------------------------
 
-Literal variable directive is represented with the format ``/*^...*/``.
-The expression enclosed between ``/*^`` and ``*/`` is evaluated and
-its evaluation result is converted to literal format to be embedded in SQL statement.
-The directive must be followed by test data, which is never used in runtime.
+The literal variable directive is written in the format ``/*^...*/``.
+The expression enclosed between ``/*^`` and ``*/`` is evaluated, and
+its result is converted to a literal format that is embedded directly in the SQL statement.
+The directive must be followed by test data, which is never used at runtime.
 
 The following example is the pair of a DAO method and an SQL template:
 
@@ -288,9 +288,9 @@ The generated SQL statement is as follows:
 Embedded variable directive
 ---------------------------
 
-Embedded variable directive is represented with the format ``/*#...*/``.
-The expression enclosed between ``/*#`` and ``*/`` is evaluated and
-its evaluation result is embedded in SQL statement.
+The embedded variable directive is written in the format ``/*#...*/``.
+The expression enclosed between ``/*#`` and ``*/`` is evaluated, and
+its result is embedded directly in the SQL statement.
 
 The following example is the pair of a DAO method and an SQL template:
 
@@ -324,12 +324,12 @@ The generated SQL statement is as follows:
 .. warning::
 
   To prevent SQL injection vulnerabilities,
-  embedded variable directives reject parameters containing the following values:
+  embedded variable directives reject parameters containing any of the following characters or sequences:
 
-  * a single quotation ``'``
-  * a semi colon ``;``
-  * two hyphen ``--``
-  * a slash and an asterisk ``/*``
+  * Single quotation mark ``'``
+  * Semicolon ``;``
+  * Double hyphen ``--``
+  * Slash followed by an asterisk ``/*``
 
 Condition directive
 -------------------
@@ -351,8 +351,8 @@ Synopsis
     ...
   /*%end*/
 
-The expressions ``condition``, ``condition2``, and ``condition3`` must be evaluated
-to either ``boolean`` or ``java.lang.Boolean``.
+The expressions ``condition``, ``condition2``, and ``condition3`` must evaluate
+to either a primitive ``boolean`` or ``java.lang.Boolean`` object.
 
 The ``elseif`` directives and the ``else`` directive are optional.
 
@@ -441,7 +441,7 @@ the generated SQL statement is as follows:
   where
     department_id is null
 
-The SQL keyword ``and`` followed by ``department_id`` is remove automatically:
+The SQL keyword ``and`` followed by ``department_id`` is automatically removed.
 
 Nested condition directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -465,14 +465,14 @@ You can nest condition directives as follows:
 Removal of clauses on the condition directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Following clauses can become unnecessary on the condition directive:
+The following clauses may become unnecessary when using condition directives:
 
 * WHERE
 * HAVING
 * ORDER BY
 * GROUP BY
 
-In the case, they are removed automatically.
+In such cases, these clauses are automatically removed.
 
 Suppose you have the following SQL template:
 
@@ -496,8 +496,8 @@ it is removed automatically.
 Removal of AND and OR keywords on the condition directives
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-AND and OR keywords can become unnecessary on the condition directive.
-In the case, they are removed automatically.
+AND and OR keywords may become unnecessary when using condition directives.
+In such cases, these keywords are automatically removed.
 
 Suppose you have the following SQL template:
 
@@ -522,8 +522,8 @@ it is removed automatically.
 Restriction on condition directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``/*%if condition*/`` and ``/*%end*/`` must be included in
-same SQL clause and in same statement level.
+The ``/*%if condition*/`` and ``/*%end*/`` directives must be included in
+the same SQL clause and at the same statement level.
 
 The following template is invalid, because ``/*%if condition*/`` is
 in the FROM clause and ``/*%end*/`` is in the WHERE clause:
@@ -555,11 +555,11 @@ Synopsis
     ...
   /*%end*/
 
-The ``item`` is the loop variable.
-The expression ``sequence`` must be evaluated to a subtype of ``java.lang.Iterable`` or an array type.
+Here, ``item`` is the loop variable.
+The expression ``sequence`` must evaluate to a subtype of ``java.lang.Iterable`` or an array type.
 
-In the inside between ``/*%for item : sequence*/`` and ``/*%end*/``,
-two extra loop variables are available:
+Inside the loop (between ``/*%for item : sequence*/`` and ``/*%end*/``),
+two additional loop variables are available:
 
 :item_index: The index (0-based number) of the current item in the loop
 :item_has_next: Boolean value that tells if the current item is the last in the sequence or not
@@ -668,7 +668,7 @@ See also `Restriction on condition directive`_.
 Expansion directive
 -------------------
 
-Expansion directive allows you to build column list of SELECT clause from the definition of :doc:`entity`.
+The expansion directive allows you to automatically generate a column list for the SELECT clause based on an entity definition.
 
 Synopsis
 ~~~~~~~~
@@ -678,9 +678,9 @@ Synopsis
   /*%expand alias*/
 
 The expression ``alias`` is optional.
-If it is specified, it must be evaluated to ``java.lang.String``.
+If specified, it must evaluate to a ``java.lang.String``.
 
-The directive must be followed by the asterisk ``*``.
+The directive must be followed by an asterisk ``*``.
 
 .. _expand:
 
@@ -725,8 +725,8 @@ The generated SQL statement is as follows:
 Population directive
 --------------------
 
-Population directive allows you to build column list of
-UPDATE SET clause from the definition of :doc:`entity`.
+The population directive allows you to automatically generate a column list for
+the UPDATE SET clause based on an entity definition.
 
 Synopsis
 ~~~~~~~~
@@ -764,8 +764,8 @@ The generated SQL statement is as follows:
 Parser-level comment directive
 ------------------------------
 
-Using a parser-level comment directive allows you to include comments in an SQL template 
-that will be removed after the template is parsed.
+The parser-level comment directive allows you to include comments in an SQL template 
+that will be removed when the template is parsed.
 
 Synopsis
 ~~~~~~~~
@@ -799,20 +799,20 @@ The above SQL template is parsed into the following SQL:
 Comments
 ========
 
-This section show you how to distinguish between directives and normal SQL comments.
+This section explains how to distinguish between directives and normal SQL comments.
 
 Single line comment
 -------------------
 
-Always the string consisting of two hyphens ``--`` is a single line comment.
-It is never directive.
+A string beginning with two hyphens ``--`` is always treated as a single line comment,
+never as a directive.
 
 Multi line comment
 ------------------
 
-If the character following ``/*`` is not permissible as the first character in a Java identifier
-and it is neither ``%``, ``#``, ``@``, ``"`` nor ``'``,
-the ``/*`` is beginning of a multi line comment.
+If the character following ``/*`` is not valid as the first character in a Java identifier
+and is not one of ``%``, ``#``, ``@``, ``"``, or ``'``,
+then ``/*`` marks the beginning of a multi-line comment.
 
 The followings are the beginning of a multi line comment:
 
@@ -838,7 +838,7 @@ In other hand, the followings are the beginning of a directive:
 
 .. note::
 
-  We recommend you always use ``/**...*/`` to begin multi line comments because it is simple.
+  We recommend always using ``/**...*/`` for multi-line comments because it's straightforward and clearly distinguishable from directives.
 
 doma-template module
 ====================

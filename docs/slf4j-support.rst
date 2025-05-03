@@ -8,13 +8,13 @@ SLF4J support
 Overview
 ========
 
-Doma uses java util logging as underling logging framework,
-but you can replace it with `SLF4J <http://www.slf4j.org/>`_ easily.
+Doma uses Java Util Logging as its underlying logging framework,
+but you can easily replace it with `SLF4J <http://www.slf4j.org/>`_.
 
 Gradle
 ======
 
-Doma provides the doma-slf4j artifact to adapt SLF4J.
+Doma provides the doma-slf4j artifact to integrate with SLF4J.
 
 .. code-block:: kotlin
 
@@ -27,8 +27,8 @@ Doma provides the doma-slf4j artifact to adapt SLF4J.
 Configuration
 =============
 
-Return a ``org.seasar.doma.slf4j.Slf4jJdbcLogger`` instance from
-the ``getJdbcLogger`` method of the ``org.seasar.doma.jdbc.Config`` implementation class.
+Return an ``org.seasar.doma.slf4j.Slf4jJdbcLogger`` instance from
+the ``getJdbcLogger`` method of your ``org.seasar.doma.jdbc.Config`` implementation class.
 
 See also :ref:`Logger<config-logger>`.
 
@@ -54,13 +54,13 @@ doma-slf4j provides several loggers as follows:
 * org.seasar.doma.jdbc.LogKind.SQL.SQL_PROCESSOR
 * org.seasar.doma.jdbc.LogKind.SQL.UPDATE
 
-See `source code <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma/slf4j/Slf4jJdbcLogger.java>`_
-for more information. It's simple.
+For more information, see the `source code <https://github.com/domaframework/doma/blob/master/doma-slf4j/src/main/java/org/seasar/doma/slf4j/Slf4jJdbcLogger.java>`_.
+It's straightforward and easy to understand.
 
 Examples
 ========
 
-Below, we show you `logback <http://logback.qos.ch/>`_ configurations.
+Below are some sample `logback <http://logback.qos.ch/>`_ configurations.
 
 Log all
 -------

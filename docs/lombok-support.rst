@@ -5,7 +5,7 @@ Lombok support
 .. contents::
    :depth: 3
 
-Doma supports `Lombok <https://projectlombok.org/>`_ 1.16.12 or above.
+Doma supports `Lombok <https://projectlombok.org/>`_ version 1.16.12 and later.
 
 .. note::
 
@@ -14,20 +14,20 @@ Doma supports `Lombok <https://projectlombok.org/>`_ 1.16.12 or above.
 Overview
 ========
 
-Both Lombok and Doma provide annotation processors.
-Because the execution order of annotation processors is not determined in Java,
-Doma's annotation processors are not always aware of the class modifications made by
-Lombok annotation processors.
+Both Lombok and Doma use annotation processors.
+Since Java does not guarantee a specific execution order for annotation processors,
+Doma's annotation processors may not always be aware of the class modifications made by
+Lombok's annotation processors.
 
-To resolve the issue, Doma's annotation processors recognize several of Lombok's annotations
-and change their behavior.
-For example, if Doma's annotation processors find a class annotated with ``@lombok.Value``,
-they suppose that the class has a constructor whose arguments cover all instance fields.
+To address this issue, Doma's annotation processors recognize several Lombok annotations
+and adjust their behavior accordingly.
+For example, when Doma's annotation processors encounter a class annotated with ``@lombok.Value``,
+they assume that the class has a constructor with parameters matching all its instance fields.
 
 Best practices
 ==============
 
-We show you recommended ways to define classes with Lombok annotations.
+Below are recommended patterns for defining classes with Lombok annotations.
 
 Entity class definition
 -----------------------

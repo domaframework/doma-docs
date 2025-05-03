@@ -5,7 +5,7 @@ Batch delete
 .. contents::
    :depth: 3
 
-Annotate with ``@BatchDelete`` to Dao method for execute batch delete.
+Annotate a Dao method with ``@BatchDelete`` to execute batch delete operations.
 
 .. code-block:: java
 
@@ -16,8 +16,8 @@ Annotate with ``@BatchDelete`` to Dao method for execute batch delete.
       ...
   }
 
-By default DELETE statement is auto generated.
-You can mapping arbitrary SQL file by specifying ``true`` to ``sqlFile`` property within the ``@BatchDelete`` annotation.
+By default, the DELETE statement is automatically generated.
+You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` in the ``@BatchDelete`` annotation.
 
 The ``preDelete`` method of entity listener is called each entity when before executing delete if the entity listener is specified at :doc:`../entity` parameter.
 Also the ``postDelete`` method of entity listener method is called each entity when after executing delete.
@@ -158,8 +158,8 @@ You can specify batch size to ``batchSize`` property within ``@BatchDelete`` ann
   @BatchDelete(batchSize = 10)
   int[] delete(List<Employee> employees);
 
-This specify is applied regardless of using or not using SQL file.
-It you do not specify the value to ``batchSize`` property, batch size that is specified at :doc:`../config` class is applied.
+This setting applies regardless of whether you use a SQL file or not.
+If you do not specify a value for the ``batchSize`` property, the batch size configured in the :doc:`../config` class is used.
 
 SQL log output format
 =======================
@@ -171,4 +171,4 @@ You can specify SQL log output format to ``sqlLog`` property within ``@BatchDele
   @BatchDelete(sqlLog = SqlLogType.RAW)
   int[] delete(List<Employee> employees);
 
-``SqlLogType.RAW`` represent outputting log that is sql with a binding parameter.
+``SqlLogType.RAW`` outputs the SQL statement with its binding parameters in the log.

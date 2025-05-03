@@ -5,7 +5,7 @@ Batch insert
 .. contents::
    :depth: 3
 
-Annotate with ``@BatchInsert`` to Dao method for execute batch insert.
+Annotate a Dao method with ``@BatchInsert`` to execute batch insert operations.
 
 .. code-block:: java
 
@@ -18,18 +18,18 @@ Annotate with ``@BatchInsert`` to Dao method for execute batch insert.
       BatchResult<ImmutableEmployee> insert(List<ImmutableEmployee> employees);
   }
 
-By default INSERT statement is auto generated.
-You can mapping arbitrary SQL file by specifying ``true`` to ``sqlFile`` property within the ``@BatchInsert`` annotation.
+By default, the INSERT statement is automatically generated.
+You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` in the ``@BatchInsert`` annotation.
 
-The ``preInsert`` method of entity listener is called each entity when before executing insert if the entity listener is specified at :doc:`../entity` parameter.
-Also the ``postInsert`` method of entity listener method is called each entity when after executing insert.
+If an entity listener is specified for the entity class, its ``preInsert`` method is called for each entity before executing the insert operation.
+Similarly, the ``postInsert`` method is called for each entity after the insert operation completes.
 
 Return value
 =============
 
-Return value must be ``org.seasar.doma.jdbc.BatchResult`` that has entity class as an element if parameter ``Iterable`` subtype element is immutable entity class.
+If the elements of the parameter (which must be an ``Iterable`` subtype) are immutable entity classes, the return value must be ``org.seasar.doma.jdbc.BatchResult`` with the entity class as its element type.
 
-Return value must be ``int[]`` that is represented each inserting process's updated count if the above conditions are not satisfied.
+If the above condition is not met, the return value must be ``int[]``, where each element represents the number of rows affected by each insert operation.
 
 Batch insert by auto generated SQL
 =====================================
@@ -194,8 +194,8 @@ You can specify batch size to ``batchSize`` property within ``@BatchInsert`` ann
   @BatchInsert(batchSize = 10)
   int[] insert(List<Employee> employees);
 
-This specify is applied Regardless of using or not using SQL file.
-It you do not specify the value to ``batchSize`` property, batch size that is specified at :doc:`../config` class is applied.
+This setting applies regardless of whether you use a SQL file or not.
+If you do not specify a value for the ``batchSize`` property, the batch size configured in the :doc:`../config` class is used.
 
 SQL log output format
 =====================
@@ -207,4 +207,4 @@ You can specify SQL log output format to ``sqlLog`` property within ``@BatchInse
   @BatchInsert(sqlLog = SqlLogType.RAW)
   int insert(Employee employee);
 
-``SqlLogType.RAW`` represent outputting log that is sql with a binding parameter.
+``SqlLogType.RAW`` outputs the SQL statement with its binding parameters in the log.

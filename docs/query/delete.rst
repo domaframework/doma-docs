@@ -5,7 +5,7 @@ Delete
 .. contents::
    :depth: 3
 
-Annotate with ``@Delete`` to Dao method for execute delete.
+Annotate a Dao method with ``@Delete`` to execute delete operations.
 
 .. code-block:: java
 
@@ -15,11 +15,11 @@ Annotate with ``@Delete`` to Dao method for execute delete.
       int delete(Employee employee);
   }
 
-By default DELETE statement is auto generated.
-You can mapping arbitrary SQL file by specifying ``true`` to ``sqlFile`` property within the ``@Delete`` annotation.
+By default, the DELETE statement is automatically generated.
+You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` in the ``@Delete`` annotation.
 
-The ``preDelete`` method of entity listener is called when before executing delete if the entity listener is specified at entity class parameter.
-Also the ``postDelete`` method of entity listener is called when after executing delete.
+If an entity listener is specified for the entity class parameter, its ``preDelete`` method is called before executing the delete operation.
+Similarly, the ``postDelete`` method is called after the delete operation completes.
 
 Return value
 ============
@@ -32,16 +32,16 @@ See :ref:`delete-returning`.
 When not using the returning property
 -------------------------------------
 
-Return value must be ``org.seasar.doma.jdbc.Result`` that make the entity class an element if parameter is immutable entity class.
+If the parameter is an immutable entity class, the return value must be ``org.seasar.doma.jdbc.Result`` with the entity class as its element.
 
-Return value must be ``int`` that is represented updated count if the above conditions are not satisfied.
+If the above condition is not met, the return value must be ``int``, which represents the number of rows affected by the delete operation.
 
 Delete by auto generated SQL
 =============================
 
-Parameter type must be entity class.
-Specifiable parameter is only one.
-Parameter must not be ``null``.
+The parameter type must be an entity class.
+Only one parameter can be specified.
+The parameter must not be ``null``.
 
 .. code-block:: java
 
@@ -65,8 +65,8 @@ If optimistic concurrency control is enable, version number is included with ide
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If ``ignoreVersion`` property within ``@Delete`` annotation is true, version number is not include in delete condition.
-``OptimisticLockException`` is not thrown in this case, even if delete count is 0.
+If the ``ignoreVersion`` property of the ``@Delete`` annotation is set to ``true``, the version number is not included in the delete condition.
+In this case, ``OptimisticLockException`` is not thrown even if no rows are deleted.
 
 .. code-block:: java
 
@@ -125,13 +125,13 @@ or an ``Optional`` containing an entity class as its element.
 Delete by SQL file
 ===========================
 
-To execute deleting by SQL file, you set ``true`` to ``sqlFile`` property within ``@Delete`` annotation and prepare SQL file that correspond method.
+To execute a delete operation using a SQL file, set the ``sqlFile`` property to ``true`` in the ``@Delete`` annotation and prepare a corresponding SQL file for the method.
 
 
-You can use arbitrary type as parameter.
-Specifiable parameters count is no limit.
-You can set ``null`` to parameter if parameter type is basic type or domain class.
-Parameter must not be ``null`` if the type is other than that.
+You can use any type as a parameter.
+There is no limit to the number of parameters you can specify.
+You can pass ``null`` to parameters of basic type or domain class.
+For other types, parameters must not be ``null``.
 
 Entity listener method is not called even if the entity listener is specified to entity.
 
@@ -149,7 +149,7 @@ For example, you describe SQL file like below to correspond above method.
 Version number and optimistic concurrency control in  SQL File
 --------------------------------------------------------------
 
-Optimistic concurrency control is executed if you satisfied below conditions.
+Optimistic concurrency control is performed when the following conditions are met:
 
 * Entity class is included in parameter
 * Entity class at first from the left within parameter has property that is annotated with @Version

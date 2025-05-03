@@ -172,7 +172,7 @@ You can inject the named Doma’s resource using the ``io.quarkus.agroal.DataSou
     
     @Inject
     @DataSource("inventory")
-    Config invetoryConfig;
+    Config inventoryConfig;
     
     @Inject
     @DataSource("inventory")
@@ -185,7 +185,7 @@ You can inject the named Doma’s resource using the ``io.quarkus.agroal.DataSou
 Support for native images
 -------------------------
 
-The quarkus-doma module recognizes reflective classes and resources, and includes them into your native image without additional configurations.
+The quarkus-doma module automatically recognizes reflective classes and resources, including them in your native image without requiring additional configuration.
 
 Sample project
 ==============

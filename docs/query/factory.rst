@@ -5,8 +5,8 @@ Factories
 .. contents::
    :depth: 3
 
-To get instances from the factory methods of ``java.sql.Connection``,
-annotate DAO methods with one of following annotations;
+To obtain instances from the factory methods of ``java.sql.Connection``,
+annotate DAO methods with one of the following annotations:
 
 * @ArrayFactory
 * @BlobFactory

@@ -154,8 +154,8 @@ Naming convention for tables and columns
 ----------------------------------------
 
 Return a ``Naming`` from the ``getNaming`` method.
-The naming element of ``@Entity`` have preference over this value.
-When you specify explicit value to the name elements of ``@Table`` and ``@Column``,
+The naming element of ``@Entity`` takes precedence over this value.
+When you specify explicit values for the name elements of ``@Table`` and ``@Column``,
 the naming convention is not applied to them.
 
 The default Naming does nothing.
@@ -172,16 +172,16 @@ Local transaction manager
 -------------------------
 
 Return a ``LocalTransactionManager`` from the ``getTransactionManager`` method.
-The ``getTransactionManager`` method throws ``UnsupportedOperationException`` as default.
+By default, the ``getTransactionManager`` method throws ``UnsupportedOperationException``.
 
 See also: :doc:`transaction`
 
-Adding SQL identifiers to the SQLs as a comment
+Adding SQL identifiers to SQLs as comments
 -----------------------------------------------
 
 Return a ``Commenter`` from the ``getCommenter`` method.
 
-Doma provides following commenter:
+Doma provides the following commenter:
 
 * org.seasar.doma.jdbc.CallerCommenter
 
@@ -191,47 +191,47 @@ Command implementors
 --------------------
 
 Return a ``CommandImplementors`` from the ``getCommandImplementors`` method.
-For example, the CommandImplementors provides you a hook to execute JDBC API.
+For example, the CommandImplementors provides a hook to execute JDBC API.
 
 Query implementors
 ------------------
 
 Return a ``QueryImplementors`` from the ``getQueryImplementors`` method.
-For example, the QueryImplementors provides you a hook to rewrite SQL statements.
+For example, the QueryImplementors provides a hook to rewrite SQL statements.
 
 Query timeout
 -------------
 
-Return the query timeout (second) from the ``getQueryTimeout`` method.
-This value is used as default in :doc:`query/index`.
+Return the query timeout (in seconds) from the ``getQueryTimeout`` method.
+This value is used as the default in :doc:`query/index`.
 
 Max rows
 --------
 
 Return the max rows from the ``getMaxRows`` method.
-This value is used as default in :doc:`query/select`.
+This value is used as the default in :doc:`query/select`.
 
 Fetch size
 ----------
 
 Return the fetch size from the ``getFetchSize`` method.
-This value is used as default in :doc:`query/select`.
+This value is used as the default in :doc:`query/select`.
 
 Batch size
 ----------
 
 Return the batch size from the ``getBatchSize`` method.
-This value is used as default in :doc:`query/batch-insert`,
+This value is used as the default in :doc:`query/batch-insert`,
 :doc:`query/batch-update` and :doc:`query/batch-delete`.
 
 Providing entity listeners
 --------------------------
 
-Return a ``EntityListenerProvider`` from the ``getEntityListenerProvider`` method.
+Return an ``EntityListenerProvider`` from the ``getEntityListenerProvider`` method.
 When you want to get entity listeners from a dependency injection container,
 create your own EntityListenerProvider.
 
-The default EntityListenerProvider get the entity listener from the accepted supplier.
+The default EntityListenerProvider gets the entity listener from the supplied provider.
 
 SQL Builder Settings
 --------------------

@@ -5,8 +5,8 @@ SQL processor
 .. contents::
    :depth: 3
 
-SQL processors can handle the SQL statements generated from corresponding SQL templates.
-To mark a DAO method as an SQL processor, annotate the method with ``@SqlProcessor``:
+SQL processors allow you to handle SQL statements that are generated from corresponding SQL templates.
+To designate a DAO method as an SQL processor, annotate it with ``@SqlProcessor``:
 
 .. code-block:: java
 
@@ -19,8 +19,8 @@ To mark a DAO method as an SQL processor, annotate the method with ``@SqlProcess
 
 .. warning::
 
-  Being aware of SQL injection vulnerabilities is essential.
-  If it's possible, consider alternative ways other than SQL processors.
+  It is essential to be aware of SQL injection vulnerabilities when using this feature.
+  Whenever possible, consider using alternatives to SQL processors for better security.
 
 Return type
 ===========

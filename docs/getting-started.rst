@@ -8,18 +8,18 @@ Getting started
 Summary
 ========
 
-This guide outlines the setup of your development environment and introduces basic functionalities.
+This guide explains how to set up your development environment and introduces the basic functionality of Doma.
 
 Install JDK
 ============
 
-To begin, JDK 17 is required. 
+First, you need to install JDK 17 or later.
 
 Get sample project
 ==================
 
-To obtain the sample project, clone the `getting-started <https://github.com/domaframework/getting-started>`_ 
-repository and navigate to the new directory using the following commands:
+To get the sample project, clone the `getting-started <https://github.com/domaframework/getting-started>`_ 
+repository and navigate to the created directory using these commands:
 
 .. code-block:: bash
 
@@ -39,8 +39,8 @@ Ensure successful project setup with:
 Sample project structure
 ========================
 
-The getting-started sample is a Gradle multi-project that includes a java-17 subproject.
-This guide will focus on the java-17 subproject.
+The getting-started sample is a Gradle multi-project containing a java-17 subproject.
+In this guide, we'll focus on the java-17 subproject.
 
 Import project to your IDE
 ==========================
@@ -48,7 +48,7 @@ Import project to your IDE
 Eclipse
 -------
 
-Tested on Eclipse 4.23.0.
+This guide has been tested with Eclipse 4.23.0.
 Import the getting-started project as a Gradle project.
 
 .. note::
@@ -72,13 +72,12 @@ Import the getting-started project as a Gradle project.
 Programming styles
 ==================
 
-Doma supports two programming styles —DSL and DAO— and
-it is recommended to use them together to maximize their advantages.
+Doma supports two programming styles: DSL and DAO. 
+We recommend using both styles together to maximize their benefits.
 
-The DSL style leverages the type-safe Criteria API, making it ideal for automatically generating simple dynamic SQL.
-On the other hand, the DAO style maps SQL statements to Java interface methods and is well suited for automatically
-generating conventional SQL for insert, update, and delete operations,
-as well as for manually writing complex SQL.
+The DSL style uses a type-safe Criteria API, making it excellent for automatically generating simple dynamic SQL.
+The DAO style maps SQL statements to Java interface methods and works well for both automatically generating 
+standard SQL for insert, update, and delete operations and for manually writing complex SQL.
 
 DSL style
 =========
@@ -169,10 +168,10 @@ use the ``@Sql`` annotation with Text Blocks for SQL templates:
     @Select
     Employee selectById(Integer id);
 
-This SQL template contains two special expressions, ``/*%expand*/`` and ``/* id */``.
-In process of SQL template, ``/*%expand*/`` and the following ``*`` are replaced with column list.
-And ``/* id */`` and the following ``0`` are replaced with the bind variable ``?``.
-The bound value is the ``id`` parameter of the ``selectById`` method.
+This SQL template contains two special expressions: ``/*%expand*/`` and ``/* id */``.
+When processing the SQL template, ``/*%expand*/`` and the following ``*`` are replaced with a complete column list.
+Similarly, ``/* id */`` and the following ``0`` are replaced with the bind variable ``?``.
+The value bound to this variable is the ``id`` parameter of the ``selectById`` method.
 
 The above code generates the following SQL statement:
 
