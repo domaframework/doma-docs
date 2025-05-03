@@ -17,10 +17,10 @@ annotate DAO methods with one of the following annotations:
 Creating Array instances
 ========================
 
-A return type must be ``java.sql.Array`` and the number of parameters must be one.
+The return type must be ``java.sql.Array`` and the number of parameters must be one.
 The parameter type must be an array type and the parameter must not be null.
 
-Specify a database type name to the ``@ArrayFactory``'s ``typeName`` element:
+Specify a database type name in the ``typeName`` element of the ``@ArrayFactory`` annotation:
 
 .. code-block:: java
 
@@ -30,7 +30,7 @@ Specify a database type name to the ``@ArrayFactory``'s ``typeName`` element:
 Creating Blob instances
 =======================
 
-A return type must be ``java.sql.Blob`` and the number of parameters must be zero:
+The return type must be ``java.sql.Blob`` and the number of parameters must be zero:
 
 .. code-block:: java
 
@@ -40,7 +40,7 @@ A return type must be ``java.sql.Blob`` and the number of parameters must be zer
 Creating Clob instances
 =======================
 
-A return type must be ``java.sql.Clob`` and the number of parameters must be zero:
+The return type must be ``java.sql.Clob`` and the number of parameters must be zero:
 
 .. code-block:: java
 
@@ -50,7 +50,7 @@ A return type must be ``java.sql.Clob`` and the number of parameters must be zer
 Creating NClob instances
 ========================
 
-A return type must be ``java.sql.NClob`` and the number of parameters must be zero:
+The return type must be ``java.sql.NClob`` and the number of parameters must be zero:
 
 .. code-block:: java
 
@@ -60,7 +60,7 @@ A return type must be ``java.sql.NClob`` and the number of parameters must be ze
 Creating SQLXML instances
 =========================
 
-A return type must be ``java.sql.SQLXML`` and the number of parameters must be zero:
+The return type must be ``java.sql.SQLXML`` and the number of parameters must be zero:
 
 .. code-block:: java
 
