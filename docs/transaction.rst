@@ -8,23 +8,23 @@ Transaction
 Doma provides support for local transactions.
 This document explains how to configure and use local transactions in your application.
 
-If you want to use global transaction, use frameworks or application servers
-which support JTA (Java Transaction API).
+If you want to use global transactions, use frameworks or application servers
+that support JTA (Java Transaction API).
 
 See also :ref:`config-configuration-definition` .
 
 Configuration
 =============
 
-To use local transaction, these conditions are required:
+To use local transactions, the following conditions are required:
 
-* Return ``LocalTransactionDataSource`` from ``getDataSource`` in ``Config``
-* Generate ``LocalTransactionManager`` using the ``LocalTransactionDataSource`` above in the constructor
-* Use the ``LocalTransactionManager`` above to control database access
+* Return a ``LocalTransactionDataSource`` from the ``getDataSource`` method in your ``Config`` implementation
+* Create a ``LocalTransactionManager`` using the ``LocalTransactionDataSource`` in the constructor
+* Use this ``LocalTransactionManager`` to control database access
 
-There are several ways to generate and get the ``LocalTransactionManager``,
-but the simplest way is to generate it in the constructor of ``Config`` implementation class
-and make the ``Config`` implementation class singleton.
+There are several ways to create and access the ``LocalTransactionManager``,
+but the simplest approach is to create it in the constructor of your ``Config`` implementation class
+and make that ``Config`` implementation a singleton.
 
 Here is an example:
 
@@ -71,7 +71,7 @@ Here is an example:
 Usage
 ======
 
-We use the following DAO interface in example code:
+The following examples use this DAO interface:
 
 .. code-block:: java
 
@@ -92,13 +92,13 @@ We use the following DAO interface in example code:
 Start and finish transactions
 -----------------------------
 
-You can start a transaction with one of following methods of ``TransactionManager``:
+You can start a transaction using one of the following methods of ``TransactionManager``:
 
 * required
 * requiresNew
 * notSupported
 
-Use a lambda expression to write a process which you want to run in a transaction.
+Use a lambda expression to define the code you want to execute within a transaction.
 
 .. code-block:: java
 
@@ -112,13 +112,13 @@ Use a lambda expression to write a process which you want to run in a transactio
       dao.update(employee);
   });
 
-The transaction is committed if the lambda expression finishes successfully.
-The transaction is rolled back if the lambda expression throws an exception.
+The transaction is automatically committed if the lambda expression completes successfully.
+If the lambda expression throws an exception, the transaction is automatically rolled back.
 
 Explicit rollback
 --------------------
 
-Besides throwing an exception, you can use ``setRollbackOnly`` method to rollback a transaction.
+Besides throwing an exception, you can use the ``setRollbackOnly`` method to explicitly roll back a transaction.
 
 .. code-block:: java
 
@@ -137,7 +137,7 @@ Besides throwing an exception, you can use ``setRollbackOnly`` method to rollbac
 Savepoint
 --------------
 
-With a savepoint, you can cancel specific changes in a transaction.
+Savepoints allow you to roll back specific portions of a transaction while keeping other changes.
 
 .. code-block:: java
 
