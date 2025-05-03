@@ -89,8 +89,8 @@ Hot reloading
 
 In development mode, the quarkus-doma module reloads SQL and Script files when they are changed.
 
-Automatic bean register
------------------------
+Automatic bean registration
+---------------------------
 
 The quarkus-doma module registers all DAO beans to the Quarkus CDI container.
 
@@ -185,7 +185,7 @@ You can inject the named Doma’s resource using the ``io.quarkus.agroal.DataSou
 Support for native images
 -------------------------
 
-The quarkus-doma module automatically recognizes reflective classes and resources, including them in your native image without requiring additional configuration.
+The quarkus-doma module automatically recognizes reflective classes and resources and includes them in your native image without requiring additional configuration.
 
 Sample project
 ==============
