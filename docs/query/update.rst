@@ -225,7 +225,7 @@ For example, you would write an SQL file like the one below to correspond to the
 The rules for controlling update target properties are the same as in :ref:`auto-update`.
 
 Case of not using comment that generates update column list
------------------------------------------------------------
+----------------------------------------------------------
 
 You can use an arbitrary type as a parameter.
 There is no limit on the number of parameters that can be specified.
