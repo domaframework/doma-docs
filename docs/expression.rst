@@ -181,7 +181,7 @@ If the method has no argument, specify ``()`` after the method name.
       employee_name = /* employeeName */'smith'
   /*%end*/
 
-Accessing to instance fields
+Accessing instance fields
 ============================
 
 You can access instance fields using dot notation (`.`).

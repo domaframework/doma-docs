@@ -75,9 +75,9 @@ Programming styles
 Doma supports two programming styles: DSL and DAO. 
 We recommend using both styles together to maximize their benefits.
 
-The DSL style uses a type-safe Criteria API, making it excellent for automatically generating simple dynamic SQL.
+The DSL style uses a type-safe Criteria API, which excels at automatically generating simple dynamic SQL.
 The DAO style maps SQL statements to Java interface methods and works well for both automatically generating 
-standard SQL for insert, update, and delete operations and for manually writing complex SQL.
+standard SQL for insert, update, and delete operations and for writing complex SQL manually.
 
 DSL style
 =========

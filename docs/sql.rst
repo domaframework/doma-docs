@@ -11,8 +11,8 @@ Overview
 Doma supports SQL templates known as "two-way SQL".
 The term "two-way SQL" indicates that these templates can be used in two ways:
 
-* To build dynamic SQL statements from the templates.
-* To execute the templates in SQL tools as they are.
+* Building dynamic SQL statements from the templates.
+* Executing the templates directly in SQL tools without modification.
 
 Every SQL template must correspond to a DAO method.
 For example, suppose you have the pair of an SQL template and a DAO method as follows:
@@ -668,7 +668,7 @@ See also `Restriction on condition directive`_.
 Expansion directive
 -------------------
 
-The expansion directive allows you to automatically generate a column list for the SELECT clause based on an entity definition.
+The expansion directive automatically generates a column list for the SELECT clause based on an entity definition.
 
 Synopsis
 ~~~~~~~~
@@ -678,7 +678,7 @@ Synopsis
   /*%expand alias*/
 
 The expression ``alias`` is optional.
-If specified, it must evaluate to a ``java.lang.String``.
+When specified, it must evaluate to a ``java.lang.String``.
 
 The directive must be followed by an asterisk ``*``.
 
@@ -725,7 +725,7 @@ The generated SQL statement is as follows:
 Population directive
 --------------------
 
-The population directive allows you to automatically generate a column list for
+The population directive automatically generates a column list for
 the UPDATE SET clause based on an entity definition.
 
 Synopsis

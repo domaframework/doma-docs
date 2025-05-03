@@ -52,8 +52,8 @@ If optimistic concurrency control is enable, version number is included with ide
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If ``ignoreVersion`` property within ``@BatchDelete`` annotation is ``true``, version number is not include in delete condition.
-``BatchOptimisticLockException`` is not thrown, even if delete count is 0.
+If the ``ignoreVersion`` property of the ``@BatchDelete`` annotation is set to ``true``, the version number is not included in the delete condition.
+``BatchOptimisticLockException`` is not thrown, even if the delete count is 0.
 
 .. code-block:: java
 
@@ -63,8 +63,8 @@ If ``ignoreVersion`` property within ``@BatchDelete`` annotation is ``true``, ve
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of ``suppressOptimisticLockException`` property within ``@BatchDelete`` is ``true``,
-version number is include in delete condition but ``BatchOptimisticLockException`` is not thrown even if delete count is 0.
+When the ``suppressOptimisticLockException`` property of the ``@BatchDelete`` annotation is set to ``true``,
+the version number is included in the delete condition but ``BatchOptimisticLockException`` is not thrown even if the delete count is 0.
 
 .. code-block:: java
 
@@ -116,8 +116,8 @@ For example like below SQL, you must specify version number in WHERE clauses.
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If ``ignoreVersion`` property within ``@BatchDelete`` annotation is true,
-``BatchOptimisticLockException`` is not thrown even if deleted count is 0 or multiple.
+If the ``ignoreVersion`` property of the ``@BatchDelete`` annotation is set to true,
+``BatchOptimisticLockException`` is not thrown even if the deleted count is 0 or multiple.
 
 .. code-block:: java
 
@@ -127,8 +127,8 @@ If ``ignoreVersion`` property within ``@BatchDelete`` annotation is true,
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If ``suppressOptimisticLockException`` property within ``@BatchDelete`` is ``true``,
-``BatchOptimisticLockException`` is not thrown even if deleted count is 0 or multiple.
+If the ``suppressOptimisticLockException`` property of the ``@BatchDelete`` annotation is set to ``true``,
+``BatchOptimisticLockException`` is not thrown even if the deleted count is 0 or multiple.
 
 .. code-block:: java
 
