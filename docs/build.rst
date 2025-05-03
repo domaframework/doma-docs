@@ -64,7 +64,7 @@ See build.gradle.kts in the `getting-started`_ repository as an example.
 .. _build-with-maven:
 
 Build with Maven
-=================
+===============
 
 Write your pom.xml as follows:
 
