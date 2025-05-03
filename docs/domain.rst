@@ -7,17 +7,17 @@ Domain classes
 
 A domain class represents a table column and allows you to handle column values as Java objects.
 In the Doma framework, a **domain** refers to all the values that a data type may contain.
-In short, a domain class is a user-defined class that can be mapped to a column.
-The use of the domain classes is optional.
+In essence, a domain class is a user-defined class that can be mapped to a database column.
+Using domain classes is optional but recommended for type safety.
 
 Every domain class is either an internal domain class or an external domain class.
 
 Internal domain classes
 =======================
 
-The internal domain class must be annotated with ``@Domain``.
-The ``valueType`` element of the ``@Domain`` annotation corresponds to the data type of a database column.
-Specify any type of :doc:`basic` to the ``valueType`` element.
+Internal domain classes must be annotated with ``@Domain``.
+The ``valueType`` element of the ``@Domain`` annotation specifies the data type of the corresponding database column.
+You must specify a type from :doc:`basic` for the ``valueType`` element.
 
 Instantiation with a constructor
 --------------------------------
@@ -48,7 +48,7 @@ The value ``new`` indicates that instances of the annotated class will be create
 .. note::
 
   Annotating records with ``@Domain`` can be somewhat redundant,
-  since you must specify properties like ``valueType`` to ``@Domain``.
+  since you must specify properties like ``valueType`` in the ``@Domain`` annotation.
   As an alternative, you can annotate records with ``@DataType``:
 
   .. code-block:: java
