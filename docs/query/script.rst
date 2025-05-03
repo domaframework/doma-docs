@@ -143,8 +143,8 @@ The corresponding script file is as follows:
 Stopping on error
 =================
 
-Script running will stop when any statement execution fails.
-To continue the script running, specify ``false`` to the ``haltOnError`` element:
+The script execution will stop when any statement fails.
+To continue running the script even after errors, specify ``false`` for the ``haltOnError`` element:
 
 .. code-block:: java
 
@@ -154,7 +154,7 @@ To continue the script running, specify ``false`` to the ``haltOnError`` element
 Example
 =======
 
-Following script is valid for Oracle Database:
+The following script is valid for Oracle Database:
 
 .. code-block:: sql
 
@@ -195,9 +195,9 @@ Following script is valid for Oracle Database:
   end proc_resultset;
   /
 
-You can use both a single line comment ``--`` and a multi-line comment ``/* ... */``.
+You can use both single-line comments ``--`` and multi-line comments ``/* ... */``.
 Each statement must end with a semicolon ``;``.
-Be careful that a new line doesn't mean the end of a statement.
+Be careful, as a new line does not indicate the end of a statement.
 
 In this example, the slash ``/`` is a block delimiter.
 The block delimiter must appear at the beginning of a line and be followed by a new line.
