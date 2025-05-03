@@ -128,9 +128,8 @@ Even if a property is specified in this element, it is excluded from the update 
 excludeNull
 ~~~~~~~~~~~
 
-Properties with a value of ``null`` are excluded from the update targets if the ``excludeNull`` property within the ``@Update`` annotation is set to ``true``.
-If this element is ``true``, even if the ``updatable`` property within the ``@Column`` annotation is set to ``true`` or the property is specified in the ``include`` property of the ``@Update`` annotation,
-the property is excluded from the update targets if its value is ``null``.
+Properties with a value of ``null`` are excluded from the update targets when the ``excludeNull`` property of the ``@Update`` annotation is set to ``true``.
+When this element is set to ``true``, a property is excluded from the update targets if its value is ``null``, even if the ``updatable`` property of its ``@Column`` annotation is set to ``true`` or the property is specified in the ``include`` property of the ``@Update`` annotation.
 
 .. code-block:: java
 
@@ -142,10 +141,10 @@ includeUnchanged
 
 This element is only effective if a property annotated with ``@OriginalStates`` exists within the entity class being updated.
 
-If this element is true, all properties within the entity are update targets.
-That is, the columns corresponding to all properties are included in the SET clauses of the UPDATE statement.
+When this element is set to true, all properties within the entity become update targets.
+This means that the columns corresponding to all properties are included in the SET clauses of the UPDATE statement.
 
-If this element is ``false``, only properties that have actually changed since the entity was loaded are update targets.
+When this element is set to ``false``, only properties that have actually changed since the entity was loaded become update targets.
 That is, only the columns corresponding to modified properties are included in the SET clauses of the UPDATE statement.
 
 .. code-block:: java
@@ -273,9 +272,9 @@ If the update count is not 0, no ``OptimisticLockException`` is thrown and the v
 ignoreVersion
 ^^^^^^^^^^^^^
 
-If the ``ignoreVersion`` property within the ``@Update`` annotation is set to true,
+If the ``ignoreVersion`` property of the ``@Update`` annotation is set to true,
 an ``OptimisticLockException`` is not thrown even if the update count is 0.
-Also, the version property value within the entity is not modified.
+Additionally, the version property value in the entity is not modified.
 
 .. code-block:: java
 
@@ -285,9 +284,9 @@ Also, the version property value within the entity is not modified.
 suppressOptimisticLockException
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If the ``suppressOptimisticLockException`` property within the ``@Update`` annotation is set to true,
+If the ``suppressOptimisticLockException`` property of the ``@Update`` annotation is set to true,
 an ``OptimisticLockException`` is not thrown even if the update count is 0.
-However, the version property value within the entity is still incremented by 1.
+However, the version property value in the entity is still incremented by 1.
 
 .. code-block:: java
 

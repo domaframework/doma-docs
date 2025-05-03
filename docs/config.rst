@@ -5,7 +5,7 @@ Configuration
 .. contents::
    :depth: 3
 
-The configurable items must be returned from the methods of the implementation class of
+Configurable items must be returned from the methods of a class that implements
 the ``org.seasar.doma.jdbc.Config`` interface.
 
 Configurable items
@@ -15,7 +15,7 @@ DataSource
 ----------
 
 Return a JDBC ``DataSource`` from the ``getDataSource`` method.
-If you need local transactions provided by Doma, return a ``LocalTransactionDataSource``.
+If you need to use local transactions provided by Doma, return a ``LocalTransactionDataSource``.
 
 See also: :doc:`transaction`
 
@@ -26,19 +26,19 @@ See also: :doc:`transaction`
 DataSource's name
 -----------------
 
-Return a DataSource's name from the ``getDataSourceName`` method.
-In the environment where multiple DataSources are used, the name is important.
-You have to give an unique name to each DataSource.
+Return the DataSource's name from the ``getDataSourceName`` method.
+In environments where multiple DataSources are used, this name is important.
+You must assign a unique name to each DataSource.
 
 The default value is the full qualified name of the implementation class of ``Config``.
 
 SQL dialect
 -----------
 
-Return a ``Dialect`` from the  ``getDialect`` method.
-You have to choose an appropriate dialect for the database you use.
+Return a ``Dialect`` from the ``getDialect`` method.
+You must choose an appropriate dialect for the database you are using.
 
-Doma provides following dialects:
+Doma provides the following dialects:
 
 +----------------------------+------------------+--------------------------------------+
 | Database                   | Dialect Name     | Description                          |
@@ -66,7 +66,7 @@ Doma provides following dialects:
 | SQLite                     | SqliteDialect    |                                      |
 +----------------------------+------------------+--------------------------------------+
 
-These dialect are located in the ``org.seasar.doma.jdbc.dialect`` package.
+These dialects are located in the ``org.seasar.doma.jdbc.dialect`` package.
 
 MysqlDialect supports MySQL 5 by default. To use it as a dialect for MySQL 8, 
 instantiate MysqlDialect by specifying the version as follows:
@@ -86,32 +86,32 @@ Logger
 
 Return a ``JdbcLogger`` from the ``getJdbcLogger`` method.
 
-Doma provides following JdbcLogger:
+Doma provides the following JdbcLogger:
 
 * org.seasar.doma.jdbc.UtilLoggingJdbcLogger
 
-The default JdbcLogger is UtilLoggingJdbcLogger which uses ``java.util.logging``.
+The default JdbcLogger is UtilLoggingJdbcLogger, which uses ``java.util.logging``.
 
 SQL File Repository
 -------------------
 
 Return a ``SqlFileRepository`` from the ``getSqlFileRepository`` method.
 
-Doma provides following SqlFileRepositories:
+Doma provides the following SqlFileRepositories:
 
 * org.seasar.doma.jdbc.GreedyCacheSqlFileRepository
 * org.seasar.doma.jdbc.NoCacheSqlFileRepository
 
-The default SqlFileRepository is GreedyCacheSqlFileRepository
-which caches the result of SQL parsing without limitation.
+The default SqlFileRepository is GreedyCacheSqlFileRepository,
+which caches the results of SQL parsing without limitation.
 
 Controlling REQUIRES_NEW transaction
 ------------------------------------
 
 Return a ``RequiresNewController`` from the ``getRequiresNewController`` method.
-RequiresNewController may begin new transactions to makes transaction locked time shorter.
+RequiresNewController may begin new transactions to make transaction lock time shorter.
 
-This feature is used only when you use ``@TableGenerator`` which generates identities with the table.
+This feature is used only when you use ``@TableGenerator``, which generates identities using a database table.
 
 The default RequiresNewController does nothing.
 
@@ -120,33 +120,33 @@ Loading classes
 
 Return a ``ClassHelper`` from the ``getClassHelper`` method.
 
-When the application server and framework you use loads classes with their specific way,
-consider to create your own ClassHelper.
+When the application server or framework you use loads classes in a specific way,
+consider creating your own ClassHelper.
 
-The default ClassHelper loads classes with ``Class#forName`` mainly.
+The default ClassHelper primarily loads classes using ``Class#forName``.
 
 Choosing SQL format contained in exception messages
 ---------------------------------------------------
 
-Return a ``SqlLogType`` from the ``getExceptionSqlLogType``.
-The default SqlLogType contains the formatted SQL in exception messages.
+Return a ``SqlLogType`` from the ``getExceptionSqlLogType`` method.
+The default SqlLogType includes the formatted SQL in exception messages.
 
 Handling duplicate columns
 --------------------------
 
 Return a ``DuplicateColumnHandler`` from the ``getDuplicateColumnHandler`` method.
 In result set mappings, if a duplicate column for an entity class is found,
-the ``DuplicateColumnHandler`` handles the situation.
+the ``DuplicateColumnHandler`` handles this situation.
 
 The default ``DuplicateColumnHandler`` does nothing.
-To throw a ``DuplicateColumnException``, return a ``ThrowingDuplicateColumnHandler``.
+To throw a ``DuplicateColumnException`` when duplicates are found, return a ``ThrowingDuplicateColumnHandler``.
 
 Handling unknown columns
 ------------------------
 
 Return a ``UnknownColumnHandler`` from the ``getUnknownColumnHandler`` method.
-In result set mappings, if an unknown column to an entity class is found,
-the UnknownColumnHandler handles the situation.
+In result set mappings, if a column unknown to an entity class is found,
+the UnknownColumnHandler handles this situation.
 
 The default UnknownColumnHandler throws an ``UnknownColumnException``.
 

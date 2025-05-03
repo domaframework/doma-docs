@@ -47,7 +47,7 @@ The following code snippet shows how to inherit from another entity class:
 Entity listeners
 ---------------------------
 
-Entity listeners work before/after Doma issues the database modification statements - INSERT, DELETE and UPDATE.
+Entity listeners execute before and after Doma issues database modification statements - INSERT, DELETE, and UPDATE.
 
 The following code snippet shows how to define an entity listener:
 
@@ -73,8 +73,8 @@ Naming convention
 
 Naming conventions define the mapping between:
 
-* the database tables and the Java entity classes
-* the database column and the Java entity fields
+* database tables and Java entity classes
+* database columns and Java entity fields
 
 The following code snippet shows how to apply the naming convention to an entity:
 
@@ -86,7 +86,7 @@ The following code snippet shows how to apply the naming convention to an entity
   }
 
 When the ``name`` property of the ``@Table`` or ``@Column`` annotation is explicitly specified,
-the naming convention is ignored.
+the naming convention is ignored for that specific element.
 
 An entity subclass inherits its parent's naming convention.
 
@@ -118,7 +118,7 @@ The following code snippet shows how to define an immutable entity:
   }
 
 The ``immutable`` property of the ``@Entity`` annotation must be set to ``true``.
-The persistent field must be ``final``.
+All persistent fields must be declared as ``final``.
 
 An entity subclass inherits its parent's immutable property.
 
@@ -135,12 +135,12 @@ You can specify the corresponding table name with the ``@Table`` annotation:
       ...
   }
 
-Without the ``@Table`` annotation, the table name is determined by the `Naming Convention`_.
+If the ``@Table`` annotation is not specified, the table name is determined by the `Naming Convention`_.
 
 Field definition
 ==================
 
-By default, the fields are persistent and correspond to the database columns or result set columns.
+By default, all fields in an entity class are persistent and correspond to database columns or result set columns.
 
 The field type must be one of the following:
 
@@ -182,7 +182,7 @@ properties to ``false`` within the ``@Column`` annotation:
   @Column(insertable = false, updatable = false)
   String employeeName;
 
-Without the ``@Column`` annotation, the column name is determined by the `Naming Convention`_.
+If the ``@Column`` annotation is not specified, the column name is determined by the `Naming Convention`_.
 
 .. note::
 
@@ -231,9 +231,9 @@ The field type must be one of the following:
 
 .. note::
 
-  The generated values are assigned to the field only when the field is either ``null`` or less than ``0``.
-  If you use one of the primitive types as field type,
-  initialize the field with a value that is less than ``0``, such as ``-1``.
+  The generated values are assigned to the field only when the field is either ``null`` or has a value less than ``0``.
+  If you use one of the primitive types as the field type,
+  initialize the field with a value less than ``0``, such as ``-1``.
 
 Id generation by IDENTITY
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,7 +246,7 @@ To generate values using the RDBMS IDENTITY function, set the ``strategy`` prope
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Integer id;
 
-In advance, define the database primary key as IDENTITY.
+You must first define the database primary key as IDENTITY in your database schema.
 
 .. warning::
 

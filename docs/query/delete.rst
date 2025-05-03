@@ -59,8 +59,8 @@ Optimistic concurrency control is executed if you satisfied below conditions.
 * Entity class within parameter has property that is annotated with @Version
 * The ignoreVersion element within @Delete annotation is false
 
-If optimistic concurrency control is enable, version number is included with identifier in delete condition.
-``OptimisticLockException`` representing optimistic concurrency control failure is thrown, if at that time delete count is 0.
+If optimistic concurrency control is enabled, the version number is included with the identifier in the delete condition.
+``OptimisticLockException`` representing optimistic concurrency control failure is thrown if the delete count is 0.
 
 ignoreVersion
 ~~~~~~~~~~~~~
@@ -76,8 +76,8 @@ In this case, ``OptimisticLockException`` is not thrown even if no rows are dele
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If ``suppressOptimisticLockException`` property within ``@Delete`` is ``true``, version number is included in delete condition.
-But in this case ``OptimisticLockException`` is not thrown even if delete count is 0.
+If the ``suppressOptimisticLockException`` property of the ``@Delete`` annotation is set to ``true``, the version number is included in the delete condition.
+However, ``OptimisticLockException`` is not thrown even if the delete count is 0.
 
 .. code-block:: java
 
@@ -169,8 +169,8 @@ For example like below SQL, you must specify version number in WHERE clauses.
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If ``ignoreVersion`` property within ``@Delete`` annotation is ``true``,
-``OptimisticLockException`` is not thrown even if delete count is 0.
+If the ``ignoreVersion`` property of the ``@Delete`` annotation is set to ``true``,
+``OptimisticLockException`` is not thrown even if the delete count is 0.
 
 .. code-block:: java
 
@@ -180,8 +180,8 @@ If ``ignoreVersion`` property within ``@Delete`` annotation is ``true``,
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If ``suppressOptimisticLockException`` property within ``@Delete`` annotation is ``true``,
-``OptimisticLockException`` is not thrown even if delete count is 0.
+If the ``suppressOptimisticLockException`` property of the ``@Delete`` annotation is set to ``true``,
+``OptimisticLockException`` is not thrown even if the delete count is 0.
 
 .. code-block:: java
 

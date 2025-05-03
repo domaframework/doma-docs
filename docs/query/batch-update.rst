@@ -70,10 +70,10 @@ In this case, ``BatchOptimisticLockException`` is not thrown even if the update 
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of ``suppressOptimisticLockException`` property within ``@BatchUpdate`` is ``true``,
-if property that annotated with ``@Version`` is exists then version number is include in update condition and be increment by 1
-but ``BatchOptimisticLockException`` is not thrown even if update count is 0.
-However, version property value within entity is increment by 1.
+When the ``suppressOptimisticLockException`` property of the ``@BatchUpdate`` annotation is set to ``true``,
+if a property annotated with ``@Version`` exists, then the version number is included in the update condition and incremented by 1,
+but ``BatchOptimisticLockException`` is not thrown even if the update count is 0.
+However, the version property value in the entity is incremented by 1.
 
 .. code-block:: java
 
@@ -102,9 +102,9 @@ Even if the ``updatable`` property of the ``@Column`` annotation is set to ``tru
 include
 ~~~~~~~
 
-Only property that is specified with ``include`` property within ``@BatchUpdate`` annotation is included to updating target.
-If same property are specified with both of ``include`` property and ``exclude`` property within ``@BatchUpdate`` the property is excluded from updating target.
-Even if property is specified with this element the property is excluded from updating target if ``updatable`` property within ``@Column`` annotation is ``false``.
+Only properties specified in the ``include`` property of the ``@BatchUpdate`` annotation are included in the update operation.
+If a property is specified in both the ``include`` and ``exclude`` properties of the ``@BatchUpdate`` annotation, it is excluded from the update operation.
+Even if a property is specified in the ``include`` property, it is excluded from the update operation if the ``updatable`` property of its ``@Column`` annotation is set to ``false``.
 
 .. code-block:: java
 
@@ -204,9 +204,9 @@ On the other hand, if update count is 1, ``BatchOptimisticLockException`` is not
 ignoreVersion
 ^^^^^^^^^^^^^
 
-If ``ignoreVersion`` property within ``@BatchUpdate`` annotation is true,
-``BatchOptimisticLockException`` is not thrown, even if update count is 0 or multiple.
-Also, entity version property is not modified.
+If the ``ignoreVersion`` property of the ``@BatchUpdate`` annotation is set to true,
+``BatchOptimisticLockException`` is not thrown, even if the update count is 0 or multiple.
+Additionally, the entity version property is not modified.
 
 .. code-block:: java
 
@@ -216,9 +216,9 @@ Also, entity version property is not modified.
 suppressOptimisticLockException
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In case of ``suppressOptimisticLockException`` property within ``@BatchUpdate`` is ``true``,
-``BatchOptimisticLockException`` is not thrown even if update count is 0.
-However, entity version property value is incremented by 1.
+When the ``suppressOptimisticLockException`` property of the ``@BatchUpdate`` annotation is set to ``true``,
+``BatchOptimisticLockException`` is not thrown even if the update count is 0.
+However, the entity version property value is incremented by 1.
 
 .. code-block:: java
 

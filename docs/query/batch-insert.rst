@@ -34,18 +34,18 @@ If the above condition is not met, the return value must be ``int[]``, where eac
 Batch insert by auto generated SQL
 =====================================
 
-Parameter type must be ``java.lang.Iterable`` subtype that has :doc:`../entity` as an element.
-Specifiable parameter is only one.
-Parameter must not be ``null``.
-Return value array element count become equal ``Iterable`` element count.
-Insert count is returned to array each element.
+The parameter type must be a ``java.lang.Iterable`` subtype that has :doc:`../entity` as its element type.
+Only one parameter can be specified.
+The parameter must not be ``null``.
+The return value array's element count equals the ``Iterable`` element count.
+Each element in the array represents the insert count for the corresponding operation.
 
 Identifier
 -----------
 
-If annotated with ``@GeneratedValue`` at :doc:`../entity` identifier, the identifier is auto generated and set.
+If the identifier in :doc:`../entity` is annotated with ``@GeneratedValue``, the identifier is automatically generated and set.
 
-You reference :ref:`identity-auto-generation` about cautionary point.
+Reference :ref:`identity-auto-generation` for cautionary points.
 
 If you don't use auto-generated keys in your application, you can enable the `ignoreGeneratedKeys` flag.
 This flag may improve performance.
@@ -58,8 +58,8 @@ This flag may improve performance.
 Version number
 ----------------
 
-If value that explicitly set is over ``0`` then use the value if :doc:`../entity` has property that is annotated  with ``@Version``.
-If the value is not set or is less than ``0`` the value is set ``1`` automatically.
+If a value that is explicitly set is greater than ``0``, then that value is used if the :doc:`../entity` has a property annotated with ``@Version``.
+If the value is not set or is less than ``0``, the value is automatically set to ``1``.
 
 Properties of @BatchInsert
 ---------------------------
@@ -67,13 +67,13 @@ Properties of @BatchInsert
 insertable
 ~~~~~~~~~~
 
-The ``insertable`` property within ``@Column`` annotation that is specified ``false`` is excluded from insert target if :doc:`../entity` has property that is annotated with ``@Column``.
+A property is excluded from insertion if the entity class has a property annotated with ``@Column`` and the ``insertable`` property of the ``@Column`` annotation is set to ``false``.
 
 exclude
 ~~~~~~~
 
-Property that is specified with ``exclude`` property within the ``@BatchInsert`` annotation is excluded from inserting target.
-Even if ``insertable`` property within ``@Column`` annotation is specified ``true`` the property is excluded from inserting target if the property is specified by this element.
+A property specified in the ``exclude`` property of the ``@BatchInsert`` annotation is excluded from the insertion operation.
+Even if the ``insertable`` property of the ``@Column`` annotation is set to ``true``, the property is excluded from the insertion operation if it is specified in this element.
 
 .. code-block:: java
 
@@ -83,9 +83,9 @@ Even if ``insertable`` property within ``@Column`` annotation is specified ``tru
 include
 ~~~~~~~
 
-Only property that is specified with ``include`` property within ``@BatchInsert`` annotation is included to inserting target.
-If same property are specified with both of ``include`` property and ``exclude`` property within ``@BatchInsert`` the property is excluded from updating target.
-Even if property is specified with this element the property is excluded from inserting target if ``insertable`` property within ``@Column`` annotation is ``false``.
+Only properties specified in the ``include`` property of the ``@BatchInsert`` annotation are included in the insertion operation.
+If the same property is specified in both the ``include`` property and the ``exclude`` property of the ``@BatchInsert`` annotation, it is excluded from the insertion operation.
+Even if a property is specified in this element, it is excluded from the insertion operation if the ``insertable`` property of its ``@Column`` annotation is set to ``false``.
 
 .. code-block:: java
 
@@ -129,8 +129,8 @@ This property represents the keys that should be used to determine if a duplicat
 Batch insert by SQL file
 ===========================
 
-To execute batch inserting by SQL file,
-you set ``true`` to ``sqlFile`` property within ``@BatchInsert`` annotation and prepare SQL file that correspond method.
+To execute batch insertion using an SQL file,
+set the ``sqlFile`` property of the ``@BatchInsert`` annotation to ``true`` and prepare an SQL file that corresponds to the method.
 
 .. code-block:: java
 
@@ -140,24 +140,24 @@ you set ``true`` to ``sqlFile`` property within ``@BatchInsert`` annotation and 
   @BatchInsert(sqlFile = true)
   BatchResult<ImmutableEmployee> insert(List<ImmutableEmployee> employees);
 
-Parameter type must be ``java.lang.Iterable`` subtype that has :doc:`../entity` as an element.
-Specifiable parameter is only one.
-Parameter must not be ``null``.
-Return value array element count become equal ``Iterable`` element count.
-Insert count is returned to array each element.
+The parameter type must be a ``java.lang.Iterable`` subtype that has :doc:`../entity` as its element type.
+Only one parameter can be specified.
+The parameter must not be ``null``.
+The return value array's element count equals the ``Iterable`` element count.
+Each element in the array represents the insert count for the corresponding operation.
 
-If entity listener is specified at :doc:`../entity` then entity listener method is not called.
+If an entity listener is specified for the :doc:`../entity`, its methods are not called when using SQL files.
 
-For example, you describe SQL like below to correspond above method.
+For example, you would write SQL like the following to correspond to the above method:
 
 .. code-block:: sql
 
   insert into employee (id, name, salary, version)
   values (/* employees.id */0, /* employees.name */'hoge', /* employees.salary */100, /* employees.version */0)
 
-Parameter name indicate ``java.lang.Iterable`` subtype element in SQL file.
+The parameter name in the SQL file refers to the element of the ``java.lang.Iterable`` subtype.
 
-Identifier auto setting and version number auto setting are not executed in batch insert by SQL file.
+Automatic identifier setting and automatic version number setting are not performed when inserting via SQL file.
 
 Additionally, the following properties of ``@BatchInsert`` are not used:
 
@@ -169,25 +169,25 @@ Additionally, the following properties of ``@BatchInsert`` are not used:
 Unique constraint violation
 ============================
 
-``UniqueConstraintException`` is thrown regardless of with or without using sql file if unique constraint violation is occurred.
+``UniqueConstraintException`` is thrown if a unique constraint violation occurs, regardless of whether an SQL file is used or not.
 
 Query timeout
 ==================
 
-You can specify seconds of query timeout to ``queryTimeout`` property within ``@BatchInsert`` annotation.
+You can specify the query timeout in seconds using the ``queryTimeout`` property of the ``@BatchInsert`` annotation.
 
 .. code-block:: java
 
   @BatchInsert(queryTimeout = 10)
   int[] insert(List<Employee> employees);
 
-This specifying is applied regardless of with or without using sql file.
-Query timeout that is specified in config class is used if ``queryTimeout`` property is not set value.
+This specification is applied regardless of whether an SQL file is used or not.
+The query timeout specified in the config class is used if the ``queryTimeout`` property is not set.
 
 Batch size
 ============
 
-You can specify batch size to ``batchSize`` property within ``@BatchInsert`` annotation.
+You can specify the batch size using the ``batchSize`` property of the ``@BatchInsert`` annotation.
 
 .. code-block:: java
 
@@ -200,11 +200,11 @@ If you do not specify a value for the ``batchSize`` property, the batch size con
 SQL log output format
 =====================
 
-You can specify SQL log output format to ``sqlLog`` property within ``@BatchInsert`` annotation.
+You can specify the SQL log output format using the ``sqlLog`` property of the ``@BatchInsert`` annotation.
 
 .. code-block:: java
 
   @BatchInsert(sqlLog = SqlLogType.RAW)
   int insert(Employee employee);
 
-``SqlLogType.RAW`` outputs the SQL statement with its binding parameters in the log.
+``SqlLogType.RAW`` indicates that the log outputs SQL with bind parameters.
