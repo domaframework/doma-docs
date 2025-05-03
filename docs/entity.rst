@@ -31,7 +31,7 @@ The following code snippet shows how to inherit from another entity class:
   }
 
 .. note::
-  In Java 14 and later version, you can annotate `records`_ with ``@Entity``:
+  You can annotate `records`_ with ``@Entity``:
 
   .. code-block:: java
 
