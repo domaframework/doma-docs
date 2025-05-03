@@ -54,7 +54,7 @@ Which IDE do you recommend?
 ---------------------------
 
 Doma works with both Eclipse and IntelliJ IDEA, but IntelliJ IDEA is recommended. 
-This is because Eclipse's annotation processing may behave differently from the JDK used in the production environment.
+This is because Eclipse's annotation processing may behave differently from the JRE used in the production environment.
 
 Which build tool do you recommend?
 ----------------------------------

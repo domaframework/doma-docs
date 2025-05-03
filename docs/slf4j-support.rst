@@ -35,7 +35,7 @@ See also :ref:`Logger<config-logger>`.
 Loggers
 =======
 
-doma-slf4j provides the following loggers:
+doma-slf4j provides several loggers as follows:
 
 * org.seasar.doma.jdbc.LogKind.DAO
 * org.seasar.doma.jdbc.LogKind.FAILURE

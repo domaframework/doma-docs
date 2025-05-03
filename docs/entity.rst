@@ -31,7 +31,7 @@ The following code snippet shows how to inherit from another entity class:
   }
 
 .. note::
-  In Java 14 and later versions, you can annotate `records`_ with ``@Entity``:
+  In Java 14 and later version, you can annotate `records`_ with ``@Entity``:
 
   .. code-block:: java
 
@@ -47,7 +47,7 @@ The following code snippet shows how to inherit from another entity class:
 Entity listeners
 ---------------------------
 
-Entity listeners work before and after Doma issues database modification statements - INSERT, DELETE, and UPDATE.
+Entity listeners work before/after Doma issues the database modification statements - INSERT, DELETE and UPDATE.
 
 The following code snippet shows how to define an entity listener:
 

@@ -54,13 +54,13 @@ The parameter must not be ``null``.
 Version number and optimistic concurrency control in auto generated SQL
 -----------------------------------------------------------------------
 
-Optimistic concurrency control is executed if the following conditions are met:
+Optimistic concurrency control is executed if you satisfied below conditions.
 
-* The entity class parameter has a property that is annotated with @Version
-* The ignoreVersion element within the @Delete annotation is false
+* Entity class within parameter has property that is annotated with @Version
+* The ignoreVersion element within @Delete annotation is false
 
-If optimistic concurrency control is enabled, the version number is included with the identifier in the delete condition.
-An ``OptimisticLockException`` representing optimistic concurrency control failure is thrown if the delete count is 0.
+If optimistic concurrency control is enable, version number is included with identifier in delete condition.
+``OptimisticLockException`` representing optimistic concurrency control failure is thrown, if at that time delete count is 0.
 
 ignoreVersion
 ~~~~~~~~~~~~~
@@ -76,8 +76,8 @@ In this case, ``OptimisticLockException`` is not thrown even if no rows are dele
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the ``suppressOptimisticLockException`` property within the ``@Delete`` annotation is ``true``, the version number is included in the delete condition.
-However, in this case, an ``OptimisticLockException`` is not thrown even if the delete count is 0.
+If ``suppressOptimisticLockException`` property within ``@Delete`` is ``true``, version number is included in delete condition.
+But in this case ``OptimisticLockException`` is not thrown even if delete count is 0.
 
 .. code-block:: java
 
@@ -133,14 +133,14 @@ There is no limit to the number of parameters you can specify.
 You can pass ``null`` to parameters of basic type or domain class.
 For other types, parameters must not be ``null``.
 
-Entity listener methods are not called even if an entity listener is specified for the entity.
+Entity listener method is not called even if the entity listener is specified to entity.
 
 .. code-block:: java
 
   @Delete(sqlFile = true)
   int delete(Employee employee);
 
-For example, you would write an SQL file like the one below to correspond to the above method.
+For example, you describe SQL file like below to correspond above method.
 
 .. code-block:: sql
 
@@ -151,26 +151,26 @@ Version number and optimistic concurrency control in  SQL File
 
 Optimistic concurrency control is performed when the following conditions are met:
 
-* An entity class is included in the parameters
-* The leftmost entity class parameter has a property that is annotated with @Version
-* The ignoreVersion property within the @Delete annotation is false
-* The suppressOptimisticLockException property within the @Delete annotation is false
+* Entity class is included in parameter
+* Entity class at first from the left within parameter has property that is annotated with @Version
+* The ignoreVersion property within @Delete annotation is false
+* The suppressOptimisticLockException property within @Delete annotation is false
 
-However, writing SQL for optimistic concurrency control is the application developer's responsibility.
-For example, in the SQL below, you must specify the version number in the WHERE clause.
+However, describing to SQL file for Optimistic concurrency control SQL is application developer's responsibility.
+For example like below SQL, you must specify version number in WHERE clauses.
 
 .. code-block:: sql
 
   delete from EMPLOYEE where ID = /* employee.id */1 and VERSION = /* employee.version */1
 
-An ``OptimisticLockException`` representing optimistic concurrency control failure is thrown if this SQL delete count is 0.
-An ``OptimisticLockException`` is not thrown if the delete count is not 0.
+``OptimisticLockException`` representing optimistic concurrency control failure is thrown, if this SQL delete count is 0.
+``OptimisticLockException`` is not thrown if delete count is not 0.
 
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If the ``ignoreVersion`` property within the ``@Delete`` annotation is ``true``,
-an ``OptimisticLockException`` is not thrown even if the delete count is 0.
+If ``ignoreVersion`` property within ``@Delete`` annotation is ``true``,
+``OptimisticLockException`` is not thrown even if delete count is 0.
 
 .. code-block:: java
 
@@ -180,8 +180,8 @@ an ``OptimisticLockException`` is not thrown even if the delete count is 0.
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the ``suppressOptimisticLockException`` property within the ``@Delete`` annotation is ``true``,
-an ``OptimisticLockException`` is not thrown even if the delete count is 0.
+If ``suppressOptimisticLockException`` property within ``@Delete`` annotation is ``true``,
+``OptimisticLockException`` is not thrown even if delete count is 0.
 
 .. code-block:: java
 
@@ -192,24 +192,24 @@ Query timeout
 ==================
 
 
-You can specify the number of seconds for query timeout in the ``queryTimeout`` property of the ``@Delete`` annotation.
+You can specify seconds of query timeout to ``queryTimeout`` property within ``@Delete`` annotation.
 
 .. code-block:: java
 
   @Delete(queryTimeout = 10)
   int delete(Employee employee);
 
-This specification is applied regardless of whether you are using an SQL file or not.
-The query timeout that is specified in :doc:`../config` is used if the ``queryTimeout`` property is not set.
+This specifying is applied regardless of with or without using sql file.
+Query timeout that is specified in :doc:`../config` is used if ``queryTimeout`` property is not set value.
 
 SQL log output format
 =====================
 
-You can specify the SQL log output format in the ``sqlLog`` property of the ``@Delete`` annotation.
+You can specify SQL log output format to ``sqlLog`` property within ``@Delete`` annotation.
 
 .. code-block:: java
 
   @Delete(sqlLog = SqlLogType.RAW)
   int delete(Employee employee);
 
-``SqlLogType.RAW`` represents outputting a log that contains SQL with binding parameters.
+``SqlLogType.RAW`` represent outputting log that is sql with a binding parameter.

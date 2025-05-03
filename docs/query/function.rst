@@ -49,7 +49,7 @@ Function name
 =============
 
 The annotated method name is recognized as the function name by default.
-To override this behavior, you can specify a value for the ``name`` element of the ``@Function`` annotation:
+To override it, you can specify a value for the ``@Function``'s ``name`` element:
 
 .. code-block:: java
 
@@ -162,7 +162,7 @@ Cursor or result set
 --------------------
 
 To indicate cursors or result sets,
-annotate the corresponding DAO method parameters with the ``@ResultSet`` annotation.
+annotate corresponding DAO method parameters with the ``@ResultSet`` annotation.
 
 The DAO method parameter type must be ``java.util.List``
 and its element type must be one of the following:

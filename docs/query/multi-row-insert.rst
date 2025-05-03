@@ -53,7 +53,7 @@ When not using the returning property
 
 If the type argument of the ``Iterable`` parameter is an immutable entity class, the return type must be ``org.seasar.doma.jdbc.MultiResult`` with that entity class as an element.
 
-If the type argument of the ``Iterable`` parameter is a mutable entity class, the return type must be ``int`` that represents the number of rows affected.
+If the type argument of the ``Iterable`` parameter is a mutable entity class, the return type must be ``int`` that represents updated count.
 
 Parameter type
 ==============
@@ -185,7 +185,7 @@ An ``org.seasar.doma.jdbc.UniqueConstraintException`` is thrown if a unique cons
 Query timeout
 ==================
 
-You can specify the number of seconds for query timeout in the ``queryTimeout`` property of the ``@MultiInsert`` annotation.
+You can specify seconds of query timeout to ``queryTimeout`` property within ``@MultiInsert`` annotation.
 
 .. code-block:: java
 
@@ -197,7 +197,7 @@ If no value is set for the ``queryTimeout`` property, the query timeout specifie
 SQL log output format
 =====================
 
-You can specify the SQL log output format in the ``sqlLog`` property of the ``@MultiInsert`` annotation.
+You can specify SQL log output format to ``sqlLog`` property within ``@MultiInsert`` annotation.
 
 .. code-block:: java
 

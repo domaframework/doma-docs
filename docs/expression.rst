@@ -7,7 +7,7 @@ Expression language
 
 You can write simple expressions in SQL directives.
 The grammar is very similar to Java,
-though not all Java features are supported.
+although not all Java features are supported.
 
 .. note::
 
@@ -54,7 +54,7 @@ You can use the following literals:
 +----------+----------------------+
 
 Numeric types are distinguished by suffix letters such as ``L`` or ``F``
-at the end of the literals. Note that these suffixes must be uppercase letters.
+at the end of the literals. Note that these suffixes must be capital letters.
 
 .. code-block:: sql
 
@@ -181,7 +181,7 @@ If the method has no argument, specify ``()`` after the method name.
       employee_name = /* employeeName */'smith'
   /*%end*/
 
-Accessing instance fields
+Accessing to instance fields
 ============================
 
 You can access instance fields using dot notation (`.`).
@@ -206,7 +206,7 @@ The method must have public visibility.
       employee_name = /* employeeName */'smith'
   /*%end*/
 
-Accessing static fields
+Accessing to static fields
 ==========================
 
 You can access static fields by prefixing the field name

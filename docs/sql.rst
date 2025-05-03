@@ -15,7 +15,7 @@ The term "two-way SQL" indicates that these templates can be used in two ways:
 * To execute the templates in SQL tools as they are.
 
 Every SQL template must correspond to a DAO method.
-For example, suppose you have the following pair of an SQL template and a DAO method:
+For example, suppose you have the pair of an SQL template and a DAO method as follows:
 
 .. code-block:: sql
 
@@ -37,9 +37,9 @@ The SQL statement generated from the SQL template is as follows:
 
 The number ``99`` in the SQL template is test data that is never used at runtime.
 This test data is only useful when you execute the SQL template directly in your database tools.
-In other words, you can verify whether the SQL template is grammatically correct with your favorite SQL tools.
+In other words, you can check whether the SQL template is grammatically correct with your favorite SQL tools.
 
-Each SQL template is represented as either a text file or an annotation.
+Each SQL template is represented either a text file or an annotation.
 
 SQL templates in files
 ======================
@@ -825,7 +825,7 @@ The followings are the beginning of a multi line comment:
 * /\*)...\*/
 * /\*&...\*/
 
-On the other hand, the following are the beginning of a directive:
+In other hand, the followings are the beginning of a directive:
 
 * /\* ...\*/
 * /\*a...\*/

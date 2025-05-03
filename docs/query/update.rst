@@ -225,7 +225,7 @@ For example, you would write an SQL file like the one below to correspond to the
 The rules for controlling update target properties are the same as in :ref:`auto-update`.
 
 Case of not using comment that generates update column list
-----------------------------------------------------------
+---------------------------------------------------------
 
 You can use an arbitrary type as a parameter.
 There is no limit on the number of parameters that can be specified.
@@ -322,4 +322,4 @@ You can specify the SQL log output format using the ``sqlLog`` property within t
   @Update(sqlLog = SqlLogType.RAW)
   int update(Employee employee);
 
-``SqlLogType.RAW`` represents outputting a log that contains SQL with binding parameters.
+``SqlLogType.RAW`` indicates that the log output will contain the SQL with binding parameters.

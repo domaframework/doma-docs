@@ -43,7 +43,7 @@ Parameter
 =========
 
 Include a parameter whose type is ``BiFunction``.
-The ``BiFunction`` parameter accepts a configuration and an SQL statement, and then processes them.
+The ``BiFunction`` parameter accepts a configuration and an SQL statement then processes them.
 Parameters other than the ``BiFunction`` parameter are used in the SQL template.
 
 Example

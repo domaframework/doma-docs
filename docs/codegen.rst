@@ -301,7 +301,7 @@ The ``entity`` block must be defined within a named configuration:
      - Values
      - Default
    * - overwrite
-     - whether to overwrite generated entity files or not
+     - where to overwrite generated entity files or not
      - 
      - `true`
    * - overwriteListener
@@ -441,7 +441,7 @@ A ``dao`` block must be under a named config:
      - 
      - "Dao"
    * - configClassName
-     - The name of a class that implements ``org.seasar.doma.jdbc.Config``. This name is used in the @Dao annotation
+     - ``org.seasar.doma.jdbc.Config`` implemented class name. The name is used at @Dao
      - 
      - ``false``
 

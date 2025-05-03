@@ -19,41 +19,41 @@ Annotate a Dao method with ``@BatchDelete`` to execute batch delete operations.
 By default, the DELETE statement is automatically generated.
 You can map to an arbitrary SQL file by setting the ``sqlFile`` property to ``true`` in the ``@BatchDelete`` annotation.
 
-The ``preDelete`` method of the entity listener is called for each entity before executing the delete operation if an entity listener is specified for the :doc:`../entity` parameter.
-Similarly, the ``postDelete`` method of the entity listener is called for each entity after the delete operation completes.
+The ``preDelete`` method of entity listener is called each entity when before executing delete if the entity listener is specified at :doc:`../entity` parameter.
+Also the ``postDelete`` method of entity listener method is called each entity when after executing delete.
 
 Return value
 ==============
 
-The return value must be ``org.seasar.doma.jdbc.BatchResult`` with the entity class as its element type if the elements of the parameter (which must be an ``Iterable`` subtype) are immutable entity classes.
+Return value must be ``org.seasar.doma.jdbc.BatchResult`` that has entity class as an element if parameter ``Iterable`` subtype element is immutable entity class.
 
-The return value must be ``int[]``, where each element represents the number of rows affected by each delete operation, if the above condition is not met.
+Return value must be ``int[]`` that is represented each deleting process's updated count if the above conditions are not satisfied.
 
 Batch delete by auto generated SQL
 ====================================
 
-The parameter type must be a ``java.lang.Iterable`` subtype that has :doc:`../entity` as its element type.
-Only one parameter can be specified.
-The parameter must not be ``null``.
-The return value array element count equals the ``Iterable`` element count.
-The delete count is returned in each element of the array.
+Parameter type must be ``java.lang.Iterable`` subtype that has :doc:`../entity` as an element.
+Specifiable parameter is only one.
+Parameter must not be ``null``.
+Return value array element count become equal ``Iterable`` element count.
+Delete count is returned to array each element.
 
 Version number and optimistic concurrency control in auto generated SQL
 -----------------------------------------------------------------------------
 
-Optimistic concurrency control is executed if the following conditions are met:
+Optimistic concurrency control is executed if you satisfied below conditions.
 
-* The :doc:`../entity` within the parameter's java.lang.Iterable subtype has a property that is annotated with @Version
-* The ignoreVersion element within the @BatchDelete annotation is false
+* :doc:`../entity` within parameter java.lang.Iterable subtype has property that is annotated with @Version
+* The ignoreVersion element within @BatchDelete annotation is false
 
-If optimistic concurrency control is enabled, the version number is included with the identifier in the delete condition.
-A ``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown if the delete count is 0.
+If optimistic concurrency control is enable, version number is included with identifier in delete condition.
+``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown, if at that time deleted count is 0.
 
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If the ``ignoreVersion`` property within the ``@BatchDelete`` annotation is ``true``, the version number is not included in the delete condition.
-A ``BatchOptimisticLockException`` is not thrown, even if the delete count is 0.
+If ``ignoreVersion`` property within ``@BatchDelete`` annotation is ``true``, version number is not include in delete condition.
+``BatchOptimisticLockException`` is not thrown, even if delete count is 0.
 
 .. code-block:: java
 
@@ -63,8 +63,8 @@ A ``BatchOptimisticLockException`` is not thrown, even if the delete count is 0.
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the ``suppressOptimisticLockException`` property within the ``@BatchDelete`` annotation is ``true``,
-the version number is included in the delete condition but a ``BatchOptimisticLockException`` is not thrown even if the delete count is 0.
+In case of ``suppressOptimisticLockException`` property within ``@BatchDelete`` is ``true``,
+version number is include in delete condition but ``BatchOptimisticLockException`` is not thrown even if delete count is 0.
 
 .. code-block:: java
 
@@ -74,50 +74,50 @@ the version number is included in the delete condition but a ``BatchOptimisticLo
 Batch delete by SQL file
 ===========================
 
-To execute batch deletes using an SQL file,
-set the ``sqlFile`` property to ``true`` in the ``@BatchDelete`` annotation and prepare an SQL file that corresponds to the method.
+To execute batch deleting by SQL file,
+you set ``true`` to ``sqlFile`` property within ``@BatchDelete`` annotation and prepare SQL file that correspond method.
 
 .. code-block:: java
 
   @BatchDelete(sqlFile = true)
   int[] delete(List<Employee> employees);
 
-The parameter type must be a ``java.lang.Iterable`` subtype that has an arbitrary type as its element type.
-Only one parameter can be specified.
-The parameter must not be ``null``.
-The return value array element count equals the ``Iterable`` element count.
-The delete count is returned in each element of the array.
+Parameter type must be ``java.lang.Iterable`` subtype that has arbitrary type as an element.
+Specifiable parameter is only one.
+Parameter must not be ``null``.
+Return value array element count become equal ``Iterable`` element count.
+Delete count is returned to array each element.
 
-For example, you would write an SQL file like the one below to correspond to the above method.
+For example, you describe SQL like below to correspond above method.
 
 .. code-block:: sql
 
   delete from employee where name = /* employees.name */'hoge'
 
-The parameter name indicates the ``java.lang.Iterable`` subtype element in the SQL file.
+Parameter name indicate ``java.lang.Iterable`` subtype element in SQL file.
 
 Version number and optimistic concurrency control in SQL file
 --------------------------------------------------------------
 
-Optimistic concurrency control is executed if the following conditions are met:
+Optimistic concurrency control is executed if you satisfied below conditions.
 
-* The parameter's ``java.lang.Iterable`` subtype has a :doc:`../entity` element, and the :doc:`../entity` element has a property annotated with @Version
-* The ignoreVersion element within the @BatchDelete annotation is false
+* The parameter ``java.lang.Iterable`` subtype has :doc:`../entity` element, the  :doc:`../entity` element is annotated with @Version
+* The ignoreVersion element within @BatchDelete annotation is false
 
-However, writing SQL for optimistic concurrency control is the application developer's responsibility.
-For example, in the SQL below, you must specify the version number in the WHERE clause.
+However, describing to SQL file for Optimistic concurrency control SQL is application developer's responsibility.
+For example like below SQL, you must specify version number in WHERE clauses.
 
 .. code-block:: sql
 
   delete from EMPLOYEE where ID = /* employees.id */1 and VERSION = /* employees.version */1
 
-A ``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown if the delete count is 0 or multiple in this SQL.
+``BatchOptimisticLockException`` representing optimistic concurrency control failure is thrown, if deleted count is 0 or multiple in this SQL.
 
 ignoreVersion
 ~~~~~~~~~~~~~
 
-If the ``ignoreVersion`` property within the ``@BatchDelete`` annotation is true,
-a ``BatchOptimisticLockException`` is not thrown even if the delete count is 0 or multiple.
+If ``ignoreVersion`` property within ``@BatchDelete`` annotation is true,
+``BatchOptimisticLockException`` is not thrown even if deleted count is 0 or multiple.
 
 .. code-block:: java
 
@@ -127,8 +127,8 @@ a ``BatchOptimisticLockException`` is not thrown even if the delete count is 0 o
 suppressOptimisticLockException
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the ``suppressOptimisticLockException`` property within the ``@BatchDelete`` annotation is ``true``,
-a ``BatchOptimisticLockException`` is not thrown even if the delete count is 0 or multiple.
+If ``suppressOptimisticLockException`` property within ``@BatchDelete`` is ``true``,
+``BatchOptimisticLockException`` is not thrown even if deleted count is 0 or multiple.
 
 .. code-block:: java
 
@@ -138,33 +138,33 @@ a ``BatchOptimisticLockException`` is not thrown even if the delete count is 0 o
 Query timeout
 ==================
 
-You can specify the number of seconds for query timeout in the ``queryTimeout`` property of the ``@BatchDelete`` annotation.
+You can specify seconds of query timeout to ``queryTimeout`` property within ``@BatchDelete`` annotation.
 
 .. code-block:: java
 
   @BatchDelete(queryTimeout = 10)
   int[] delete(List<Employee> employees);
 
-This specification is applied regardless of whether you are using an SQL file or not.
-The query timeout that is specified in the config class is used if the ``queryTimeout`` property is not set.
+This specifying is applied regardless of with or without using sql file.
+Query timeout that is specified in config class is used if ``queryTimeout`` property is not set value.
 
 Batch size
 ============
 
-You can specify the batch size in the ``batchSize`` property of the ``@BatchDelete`` annotation.
+You can specify batch size to ``batchSize`` property within ``@BatchDelete`` annotation.
 
 .. code-block:: java
 
   @BatchDelete(batchSize = 10)
   int[] delete(List<Employee> employees);
 
-This specification is applied regardless of whether you are using an SQL file or not.
-If you do not specify a value for the ``batchSize`` property, the batch size that is specified in the :doc:`../config` class is used.
+This setting applies regardless of whether you use a SQL file or not.
+If you do not specify a value for the ``batchSize`` property, the batch size configured in the :doc:`../config` class is used.
 
 SQL log output format
 =======================
 
-You can specify the SQL log output format in the ``sqlLog`` property of the ``@BatchDelete`` annotation.
+You can specify SQL log output format to ``sqlLog`` property within ``@BatchDelete`` annotation.
 
 .. code-block:: java
 

@@ -42,7 +42,7 @@ Sample project structure
 The getting-started sample is a Gradle multi-project containing a java-17 subproject.
 In this guide, we'll focus on the java-17 subproject.
 
-Import the project to your IDE
+Import project to your IDE
 ==========================
 
 Eclipse
@@ -83,7 +83,7 @@ DSL style
 =========
 
 In the DSL style, you work with examples in the ``boilerplate.java17.repository.EmployeeRepository`` 
-class and the :doc:`query-dsl` for operations.
+and the :doc:`query-dsl` for operations. 
 
 SELECT
 ------
@@ -152,7 +152,7 @@ See :doc:`dao` and :doc:`sql` for more information.
 SELECT (DAO)
 ------------
 
-In the DAO style, to issue a SELECT statement that retrieves Java objects, 
+In the DAO style, for issuing a SELECT statement to retrieve Java objects, 
 use the ``@Sql`` annotation with Text Blocks for SQL templates:
 
 .. code-block:: java

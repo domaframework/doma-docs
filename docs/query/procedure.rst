@@ -37,7 +37,7 @@ Parameters
 
 The order of the stored procedure parameters must match the order of the DAO method parameters.
 
-All parameters must be annotated with one of the following annotations:
+All parameters must be annotated with one of following annotations:
 
 * @In
 * @InOut
@@ -138,7 +138,7 @@ Cursor or result set
 --------------------
 
 To indicate cursors or result sets,
-annotate the corresponding DAO method parameters with the ``@ResultSet`` annotation.
+annotate corresponding DAO method parameters with the ``@ResultSet`` annotation.
 
 The DAO method parameter type must be ``java.util.List``
 and its element type must be one of the following:

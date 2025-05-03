@@ -60,7 +60,7 @@ Differences between temporal classes
 Examples
 ========
 
-Using in an entity class
+Using in entity class
 ---------------------
 
 .. code-block:: java
@@ -80,7 +80,7 @@ Using in an entity class
   }
 
 
-Using in a domain class
+Using in domain class
 ---------------------
 
 .. code-block:: java
@@ -99,7 +99,7 @@ Using in a domain class
       }
   }
 
-Using in a DAO interface
+Using in DAO interface
 ----------------------
 
 .. code-block:: java

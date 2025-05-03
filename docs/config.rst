@@ -66,7 +66,7 @@ Doma provides following dialects:
 | SQLite                     | SqliteDialect    |                                      |
 +----------------------------+------------------+--------------------------------------+
 
-These dialects are located in the ``org.seasar.doma.jdbc.dialect`` package.
+These dialect are located in the ``org.seasar.doma.jdbc.dialect`` package.
 
 MysqlDialect supports MySQL 5 by default. To use it as a dialect for MySQL 8, 
 instantiate MysqlDialect by specifying the version as follows:
@@ -290,8 +290,8 @@ All JDBC drivers are loaded automatically by the `service provider <service prov
 
 .. warning::
 
-  However, in specific environments, the mechanism may not work appropriately.
-  For example, this can occur when using Apache Tomcat.
+  But in the specific environment, the mechanism doesn't work appropriately.
+  For example, when you use Apache Tomcat, you will find the case.
   See also: `DriverManager, the service provider mechanism and memory leaks <tomcat driver_>`_
 
 .. _config-configuration-definition:

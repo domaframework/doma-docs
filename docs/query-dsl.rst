@@ -491,7 +491,7 @@ The above query generates:
 Dynamic Where Expression
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A WHERE expression only includes operators that have been evaluated to build the WHERE clause. When no operators are evaluated in the expression, the statement omits the WHERE clause entirely.
+A WHERE expression uses only evaluated operators to build a WHERE clause. When no operators are evaluated in the expression, the statement omits the WHERE clause.
 
 For example, with a conditional expression:
 

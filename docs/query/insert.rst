@@ -35,15 +35,15 @@ See :ref:`insert-returning`.
 When not using the returning property
 -------------------------------------
 
-Return value must be ``org.seasar.doma.jdbc.Result`` that has the entity class as an element if the parameter is an immutable entity class.
+Return value must be ``org.seasar.doma.jdbc.Result`` that make the entity class an element if parameter is immutable entity class.
 
-Return value must be ``int`` that represents the updated count if the above conditions are not satisfied.
+Return value must be ``int`` that is represented updated count if the above conditions are not satisfied.
 
 Insert by auto generated SQL
 ============================
 
-Parameter type must be an entity class.
-Only one parameter can be specified.
+Parameter type must be entity class.
+Specifiable parameter is only one.
 Parameter must not be null.
 
 .. code-block:: java
@@ -65,7 +65,7 @@ Reference :ref:`identity-auto-generation` about cautionary point.
 Version numbers
 ----------------
 
-If a value that is explicitly set is over 0, then use that value if :doc:`../entity` has a property that is annotated with ``@Version``.
+If value that explicitly set is over 0 then use the value if :doc:`../entity` has property that is annotated  with ``@Version``.
 
 If the value is not set or is less than 0 the value is set 1 automatically.
 
@@ -75,7 +75,7 @@ Properties of @Insert
 insertable
 ~~~~~~~~~~
 
-A property that has its ``insertable`` element of ``@Column`` set to false is excluded from insertion if the entity class has a property that is annotated with ``@Column``.
+Property that is set false to ``insertable`` element of ``@Column`` is excluded from insertion if entity class has property that is annotated with ``@Column``.
 
 exclude
 ~~~~~~~
@@ -91,10 +91,10 @@ Even if ``insertable`` element of ``@Column`` is true the property is excluded f
 include
 ~~~~~~~
 
-A property that is specified in the ``include`` element of ``@Insert`` is included in the insertion.
-If the same property is specified in both the ``include`` element and ``exclude`` element of ``@Insert``, the property is excluded from insertion.
+Property that is specified in ``include`` element of ``@Insert`` is included to insertion.
+If same property are specified in both of ``include`` element and ``exclude`` element of ``@Insert`` the property is excluded from insertion.
 
-Even if a property is specified in this element, the property is excluded from insertion if the ``insertable`` element of ``@Column`` is false.
+Even if property is specified in this element the property is excluded from insertion if ``insertable`` element of ``@Column`` is false.
 
 .. code-block:: java
 
@@ -104,9 +104,9 @@ Even if a property is specified in this element, the property is excluded from i
 excludeNull
 ~~~~~~~~~~~
 
-A property whose value is ``null`` is excluded from insertion if the ``excludeNull`` element of ``@Insert`` is true.
-If this element is true, even if the ``insertable`` element of ``@Column`` is true or the property is specified in the ``include`` element of ``@Insert``,
-the property is excluded from insertion if its value is ``null``.
+Property that value is ``null`` is excluded from insertion if ``excludeNull`` element of ``@Insert`` is true.
+If this element is true, even if ``insertable`` element of ``@Column`` is true or property is specified in ``include`` element of ``@Insert``
+the property is excluded from insertion if value is ``null``.
 
 .. code-block:: java
 
@@ -190,10 +190,10 @@ Insert by SQL file
 To execute insertion by SQL file,
 you set ``true`` to ``sqlFile`` element of ``@Insert`` and prepare SQL file that correspond method.
 
-You can use an arbitrary type as a parameter.
-There is no limit to the number of parameters that can be specified.
-You can set ``null`` to a parameter if the parameter type is a basic type or domain class.
-For other types, the parameter must not be ``null``.
+You can use arbitrary type as parameter.
+Specifiable parameters count is no limit.
+You can set ``null`` to parameter if parameter type is basic type or domain class.
+For other type than that, parameter must not be ``null``.
 
 .. code-block:: java
 
@@ -238,8 +238,8 @@ You can specify second of query timeout to ``queryTimeout`` element of ``@Insert
   @Insert(queryTimeout = 10)
   int insert(Employee employee);
 
-This specification is applied regardless of whether you are using an SQL file or not.
-Query timeout that is specified in :doc:`../config` is used if the ``queryTimeout`` element is not set.
+This specifying is applied regardless with or without using sql file.
+Query timeout that is specified in :doc:`../config` is used if ``queryTimeout`` element is not set value.
 
 SQL log output format
 ======================

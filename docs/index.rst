@@ -20,7 +20,7 @@ Doma is a database access framework for Java with several notable strengths:
 * It includes SQL templates, known as “two-way SQL.”
 * It runs independently, without relying on any other libraries.
 
-This document consists of the following sections:
+This document consists of following sections:
 
 * `User Documentation`_
 * `About Doma`_

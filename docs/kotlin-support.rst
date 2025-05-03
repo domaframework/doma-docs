@@ -16,7 +16,7 @@ Entity classes
 --------------
 
 * Define as a plain class
-* Specify a ``Metamodel`` annotation in the ``metamodel`` element of the ``@Entity`` annotation
+* Specify a ``Metamodel`` annotation in the ``metamodel`` element of ``@Entity``
 
 .. code-block:: kotlin
 
