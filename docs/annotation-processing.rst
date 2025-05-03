@@ -234,4 +234,3 @@ and should be placed in a root directory such as ``src/main/resources``.
 .. note::
   Options specified in the ``doma.compile.config`` file are overridden by
   any options specified directly in the build tools.
-```
