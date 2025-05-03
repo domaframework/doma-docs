@@ -54,7 +54,7 @@ The embeddable class is used as the entity field type:
       Address address;
   }
 
-The above entity definition is equivalent to following one:
+The above entity definition is equivalent to the following one:
 
 .. code-block:: java
 
