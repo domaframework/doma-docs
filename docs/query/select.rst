@@ -175,7 +175,7 @@ The type parameter ``TARGET`` of ``Function<Stream<TARGET>, RESULT>`` must be on
 * java.util.OptionalLong
 * java.util.OptionalDouble
 
-Type parameter ``RESULT`` must match to Dao method return value.
+The type parameter ``RESULT`` must match the DAO method return type.
 
 Returning a Stream
 ---------------------------
@@ -496,4 +496,4 @@ You can specify the format of SQL log output in the ``sqlLog`` element of the ``
   @Select(sqlLog = SqlLogType.RAW)
   List<Employee> selectById(Integer id);
 
-``SqlLogType.RAW`` outputs the SQL statement with its binding parameters in the log.
+``SqlLogType.RAW`` represents outputting a log that contains the SQL statement with its binding parameters.
