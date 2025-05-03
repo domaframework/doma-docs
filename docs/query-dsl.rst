@@ -1158,7 +1158,7 @@ All are optional and can be applied as follows:
 
 .. note::
 
-    To allow a delete statement with an empty WHERE clause, enable the `allowEmptyWhere` setting.
+    To allow a delete statement with an empty WHERE clause, enable the ``allowEmptyWhere`` setting.
 
 Delete Record by Entity
 -----------------------
@@ -1577,7 +1577,7 @@ You can also specify excluded columns:
 
 .. note::
 
-    To perform an update without a WHERE clause, enable the `allowEmptyWhere` setting.
+    To perform an update without a WHERE clause, enable the ``allowEmptyWhere`` setting.
 
 Update Record by Entity
 -----------------------
