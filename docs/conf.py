@@ -178,7 +178,7 @@ gettext_uuid = False
 gettext_compact = False
 
 html_context = {
-    'doma_version': '3.6.0',
+    'doma_version': '3.7.0',
     'doma_compile_version': '3.0.1',
     'doma_codegen_version': '3.0.0',
     'eclipse_apt_version': '4.3.0',
