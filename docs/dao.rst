@@ -53,28 +53,12 @@ However, if the configuration class is managed by a Dependency Injection (DI) co
 
 .. code-block:: java
 
-  EmployeeDao employeeDao = new EmployeeDaoImpl();
+  Config config = ...;
+  EmployeeDao employeeDao = new EmployeeDaoImpl(config);
   Employee employee = employeeDao.selectById(1);
 
 By default, the implementation class name is the interface name suffixed with ``Impl``.
 Please refer to :doc:`annotation-processing` for information on how to customize the package name and suffix.
-
-If you use the default constructor, the ``DataSource`` is determined by the configuration in the ``config`` element of the ``@Dao`` annotation.
-Alternatively, you can instantiate with an explicitly specified ``DataSource``.
-
-.. code-block:: java
-
-  DataSource dataSource = ...;
-  EmployeeDao employeeDao = new EmployeeDaoImpl(dataSource);
-  Employee employee = employeeDao.selectById(1);
-
-Additionally, you can instantiate with an explicitly specified ``Connection``.
-
-.. code-block:: java
-
-  Connection connection = ...;
-  EmployeeDao employeeDao = new EmployeeDaoImpl(connection);
-  Employee employee = employeeDao.selectById(1);
 
 A DAO interface does not need to be defined in a one-to-one relationship with an entity class.
 One DAO interface can handle multiple entity classes.
