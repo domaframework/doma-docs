@@ -190,7 +190,7 @@ or an ``Optional`` containing an entity class as its element.
   Only H2 Database, PostgreSQL, SQL Server, and SQLite Dialects support this feature.
 
 Update by SQL file
-=================
+==================
 
 To execute an update using an SQL file,
 set the ``sqlFile`` property to ``true`` within the ``@Update`` annotation and prepare an SQL file that corresponds to the method.
@@ -200,7 +200,7 @@ set the ``sqlFile`` property to ``true`` within the ``@Update`` annotation and p
   When updating via SQL file, the rules differ depending on whether you use :ref:`populate`.
 
 Case of using comment that generates update column list
-------------------------------------------------------
+-------------------------------------------------------
 
 The first parameter type must be an entity class.
 There is no limit on the number of parameters that can be specified.
@@ -224,7 +224,7 @@ For example, you would write an SQL file like the one below to correspond to the
 The rules for controlling update target properties are the same as in :ref:`auto-update`.
 
 Case of not using comment that generates update column list
----------------------------------------------------------
+-----------------------------------------------------------
 
 You can use an arbitrary type as a parameter.
 There is no limit on the number of parameters that can be specified.
@@ -299,7 +299,7 @@ Unique constraint violation
 A ``UniqueConstraintException`` is thrown if a unique constraint violation occurs, regardless of whether an SQL file is used or not.
 
 Query timeout
-============
+=============
 
 You can specify the query timeout in seconds using the ``queryTimeout`` property within the ``@Update`` annotation.
 
@@ -312,7 +312,7 @@ This specification applies regardless of whether an SQL file is used or not.
 If the ``queryTimeout`` property is not set, the query timeout specified in :doc:`../config` is used.
 
 SQL log output format
-====================
+=====================
 
 You can specify the SQL log output format using the ``sqlLog`` property within the ``@Update`` annotation.
 
