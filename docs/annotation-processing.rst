@@ -26,7 +26,7 @@ doma.dao.subpackage
 
 doma.dao.suffix
   The name suffix for the generated implementation classes of interfaces annotated with ``@Dao``.
-  For example, if this value is set to ``Bean`` and the simple name of the interface annotated with ``@Dao`` is ``EmployeeDao``,
+  For example, if this value is set to ``Bean`` and the simple name of an interface annotated with ``@Dao`` is ``EmployeeDao``,
   the simple name of the generated implementation class will be ``EmployeeDaoBean``.
   The default value is ``Impl``.
 
