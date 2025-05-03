@@ -62,6 +62,7 @@ User Documentation
    kotlin-support
    slf4j-support
    jpms-support
+   spring-boot-support
    quarkus-support
    codegen
 
