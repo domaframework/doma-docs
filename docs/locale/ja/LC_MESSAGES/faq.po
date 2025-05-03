@@ -241,11 +241,11 @@ msgstr "リレーションシップを取得するには2つの方法があり�
 
 #: ../../faq.rst:139
 msgid ":doc:`aggregate-strategy` with SQL Templates."
-msgstr "SQLテンプレートを用いた :doc:`aggregate-strategy`"
+msgstr ":doc:`aggregate-strategy` を用いた SQLテンプレート"
 
 #: ../../faq.rst:140
 msgid ":ref:`query_dsl_associate` with The Criteria API."
-msgstr "`:ref:`query_dsl_associate` と Criteria API。"
+msgstr ":ref:`query_dsl_associate` を用いた Criteria API"
 
 #: ../../faq.rst:143
 msgid "Does Doma provide a JDBC connection pooling feature?"
