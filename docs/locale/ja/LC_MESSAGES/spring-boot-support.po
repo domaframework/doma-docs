@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../../spring-boot-support.rst:3
 msgid "Spring Boot support"
-msgstr "Spring Bootサポート"
+msgstr "Spring Boot サポート"
 
 #: ../../spring-boot-support.rst:6
 msgid "Contents"
