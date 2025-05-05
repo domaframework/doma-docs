@@ -192,7 +192,7 @@ msgstr "ストリーム検索"
 
 #: ../../query/select.rst:142
 msgid "For processing a large number of records incrementally, stream search using ``java.util.stream.Stream`` can be utilized."
-msgstr "大量のレコードをインクリメンタルに処理するために、``java.util.stream.Stream`` を使ったストリーム検索を利用できます。"
+msgstr "大量のレコードをインクリメンタルに処理するために、 ``java.util.stream.Stream`` を使ったストリーム検索を利用できます。"
 
 #: ../../query/select.rst:144
 msgid "There are two types of stream searches: one method involves passing a Stream to ``java.util.Function``, and the other method involves returning a ``Stream`` as the return value."
@@ -474,7 +474,8 @@ msgstr "検索結果の保証"
 
 #: ../../query/select.rst:412
 msgid "To ensure that at least one result is returned from the search, set the ``ensureResult`` property of the ``@Select`` annotation to ``true``."
-msgstr "検索結果が少なくとも1つ返されるようにするには、 ``@Select`` アノテーションの ``ensureResult`` プロパティを ``true `` に設定します。"
+msgstr "検索結果が少なくとも1つ返されるようにするには、 ``@Select`` アノテーションの \n"
+"``ensureResult`` プロパティを ``true`` に設定します。"
 
 #: ../../query/select.rst:419
 msgid "If there are no search results, a ``NoResultException`` will be thrown."

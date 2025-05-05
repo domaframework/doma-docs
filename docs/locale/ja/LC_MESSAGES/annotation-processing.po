@@ -69,7 +69,7 @@ msgstr "アノテーション処理中にデバッグログを出力するかど
 
 #: ../../annotation-processing.rst:47
 msgid "doma.domain.converters"
-msgstr ""
+msgstr "doma.domain.converters"
 
 #: ../../annotation-processing.rst:49
 msgid "The fully qualified names of classes annotated with ``@DomainConverters``. Multiple names should be provided as a comma-separated list. This option is used to locate external domain classes."

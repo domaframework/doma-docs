@@ -54,7 +54,7 @@ msgstr "自動生成されたSQLによるバッチ追加"
 #: ../../query/batch-insert.rst:37
 #: ../../query/batch-insert.rst:143
 msgid "The parameter type must be a ``java.lang.Iterable`` subtype that has :doc:`../entity` as its element type. Only one parameter can be specified. The parameter must not be ``null``. The return value array's element count equals the ``Iterable`` element count. Each element in the array represents the insert count for the corresponding operation."
-msgstr "パラメータの型は、エンティティクラスを要素とする ``java.lang.Iterable`` のサブタイプでなければなりません。指定できるパラメータは1つだけで、パラメータは ``null`` であってはなりません。返値の配列の要素数は ``Iterable`` の要素数と等しく、それぞれの配列要素は該当する更新操作によって影響を受ける行の数を表します。"
+msgstr "パラメータの型は、:doc:`../entity` を要素とする ``java.lang.Iterable`` のサブタイプでなければなりません。指定できるパラメータは1つだけで、パラメータは ``null`` であってはなりません。返値の配列の要素数は ``Iterable`` の要素数と等しく、それぞれの配列要素は該当する更新操作によって影響を受ける行の数を表します。"
 
 #: ../../query/batch-insert.rst:44
 msgid "Identifier"

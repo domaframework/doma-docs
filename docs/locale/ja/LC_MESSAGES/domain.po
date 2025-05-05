@@ -25,7 +25,7 @@ msgstr "コンテンツ"
 
 #: ../../domain.rst:8
 msgid "A domain class represents a table column and allows you to handle column values as Java objects. In the Doma framework, a **domain** refers to all the values that a data type may contain. In essence, a domain class is a user-defined class that can be mapped to a database column. Using domain classes is optional but recommended for type safety."
-msgstr "ドメインクラスはデータベースのカラムを表し、カラムの値をJavaオブジェクトとして処理できるようにします。Domaフレームワークでは、\"ドメイン\"はデータ型に含まれる可能性のあるすべての値を意味します。つまり、ドメインクラスは、カラムにマップできるユーザー定義のクラスです。ドメインクラスの使用はオプションですが、型の安全性のために推奨されます。"
+msgstr "ドメインクラスはデータベースのカラムを表し、カラムの値をJavaオブジェクトとして処理できるようにします。Domaフレームワークでは、 **ドメイン** はデータ型に含まれる可能性のあるすべての値を意味します。つまり、ドメインクラスは、カラムにマップできるユーザー定義のクラスです。ドメインクラスの使用はオプションですが、型の安全性のために推奨されます。"
 
 #: ../../domain.rst:13
 msgid "Every domain class is either an internal domain class or an external domain class."

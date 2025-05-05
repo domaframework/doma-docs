@@ -33,7 +33,7 @@ msgstr "埋め込み可能クラスの定義"
 
 #: ../../embeddable.rst:13
 msgid "Here is an example of how to define an embeddable class:"
-msgstr "埋め込み可能クラスを定義する方法の例を示します:"
+msgstr "埋め込み可能クラスを定義する方法を示します:"
 
 #: ../../embeddable.rst:34
 msgid "You can apply the ``@Embeddable`` annotation to both classes and records:"

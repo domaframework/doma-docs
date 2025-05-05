@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 18:54+0900\n"
+"POT-Creation-Date: 2025-05-05 09:03+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -711,7 +711,7 @@ msgstr ""
 
 #: ../../codegen.rst:572
 msgid "DAO source files"
-msgstr "DAO のソースファイル"
+msgstr "DAOのソースファイル"
 
 #: ../../codegen.rst:573
 msgid "sqlTest.ftl"
@@ -744,8 +744,8 @@ msgid "selectByIdAndVersion.sql.ftl"
 msgstr ""
 
 #: ../../codegen.rst:583
-msgid "To create custom templates, copy the default files, modify their contents without changing the filenames, and place them in the directory specified by the `templateDir` option."
-msgstr "カスタムテンプレートを作成するには、デフォルトファイルをコピーし、ファイル名を変更せずにその内容を変更し、`templateDir`オプションで指定されたディレクトリに配置します。"
+msgid "To create custom templates, copy the default files, modify their contents without changing the filenames, and place them in the directory specified by the ``templateDir`` option."
+msgstr "カスタムテンプレートを作成するには、既定のファイルをコピーし、ファイル名を変更せずに内容を変更します。 そして ``templateDir`` オプションで指定したディレクトリに配置します。"
 
 #: ../../codegen.rst:629
 msgid "The Doma CodeGen Plugin uses `Apache FreeMarker <https://freemarker.apache.org/>`_ to process the template files."

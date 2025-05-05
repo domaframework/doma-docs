@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../../query/update.rst:87
 msgid "When the ``suppressOptimisticLockException`` property within the ``@Update`` annotation is set to true, if a property annotated with ``@Version`` exists, then the version number is included in the update condition and incremented by 1, but an ``OptimisticLockException`` is not thrown even if the update count is 0. However, the version property value within the entity is still incremented by 1."
-msgstr "``@Update` アノテーションの ``suppressOptimisticLockException`` プロパティが ``true`` の場合、 ``@Version`` アノテーションが付けられたプロパティが存在すればバージョン番号は更新条件に含まれ増分もされますが、 更新件数が0でも ``OptimisticLockException`` はスローされません。ただし、エンティティのバージョンプロパティの値は1増分されます。"
+msgstr "``@Update`` アノテーションの ``suppressOptimisticLockException`` プロパティが ``true`` の場合、 ``@Version`` アノテーションが付けられたプロパティが存在すればバージョン番号は更新条件に含まれ増分もされますが、 更新件数が0でも ``OptimisticLockException`` はスローされません。ただし、エンティティのバージョンプロパティの値は1増分されます。"
 
 #: ../../query/update.rst:98
 msgid "Control updating target property"

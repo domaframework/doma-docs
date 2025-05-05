@@ -844,7 +844,7 @@ msgstr ""
 
 #: ../../sql.rst:843
 msgid "We recommend always using ``/**...*/`` for multi-line comments because it's straightforward and clearly distinguishable from directives."
-msgstr "複数行コメントには常に``/**...*/``を使用することをお勧めします。これは簡単で、ディレクティブと明確に区別できるからです。"
+msgstr "複数行コメントには常に ``/**...*/`` を使用することをお勧めします。これは簡単で、ディレクティブと明確に区別できるからです。"
 
 #: ../../sql.rst:846
 msgid "doma-template module"

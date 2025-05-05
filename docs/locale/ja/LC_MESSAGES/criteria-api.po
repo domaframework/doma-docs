@@ -704,7 +704,7 @@ msgstr "また、offset 式では、OFFSET 句を構築するために null 以�
 
 #: ../../criteria-api.rst:1041
 msgid "For Update expression (Entityql, NativeSql)"
-msgstr " For update 式 (Entityql、NativeSql)"
+msgstr "For update 式 (Entityql、NativeSql)"
 
 #: ../../criteria-api.rst:1060
 msgid "Union expression (NativeSql)"

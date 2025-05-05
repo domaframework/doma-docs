@@ -581,7 +581,7 @@ These files include:
      - SQL files
 
 To create custom templates, copy the default files, modify their contents without changing the filenames,
-and place them in the directory specified by the `templateDir` option.
+and place them in the directory specified by the ``templateDir`` option.
 
 .. tabs::
 

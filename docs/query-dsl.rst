@@ -570,7 +570,7 @@ This generates:
 .. _query_dsl_associate:
 
 Association
------------
+~~~~~~~~~~~
 
 You can associate entities using the ``associate`` operation in conjunction with a join expression:
 
