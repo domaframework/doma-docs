@@ -29,19 +29,21 @@ This annotation specifies how an entity aggregate is reconstructed from a query 
 Association linker definition
 ===============================
 
-An aggregate strategy must contain at least one field of type ``BiFunction`` annotated with ``@AssociationLinker``.
-This ``BiFunction`` is responsible for dynamically associating two entity instances.
+An aggregate strategy must contain at least one field of type ``BiConsumer`` or ``BiFunction``,
+annotated with ``@AssociationLinker``.
+These functions are responsible for dynamically associating two entity instances.
+Use a ``BiFunction`` when associating immutable entities.
+For mutable entities, you may use either a ``BiConsumer`` or a ``BiFunction``.
 
 .. code-block:: java
 
     @AggregateStrategy(root = Department.class, tableAlias = "d")
     interface DepartmentAggregateStrategy {
       @AssociationLinker(propertyPath = "employees", tableAlias = "e")
-      BiFunction<Department, Employee, Department> employees =
+      BiConsumer<Department, Employee> employees =
           (d, e) -> {
             d.getEmployees().add(e);
             e.setDepartment(d);
-            return d;
           };
 
       @AssociationLinker(propertyPath = "employees.address", tableAlias = "a")
@@ -52,11 +54,13 @@ This ``BiFunction`` is responsible for dynamically associating two entity instan
           };
     }
 
-- In the ``BiFunction``, the first and third type parameters represent the class that owns the property,
-  while the second type parameter represents the property type.
-- The ``propertyPath`` element specifies the target property's name as a dot-separated path from the root entity class.
+- The first type parameter of a ``BiConsumer`` or ``BiFunction`` represents the type of the property owner,
+  and the second type parameter represents the type of the property.
+  The third type parameter of a ``BiFunction`` must be the same as the first one and represents the type of
+  the entity after the association is applied.
+- The ``propertyPath`` element specifies the name of the target property as a dot-separated path from the root entity class.
 - The ``tableAlias`` element specifies the alias for the table corresponding to the entity class used as the second
-  type parameter of ``BiFunction``. This alias must be used in the SELECT statement.
+  type parameter of the ``BiConsumer`` or ``BiFunction``. This alias must be used in the SELECT statement.
 
 Example
 ================
