@@ -17,7 +17,7 @@ To perform a search operation using the SELECT statement, annotate the DAO metho
   }
 
 The ``@Select`` annotation requires an :doc:`SQL template <../sql>`. 
-Describe the SQL template in an SQL file or in the ``@Sql`` annotation.
+You can define the SQL template either in an SQL file or in the ``@Sql`` annotation.
 
 Search condition
 =================
@@ -56,8 +56,8 @@ Use the :ref:`bind-variable-directive` to bind method parameters to SQL.
 Query using arbitrary type
 ----------------------------------
 
-When using arbitrary types as method parameters, use a dot ``.`` within the bind variable directive 
-to perform field access or method invocation, and bind the result to SQL.
+When using arbitrary types as method parameters, use a dot ``.`` in the bind variable directive 
+to access fields or invoke methods, and bind the result to SQL.
 
 .. code-block:: java
 
@@ -139,16 +139,16 @@ If there are no search results, an empty list is returned.
 Stream search
 ==============
 
-For processing a large number of records incrementally, stream search using ``java.util.stream.Stream`` can be utilized.
+For processing a large number of records incrementally, you can use stream search with ``java.util.stream.Stream``.
 
-There are two types of stream searches: one method involves passing a Stream to ``java.util.Function``, 
-and the other method involves returning a ``Stream`` as the return value.
+There are two approaches to stream searches: you can either pass a Stream to a ``java.util.Function``, 
+or return a ``Stream`` directly from the method.
 
 Passing a Stream to Function
 -----------------------------
 
 Set the ``strategy`` property in the ``@Select`` annotation to ``SelectType.STREAM``, 
-and add a subtype of ``java.util.Function<Stream<TARGET, RESULT>>`` as a method parameter.
+and add a parameter that is a subtype of ``java.util.Function<Stream<TARGET, RESULT>>``.
 
 .. code-block:: java
 
@@ -175,7 +175,7 @@ The type parameter ``TARGET`` of ``Function<Stream<TARGET>, RESULT>`` must be on
 * java.util.OptionalLong
 * java.util.OptionalDouble
 
-Type parameter ``RESULT`` must match to Dao method return value.
+The type parameter ``RESULT`` must match the return type of the DAO method.
 
 Returning a Stream
 ---------------------------
@@ -230,9 +230,9 @@ Collector search
 
 Search results can be processed using ``java.util.Collector``.
 
-To process search results using ``Collector``, set the ``strategy`` element of ``@Select`` to ``SelectType.COLLECT``, 
-and define a subtype of ``java.stream.Collector<TARGET, ACCUMULATION, RESULT>`` or 
-``java.stream.Collector<TARGET, ?, RESULT>`` as a method parameter.
+To process search results using ``Collector``, set the ``strategy`` property of ``@Select`` to ``SelectType.COLLECT``, 
+and add a parameter that is a subtype of either ``java.stream.Collector<TARGET, ACCUMULATION, RESULT>`` or 
+``java.stream.Collector<TARGET, ?, RESULT>``.
 
 .. code-block:: java
 
@@ -268,7 +268,7 @@ The type parameter ``RESULT`` of ``Collector<TARGET, ACCUMULATION, RESULT>`` mus
 Aggregate strategy
 ==================
 
-The ``aggregateStrategy`` element in ``@Select`` allows query results to be mapped
+The ``aggregateStrategy`` property in ``@Select`` allows query results to be mapped
 to hierarchical entity structures based on a predefined aggregate strategy.
 
 .. code-block:: java
@@ -435,7 +435,7 @@ a ``ResultMappingException`` will be thrown.
 Query timeout
 ==================
 
-You can specify the query timeout in seconds for the ``queryTimeout`` property within the ``@Select`` annotation.
+You can specify the query timeout in seconds using the ``queryTimeout`` property in the ``@Select`` annotation.
 
 .. code-block:: java
 
@@ -448,7 +448,7 @@ If the value of the ``queryTimeout`` property is not set, the query timeout spec
 Fetch size
 ==============
 
-You can specify the fetch size in the ``fetchSize`` property within the ``@Select`` annotation.
+You can specify the fetch size using the ``fetchSize`` property in the ``@Select`` annotation.
 
 .. code-block:: java
 
@@ -460,7 +460,7 @@ If the value of the ``fetchSize`` property is not set, the fetch size specified 
 Max row count
 ===============
 
-You can specify the maximum number of rows in the ``maxRows`` property within the ``@Select`` annotation.
+You can specify the maximum number of rows using the ``maxRows`` property in the ``@Select`` annotation.
 
 .. code-block:: java
 
@@ -473,7 +473,7 @@ The naming convention for the keys of the Map
 =============================================
 
 If you are mapping search results to ``java.util.Map<String, Object>``, 
-you can specify the naming convention for the keys of the map in the ``mapKeyNaming`` element of ``@Select``.
+you can specify the naming convention for the keys of the map using the ``mapKeyNaming`` property of ``@Select``.
 
 .. code-block:: java
 
@@ -489,7 +489,7 @@ specified in the :doc:`../config`.
 Output format of SQL logs
 =========================
 
-You can specify the format of SQL log output in the ``sqlLog`` element of the ``@Select`` annotation.
+You can specify the format of SQL log output using the ``sqlLog`` property of the ``@Select`` annotation.
 
 .. code-block:: java
 

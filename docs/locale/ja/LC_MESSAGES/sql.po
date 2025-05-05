@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 18:54+0900\n"
+"POT-Creation-Date: 2025-05-05 10:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgid "The number ``99`` in the SQL template is test data that is never used at 
 msgstr "SQL テンプレート内の数字 ``99`` はテストデータであり、実行時には決して使用されません。テストデータは、SQL テンプレートをそのまま実行する場合にのみ役立ちます。つまり、お気に入りの SQL ツールを使用して、SQL テンプレートが文法的に正しいかどうかを確認できます。"
 
 #: ../../sql.rst:42
-msgid "Each SQL template is represented either a text file or an annotation."
+msgid "Each SQL template is represented by either a text file or an annotation."
 msgstr "各 SQL テンプレートは、テキストファイルまたはアノテーションのいずれかで表されます。"
 
 #: ../../sql.rst:45
@@ -376,7 +376,7 @@ msgid "Parameters in IN clause"
 msgstr "IN句のパラメータ"
 
 #: ../../sql.rst:220
-msgid "Parameters with a type that is a subtype of ``java.lang.Iterable`` or an array type are recognized as bind variables in an IN clause."
+msgid "Parameters that are either a subtype of ``java.lang.Iterable`` or an array type are recognized as bind variables in an IN clause."
 msgstr "``java.lang.Iterable`` のサブタイプまたは配列型のパラメータは、IN句のバインド変数として認識されます。"
 
 #: ../../sql.rst:223
@@ -516,8 +516,8 @@ msgid "If the ``employeeId == null && department_id != null`` is evaluated ``tru
 msgstr "``employeeId == null && department_id != null`` が  ``true`` と評価された場合、生成される SQL ステートメントは次のようになります。"
 
 #: ../../sql.rst:432
-msgid "The SQL keyword ``and`` followed by ``department_id`` is remove automatically:"
-msgstr "SQL キーワード ``and`` は自動的に削除されます。"
+msgid "The SQL keyword ``and`` followed by ``department_id`` is removed automatically:"
+msgstr "SQL キーワード ``and`` と ``department_id`` は自動的に削除されます。"
 
 #: ../../sql.rst:434
 msgid "If the ``employeeId == null && department_id == null`` is evaluated ``true``, the generated SQL statement is as follows:"
@@ -609,7 +609,7 @@ msgid "Loop directive"
 msgstr "ループディレクティブ"
 
 #: ../../sql.rst:549
-msgid "Loop directive allows you to build SQL statements using loop."
+msgid "The loop directive allows you to build SQL statements using loops."
 msgstr "ループディレクティブを使用すると、ループを使用して SQL ステートメントを構築できます。"
 
 #: ../../sql.rst:560
@@ -649,16 +649,16 @@ msgid "If the sequence ``names`` contains three items, the generated SQL stateme
 msgstr "シーケンス ``names`` に 3 つの項目が含まれる場合、生成される SQL ステートメントは次のようになります。"
 
 #: ../../sql.rst:599
-msgid "Removal of clauses on the loop directive"
+msgid "Removal of clauses in the loop directive"
 msgstr "ループディレクティブの句の削除"
 
 #: ../../sql.rst:601
-msgid "Following clauses can become unnecessary on the loop directive:"
+msgid "The following clauses can become unnecessary in the loop directive:"
 msgstr "ループ ディレクティブでは次の句が不要になる場合があります。"
 
 #: ../../sql.rst:608
-msgid "In the case, they are removed automatically."
-msgstr "その場合は自動的に削除されます。"
+msgid "In such cases, these clauses are removed automatically."
+msgstr "そのような場合には、これらの句は自動的に削除されます。"
 
 #: ../../sql.rst:622
 #: ../../sql.rst:652
@@ -670,11 +670,11 @@ msgid "Because the SQL clause ``where`` followed by ``/*%for ...*/`` is unnecess
 msgstr "SQL 句 ``where`` の後に ``/* %for ...``*/`` が続く部分は不要なため、自動的に削除されます。"
 
 #: ../../sql.rst:633
-msgid "Removal of AND and OR keywords on the loop directive"
+msgid "Removal of AND and OR keywords in the loop directive"
 msgstr "ループディレクティブの AND および OR キーワードの削除"
 
 #: ../../sql.rst:635
-msgid "AND and OR keywords can become unnecessary on the loop directive. In the case, they are removed automatically."
+msgid "AND and OR keywords can become unnecessary in the loop directive. In such cases, these keywords are removed automatically."
 msgstr "AND キーワードと OR キーワードは、ループ ディレクティブでは不要になる場合があります。その場合は自動的に削除されます。"
 
 #: ../../sql.rst:659
@@ -686,7 +686,7 @@ msgid "Restriction on loop directive"
 msgstr "ループディレクティブの制限事項"
 
 #: ../../sql.rst:665
-msgid "``/*%for ...*/`` and ``/*%end*/`` must be included in same SQL clause and in same statement level."
+msgid "``/*%for ...*/`` and ``/*%end*/`` must be included in the same SQL clause and at the same statement level."
 msgstr "``/* %for ...*/`` と ``/* %end*/`` は、同じ SQL 句および同じ文レベルに含める必要があります。"
 
 #: ../../sql.rst:668
@@ -739,8 +739,8 @@ msgid "Parser-level comment directive"
 msgstr "パーサーレベルコメントディレクティブ"
 
 #: ../../sql.rst:769
-msgid "The parser-level comment directive allows you to include comments in an SQL template that will be removed when the template is parsed."
-msgstr "パーサーレベルのコメントディレクティブを使用すると、テンプレート解析時に除去されるコメントをSQLテンプレートに含めることができます。"
+msgid "The parser-level comment directive allows you to include comments in an SQL template. These comments will be removed when the template is parsed."
+msgstr "パーサーレベルのコメントディレクティブを使用すると、SQLテンプレートにコメントを含めることができ、これらのコメントはテンプレート解析時に削除されます。"
 
 #: ../../sql.rst:790
 msgid "The above SQL template is parsed into the following SQL:"
@@ -771,8 +771,8 @@ msgid "If the character following ``/*`` is not valid as the first character in 
 msgstr "``/*`` に続く文字が Java 識別子の最初の文字として許可されておらず、かつそれが ``%``、``#``、``@``、``\"``、``'`` のいずれでもない場合、``/*`` は複数行コメントの始まりです。"
 
 #: ../../sql.rst:819
-msgid "The followings are the beginning of a multi line comment:"
-msgstr "以下は複数行のコメントの始まりです。"
+msgid "The following are examples of multi-line comment beginnings:"
+msgstr "以下は、複数行コメントの開始例です:"
 
 #: ../../sql.rst:821
 msgid "/\\*\\*...\\*/"
@@ -807,8 +807,8 @@ msgid "/\\*&...\\*/"
 msgstr ""
 
 #: ../../sql.rst:830
-msgid "In other hand, the followings are the beginning of a directive:"
-msgstr "一方、以下はディレクティブの始まりです。"
+msgid "On the other hand, the following are examples of directive beginnings:"
+msgstr "一方、ディレクティブの開始例は以下の通りです。"
 
 #: ../../sql.rst:832
 msgid "/\\* ...\\*/"

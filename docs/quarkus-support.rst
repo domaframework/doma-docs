@@ -9,7 +9,7 @@ Overview
 ========
 
 Doma supports `Quarkus <https://quarkus.io/>`_ v3.7.0 and later.
-To combine Doma with Quarkus, the `quarkus-doma <https://github.com/quarkiverse/quarkus-doma>`_ module is necessary.
+To integrate Doma with Quarkus, you need to use the `quarkus-doma <https://github.com/quarkiverse/quarkus-doma>`_ extension.
 
 .. note::
 
@@ -87,17 +87,17 @@ Main features
 Hot reloading
 -------------
 
-In development mode, the quarkus-doma module reloads SQL and Script files when they are changed.
+In development mode, the quarkus-doma extension automatically detects and reloads SQL and Script files whenever you modify them.
 
 Automatic bean register
 -----------------------
 
-The quarkus-doma module registers all DAO beans to the Quarkus CDI container.
+The quarkus-doma extension automatically registers all DAO beans in the Quarkus CDI container.
 
 Automatic SQL execution on startup
 -----------------------------------
 
-The quarkus-doma module executes import.sql when Quarkus starts.
+The quarkus-doma extension automatically executes the import.sql script file during application startup to initialize your database.
 
 Configuration
 -------------
@@ -133,14 +133,14 @@ You can bind Doma’s configurations to each datasource as follows:
     quarkus.datasource.jdbc.url=jdbc:h2:tcp://localhost/mem:default
     quarkus.datasource.jdbc.min-size=3
     quarkus.datasource.jdbc.max-size=13
-    
+
     # inventory datasource
     quarkus.datasource.inventory.db-kind=h2
     quarkus.datasource.inventory.username=username2
     quarkus.datasource.inventory.jdbc.url=jdbc:h2:tcp://localhost/mem:inventory
     quarkus.datasource.inventory.jdbc.min-size=2
     quarkus.datasource.inventory.jdbc.max-size=12
-    
+
     # Doma's configuration bound to the above default datasource
     quarkus.doma.dialect=h2
     quarkus.doma.batch-size=10
@@ -148,7 +148,7 @@ You can bind Doma’s configurations to each datasource as follows:
     quarkus.doma.max-rows=500
     quarkus.doma.query-timeout=5000
     quarkus.doma.sql-load-script=import.sql
-    
+
     # Doma's configuration bound to the above inventory datasource
     quarkus.doma.inventory.dialect=h2
     quarkus.doma.inventory.batch-size=10
@@ -163,21 +163,21 @@ You can inject the named Doma’s resource using the ``io.quarkus.agroal.DataSou
 
     @Inject
     Config defaultConfig;
-    
+
     @Inject
     Entityql defaultEntityql;
-    
+
     @Inject
     NativeSql defaultNativeSql;
-    
+
     @Inject
     @DataSource("inventory")
     Config inventoryConfig;
-    
+
     @Inject
     @DataSource("inventory")
     Entityql inventoryEntityql;
-    
+
     @Inject
     @DataSource("inventory")
     NativeSql inventoryNativeSql;
@@ -185,7 +185,7 @@ You can inject the named Doma’s resource using the ``io.quarkus.agroal.DataSou
 Support for native images
 -------------------------
 
-The quarkus-doma module automatically recognizes reflective classes and resources, including them in your native image without requiring additional configuration.
+The quarkus-doma extension automatically recognizes reflective classes and resources. These are included in your native image without requiring any additional configuration.
 
 Sample project
 ==============

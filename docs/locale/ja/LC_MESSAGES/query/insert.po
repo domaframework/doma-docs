@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 18:54+0900\n"
+"POT-Creation-Date: 2025-05-05 10:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -52,11 +52,11 @@ msgid "When not using the returning property"
 msgstr "returning プロパティを使用しない場合"
 
 #: ../../query/insert.rst:38
-msgid "Return value must be ``org.seasar.doma.jdbc.Result`` with the entity class as its element if the parameter is an immutable entity class."
+msgid "The return value must be an ``org.seasar.doma.jdbc.Result`` with the entity class as its element if the parameter is an immutable entity class."
 msgstr "パラメータが不変のエンティティクラスの場合、戻り値はエンティティクラスを要素とする ``org.seasar.doma.jdbc.Result`` である必要があります。"
 
 #: ../../query/insert.rst:40
-msgid "Return value must be ``int`` representing the update count if the above conditions are not satisfied."
+msgid "The return value must be an ``int`` representing the update count if the above condition is not satisfied."
 msgstr "上記の条件が満たされない場合、戻り値は更新された件数を表す ``int`` でなければなりません。"
 
 #: ../../query/insert.rst:43
@@ -100,8 +100,8 @@ msgid "insertable"
 msgstr ""
 
 #: ../../query/insert.rst:78
-msgid "A property is excluded from insertion if the entity class has a property annotated with ``@Column`` and the ``insertable`` element of ``@Column`` is set to false."
-msgstr "エンティティクラスに ``@Column`` が注釈されたプロパティが含まれており、その ``@Column`` の ``insertable`` 要素がfalseに設定されている場合、プロパティは挿入から除外されます。"
+msgid "A property is excluded from insertion if the entity class has a property annotated with ``@Column`` and the ``insertable`` property of ``@Column`` is set to false."
+msgstr "エンティティクラスに ``@Column`` が注釈されたプロパティが含まれており、その ``@Column`` の ``insertable`` 要素がfalseに設定されている場合、プロパティは追加から除外されます。"
 
 #: ../../query/insert.rst:81
 #: ../../query/insert.rst:219

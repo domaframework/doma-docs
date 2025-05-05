@@ -15,9 +15,8 @@ Overview
 ========
 
 Both Lombok and Doma use annotation processors.
-Since Java does not guarantee a specific execution order for annotation processors,
-Doma's annotation processors may not always be aware of the class modifications made by
-Lombok's annotation processors.
+Java doesn't guarantee any specific order for annotation processors to run.
+This means Doma's processors might execute before Lombok has finished modifying classes.
 
 To address this issue, Doma's annotation processors recognize several Lombok annotations
 and adjust their behavior accordingly.
@@ -27,12 +26,12 @@ they assume that the class has a constructor with parameters matching all its in
 Best practices
 ==============
 
-Below are recommended patterns for defining classes with Lombok annotations.
+Here are the recommended patterns for using Lombok annotations with Doma classes:
 
 Entity class definition
 -----------------------
 
-immutable entity classes
+Immutable Entity Classes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Specify ``true`` to the ``immutable`` element of ``@Entity``

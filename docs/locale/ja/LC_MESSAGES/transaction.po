@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 13:10+0900\n"
+"POT-Creation-Date: 2025-05-05 10:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,8 @@ msgid "Use this ``LocalTransactionManager`` to control database access"
 msgstr "この ``LocalTransactionManager`` を使用してデータベースアクセスを制御します"
 
 #: ../../transaction.rst:25
-msgid "There are several ways to create and access the ``LocalTransactionManager``, but the simplest approach is to create it in the constructor of your ``Config`` implementation class and make that ``Config`` implementation a singleton."
-msgstr "``LocalTransactionManager`` を生成・取得する方法はいくつかありますが、最も簡単な方法は ``Config`` 実装クラスのコンストラクタ内で生成し、 ``Config`` 実装クラスをシングルトンにする方法です。"
+msgid "There are several ways to create and access the ``LocalTransactionManager``, but the simplest approach is to create it in the constructor of your ``Config`` implementation class and make that ``Config`` implementation a singleton instance."
+msgstr "``LocalTransactionManager`` を生成・取得する方法はいくつかありますが、最も簡単な方法は ``Config`` 実装クラスのコンストラクタ内で生成し、``Config`` 実装クラスをシングルトンにすることです。"
 
 #: ../../transaction.rst:29
 msgid "Here is an example:"
@@ -72,24 +72,24 @@ msgid "The following examples use this DAO interface:"
 msgstr "次の例ではこのDAOインターフェースを使用します。"
 
 #: ../../transaction.rst:93
-msgid "Start and finish transactions"
-msgstr "トランザクションの開始と終了"
+msgid "Starting and Managing Transactions"
+msgstr "トランザクションの開始と管理"
 
 #: ../../transaction.rst:95
 msgid "You can start a transaction using one of the following methods of ``TransactionManager``:"
 msgstr "次の ``TransactionManager`` のメソッドのいずれかを使用してトランザクションを開始できます。"
 
 #: ../../transaction.rst:97
-msgid "required"
-msgstr ""
+msgid "``required`` - Uses an existing transaction if available, or creates a new one if none exists"
+msgstr "``required`` - 利用可能な既存のトランザクションを使用するか、存在しない場合は新しいトランザクションを作成します"
 
 #: ../../transaction.rst:98
-msgid "requiresNew"
-msgstr ""
+msgid "``requiresNew`` - Always creates a new transaction, suspending any existing transaction"
+msgstr "``requiresNew`` - 常に新しいトランザクションを作成し、既存のトランザクションを中断します"
 
 #: ../../transaction.rst:99
-msgid "notSupported"
-msgstr ""
+msgid "``notSupported`` - Executes without a transaction, suspending any existing transaction"
+msgstr "``notSupported`` - トランザクションなしで実行され、既存のトランザクションを一時停止"
 
 #: ../../transaction.rst:101
 msgid "Use a lambda expression to define the code you want to execute within a transaction."
@@ -100,7 +100,7 @@ msgid "The transaction is automatically committed if the lambda expression compl
 msgstr "トランザクションはラムダ式が正常に完了した場合、自動的にコミットされます。ラムダ式が例外をスローした場合、トランザクションは自動的にロールバックされます。"
 
 #: ../../transaction.rst:119
-msgid "Explicit rollback"
+msgid "Explicit Rollback"
 msgstr "明示的なロールバック"
 
 #: ../../transaction.rst:121
@@ -108,8 +108,8 @@ msgid "Besides throwing an exception, you can use the ``setRollbackOnly`` method
 msgstr "例外をスローする以外に、``setRollbackOnly`` メソッドを使用してトランザクションを明示的にロールバックすることもできます。"
 
 #: ../../transaction.rst:138
-msgid "Savepoint"
-msgstr "セーブポイント"
+msgid "Using Savepoints"
+msgstr "セーブポイントの使用"
 
 #: ../../transaction.rst:140
 msgid "Savepoints allow you to roll back specific portions of a transaction while keeping other changes."

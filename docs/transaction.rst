@@ -24,7 +24,7 @@ To use local transactions, the following conditions are required:
 
 There are several ways to create and access the ``LocalTransactionManager``,
 but the simplest approach is to create it in the constructor of your ``Config`` implementation class
-and make that ``Config`` implementation a singleton.
+and make that ``Config`` implementation a singleton instance.
 
 Here is an example:
 
@@ -89,14 +89,14 @@ The following examples use this DAO interface:
   }
 
 
-Start and finish transactions
------------------------------
+Starting and Managing Transactions
+----------------------------------
 
 You can start a transaction using one of the following methods of ``TransactionManager``:
 
-* required
-* requiresNew
-* notSupported
+* ``required`` - Uses an existing transaction if available, or creates a new one if none exists
+* ``requiresNew`` - Always creates a new transaction, suspending any existing transaction
+* ``notSupported`` - Executes without a transaction, suspending any existing transaction
 
 Use a lambda expression to define the code you want to execute within a transaction.
 
@@ -115,8 +115,8 @@ Use a lambda expression to define the code you want to execute within a transact
 The transaction is automatically committed if the lambda expression completes successfully.
 If the lambda expression throws an exception, the transaction is automatically rolled back.
 
-Explicit rollback
---------------------
+Explicit Rollback
+-----------------------------
 
 Besides throwing an exception, you can use the ``setRollbackOnly`` method to explicitly roll back a transaction.
 
@@ -134,8 +134,8 @@ Besides throwing an exception, you can use the ``setRollbackOnly`` method to exp
       tm.setRollbackOnly();
   });
 
-Savepoint
---------------
+Using Savepoints
+-----------------------------
 
 Savepoints allow you to roll back specific portions of a transaction while keeping other changes.
 

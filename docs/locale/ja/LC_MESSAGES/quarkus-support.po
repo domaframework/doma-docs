@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 13:10+0900\n"
+"POT-Creation-Date: 2025-05-05 10:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,8 @@ msgid "Overview"
 msgstr "概要"
 
 #: ../../quarkus-support.rst:11
-msgid "Doma supports `Quarkus <https://quarkus.io/>`_ v3.7.0 and later. To combine Doma with Quarkus, the `quarkus-doma <https://github.com/quarkiverse/quarkus-doma>`_ module is necessary."
-msgstr "Domaは `Quarkus <https://quarkus.io/>`_ v3.7.0以降をサポートしています。DomaとQuarkusを組み合わせるには、 `quarkus-doma <https://github.com/quarkiverse/quarkus-doma>`_ モジュールが必要です。"
+msgid "Doma supports `Quarkus <https://quarkus.io/>`_ v3.7.0 and later. To integrate Doma with Quarkus, you need to use the `quarkus-doma <https://github.com/quarkiverse/quarkus-doma>`_ extension."
+msgstr "Domaは `Quarkus <https://quarkus.io/>`_ v3.7.0以降をサポートしています。DomaとQuarkusを統合するには、 `quarkus-doma <https://github.com/quarkiverse/quarkus-doma>`_ エクステンションを使用する必要があります。"
 
 #: ../../quarkus-support.rst:16
 msgid "Quarkus and the quarkus-doma module require Java 17 and later."
@@ -56,24 +56,24 @@ msgid "Hot reloading"
 msgstr "ホットリロード"
 
 #: ../../quarkus-support.rst:90
-msgid "In development mode, the quarkus-doma module reloads SQL and Script files when they are changed."
-msgstr "開発モードでは、quarkus-domaモジュールは、変更時にSQLとスクリプトファイルをリロードします。"
+msgid "In development mode, the quarkus-doma extension automatically detects and reloads SQL and Script files whenever you modify them."
+msgstr "開発モードでは、quarkus-domaエクステンションは、変更時にSQLとスクリプトファイルを自動検出してリロードします。"
 
 #: ../../quarkus-support.rst:93
 msgid "Automatic bean register"
 msgstr "自動Bean登録"
 
 #: ../../quarkus-support.rst:95
-msgid "The quarkus-doma module registers all DAO beans to the Quarkus CDI container."
-msgstr "quarkus-domaモジュールは、すべてのDAO BeanをQuarkus CDIコンテナに登録します。"
+msgid "The quarkus-doma extension automatically registers all DAO beans in the Quarkus CDI container."
+msgstr "quarkus-domaエクステンションは、すべてのDAO BeanをQuarkus CDIコンテナに自動的に登録します。"
 
 #: ../../quarkus-support.rst:98
 msgid "Automatic SQL execution on startup"
 msgstr "起動時のSQL自動実行"
 
 #: ../../quarkus-support.rst:100
-msgid "The quarkus-doma module executes import.sql when Quarkus starts."
-msgstr "quarkus-domaモジュールは、Quarkusの起動時にimport.sqlを実行します。"
+msgid "The quarkus-doma extension automatically executes the import.sql script file during application startup to initialize your database."
+msgstr "quarkus-domaエクステンションは、アプリケーション起動時にimport.sqlスクリプトファイルを自動的に実行し、データベースを初期化します。"
 
 #: ../../quarkus-support.rst:103
 msgid "Configuration"
@@ -108,8 +108,8 @@ msgid "Support for native images"
 msgstr "ネイティブイメージのサポート"
 
 #: ../../quarkus-support.rst:188
-msgid "The quarkus-doma module automatically recognizes reflective classes and resources, including them in your native image without requiring additional configuration."
-msgstr "quarkus-domaモジュールは、リフレクションクラスとリソースを認識し、追加の設定なしでネイティブイメージに含めます。"
+msgid "The quarkus-doma extension automatically recognizes reflective classes and resources. These are included in your native image without requiring any additional configuration."
+msgstr ""
 
 #: ../../quarkus-support.rst:191
 msgid "Sample project"

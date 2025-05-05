@@ -35,9 +35,9 @@ See :ref:`insert-returning`.
 When not using the returning property
 -------------------------------------
 
-Return value must be ``org.seasar.doma.jdbc.Result`` with the entity class as its element if the parameter is an immutable entity class.
+The return value must be an ``org.seasar.doma.jdbc.Result`` with the entity class as its element if the parameter is an immutable entity class.
 
-Return value must be ``int`` representing the update count if the above conditions are not satisfied.
+The return value must be an ``int`` representing the update count if the above condition is not satisfied.
 
 Insert by auto generated SQL
 ============================
@@ -75,7 +75,7 @@ Properties of @Insert
 insertable
 ~~~~~~~~~~
 
-A property is excluded from insertion if the entity class has a property annotated with ``@Column`` and the ``insertable`` element of ``@Column`` is set to false.
+A property is excluded from insertion if the entity class has a property annotated with ``@Column`` and the ``insertable`` property of ``@Column`` is set to false.
 
 exclude
 ~~~~~~~

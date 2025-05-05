@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doma-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 18:54+0900\n"
+"POT-Creation-Date: 2025-05-05 10:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,8 @@ msgid "Loggers"
 msgstr "ロガー"
 
 #: ../../slf4j-support.rst:38
-msgid "doma-slf4j provides several loggers as follows:"
-msgstr "doma-slf4j は、次のようないくつかのロガーを提供します。"
+msgid "The doma-slf4j module provides the following loggers:"
+msgstr "doma-slf4j モジュールは以下のロガーを提供します:"
 
 #: ../../slf4j-support.rst:40
 msgid "org.seasar.doma.jdbc.LogKind.DAO"

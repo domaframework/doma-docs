@@ -39,7 +39,7 @@ The number ``99`` in the SQL template is test data that is never used at runtime
 This test data is only useful when you execute the SQL template directly in your database tools.
 In other words, you can check whether the SQL template is grammatically correct with your favorite SQL tools.
 
-Each SQL template is represented either a text file or an annotation.
+Each SQL template is represented by either a text file or an annotation.
 
 SQL templates in files
 ======================
@@ -217,7 +217,7 @@ The following SQL statement is generated from the SQL template:
 Parameters in IN clause
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Parameters with a type that is a subtype of ``java.lang.Iterable`` or an array type are
+Parameters that are either a subtype of ``java.lang.Iterable`` or an array type are
 recognized as bind variables in an IN clause.
 
 The type argument of ``java.lang.Iterable`` must be one of :doc:`basic` and :doc:`domain`.
@@ -429,7 +429,7 @@ the generated SQL statement is as follows:
   where
     department_id = ?
 
-The SQL keyword ``and`` followed by ``department_id`` is remove automatically:
+The SQL keyword ``and`` followed by ``department_id`` is removed automatically:
 
 If the ``employeeId == null && department_id == null`` is evaluated ``true``,
 the generated SQL statement is as follows:
@@ -546,7 +546,7 @@ in the outer statement and ``/*%end*/`` is in the inner statement:
 Loop directive
 --------------
 
-Loop directive allows you to build SQL statements using loop.
+The loop directive allows you to build SQL statements using loops.
 
 Synopsis
 ~~~~~~~~
@@ -595,17 +595,17 @@ the generated SQL statement is as follows:
   or
   employee_name like ?
 
-Removal of clauses on the loop directive
+Removal of clauses in the loop directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Following clauses can become unnecessary on the loop directive:
+The following clauses can become unnecessary in the loop directive:
 
 * WHERE
 * HAVING
 * ORDER BY
 * GROUP BY
 
-In the case, they are removed automatically.
+In such cases, these clauses are removed automatically.
 
 Suppose you have the following SQL template:
 
@@ -629,11 +629,11 @@ the generated SQL statement is as follows:
 Because the SQL clause ``where`` followed by ``/*%for ...*/`` is unnecessary,
 it is removed automatically.
 
-Removal of AND and OR keywords on the loop directive
+Removal of AND and OR keywords in the loop directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-AND and OR keywords can become unnecessary on the loop directive.
-In the case, they are removed automatically.
+AND and OR keywords can become unnecessary in the loop directive.
+In such cases, these keywords are removed automatically.
 
 Suppose you have the following SQL template:
 
@@ -663,7 +663,7 @@ Restriction on loop directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``/*%for ...*/`` and ``/*%end*/`` must be included in
-same SQL clause and in same statement level.
+the same SQL clause and at the same statement level.
 
 See also `Restriction on condition directive`_.
 
@@ -766,8 +766,8 @@ The generated SQL statement is as follows:
 Parser-level comment directive
 ------------------------------
 
-The parser-level comment directive allows you to include comments in an SQL template 
-that will be removed when the template is parsed.
+The parser-level comment directive allows you to include comments in an SQL template. 
+These comments will be removed when the template is parsed.
 
 Synopsis
 ~~~~~~~~
@@ -779,7 +779,7 @@ Synopsis
 Suppose you have the following SQL template:
 
 .. code-block:: sql
-  
+
   select 
     *
   from
@@ -790,7 +790,7 @@ Suppose you have the following SQL template:
 The above SQL template is parsed into the following SQL:
 
 .. code-block:: sql
-  
+
   select 
     *
   from
@@ -816,7 +816,7 @@ If the character following ``/*`` is not valid as the first character in a Java 
 and is not one of ``%``, ``#``, ``@``, ``"``, or ``'``,
 then ``/*`` marks the beginning of a multi-line comment.
 
-The followings are the beginning of a multi line comment:
+The following are examples of multi-line comment beginnings:
 
 * /\*\*...\*/
 * /\*+...\*/
@@ -827,7 +827,7 @@ The followings are the beginning of a multi line comment:
 * /\*)...\*/
 * /\*&...\*/
 
-In other hand, the followings are the beginning of a directive:
+On the other hand, the following are examples of directive beginnings:
 
 * /\* ...\*/
 * /\*a...\*/
