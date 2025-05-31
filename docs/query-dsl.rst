@@ -1118,6 +1118,58 @@ The above query generates the following SQL:
     inner join
         AVERAGE_SALARY t1_ on (t0_.SALARY >= t1_.SALARY)
 
+User-Defined Comparisons
+------------------------
+
+You can define user-defined comparisons using ``Expressions.userDefined``.
+
+Example of defining a custom ``regexp`` comparison class:
+
+The defined class needs to accept a ``UserDefinedCriteriaContext``
+
+.. code-block:: java
+
+    record MyExtension(UserDefinedCriteriaContext context) {
+        public void regexp(PropertyMetamodel<String> propertyMetamodel, String pattern) {
+            context.add(
+                (b) -> {
+                    b.appendExpression(propertyMetamodel);
+                    b.appendSql(" ~ ");
+                    b.appendParameter(propertyMetamodel, pattern);
+                });
+        }
+
+Using the custom comparison class in a query:
+
+the first argument is a function that creates an Extension and accepts a UserDefinedCriteriaContext.
+the second argument is a block that uses the Extension.
+
+.. code-block:: java
+
+    var d = new Department_();
+    var list =
+    dsl.from(d)
+        .where(
+            c -> {
+              c.extension(
+                  MyExtension::new,
+                  (ext) -> {
+                    ext.regexp(d.departmentName, "SA");
+                  });
+            })
+        .orderBy(c -> c.asc(d.departmentId))
+        .select()
+        .fetch();
+
+This generates:
+
+.. code-block:: sql
+
+    select t0_.DEPARTMENT_ID, t0_.DEPARTMENT_NO, t0_.DEPARTMENT_NAME,
+    t0_.LOCATION, t0_.VERSION
+    from DEPARTMENT t0_
+    where t0_.DEPARTMENT_NAME ~ ?
+
 Delete Statement
 ================
 
