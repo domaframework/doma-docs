@@ -1,0 +1,79 @@
+# Doma
+
+Doma is a database access framework for Java that provides compile-time code generation, type-safe query building, and SQL template support. It offers a unique approach to database programming with annotation processing for compile-time validation and zero runtime dependencies.
+
+## Key Features
+
+- **Compile-time Code Generation**: Uses annotation processing to generate DAO implementations and validate SQL queries at compile time
+- **Type-safe Criteria API**: Build queries programmatically with full type safety and IDE support
+- **Two-way SQL**: Write SQL templates that work both as standalone SQL and within the framework
+- **Entity Associations**: Support for one-to-one, one-to-many, and many-to-one relationships
+- **Zero Dependencies**: Runs independently without requiring additional libraries
+- **Multi-language Support**: First-class support for Java and Kotlin
+- **Framework Integration**: Seamless integration with Spring Boot, Quarkus, and other frameworks
+
+## Architecture
+
+Doma follows a code-first approach where:
+1. You define entities using annotations
+2. Annotation processors generate DAO implementations at compile time
+3. SQL queries are validated against entity definitions
+4. Runtime execution uses generated, optimized code
+
+## Use Cases
+
+- Applications requiring complex SQL queries with type safety
+- Projects needing compile-time validation of database operations
+- Systems where performance and minimal dependencies are critical
+- Teams preferring SQL-centric development over ORM abstractions
+
+## Docs
+
+- [Getting Started Guide](https://doma.readthedocs.io/en/stable/getting-started.html)
+- [Configuration](https://doma.readthedocs.io/en/stable/config.html)
+- [Basic Usage](https://doma.readthedocs.io/en/stable/basic.html)
+- [Domain Types](https://doma.readthedocs.io/en/stable/domain.html)
+- [Embeddable Objects](https://doma.readthedocs.io/en/stable/embeddable.html)
+- [Entity Mapping](https://doma.readthedocs.io/en/stable/entity.html)
+- [Data Access Objects (DAO)](https://doma.readthedocs.io/en/stable/dao.html)
+- [Aggregate Strategy](https://doma.readthedocs.io/en/stable/aggregate-strategy.html)
+- [Query Operations](https://doma.readthedocs.io/en/stable/query/)
+  - [Select Queries](https://doma.readthedocs.io/en/stable/query/select.html)
+  - [Insert Operations](https://doma.readthedocs.io/en/stable/query/insert.html)
+  - [Update Operations](https://doma.readthedocs.io/en/stable/query/update.html)
+  - [Delete Operations](https://doma.readthedocs.io/en/stable/query/delete.html)
+  - [Batch Insert](https://doma.readthedocs.io/en/stable/query/batch-insert.html)
+  - [Batch Update](https://doma.readthedocs.io/en/stable/query/batch-update.html)
+  - [Batch Delete](https://doma.readthedocs.io/en/stable/query/batch-delete.html)
+  - [Multi-row Insert](https://doma.readthedocs.io/en/stable/query/multi-row-insert.html)
+  - [Stored Procedures](https://doma.readthedocs.io/en/stable/query/procedure.html)
+  - [Functions](https://doma.readthedocs.io/en/stable/query/function.html)
+  - [Script Execution](https://doma.readthedocs.io/en/stable/query/script.html)
+  - [Query Factory](https://doma.readthedocs.io/en/stable/query/factory.html)
+  - [SQL Processor](https://doma.readthedocs.io/en/stable/query/sql-processor.html)
+- [Query Builder](https://doma.readthedocs.io/en/stable/query-builder/)
+- [Type-safe Criteria API](https://doma.readthedocs.io/en/stable/query-dsl.html)
+- [SQL Templates (Two-way SQL)](https://doma.readthedocs.io/en/stable/sql.html)
+- [Expression Language](https://doma.readthedocs.io/en/stable/expression.html)
+- [Transaction Management](https://doma.readthedocs.io/en/stable/transaction.html)
+- [Build Configuration](https://doma.readthedocs.io/en/stable/build.html)
+- [Annotation Processing](https://doma.readthedocs.io/en/stable/annotation-processing.html)
+- [Lombok Support](https://doma.readthedocs.io/en/stable/lombok-support.html)
+- [Kotlin Support](https://doma.readthedocs.io/en/stable/kotlin-support.html)
+- [SLF4J Integration](https://doma.readthedocs.io/en/stable/slf4j-support.html)
+- [Java Module System Support](https://doma.readthedocs.io/en/stable/jpms-support.html)
+- [Spring Boot Integration](https://doma.readthedocs.io/en/stable/spring-boot-support.html)
+- [Quarkus Support](https://doma.readthedocs.io/en/stable/quarkus-support.html)
+- [Code Generation](https://doma.readthedocs.io/en/stable/codegen.html)
+- [Frequently Asked Questions](https://doma.readthedocs.io/en/stable/faq.html)
+
+## Resources
+
+- [Main Repository](https://github.com/domaframework/doma)
+- [Release Notes](https://github.com/domaframework/doma/releases)
+- [JavaDoc API Reference](https://www.javadoc.io/doc/org.seasar.doma/doma-core/latest/index.html)
+- [Code Examples](https://github.com/domaframework/simple-examples)
+- [Compile Plugin](https://github.com/domaframework/doma-compile-plugin)
+- [Code Generation Plugin](https://github.com/domaframework/doma-codegen-plugin)
+- [News and Announcements](https://twitter.com/domaframework)
+- [Support Development](https://opencollective.com/doma)

@@ -96,6 +96,7 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
+html_extra_path = ['extra']
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
