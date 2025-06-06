@@ -178,12 +178,12 @@ gettext_uuid = False
 gettext_compact = False
 
 html_context = {
-    'doma_version': '3.8.0',
+    'doma_version': '3.9.0',
     'doma_compile_version': '4.0.0',
     'doma_codegen_version': '3.0.0',
     'eclipse_apt_version': '4.3.0',
     'logback_classic_version': '1.5.18',
-    'quarkus_doma_version': '1.0.2'
+    'quarkus_doma_version': '1.0.3'
 }
 
 def render_jinja(app, docname, source):
