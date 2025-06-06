@@ -96,7 +96,7 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
-html_extra_path = ['extra']
+html_extra_path = ['llms.txt']
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
