@@ -1979,6 +1979,46 @@ This generates:
     LOCATION, VERSION) select t0_.DEPARTMENT_ID, t0_.DEPARTMENT_NO, t0_.DEPARTMENT_NAME,
     t0_.LOCATION, t0_.VERSION from DEPARTMENT t0_
 
+User-Defined Operators
+----------------------
+
+User-defined operators can be implemented as methods in a class that accepts a ``UserDefinedCriteriaContext`` instance via its constructor.
+
+.. code-block:: java
+
+    record MyExtension(UserDefinedCriteriaContext context) {
+      public void regexp(PropertyMetamodel<String> propertyMetamodel, String regexp) {
+        context.add(
+            (b) -> {
+              b.appendExpression(propertyMetamodel);
+              b.appendSql(" ~ ");
+              b.appendParameter(propertyMetamodel, regexp);
+            });
+      }
+    }
+
+The class above can be used in the WHERE, JOIN, or HAVING clause of a query as follows:
+
+.. code-block:: java
+
+    var d = new Department_();
+    var list =
+        queryDsl.from(d)
+            .where(c -> c.extension(MyExtension::new, (ext) -> {
+                ext.regexp(d.departmentName, "A");
+            }))
+            .orderBy(c -> c.asc(d.departmentId))
+            .select()
+            .fetch();
+
+The query above is translated into the following SQL:
+
+.. code-block:: sql
+
+    select t0_.DEPARTMENT_ID, t0_.DEPARTMENT_NO, t0_.DEPARTMENT_NAME, t0_.LOCATION, t0_.VERSION from DEPARTMENT t0_
+    where t0_.DEPARTMENT_NAME ~ ?
+    order by t0_.DEPARTMENT_ID asc
+
 Debugging
 =========
 
