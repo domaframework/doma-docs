@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is the documentation repository for Doma, a database access framework for Java. The documentation is built using Sphinx and hosted on ReadTheDocs. The repository manages:
 
 - English documentation (primary)
-- Japanese translation via Crowdin integration
+- Japanese translation
 - Multiple output formats (HTML, PDF, ePub)
 
 ## Development Commands
@@ -41,12 +41,6 @@ make
 cd docs
 # Generate POT files for translation
 sphinx-build -b gettext . _build/gettext
-
-# Upload to Crowdin (admin only)
-crowdin push
-
-# Download translations (admin only)  
-crowdin pull
 ```
 
 ## Architecture
@@ -74,8 +68,7 @@ These variables can be used in documentation via Jinja templating.
 
 ### Translation Workflow
 - English content is written in .rst files
-- Crowdin integration automatically generates .pot files for translators
-- Japanese translations are managed via Crowdin project: https://crowdin.com/project/doma-docs
+- POT files for translation are generated using `sphinx-build -b gettext`
 - Translated .po files are stored in `/docs/locale/ja/LC_MESSAGES/`
 
 ## Content Guidelines

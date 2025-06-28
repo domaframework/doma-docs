@@ -55,21 +55,3 @@ Execute the `sphinx-build` command in the docs directory:
 ```
 $ sphinx-build -b gettext . _build/gettext
 ```
-
-#### Upload POT files to Crowdin
-
-Execute the `crowdin` command in the docs directory:
-
-```
-$ crowdin push
-```
-
-This command is only permitted for administrators.
-
-#### Download PO files from Crowdin
-
-Execute the `crowdin` command in the docs directory:
-
-```
-$ crowdin pull
-```
