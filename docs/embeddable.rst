@@ -176,6 +176,40 @@ The ``prefix`` attribute controls how column names are generated:
       Address deliveryAddress;
   }
 
+Column overrides
+----------------
+
+You can use the ``columnOverrides`` attribute along with ``@ColumnOverride`` annotations to have fine-grained control over individual column mappings:
+
+.. code-block:: java
+
+  @Entity
+  public class Customer {
+      @Id 
+      Integer id;
+      
+      @Embedded(columnOverrides = {
+          @ColumnOverride(name = "street", column = @Column(name = "BILLING_STREET")),
+          @ColumnOverride(name = "city", column = @Column(name = "BILLING_CITY"))
+      })
+      Address billingAddress;
+      
+      @Embedded(columnOverrides = {
+          @ColumnOverride(name = "street", column = @Column(name = "SHIP_STREET", insertable = false)),
+          @ColumnOverride(name = "city", column = @Column(name = "SHIP_CITY", updatable = false))
+      })
+      Address shippingAddress;
+  }
+
+The ``@ColumnOverride`` annotation allows you to:
+
+* Specify a custom column name for a specific embeddable field
+* Override column attributes such as ``insertable``, ``updatable``, and ``quote``
+* Take precedence over any ``prefix`` attribute when both are specified
+
+.. note::
+   When both ``prefix`` and ``columnOverrides`` are used, the ``@ColumnOverride`` settings take precedence for the specified fields.
+
 Example
 =======
 
