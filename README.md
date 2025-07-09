@@ -1,5 +1,14 @@
 # Doma Documentation
 
+> [!IMPORTANT]
+> **This documentation has been migrated to the main Doma repository.**
+> 
+> Please visit https://github.com/domaframework/doma/ for the latest documentation.
+> 
+> This repository is now archived and no longer maintained.
+
+---
+
 This repository manages the English version of the [Doma](https://github.com/domaframework/doma) documentation.
 Localization into Japanese is managed manually.
 
